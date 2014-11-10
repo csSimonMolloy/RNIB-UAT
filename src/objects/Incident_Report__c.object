@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>About_the_incident__c</fullName>
+        <inlineHelpText>How did it happen?</inlineHelpText>
+        <label>About the incident</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>About_the_injury_or_damage__c</fullName>
+        <inlineHelpText>Description of injury suffered:
+What part of the body was injured?:</inlineHelpText>
+        <label>About the injury or damage</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Action_taken_after_to_reduce_risk__c</fullName>
+        <label>Action taken after to reduce risk</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Community_Fundraiser_Email__c</fullName>
+        <label>Community Fundraiser Email</label>
+        <type>Email</type>
+    </fields>
+    <fields>
+        <fullName>Community_Fundraiser_Name__c</fullName>
+        <label>Community Fundraiser Name</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Community_Fundraiser_Phone__c</fullName>
+        <label>Community Fundraiser Phone</label>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Form_Filled_In_By_Address__c</fullName>
+        <formula>Form_Filled_In_By__r.MailingStreet &amp; BR() &amp;
+Form_Filled_In_By__r.MailingCity &amp; BR() &amp;
+Form_Filled_In_By__r.MailingState &amp; BR() &amp;
+Form_Filled_In_By__r.MailingPostalCode</formula>
+        <label>Form Filled In By Address</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Form_Filled_In_By_Email__c</fullName>
+        <formula>Form_Filled_In_By__r.Email</formula>
+        <label>Form Filled In By Email</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Form_Filled_In_By_Phone__c</fullName>
+        <formula>Form_Filled_In_By__r.Phone</formula>
+        <label>Form Filled In By Phone</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Form_Filled_In_By_Type__c</fullName>
+        <formula>IF(Form_Filled_In_By__r.RecordType.Name  = &quot;Volunteer&quot; , &quot;Volunteer&quot; , &quot;Other&quot;)</formula>
+        <label>Form Filled In By Type</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Form_Filled_In_By__c</fullName>
+        <label>Form Filled In By</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Incident Reports (Form Filled In By)</relationshipLabel>
+        <relationshipName>Incident_Reports1</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Form_filled_in_by2__c</fullName>
+        <label>Form filled In By</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Incident_Date_Time__c</fullName>
+        <label>Incident Date/Time</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Incident_Location__c</fullName>
+        <inlineHelpText>Where the Incident happened (Address or Location)</inlineHelpText>
+        <label>Incident Location</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Note__c</fullName>
+        <formula>&quot;Please contact your Volunteer Manager once you have completed and saved this report&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Note:</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Other_Person_Address__c</fullName>
+        <label>Other Person Address</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Other_Person_Email__c</fullName>
+        <label>Other Person Email</label>
+        <type>Email</type>
+    </fields>
+    <fields>
+        <fullName>Other_Person_First_Name__c</fullName>
+        <label>Other Person First Name</label>
+        <length>200</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Other_Person_Last_Name__c</fullName>
+        <label>Other Person Last Name</label>
+        <length>200</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Other_Person_Phone__c</fullName>
+        <label>Other Person Phone</label>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Other_Person__c</fullName>
+        <label>Other Person</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Person_Involved2__c</fullName>
+        <label>Person Involved</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Person_Involved_Address__c</fullName>
+        <formula>Person_Involved__r.MailingStreet &amp; BR() &amp;
+ Person_Involved__r.MailingCity &amp; BR() &amp;
+ Person_Involved__r.MailingState &amp; BR() &amp;
+ Person_Involved__r.MailingPostalCode</formula>
+        <label>Person Involved Address</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Person_Involved_Email__c</fullName>
+        <formula>Person_Involved__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Person Involved Email</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Person_Involved_Phone__c</fullName>
+        <formula>Person_Involved__r.Phone</formula>
+        <label>Person Involved Phone</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Person_Involved_Type__c</fullName>
+        <formula>IF( Person_Involved__r.RecordType.Name = &quot;Volunteer&quot; , &quot;Volunteer&quot; , &quot;Other&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Person Involved Type</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Person_Involved__c</fullName>
+        <label>Person Involved</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Incident Reports</relationshipLabel>
+        <relationshipName>Incident_Reports</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Property_damage_cost__c</fullName>
+        <label>Property damage cost</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Property_damaged_Description__c</fullName>
+        <inlineHelpText>Describe damage to property
+Cost of repair to damage</inlineHelpText>
+        <label>Property damaged Description</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Property_damaged__c</fullName>
+        <label>Property damaged</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reduce_Risk_Description__c</fullName>
+        <inlineHelpText>Describe Action taken after accident/incident to reduce risk</inlineHelpText>
+        <label>Reduce Risk Description</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Result_of_injury__c</fullName>
+        <label>Result of injury</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Able to do normal activities after incident</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unable to do normal activities after incident</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Treatment_after_injury__c</fullName>
+        <label>Treatment after injury</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Treatment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>First aid</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Seen by GP / Paramedic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hospital Visit for Treatment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>24 hours or more Hospital Stay</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <label>Incident Report</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Form_Filled_In_By__c</columns>
+        <columns>About_the_incident__c</columns>
+        <columns>Incident_Date_Time__c</columns>
+        <columns>Person_Involved__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Incident_Reports</fullName>
+        <columns>NAME</columns>
+        <columns>Form_filled_in_by2__c</columns>
+        <columns>Incident_Date_Time__c</columns>
+        <columns>About_the_incident__c</columns>
+        <columns>Person_Involved2__c</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Incident Reports</label>
+    </listViews>
+    <nameField>
+        <displayFormat>IR-{00000}</displayFormat>
+        <label>Incident Report No</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Incident Reports</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Form_Filled_In_By__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Form_filled_in_by2__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>About_the_incident__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Incident_Date_Time__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Person_Involved__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Person_Involved2__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Action_After_Description_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL(Action_taken_after_to_reduce_risk__c, &quot;Yes&quot;), Reduce_Risk_Description__c =&quot;&quot;)</errorConditionFormula>
+        <errorMessage>Reduce Risk Description must be filled in</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Property_Damage_Description_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL(Property_damaged__c,&quot;Yes&quot;), Property_damaged_Description__c =&quot;&quot;)</errorConditionFormula>
+        <errorMessage>Property Damage Description must be filled in</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Generate_Incident_Report</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasScrollbars>true</hasScrollbars>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Generate Incident Report</masterLabel>
+        <openType>newWindow</openType>
+        <page>Incident_Report</page>
+        <position>none</position>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

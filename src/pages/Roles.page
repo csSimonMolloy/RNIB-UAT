@@ -1,0 +1,477 @@
+<apex:page showHeader="false" cache="false" controller="RoleController">
+<head>
+    <title>Volunteer for us - RNIB</title>
+    <link href="http://www.rnib.org.uk/_layouts/RNIB/Internet/Styles/green.css" rel="stylesheet" type="text/css"/><!-- End CssLink -->
+    <link id="Link1" rel="stylesheet" href="http://www.rnib.org.uk/_layouts/RNIB/Internet/Styles/rnib.css" type="text/css"/>
+    <link rel="stylesheet" href="http://www.rnib.org.uk/_layouts/RNIB/Internet/Styles/rnibprintmedia.css" type="text/css" media="print"/>
+    <link id="ResolutionCSS" rel="stylesheet" type="text/css" href="http://www.rnib.org.uk//_layouts/RNIB/Internet/Styles/wide.css" title="ResolutionCSS"/>
+    <link id="ctl00_bodyCSS" rel="stylesheet" href="http://www.rnib.org.uk//_layouts/RNIB/Internet/Styles/TextResizing/smallfont.css" type="text/css"/>
+    <link rel="alternate stylesheet" type="text/css" href="http://www.rnib.org.uk//_layouts/RNIB/Internet/Styles/wide.css" title="Wide"/>
+  
+    <meta name="keywords" content="contact, address, telephone, email, offices, location, head office, offices, HQ,"></meta>
+    <meta name="description" content="To get in touch with RNIB, call 0303 123 9999, email helpline@rnib.org.uk or fill out our online contact form."></meta>
+    <link rel="shortcut icon" href="http://www.rnib.org.uk//SiteCollectionImages/favicon.jpg"/>
+
+    <link id="ctl00_onetidThemeCSS" rel="stylesheet" type="text/css" href="http://www.rnib.org.uk/../../../_themes/Vintage/Vint1011-65001.css"/>
+    <meta name="Microsoft Theme" content="Vintage 1011, default"></meta>
+  
+ </head>
+ <body id="home">
+    <div>
+        <div id="wrapper">
+            <div id="header" style="width: 99.9996%;">
+                <div id="header-col-1">
+                    <a id="ctl00_masterPageLogo_linkSiteLogo" href="http://www.rnib.org.uk"><img id="ctl00_masterPageLogo_imgSiteLogo" src="http://www.rnib.org.uk/PublishingImages/RNIBLogo.gif" alt="RNIB Home"/></a> <img id="ctl00_masterPageLogo_imgStrapLineLogo" src="http://www.rnib.org.uk/publishingimages/rnibstrapline.gif" alt="supporting blind and partially sighted people"/> 
+                    <ul class="contact-info">
+                        <li>
+                        <a href="http://www.rnib.org.uk/aboutus/contactdetails/Pages/helpline.aspx">RNIB Helpline</a>
+                        </li>
+                        <li>
+                        0303 123 9999
+                        </li>
+                        <li class="rss">
+                        <a href="http://www.rnib.org.uk/getinvolved/onlinecommunity/Pages/rss.aspx">Email alerts and RSS</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="header-col-2">
+                    <div class="headerlinks-right">
+                        <p class="welcome"></p>
+                        <ul id="ctl00_ctl14_ulWelcomeControl" class="site-tools login">
+                            <li id="ctl00_ctl14_liLogin">
+                            <a href="https://www.rnib.org.uk/Pages/Login.aspx?ReturnUrl=http://www.rnib.org.uk/aboutus/contactdetails/Pages/contactdetails.aspx&amp;LoginLnk=true">Login</a>
+                            </li>
+                            <li id="ctl00_ctl14_liRegister">
+                            <a href="https://www.rnib.org.uk/Pages/Register.aspx">Register</a>
+                            </li>
+                        </ul><!-- End Master Page Welcome Control 1.0.0.0-->
+                        <ul class="site-tools" xmlns:rs="urn:schemas-microsoft-com:rowset">
+                            <li>
+                            <a href="http://www.rnib.org.uk/aboutus/aboutthiswebsite/help/Pages/help.aspx">Help</a>
+                            </li>
+                            <li>
+                            <a href="http://www.rnib.org.uk/aboutus/contactdetails/Pages/contactdetails.aspx">Contact Us</a>
+                            </li>
+                            <li>
+                            <a href="http://www.rnib.org.uk/getinvolved/onlinecommunity/Forum">Discussions</a>
+                            </li>
+                            <li>
+                            <a href="http://www.rnib.org.uk/aboutus/aboutthiswebsite/privacy/Pages/cookies.aspx">Cookies</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="clear">
+                </div>
+            </div><!-- main nav -->
+                <ul id="main-nav">
+                    <li class="node-0">
+                    <a href="/">Home</a>
+                    </li>
+                    <li class="node-1">
+                    <a href="/eyehealth">Eye health</a>
+                    </li>
+                    <li class="node-2">
+                    <a href="/LIVINGWITHSIGHTLOSS">Living with sight loss</a>
+                    </li>
+                    <li class="node-3">
+                    <a href="/PROFESSIONALS">Professionals</a>
+                    </li>
+                    <li class="node-4 selected">
+                    <a href="/getinvolved">Get involved</a>
+                    </li>
+                    <li class="node-5">
+                    <a href="/aboutus">About us</a>
+                    </li>
+                    <li class="node-6">
+                    <a href="/shop">Shop</a>
+                    </li>
+                    <li class="node-7">
+                    <a href="/donate">Donate</a>
+                    </li>
+                </ul>
+        </div>
+<div id="breadcrumbs">
+     <p>
+      You are here:
+     </p>
+     <ul>
+      <li>
+       <a href="/">Home</a>
+      </li>
+      <li>
+       <a href="/getinvolved">Get involved</a>
+      </li>
+      <li>
+       Volunteer
+      </li>
+     </ul>
+     <div class="clear">
+       
+     </div>
+    </div>
+        <div id="content-wrapper">
+            <div id="main">
+                <div id="content">
+                    <div id="col-3">
+                        <h1 id="skiptomain">Volunteer for us</h1>
+                        <div id="col-3-top">
+                            <div class="top-links" id="ctl00_PlaceHolderContentWrapper_PlaceHolderMainWrapper_PlaceHolderMain_H2LinksPanel">
+                                <div id="ctl00_PlaceHolderContentWrapper_PlaceHolderMainWrapper_PlaceHolderMain_H2LinksPanel_RichHtmlField1__ControlWrapper_RichHtmlField">
+                                </div>
+                            </div>
+                            <div id="ctl00_PlaceHolderContentWrapper_PlaceHolderMainWrapper_PlaceHolderMain_GeneralContentPage2">
+                                <div class="page-content">
+                                    <p>Our volunteers make an enormous difference to the lives of blind and partially sighted people. Without you we would not be able to reach and support as many blind and partially sighted people as we do.</p>
+                                    <p>This page lists our volunteering opportunities. If you have any questions about a role, contact the volunteering team by email <a href="mailto:volunteering@rnib.org.uk">volunteering@rnib.org.uk</a> or telephone on 0845 60 30 575 or 01733 375450. </p>
+                                </div>
+                            </div>
+                            <div class="clear">
+                            </div>
+                        </div>
+                        <div class="clear">
+                        </div>
+                        <div id="contact-us">
+                        <div class="clear"></div>   
+                        
+                        
+                   
+                        
+   <apex:form >
+  <apex:pageMessages id="errors" escape="false"/>
+ 
+ 
+       <script type="text/javascript">
+      function doSearch() {
+        searchServer(
+          document.getElementById("location").value,
+          document.getElementById("skills").value,
+          document.getElementById("availability").value,
+          document.getElementById("interests").value,   
+          document.getElementById("service").value,   
+          document.getElementById("worklocation").value   
+          );
+      }
+      </script> 
+
+
+
+      <apex:actionFunction name="searchServer" action="{!runSearch}" rerender="results,results2,debug,errors" >
+          <apex:param name="location" value="" />
+          <apex:param name="skills" value="" />
+          <apex:param name="availability" value="" />
+          <apex:param name="interests" value="" />
+          <apex:param name="service" value="" />
+          <apex:param name="worklocation" value="" />
+      </apex:actionFunction>
+
+<div class="globalcallout-aggregation">
+         
+         <div class="wp-wrapper curve-right branding-3 wp-inner">
+          <h2>
+           SEARCH CRITERIA
+          </h2>
+          <table bgcolor="#aa0066">
+    <tr>
+        <td style="font-weight:bold;">Locations</td>
+        <td>
+        <select id="location">
+        <option value=""></option>
+        <apex:repeat value="{!locations}" var="loc">
+        <option value="{!loc}">{!loc}</option>
+        </apex:repeat>
+        </select>
+        </td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold;">Skills</td>
+        <td>
+        <select id="skills">
+        <option value=""></option>
+        <apex:repeat value="{!skills}" var="skl">
+        <option value="{!skl}">{!skl}</option>
+        </apex:repeat>
+        </select>
+        </td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold;">Availability</td>
+        <td>
+        <select id="availability">
+        <option value=""></option>
+        <apex:repeat value="{!availability}" var="ava">
+        <option value="{!ava}">{!ava}</option>
+        </apex:repeat>
+        </select>
+        </td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold;">Interests</td>
+        <td>
+        <select id="interests">
+        <option value=""></option>
+        <apex:repeat value="{!interests}" var="int">
+        <option value="{!int}">{!int}</option>
+        </apex:repeat>
+        </select>
+        </td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold;">Service</td>
+        <td>
+        <select id="service">
+        <option value=""></option>
+        <apex:repeat value="{!service}" var="ser">
+        <option value="{!ser}">{!ser}</option>
+        </apex:repeat>
+        </select>
+        </td>
+    </tr>  
+    <tr>
+    <td style="font-weight:bold;">Work Location</td>
+        <td>
+        <select id="worklocation">
+        <option value=""></option>
+        <apex:repeat value="{!worklocation}" var="wor">
+        <option value="{!wor}">{!wor}</option>
+        </apex:repeat>
+        </select>
+        </td>
+    </tr>   
+    <tr>
+        <td>
+        <input type="BUTTON" OnClick="doSearch();" value="Search"/>
+        <input type="BUTTON" OnClick="window.location.reload()" value="Reset"/>
+        </td>
+        <td>
+        </td>
+    </tr>    
+</table>
+          <div class="clear"></div>
+         </div>
+        </div>
+
+<p>&nbsp;</p>
+
+                        <h2>Current Opportunities</h2>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <div class="clear"></div>  
+ 
+  
+  <apex:outPutPanel id="results2"> 
+   <apex:repeat value="{!roles}" var="role" >
+<div class="aggregation-item">
+<p><b><apex:outputField value=" {!role.Role_Type__c}"/>&nbsp;-&nbsp;<apex:outputLink value="/apex/Role_Details?id={!role.Id}">{!role.Role_Title__c}</apex:outputLink>&nbsp;-&nbsp;<apex:outputField value=" {!role.Location__c}"/></b><br></br>
+<apex:outputField value=" {!role.Role_Description__c}"/>
+</p>
+</div>
+</apex:repeat>
+</apex:outputPanel>                      
+                    
+         
+<!--  <apex:pageBlock title="Debug - SOQL" id="debug">
+      <apex:outputText value="{!debugSoql}" />           
+  </apex:pageBlock>  -->  
+ 
+ 
+  </apex:form>                
+                        
+     
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+             
+                        
+                        
+                        
+                          
+
+                            
+                            
+                            
+                            
+                        </div>
+                                 
+                        <div id="ctl00_PlaceHolderContentWrapper_PlaceHolderMainWrapper_PlaceHolderMain_PageContactDisplayModePanel1">
+                            <p class="last-updated">Contact: <a href="mailto:volunteering@rnib.org.uk">volunteering@rnib.org.uk</a> </p>
+                        </div>
+                        <div id="ctl00_PlaceHolderContentWrapper_PlaceHolderMainWrapper_PlaceHolderMain_displayPanelLastUpdated">
+                        </div>
+                        <div class="clear">
+                        </div>
+                        <div class="back-to-top">
+                            <a href="#skiptomain">Back to top</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="content-col-1">
+       
+       <div id="content-col-1-inner">
+        <div id="content-col-1-corner">
+          
+        </div>
+        <div id="current-navigation">
+         
+         <div id="current-nav">
+          <div id="nav-heading">
+           <h2>
+            <a href="/getinvolved/volunteer">Volunteer</a>
+           </h2>
+          </div>
+          <ul>
+           <li>
+            <a href="/getinvolved/volunteer/opportunities">Volunteering opportunities</a>
+           </li>
+           <li>
+            <a href="/getinvolved/volunteer/Pages/howapply.aspx">How do I apply?</a>
+           </li>
+           <li>
+            <a href="/getinvolved/volunteer/forourvolunteers">Common questions about volunteering</a>
+           </li>
+           <li>
+            <a href="/getinvolved/volunteer/meetvolunteers">Meet our volunteers</a>
+           </li>
+           <li>
+            <a href="/getinvolved/volunteer/contactus">Contact the volunteering team</a>
+           </li>
+          </ul>
+         </div>
+         <div id="sub-nav">
+          <h2>
+           <a href="/getinvolved">Get involved</a>
+          </h2>
+          <ul>
+           <li>
+            <a href="/getinvolved/campaign">Campaign</a>
+           </li>
+           <li class="selected">
+            <a href="/getinvolved/volunteer">Volunteer</a>
+           </li>
+           <li>
+            <a href="/getinvolved/fundraising">Fundraising</a>
+           </li>
+           <li>
+            <a href="/getinvolved/events">Events and challenges</a>
+           </li>
+           <li>
+            <a href="/getinvolved/readforrnibday">Read for RNIB Day</a>
+           </li>
+           <li>
+            <a href="/donate/">Donate</a>
+           </li>
+           <li>
+            <a href="/donate/legacy/Pages/leave-gift-in-will.aspx">Leave us a gift in your Will</a>
+           </li>
+           <li>
+            <a href="/getinvolved/membership">RNIB Membership</a>
+           </li>
+           <li>
+            <a href="/getinvolved/corporatepartnerships">Corporate partnerships</a>
+           </li>
+           <li>
+            <a href="/getinvolved/news">Get involved news</a>
+           </li>
+           <li>
+            <a href="/getinvolved/onlinecommunity">Online community</a>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div id="content-col-3">
+                <div class="listlinks-aggregation">
+                    <div class="wp-wrapper curve-left branding-7">
+                        <div class="wp-inner">
+                            <h2>Related information</h2>
+                            <ul>
+                                <li>
+                                <a href="http://www.rnib.org.uk/aboutus/contactdetails/Pages/contactdetails.aspx">Contact RNIB</a>
+                                </li>
+                                <li>
+                                <a href="http://www.rnib.org.uk/aboutus/contactdetails/Pages/helpline.aspx">RNIB Helpline</a>
+                                </li>
+                                <li>
+                                <a href="http://www.rnib.org.uk/aboutus/organisation/Pages/our_organisation.aspx">Our organisation</a>
+                                </li>
+                                <li>
+                                <a href="http://www.rnib.org.uk/aboutus/jobs/Pages/jobs.aspx">Jobs with RNIB</a>
+                                </li>
+                                <li>
+                                <a href="http://www.rnib.org.uk/aboutus/mediacentre/Pages/media_centre.aspx">Media centre</a>
+                                </li>
+                                <li>
+                                <a href="http://www.rnib.org.uk/getinvolved/campaign">Our campaigns</a>
+                                </li>
+                                <li>
+                                <a href="http://www.rnib.org.uk/getinvolved/volunteer">Volunteering</a>
+                                </li>
+                                <li>
+                                <a href="http://www.rnib.org.uk/getinvolved/onlinecommunity">Online community</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear">
+        </div><!-- Master Page Footer Control 1.0.0.0-->
+        <div id="footer">
+            <div id="footer-right">
+                <a href="/professionals/webaccessibility/accessiblewebsitedirectory/Pages/accessible_website_directory.aspx"><img id="imgFooter" alt="RNIB Surf Right Accessible website" src="http://www.rnib.org.uk/publishingimages/SeeItRight.gif"/></a>
+            </div>
+            <ul class="contact-info" xmlns:rs="urn:schemas-microsoft-com:rowset">
+                <li>
+                <a href="http://www.rnib.org.uk/aboutus/aboutthiswebsite/legal/Pages/copyright.aspx">Copyright</a>
+                </li>
+                <li>
+                &copy; 2013 Royal National Institute of Blind People
+                </li>
+                <li>
+                <a href="http://www.rnib.org.uk/aboutus/aboutthiswebsite/legal/Pages/legal.aspx">Terms and conditions</a>
+                </li>
+                <li>
+                <a href="http://www.rnib.org.uk/aboutus/aboutthiswebsite/privacy">Privacy</a>
+                </li>
+                <li>
+                <a href="http://www.rnib.org.uk/getinvolved/fundraising/fundraisingpromise/Pages/fundraising_promise.aspx">Fundraising promise</a>
+                </li>
+                <li>
+                <a href="http://twitter.com/rnib">Twitter</a>
+                </li>
+                <li>
+                <a href="http://www.facebook.com/rnibuk">Facebook</a>
+                </li>
+                <li>
+                <a href="http://www.youtube.com/rnibuk">You Tube</a>
+                </li>
+                <li>
+                <a href="http://www.rnib.org.uk/aboutus/contactdetails/Pages/contactdetails.aspx">Contact us</a>
+                </li>
+            </ul>
+            <p>Registered Charity Number 226227, 105 Judd Street, London WC1H 9NE</p>
+            <div class="clear">
+            </div>
+        </div><!-- End Master Page Footer Control 1.0.0.0-->
+        <div class="clear">
+        </div>
+    </div><!--//wrapper-->
+</div>
+ 
+
+</body>
+    
+    
+
+</apex:page>

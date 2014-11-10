@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Access_Technology_Related_to_Role__c</fullName>
+        <formula>TEXT(Contact__r.Access_Technology_Related_to_Role__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Access Technology - Related to Role</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Access_Technology_Type__c</fullName>
+        <formula>IF(INCLUDES( Contact__r.Access_Technology_Type__c , &quot;JAWS&quot;), &quot;JAWS&quot; + BR(), &quot;&quot;) + IF(INCLUDES(Contact__r.Access_Technology_Type__c, &quot;Zoomtext Magnifier&quot;), &quot;Zoomtext Magnifier&quot; + BR(), &quot;&quot;) + 
+ IF(INCLUDES(Contact__r.Access_Technology_Type__c, &quot;Zoomtext Magnifier and Reader&quot;), &quot;Zoomtext Magnifier and Reader&quot; + BR(), &quot;&quot;) + 
+ IF(INCLUDES(Contact__r.Access_Technology_Type__c, &quot;Windows 7 Access Centre&quot;), &quot;Windows 7 Access Centre&quot; + BR(), &quot;&quot;) + 
+ IF(INCLUDES(Contact__r.Access_Technology_Type__c, &quot;Dragon Naturally Speaking&quot;), &quot;Dragon Naturally Speaking&quot; + BR(), &quot;&quot;) +
+ IF(INCLUDES(Contact__r.Access_Technology_Type__c, &quot;Large print keyboard&quot;), &quot;Large print keyboard&quot; + BR(), &quot;&quot;)  +
+ IF(INCLUDES(Contact__r.Access_Technology_Type__c, &quot;Larger monitor&quot;), &quot;Larger monitor&quot; + BR(), &quot;&quot;) +
+ IF(INCLUDES(Contact__r.Access_Technology_Type__c, &quot;Switch box&quot;), &quot;Switch box&quot; + BR(), &quot;&quot;)+  
+IF(INCLUDES(Contact__r.Access_Technology_Type__c, &quot;Duxbury&quot;), &quot;Duxbury&quot; + BR(), NULL) +  
+IF(INCLUDES(Contact__r.Access_Technology_Type__c, &quot;Kurzweil&quot;), &quot;Kurzweil&quot; + BR(), NULL) + 
+IF(INCLUDES(Contact__r.Access_Technology_Type__c, &quot;Easy Converter&quot;), &quot;Easy Converter&quot; + BR(), NULL) + 
+IF(INCLUDES(Contact__r.Access_Technology_Type__c, &quot;Azabat&quot;), &quot;Azabat&quot;, NULL)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Access Technology Type</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Any_further_comments__c</fullName>
+        <label>Any further comments</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Application__c</fullName>
+        <label>Volunteer Role</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipLabel>Interviews</relationshipLabel>
+        <relationshipName>Interviews</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Communication_methods__c</fullName>
+        <label>Communication methods</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Connect magazine</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Newsletter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Team meetings</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reviews</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Interviews</relationshipLabel>
+        <relationshipName>Interviews</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Date_Time__c</fullName>
+        <label>Date/Time</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Favourite_part__c</fullName>
+        <label>Favourite part</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Follow_on_Actions_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>Follow-on actions have been identified during the exit interview stage.</inlineHelpText>
+        <label>Follow-on Actions Required</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Interviewer1__c</fullName>
+        <label>Interviewer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Interviews</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Is_Access_Technology_required__c</fullName>
+        <formula>TEXT(Contact__r.Is_Access_Technology_Required__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Access Technology Required?</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Least_positive_aspect__c</fullName>
+        <label>Least positive aspect</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Leaving_Reason__c</fullName>
+        <label>Leaving Reason</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Asked to stop by RNIB</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Assisting another UK agency as volunteer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Changes in RNIB policy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deceased</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dissatisfaction with RNIB</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ill health</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lack of RNIB support</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moved away</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moved to another role</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moving into employment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moving to help another RNIB service</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No longer feel able to carry out the role</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not being used</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other commitments</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reached retirement age</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service/role ceased</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Short volunteering opportunity</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transferring to Action for the Blind</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Leaving_details__c</fullName>
+        <label>Leaving details</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Legacy_Interview_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>Legacy Interview ID</label>
+        <length>10</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>NVIS_Account_No__c</fullName>
+        <externalId>true</externalId>
+        <label>NVIS Account No</label>
+        <length>30</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Note__c</fullName>
+        <formula>&quot;To Edit or Update the Fields in this Section please visit the Volunteer&apos;s Contact Page&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Note:</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Outcome__c</fullName>
+        <label>Outcome</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not yet conducted</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Conducted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Recommend_to_others__c</fullName>
+        <label>Recommend to others</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Review_frequency__c</fullName>
+        <label>Review frequency</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Safeguarding_Issue__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>Safeguarding issues resulting in Volunteer leaving</inlineHelpText>
+        <label>Safeguarding Issue</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Soft_Notes__c</fullName>
+        <inlineHelpText>Enter notes regarding the interview here</inlineHelpText>
+        <label>Soft Notes</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Sufficient_training__c</fullName>
+        <label>Sufficient training</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Suggested_improvements__c</fullName>
+        <label>Suggested improvements</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Technology_required_if_yes__c</fullName>
+        <formula>Contact__r.If_Yes_Contact__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This field contains the description given by the Volunteer/Applicant</inlineHelpText>
+        <label>Technology required, If Yes</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Training_received__c</fullName>
+        <label>Training received</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Induction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Visual awareness/understand sight loss</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer care</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Role specific training</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manual handling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <label>Interview</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Contact__c</columns>
+        <columns>Application__c</columns>
+        <columns>Date_Time__c</columns>
+        <columns>Leaving_Reason__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Exit_Interviews_Due_Next_Month</fullName>
+        <columns>NAME</columns>
+        <columns>Date_Time__c</columns>
+        <columns>Application__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Date_Time__c</field>
+            <operation>equals</operation>
+            <value>NEXT_MONTH</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Interview__c.Exit_Interview</value>
+        </filters>
+        <label>Exit Interviews Due Next Month</label>
+    </listViews>
+    <listViews>
+        <fullName>Follow_on_Actions</fullName>
+        <columns>NAME</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Contact__c</columns>
+        <columns>Leaving_Reason__c</columns>
+        <columns>Date_Time__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Follow_on_Actions_Required__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Exit Interviews with Follow-on Actions</label>
+    </listViews>
+    <listViews>
+        <fullName>Role_Interviews_Due_This_Month</fullName>
+        <columns>NAME</columns>
+        <columns>Contact__c</columns>
+        <columns>Date_Time__c</columns>
+        <columns>Outcome__c</columns>
+        <columns>Application__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Date_Time__c</field>
+            <operation>equals</operation>
+            <value>THIS_MONTH</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Interview__c.Role_Interview</value>
+        </filters>
+        <label>Role Application Interviews This Month</label>
+    </listViews>
+    <listViews>
+        <fullName>Safe_Guarding_Issues</fullName>
+        <columns>NAME</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Contact__c</columns>
+        <columns>Leaving_Reason__c</columns>
+        <columns>Date_Time__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Safeguarding_Issue__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Safe Guarding Issues</label>
+    </listViews>
+    <nameField>
+        <displayFormat>I-{0000}</displayFormat>
+        <label>Interview</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Interviews</pluralLabel>
+    <recordTypes>
+        <fullName>Exit_Interview</fullName>
+        <active>true</active>
+        <description>Use this record type for an exit interview</description>
+        <label>Exit Interview</label>
+        <picklistValues>
+            <picklist>Communication_methods__c</picklist>
+            <values>
+                <fullName>Connect magazine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Newsletter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviews</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Team meetings</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Leaving_Reason__c</picklist>
+            <values>
+                <fullName>Asked to stop by RNIB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assisting another UK agency as volunteer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Changes in RNIB policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deceased</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dissatisfaction with RNIB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ill health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lack of RNIB support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moved away</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moved to another role</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moving into employment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moving to help another RNIB service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No longer feel able to carry out the role</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not being used</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other commitments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reached retirement age</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service%2Frole ceased</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Short volunteering opportunity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transferring to Action for the Blind</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Outcome__c</picklist>
+            <values>
+                <fullName>Conducted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not yet conducted</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_received__c</picklist>
+            <values>
+                <fullName>Customer care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Induction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual handling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Role specific training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visual awareness%2Funderstand sight loss</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Role_Interview</fullName>
+        <active>true</active>
+        <description>Use this record type for an applicant</description>
+        <label>Role Interview</label>
+        <picklistValues>
+            <picklist>Communication_methods__c</picklist>
+            <values>
+                <fullName>Connect magazine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Newsletter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviews</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Team meetings</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Leaving_Reason__c</picklist>
+            <values>
+                <fullName>Asked to stop by RNIB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assisting another UK agency as volunteer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Changes in RNIB policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deceased</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dissatisfaction with RNIB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ill health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lack of RNIB support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moved away</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moving into employment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moving to help another RNIB service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No longer feel able to carry out the role</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not being used</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other commitments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reached retirement age</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service%2Frole ceased</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Short volunteering opportunity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transferring to Action for the Blind</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Outcome__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not yet conducted</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_received__c</picklist>
+            <values>
+                <fullName>Customer care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Induction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual handling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Role specific training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visual awareness%2Funderstand sight loss</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>RECORDTYPE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Contact__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Application__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Date_Time__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Leaving_Reason__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Outcome__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Soft_Notes__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>New_Exit_Interview</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>url</linkType>
+        <masterLabel>New Exit Interview</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/a0B/e?CF00Nb0000008LpiN= 
+{!Application__c.Name}&amp;RecordType=012b0000000Q7fx&amp;saveURL=/{!Application__c.Id}&amp;CF00Nb0000008LpiP={!Application__c.Applicant__c}&amp;CF00Nb0000008LpiT={!User.Name}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Interview</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>url</linkType>
+        <masterLabel>New Role Interview</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/a0B/e?CF00Nb0000008LpiN= 
+{!Application__c.Name}&amp;saveURL=/{!Application__c.Id}&amp;CF00Nb0000008LpiP={!Application__c.Applicant__c}&amp;CF00Nb0000008LpiT={!User.Name}</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,7 @@
+Dear {!Customer_Requests__c.OwnerFirstName},
+
+Thank you for accepting the following customer request.
+
+To view the customer request please click on the link below:
+
+{!CR_Notification__c.Customer_RequestId__c}

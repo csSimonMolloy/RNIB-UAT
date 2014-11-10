@@ -1,0 +1,15 @@
+Dear All, <br><br>
+
+Your approval request for Opportunity - {!Role_Opportunity__c.Role_Title__c} has been rejected. <br><br>
+
+To check the details follow this link - {!Role_Opportunity__c.Link}<br><br>
+
+<br>
+
+
+Best Regards, <br><br>
+
+{!ApprovalRequest.Process_Approver} <br><br>
+
+GVT <br>
+RNIB Volunteering Team

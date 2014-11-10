@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Date_Time_Donated__c</fullName>
+        <inlineHelpText>Enter the date when the time was donated</inlineHelpText>
+        <label>Date Time Donated</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>TIme_Donation__c</fullName>
+        <label>Time Donation</label>
+        <referenceTo>Time_Donation__c</referenceTo>
+        <relationshipLabel>Time Donation Entries</relationshipLabel>
+        <relationshipName>Time_Donation_Entries</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>Time_Donated_in_Hours__c</fullName>
+        <inlineHelpText>Enter time donated in whole hours (round-up to nearest hours donated)</inlineHelpText>
+        <label>Time Donated in Hours</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <label>Time Donation Entry</label>
+    <nameField>
+        <displayFormat>TIME ENTRY - {00000}</displayFormat>
+        <label>Time Donation Entries Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Time Donation Entries</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>New_Time_Donation_Entry</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>url</linkType>
+        <masterLabel>New Time Donation Entry</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/a0F/e?CF00Nb0000008Lpe9={!Time_Donation__c.Name}&amp;CF00Nb0000008Lpe9_lkid={!Time_Donation__c.Id}&amp;retURL=%2Fa0Kg00000014BsH&amp;saveURL=%2F{!Time_Donation__c.Id}</url>
+    </webLinks>
+</CustomObject>

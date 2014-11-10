@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Applicant Home</label>
+    <mobileReady>false</mobileReady>
+    <motif>Custom15: People</motif>
+    <page>ApplicantLandingPage</page>
+</CustomTab>

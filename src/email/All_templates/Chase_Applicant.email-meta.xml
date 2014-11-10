@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Chase Applicant</name>
+    <style>none</style>
+    <subject>Reminder to complete volunteer role application</subject>
+    <textOnly>Dear {!Application__c.Applicant__c},
+
+Thank you for your interest in volunteering for RNIB group.
+
+The information you have entered on your application form will continue to be saved for the next seven days. If it is not completed and submitted after this time you will be required to restart the application process.
+
+If you have any questions, please do not hesitate to contact us on 0845 60 30 575 or 01733 37 54 50 or volunteering@rnib.org.uk.
+
+We look forward to hearing from you.
+
+Kind regards
+
+RNIB Group Volunteering Team
+T: 01733 37 54 50
+E: volunteering@rnib.org.uk
+W: www.rnib.org.uk</textOnly>
+    <type>custom</type>
+</EmailTemplate>

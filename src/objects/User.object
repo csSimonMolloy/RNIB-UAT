@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Address_Line_1__c</fullName>
+        <label>Address Line 1</label>
+        <length>254</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Address_Line_2__c</fullName>
+        <label>Address Line 2</label>
+        <length>254</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Address_Line_3__c</fullName>
+        <label>Address Line 3</label>
+        <length>254</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Address_Line_4__c</fullName>
+        <label>Address Line 4</label>
+        <length>254</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Data_Protection__c</fullName>
+        <inlineHelpText>We will use your personal details in relation to your application and volunteering role. Please indicate if you are happy to receive occasional information on other RNIB Group Volunteering opportunities</inlineHelpText>
+        <label>Data Protection</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Response</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>GVT_CS_Approver__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>Check box if the user can approve Criminal Record checks</inlineHelpText>
+        <label>GVT/CS Criminal Record Checks Approver?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Group_Induction__c</fullName>
+        <label>Group Induction</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Holiday__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Unavailable?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_User_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>Legacy User ID</label>
+        <length>10</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Portal_Start_URL__c</fullName>
+        <label>Portal Start URL</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Preferred_Communications_Channel__c</fullName>
+        <label>Preferred Communications Channel</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Phone call</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Letter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Text message</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not known</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Prefix__c</fullName>
+        <label>Prefix</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Mr.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ms.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mrs.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dr.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prof.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Role_Template__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>This user can create and edit role templates</inlineHelpText>
+        <label>Role Template</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Trained_On_Player__c</fullName>
+        <label>Trained On Player</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>User_Fullname__c</fullName>
+        <formula>TEXT(Prefix__c) + &quot; &quot; +  FirstName + &quot; &quot; + LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>User Fullname</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Work_Telephone__c</fullName>
+        <label>Work Telephone</label>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>gvt__c</fullName>
+        <label>GVT</label>
+        <relationshipName>Users</relationshipName>
+        <restrictedAdminField>true</restrictedAdminField>
+        <type>Hierarchy</type>
+    </fields>
+    <fields>
+        <fullName>pw_ccpro__ExemptValidationErrors__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Exempt from AddressTools Validation Errors</description>
+        <label>Exempt Validation Errors</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>pw_ccpro__QuickCompleteCountry__c</fullName>
+        <label>QuickComplete Country</label>
+        <length>40</length>
+        <type>Text</type>
+    </fields>
+</CustomObject>

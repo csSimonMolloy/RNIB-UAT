@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <webLinks>
+        <fullName>New_Event_Customer_Request</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>url</linkType>
+        <masterLabel>New Event (Customer Request)</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/00U/e?what_id={!Customer_Requests__c.Id}&amp;who_id={!Customer_Requests__c.Customer_NameId__c}&amp;retURL={!Customer_Requests__c.Id}</url>
+    </webLinks>
+</CustomObject>

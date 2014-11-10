@@ -1,0 +1,2136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Activities_Performed_to_Resolve_Request__c</fullName>
+        <inlineHelpText>Select the activities which you performed to complete the Customer Request</inlineHelpText>
+        <label>Activities Performed to Resolve Request</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Home visit arranged</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Remote support arranged</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Researching issue</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Follow up arranged</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On hold - Part/software on order</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On hold - Waiting on customer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On hold - Waiting on volunteer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed - Resolved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed - Request cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed - Unable to contact customer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed - Unable to complete request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed - Refer to another service</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed - Refer to GVT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed - Not enough information</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed - Not suitable for service</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Activity__c</fullName>
+        <label>Activity</label>
+        <picklist>
+            <controllingField>Service__c</controllingField>
+            <picklistValues>
+                <fullName>Changing settings for accessibility</fullName>
+                <controllingFieldValues>Technology Support</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Choosing or using a talking book player</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Installing broadband</fullName>
+                <controllingFieldValues>Technology Support</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Installing software (e.g. JAWS, NVDA, Supernova, Zoomtext)</fullName>
+                <controllingFieldValues>Technology Support</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Problems with broadband</fullName>
+                <controllingFieldValues>Technology Support</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Problems with device or equipment</fullName>
+                <controllingFieldValues>Technology Support</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Problems with software</fullName>
+                <controllingFieldValues>Technology Support</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Setting up a new device or equipment</fullName>
+                <controllingFieldValues>Technology Support</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Virus or spam issues</fullName>
+                <controllingFieldValues>Technology Support</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Advise_Referrer_of_Outcome__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Advise Referrer of Outcome</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Allocated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Allocated</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Any_other_comments__c</fullName>
+        <label>Any other comments</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Assigned_Volunteer__c</fullName>
+        <description>Lookup field to hold the assigned volunteer (community user) for the Customer Request</description>
+        <label>Assigned Volunteer</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Customer Requests (Assigned Volunteer)</relationshipLabel>
+        <relationshipName>Assigned_Customer_Requests</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Closed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Closed</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Co_ordinator_ID__c</fullName>
+        <formula>IF($User.Id =   Volunteer_Coordinator__r.Id , 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Co-ordinator ID</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Address__c</fullName>
+        <formula>Customer_Name__r.MailingStreet &amp; BR()&amp;
+Customer_Name__r.MailingCity &amp; BR()&amp;
+Customer_Name__r.MailingState</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer Address</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Email__c</fullName>
+        <formula>Customer_Name__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer Email</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Feedback__c</fullName>
+        <label>Customer Feedback</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Customer_Home_Phone__c</fullName>
+        <formula>Customer_Name__r.HomePhone</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer Home Phone</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Name__c</fullName>
+        <label>Customer Name</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Customer Requests</relationshipLabel>
+        <relationshipName>Customer_Requests</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Phone__c</fullName>
+        <formula>Customer_Name__r.OtherPhone</formula>
+        <label>Customer Other Phone</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Post_Code__c</fullName>
+        <formula>Customer_Name__r.MailingPostalCode</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer Post Code</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Request_Duration__c</fullName>
+        <formula>(Date_Time_Closed__c  - Date_Time_Opened__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer Request Duration</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Request_Origin__c</fullName>
+        <label>Origin</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Letter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Helpline</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Date_Time_Closed__c</fullName>
+        <label>Date/Time Closed</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Date_Time_Opened__c</fullName>
+        <formula>CreatedDate</formula>
+        <label>Date/Time Opened</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <label>Description</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Device__c</fullName>
+        <label>Device</label>
+        <picklist>
+            <picklistValues>
+                <fullName>CCTV scanner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Desktop PC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ebook reader, eg Kindle, Kobos</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GPS navigation, eg Trekker Breeze</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kitchen equipment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Landline Phone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Laptop</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Magnifier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile phone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MP3 player</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Radio, CD player or HiFi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Smart phone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tablet</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Talking book player</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Talking clock or watch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TV, eg set top box, audio description</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Voice recorder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Duration_Forumla__c</fullName>
+        <formula>IF(ISNULL( RS_Duration_Minutes__c ),&quot;0 hr 0 min&quot;,
+TEXT(FLOOR(( RS_Duration_Minutes__c )/60))
+&amp;&quot; hr &quot;
+&amp;TEXT(round(MOD(( RS_Duration_Minutes__c )/60,1)*60,0))
+&amp;&quot; min&quot;)</formula>
+        <label>Home Visits Duration</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_Customer_Request_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>Legacy Customer Request ID</label>
+        <length>10</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Location__c</fullName>
+        <label>Request Location</label>
+        <scale>6</scale>
+        <type>Location</type>
+    </fields>
+    <fields>
+        <fullName>Mapping_Status__c</fullName>
+        <label>Mapping Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Located</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Located Yet</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Google Exhausted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Problem With Address</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>NVIS_Account_No__c</fullName>
+        <externalId>true</externalId>
+        <label>NVIS Account No.</label>
+        <length>30</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Notes_on_Activities_Performed__c</fullName>
+        <inlineHelpText>Enter any further information about activities which you performed to resolve the request.  NOTE: please include any referral information e.g. if the customer would like other services.</inlineHelpText>
+        <label>Notes on Activities Performed</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Number_of_Home_Visits__c</fullName>
+        <inlineHelpText>Displays the number of Home Visits made for the Customer Request</inlineHelpText>
+        <label>Number of Home Visits</label>
+        <summaryForeignKey>Time_Entry__c.Customer_Request__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Operating_System__c</fullName>
+        <label>Operating System the customer is using</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Windows</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Apple/iOS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Android</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chromebook</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Customer_Request__c</fullName>
+        <inlineHelpText>Use if related to a previous request</inlineHelpText>
+        <label>Parent Customer Request</label>
+        <referenceTo>Customer_Requests__c</referenceTo>
+        <relationshipLabel>Child Customer Requests</relationshipLabel>
+        <relationshipName>Customer_Requests</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Priority__c</fullName>
+        <label>Priority</label>
+        <picklist>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>RNIB_Comments__c</fullName>
+        <inlineHelpText>This field contains comments from the RNIB Group Volunteer Coordinator relating to the Customer Request</inlineHelpText>
+        <label>RNIB Group Comments - VISIBLE BY ALL</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>RS_Duration_Minutes__c</fullName>
+        <label>Home Visits Duration (minutes)</label>
+        <summarizedField>Time_Entry__c.Duration__c</summarizedField>
+        <summaryForeignKey>Time_Entry__c.Customer_Request__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Refer_Type__c</fullName>
+        <label>Referred by</label>
+        <picklist>
+            <picklistValues>
+                <fullName>RNIB</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Action for Blind People</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CIB</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family/Friend</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medical professional</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Local blind society</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Social services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Education provider</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employment adviser</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ECLO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other professional</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Charities</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Referral_Contact_Name__c</fullName>
+        <inlineHelpText>Only complete if the referral wants to know the outcome.</inlineHelpText>
+        <label>Referral Contact Name</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Customer Requests (Referral Contact Name)</relationshipLabel>
+        <relationshipName>Customer_Requests1</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Referral_Email__c</fullName>
+        <formula>Referral_Contact_Name__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Referral Email</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Referral_Organisation_Name__c</fullName>
+        <formula>Referral_Contact_Name__r.Account.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Referral Organisation Name</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Referral_Phone__c</fullName>
+        <formula>Referral_Contact_Name__r.Phone</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Referral Phone</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Referral__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Referral</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Request_Type__c</fullName>
+        <label>Request Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Hardware installation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hardware trouble shooting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Software installation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Software trouble shooting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Broadband installation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Broadband trouble shooting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Connect/set up PC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Change settings for accessibility</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Virus spam issues</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Maintenance/housekeeping</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Training /advice</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile phone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TV/set top box/DVD/video</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Universal remote control</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Talking clocks/watches</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CCTV scanners</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Magnifiers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Audio</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Voice recorders</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MP3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Note takers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Penfriend</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Radio/CD/HiFi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GPS navigation e.g. Trekker Breeze</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Package and return products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Talking books</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Set up and demo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fault finding</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pack and return player via post office</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Help with book choice</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kitchen equipment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Talking scales</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tactile markers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Demonstration for microwaves</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Demonstration for washing machines</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Removal of equipment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Return and post back</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Repair</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Service__c</fullName>
+        <label>Service</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Technology Support</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>New</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Resolved - Ready for Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected - See RNIB Comments Field</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed - Pending Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed - Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Subject__c</fullName>
+        <label>Subject</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Total_Number_of_Hours_Donated_to_Resolve__c</fullName>
+        <inlineHelpText>Enter the total amount of hours taken to fully complete the Customer Request</inlineHelpText>
+        <label>Total Number of Hours Donated to Resolve</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Volunteer_Coordinator_Email__c</fullName>
+        <formula>Volunteer_Coordinator__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Volunteer Coordinator Email</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Volunteer_Coordinator_Phone__c</fullName>
+        <formula>Volunteer_Coordinator__r.Phone</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Volunteer Coordinator Phone</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Volunteer_Coordinator__c</fullName>
+        <label>Volunteer Coordinator</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Customer_Requests</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <label>Customer Request</label>
+    <listViews>
+        <fullName>All_Customer_Requests_Awaiting_Approval</fullName>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Closed__c</columns>
+        <columns>Customer_Name__c</columns>
+        <columns>Customer_Email__c</columns>
+        <columns>Assigned_Volunteer__c</columns>
+        <columns>Customer_Post_Code__c</columns>
+        <columns>Customer_Request_Origin__c</columns>
+        <columns>Date_Time_Opened__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Resolved - Ready for Approval</value>
+        </filters>
+        <filters>
+            <field>Closed__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>All Customer Requests Awaiting Approval</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Customer_Requests_Over_10_days</fullName>
+        <columns>NAME</columns>
+        <columns>Allocated__c</columns>
+        <columns>Closed__c</columns>
+        <columns>Customer_Name__c</columns>
+        <columns>Customer_Phone__c</columns>
+        <columns>Customer_Email__c</columns>
+        <columns>Customer_Post_Code__c</columns>
+        <columns>Customer_Request_Origin__c</columns>
+        <columns>Date_Time_Opened__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Date_Time_Opened__c</field>
+            <operation>greaterThan</operation>
+            <value>LAST_N_DAYS:10</value>
+        </filters>
+        <label>All Customer Requests Over 10 days</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Open_Customer_Request</fullName>
+        <columns>NAME</columns>
+        <columns>Allocated__c</columns>
+        <columns>Closed__c</columns>
+        <columns>Customer_Name__c</columns>
+        <columns>Customer_Phone__c</columns>
+        <columns>Customer_Email__c</columns>
+        <columns>Customer_Post_Code__c</columns>
+        <columns>Customer_Request_Origin__c</columns>
+        <columns>Date_Time_Opened__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>New,In Progress,On Hold,Resolved - Ready for Approval</value>
+        </filters>
+        <label>All Open Customer Requests</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Unassigned</fullName>
+        <columns>NAME</columns>
+        <columns>Allocated__c</columns>
+        <columns>Closed__c</columns>
+        <columns>Customer_Name__c</columns>
+        <columns>Customer_Phone__c</columns>
+        <columns>Customer_Email__c</columns>
+        <columns>Customer_Post_Code__c</columns>
+        <columns>Customer_Request_Origin__c</columns>
+        <columns>Date_Time_Opened__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Allocated__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>All Unassigned</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Unassigned_past_48_hours</fullName>
+        <columns>NAME</columns>
+        <columns>Allocated__c</columns>
+        <columns>Closed__c</columns>
+        <columns>Customer_Name__c</columns>
+        <columns>Customer_Phone__c</columns>
+        <columns>Customer_Email__c</columns>
+        <columns>Customer_Post_Code__c</columns>
+        <columns>Customer_Request_Origin__c</columns>
+        <columns>Date_Time_Opened__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Allocated__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>Date_Time_Opened__c</field>
+            <operation>equals</operation>
+            <value>LAST_N_DAYS:2</value>
+        </filters>
+        <label>All Unassigned past 48 hours</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Unassigned_past_7_days</fullName>
+        <columns>NAME</columns>
+        <columns>Allocated__c</columns>
+        <columns>Closed__c</columns>
+        <columns>Customer_Name__c</columns>
+        <columns>Customer_Phone__c</columns>
+        <columns>Customer_Email__c</columns>
+        <columns>Customer_Post_Code__c</columns>
+        <columns>Customer_Request_Origin__c</columns>
+        <columns>Date_Time_Opened__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Allocated__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>Date_Time_Opened__c</field>
+            <operation>equals</operation>
+            <value>LAST_N_DAYS:7</value>
+        </filters>
+        <label>All Unassigned past 7 days</label>
+    </listViews>
+    <listViews>
+        <fullName>Closed_Requests</fullName>
+        <columns>NAME</columns>
+        <columns>Duration_Forumla__c</columns>
+        <columns>Activity__c</columns>
+        <columns>Date_Time_Closed__c</columns>
+        <columns>Subject__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Closed__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Closed Requests</label>
+    </listViews>
+    <listViews>
+        <fullName>Customer_Requests_created_Today</fullName>
+        <columns>NAME</columns>
+        <columns>Customer_Name__c</columns>
+        <columns>Customer_Address__c</columns>
+        <columns>Customer_Email__c</columns>
+        <columns>Customer_Post_Code__c</columns>
+        <columns>Device__c</columns>
+        <columns>Activity__c</columns>
+        <columns>Customer_Request_Origin__c</columns>
+        <columns>Service__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Customer Requests created Today</label>
+    </listViews>
+    <listViews>
+        <fullName>Open_Customer_Requests_Over_10_days</fullName>
+        <columns>NAME</columns>
+        <columns>Allocated__c</columns>
+        <columns>Closed__c</columns>
+        <columns>Customer_Name__c</columns>
+        <columns>Customer_Phone__c</columns>
+        <columns>Customer_Email__c</columns>
+        <columns>Customer_Post_Code__c</columns>
+        <columns>Customer_Request_Origin__c</columns>
+        <columns>Date_Time_Opened__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Date_Time_Opened__c</field>
+            <operation>greaterThan</operation>
+            <value>LAST_N_DAYS:21</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>New,In Progress,On Hold,On Hold - Waiting on Customer</value>
+        </filters>
+        <label>Open Customer Requests Over 21 days</label>
+    </listViews>
+    <listViews>
+        <fullName>all</fullName>
+        <columns>NAME</columns>
+        <columns>Allocated__c</columns>
+        <columns>Closed__c</columns>
+        <columns>Status__c</columns>
+        <columns>Customer_Name__c</columns>
+        <columns>Customer_Post_Code__c</columns>
+        <columns>Assigned_Volunteer__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>Volunteer_Coordinator__c</columns>
+        <columns>Customer_Request_Origin__c</columns>
+        <columns>Date_Time_Opened__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Customer Requests</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CR-{00000}</displayFormat>
+        <label>Customer Request ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Customer Requests</pluralLabel>
+    <recordTypes>
+        <fullName>Customer_Requests_Internal</fullName>
+        <active>true</active>
+        <label>Customer Requests- Internal</label>
+        <picklistValues>
+            <picklist>Activities_Performed_to_Resolve_Request__c</picklist>
+            <values>
+                <fullName>Closed - Not enough information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed - Not suitable for service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed - Refer to GVT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed - Refer to another service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed - Request cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed - Resolved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed - Unable to complete request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed - Unable to contact customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Follow up arranged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home visit arranged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On hold - Part%2Fsoftware on order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On hold - Waiting on customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On hold - Waiting on volunteer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Remote support arranged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Researching issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Activity__c</picklist>
+            <values>
+                <fullName>Changing settings for accessibility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Choosing or using a talking book player</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Installing broadband</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Installing software %28e%2Eg%2E JAWS%2C NVDA%2C Supernova%2C Zoomtext%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problems with broadband</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problems with device or equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problems with software</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Setting up a new device or equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Virus or spam issues</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Customer_Request_Origin__c</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Helpline</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Device__c</picklist>
+            <values>
+                <fullName>CCTV scanner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Desktop PC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ebook reader%2C eg Kindle%2C Kobos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GPS navigation%2C eg Trekker Breeze</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kitchen equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landline Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laptop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MP3 player</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Magnifier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Radio%2C CD player or HiFi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Smart phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TV%2C eg set top box%2C audio description</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tablet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Talking book player</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Talking clock or watch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voice recorder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Mapping_Status__c</picklist>
+            <values>
+                <fullName>Google Exhausted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Located</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Located Yet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problem With Address</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operating_System__c</picklist>
+            <values>
+                <fullName>Android</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Apple%2FiOS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chromebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Windows</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Refer_Type__c</picklist>
+            <values>
+                <fullName>Action for Blind People</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CIB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ECLO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Education provider</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employment adviser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family%2FFriend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Local blind society</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical professional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Charities</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other professional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RNIB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social services</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_Type__c</picklist>
+            <values>
+                <fullName>Audio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broadband installation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broadband trouble shooting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CCTV scanners</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change settings for accessibility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect%2Fset up PC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demonstration for microwaves</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demonstration for washing machines</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fault finding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GPS navigation e%2Eg%2E Trekker Breeze</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hardware installation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hardware trouble shooting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Help with book choice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kitchen equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MP3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Magnifiers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maintenance%2Fhousekeeping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Note takers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pack and return player via post office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Package and return products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Penfriend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Radio%2FCD%2FHiFi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Removal of equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Repair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Return and post back</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set up and demo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Software installation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Software trouble shooting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TV%2Fset top box%2FDVD%2Fvideo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tactile markers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Talking books</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Talking clocks%2Fwatches</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Talking scales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training %2Fadvice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Universal remote control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Virus spam issues</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voice recorders</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Service__c</picklist>
+            <values>
+                <fullName>Technology Support</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Closed - Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed - Pending Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected - See RNIB Comments Field</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved - Ready for Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Customer_Requests_Portal</fullName>
+        <active>true</active>
+        <label>Customer Requests - Portal</label>
+        <picklistValues>
+            <picklist>Activities_Performed_to_Resolve_Request__c</picklist>
+            <values>
+                <fullName>Closed - Not enough information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed - Not suitable for service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed - Refer to GVT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed - Refer to another service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed - Request cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed - Resolved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed - Unable to complete request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed - Unable to contact customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Follow up arranged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home visit arranged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On hold - Part%2Fsoftware on order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On hold - Waiting on customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On hold - Waiting on volunteer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Remote support arranged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Researching issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Activity__c</picklist>
+            <values>
+                <fullName>Changing settings for accessibility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Choosing or using a talking book player</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Installing broadband</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Installing software %28e%2Eg%2E JAWS%2C NVDA%2C Supernova%2C Zoomtext%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problems with broadband</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problems with device or equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problems with software</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Setting up a new device or equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Virus or spam issues</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Customer_Request_Origin__c</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Helpline</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Device__c</picklist>
+            <values>
+                <fullName>CCTV scanner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Desktop PC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ebook reader%2C eg Kindle%2C Kobos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GPS navigation%2C eg Trekker Breeze</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kitchen equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landline Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laptop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MP3 player</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Magnifier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Radio%2C CD player or HiFi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Smart phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TV%2C eg set top box%2C audio description</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tablet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Talking book player</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Talking clock or watch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voice recorder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Mapping_Status__c</picklist>
+            <values>
+                <fullName>Google Exhausted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Located</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Located Yet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problem With Address</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operating_System__c</picklist>
+            <values>
+                <fullName>Android</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Apple%2FiOS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chromebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Windows</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Refer_Type__c</picklist>
+            <values>
+                <fullName>Action for Blind People</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CIB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ECLO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Education provider</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employment adviser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family%2FFriend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Local blind society</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical professional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Charities</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other professional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RNIB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social services</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_Type__c</picklist>
+            <values>
+                <fullName>Audio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broadband installation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broadband trouble shooting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CCTV scanners</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change settings for accessibility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect%2Fset up PC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demonstration for microwaves</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demonstration for washing machines</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fault finding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GPS navigation e%2Eg%2E Trekker Breeze</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hardware installation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hardware trouble shooting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Help with book choice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kitchen equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MP3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Magnifiers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maintenance%2Fhousekeeping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Note takers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pack and return player via post office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Package and return products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Penfriend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Radio%2FCD%2FHiFi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Removal of equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Repair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Return and post back</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set up and demo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Software installation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Software trouble shooting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TV%2Fset top box%2FDVD%2Fvideo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tactile markers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Talking books</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Talking clocks%2Fwatches</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Talking scales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training %2Fadvice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Universal remote control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Virus spam issues</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voice recorders</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Service__c</picklist>
+            <values>
+                <fullName>Technology Support</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved - Ready for Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Volunteer_Coordinator__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Customer_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Subject__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Request_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Service__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Volunteer_Coordinator__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Customer_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Subject__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Request_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Service__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <lookupFilterFields>Volunteer_Coordinator__c</lookupFilterFields>
+        <lookupFilterFields>Customer_Name__c</lookupFilterFields>
+        <lookupFilterFields>Subject__c</lookupFilterFields>
+        <lookupFilterFields>Request_Type__c</lookupFilterFields>
+        <lookupFilterFields>Service__c</lookupFilterFields>
+        <lookupFilterFields>Status__c</lookupFilterFields>
+        <lookupPhoneDialogsAdditionalFields>Volunteer_Coordinator__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Customer_Name__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Subject__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Request_Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Service__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Status__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Volunteer_Coordinator__c</searchFilterFields>
+        <searchFilterFields>Customer_Name__c</searchFilterFields>
+        <searchFilterFields>Subject__c</searchFilterFields>
+        <searchFilterFields>Request_Type__c</searchFilterFields>
+        <searchFilterFields>Service__c</searchFilterFields>
+        <searchFilterFields>Status__c</searchFilterFields>
+        <searchResultsAdditionalFields>Volunteer_Coordinator__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Customer_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Subject__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Request_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Service__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>Must_have_activity_and_hours_before_subm</fullName>
+        <active>true</active>
+        <description>An activity and the number of hours donated must be entered before you can select this status to close the customer request</description>
+        <errorConditionFormula>AND( ISPICKVAL( Status__c , &quot;Resolved - Ready for Approval&quot;), 
+OR(ISBLANK(TEXT(Activity__c)),
+(ISNULL(Total_Number_of_Hours_Donated_to_Resolve__c))
+))</errorConditionFormula>
+        <errorMessage>An activity and the number of hours donated must be entered before you can select this status to close the customer request</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Select_Referral_Contact_Name</fullName>
+        <active>true</active>
+        <errorConditionFormula>(ISBLANK(Referral_Contact_Name__c) = True) &amp;&amp;  (Advise_Referrer_of_Outcome__c = True)</errorConditionFormula>
+        <errorDisplayField>Referral_Contact_Name__c</errorDisplayField>
+        <errorMessage>Select the Referral Contact Name</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Allocate_Request</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Allocate Request</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/VolunteerMatching?cr={!Customer_Requests__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Close_Customer_Request</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Close Customer Request</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>var status = &apos;{!Customer_Requests__c.Status__c}&apos;;
+
+if (status != &apos;Resolved - Ready for Approval&apos;){
+    alert(&apos;This request must be set to \&apos;Resolved - Ready for Approval\&apos; before closing&apos;);
+}else {
+    if ((Modal.confirm &amp;&amp; Modal.confirm(&apos;Once you submit this record for approval, you    might not be able to edit it or recall it from the approval process depending on your settings. Continue?&apos;)) || (!Modal.confirm &amp;&amp; window.confirm(&apos;Once you submit this record for approval, you might not be able to edit it or recall it from the approval process depending on your settings. Continue?&apos;))) navigateToUrl(&apos;/p/process/Submit?id={!Customer_Requests__c.Id}&amp;retURL=%2F{!Customer_Requests__c.Id}&apos;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Create_Child_Request</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>url</linkType>
+        <masterLabel>Create Child Request</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/{!Customer_Requests__c.Id}/e?clone=1&amp;CF00Nb0000006WZOE={!Customer_Requests__c.Name}&amp;CF00Nb0000006WZOE_lkd={!Customer_Requests__c.Id}&amp;retURL={!Customer_Requests__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Reallocation</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Allocate Back</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/13.0/connection.js&quot;)} 
+
+var caseObj = new sforce.SObject(&quot;Customer_Requests__c&quot;); 
+caseObj.Id = &apos;{!Customer_Requests__c.Id}&apos;; 
+caseObj.OwnerId = &apos;{!$User.Id}&apos;;
+caseObj.Allocated__c = &apos;FALSE&apos;; 
+var result = sforce.connection.update([caseObj]); 
+window.location.href=window.location.href;</url>
+    </webLinks>
+</CustomObject>

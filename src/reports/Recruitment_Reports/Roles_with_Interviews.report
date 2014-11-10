@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Application__c$Name</field>
+    </columns>
+    <columns>
+        <field>Application__c$Applicant__c</field>
+    </columns>
+    <columns>
+        <field>Application__c$Role_Title__c</field>
+    </columns>
+    <columns>
+        <field>Application__c$Status__c</field>
+    </columns>
+    <columns>
+        <field>Application__c$NVIS_Account_No__c</field>
+    </columns>
+    <columns>
+        <field>Application__c.Interviews__r$Name</field>
+    </columns>
+    <columns>
+        <field>Application__c.Interviews__r$RecordType</field>
+    </columns>
+    <columns>
+        <field>Application__c.Interviews__r$Date_Time__c</field>
+    </columns>
+    <columns>
+        <field>Application__c.Interviews__r$Interviewer1__c</field>
+    </columns>
+    <columns>
+        <field>Application__c.Interviews__r$Outcome__c</field>
+    </columns>
+    <description>Report showing roles with associated interview information by Volunteer Manager</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Application__c$Volunteer_Manager__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Roles with Interviews</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Roles_with_Interviews__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Application__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

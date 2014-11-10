@@ -1,0 +1,5 @@
+<apex:page standardController="Role_Opportunity__c">
+
+<apex:detail > </apex:detail> 
+
+</apex:page>

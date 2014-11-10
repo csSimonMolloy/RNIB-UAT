@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <fields>
+        <fullName>Customer_Request__c</fullName>
+        <label>Customer Request</label>
+        <referenceTo>Customer_Requests__c</referenceTo>
+        <relationshipLabel>Customer Request Notifications</relationshipLabel>
+        <relationshipName>Customer_Request_Notifications</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>Date_Notification_Sent__c</fullName>
+        <label>Date Notification Sent</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Date_Responded__c</fullName>
+        <label>Date Responded</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Accepted but no longer available</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Responded</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Volunteer_Role_ID__c</fullName>
+        <label>Volunteer Role ID</label>
+        <length>19</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Volunteer__c</fullName>
+        <label>Volunteer</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Customer Request Notifications</relationshipLabel>
+        <relationshipName>Customer_Request_Notifications</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <label>Customer Request Notification</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CRN-{00000}</displayFormat>
+        <label>Customer Request Notification Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Customer Request Notifications</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

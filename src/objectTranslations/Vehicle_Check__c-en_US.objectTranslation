@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Vehicle Check</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Vehicle Checks</value>
+    </caseValues>
+    <fields>
+        <label><!-- Car Age --></label>
+        <name>Car_Age__c</name>
+        <picklistValues>
+            <masterLabel>Over 3 Years</masterLabel>
+            <translation><!-- Over 3 Years --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Under 3 years</masterLabel>
+            <translation><!-- Under 3 years --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Documentation Checked --></label>
+        <name>Documentation_Checked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Documentation Next Check --></label>
+        <name>Documentation_Next_Check__c</name>
+    </fields>
+    <fields>
+        <label><!-- Insurance Expires --></label>
+        <name>Insurance_Expires__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy Vehicle Check ID --></label>
+        <name>Legacy_Vehicle_Check_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- NVIS Account No --></label>
+        <name>NVIS_Account_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Registration --></label>
+        <name>Registration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role Status --></label>
+        <name>Role_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role --></label>
+        <name>Role__c</name>
+        <relationshipLabel><!-- Vehicle Checks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Car</masterLabel>
+            <translation><!-- Car --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MiniBus</masterLabel>
+            <translation><!-- MiniBus --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Vehicle Training Required --></label>
+        <name>Vehicle_Training_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volunteer --></label>
+        <name>Volunteer__c</name>
+        <relationshipLabel><!-- Vehicle Checks --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Vehicle Check Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Driver --></label>
+            <section>Driver</section>
+        </sections>
+        <sections>
+            <label><!-- Vehicle Check Details --></label>
+            <section>Vehicle Check Details</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- New_Vehicle_Check --></label>
+        <name>New_Vehicle_Check</name>
+    </webLinks>
+</CustomObjectTranslation>

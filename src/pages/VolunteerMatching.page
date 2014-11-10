@@ -1,0 +1,97 @@
+<apex:page standardController="Contact" extensions="VolunteerMatchingController">
+<!--==============================================================================-->
+<!--Name:                                                                         -->
+<!--                                                                              -->
+<!--                                                                              -->
+<!--                                                                              -->
+<!--==============================================================================-->
+<head>
+<script>
+
+function confirmSend(){
+    return window.confirm('This will send an email to the selected Volunteers - are you sure?');
+}
+
+</script>
+</head>
+    
+    <apex:form >
+        <apex:outputPanel id="messages">
+            <apex:pageMessages />
+        </apex:outputPanel>     
+    <apex:pageBlock title="Search For Volunteers" >
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Search" action="{!searchVolunteers}" rerender="opMatches"/>
+            <apex:commandButton value="Clear Search" action="{!searchClear}" rerender="opMatches, opSearchFilter"/>
+            <!-- <apex:commandButton value="Reset Search" action="{!searchReset}" rerender="shortlist, matches, search, details"/> -->
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection id="requestDetails" columns="2" title="Request Details">
+            <apex:outputField value="{!theRequest.Subject__c}"/>
+            <apex:outputField value="{!theRequest.Customer_Name__c}"/>
+            <apex:outputField value="{!theRequest.Description__c}"/>
+            <apex:outputField value="{!theRequest.Customer_Address__c}"/>
+            <apex:outputField value="{!theRequest.Service__c}"/>
+            <apex:outputField value="{!theRequest.Customer_Post_Code__c}"/>
+            
+        </apex:pageBlockSection>
+        <apex:outputPanel id="opSearchFilter">
+        <apex:pageBlockSection id="search" title="Search" columns="1">
+        <apex:outputLabel for="distanceSelect" value="Select a distance filter (if required) in MILES"/>
+        <apex:selectList id="distanceSelect" value="{!distanceFilter}" size="1">
+            <apex:selectOptions value="{!distanceChoices}"/>
+        </apex:selectList>
+        <apex:outputLabel for="serviceSelect" value="Select a service filter (if required)"/>
+        <apex:selectList id="serviceSelect" value="{!serviceFilter}" size="1">
+            <apex:selectOptions value="{!serviceChoices}"/>
+        </apex:selectList>
+        <apex:outputLabel for="searchBy" value="Sort By (optional - will default to DISTANCE)"/>
+        <apex:selectList id="searchBy" value="{!searchOrder}" size="1">
+            <apex:selectOptions value="{!searchOrderChoices}"/>
+        </apex:selectList>
+        
+        
+        </apex:pageBlockSection>
+        </apex:outputPanel>
+    </apex:pageBlock>
+    <apex:outputPanel id="opMatches">        
+    <apex:pageBlock title="Search for Volunteer Matches" >
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Send Notification Email" action="{!sendEmailNotification}" rerender="opMatches, infoMessages" />
+            <!-- <apex:commandButton value="Display Details" rerender="shortlist, matches, details" /> -->
+        </apex:pageBlockButtons>
+        <apex:pageMessages id="infoMessages"/>
+        <apex:pageBlockTable value="{!matches}" var="item">
+            <apex:column headerValue="Select">
+                <apex:inputCheckBox value="{!item.isSelected}"/>
+            </apex:column>
+            <apex:column headerValue="Label" value="{!item.matchlabel}"/>
+            <apex:column headerValue="Role Title">
+                <apex:outputLink value="/{!item.theApplication.Id}">{!item.theApplication.Role_Title__c}</apex:outputLink>
+            </apex:column>
+            <!-- <apex:column headerValue="First Name" value="{!item.theContact.FirstName}"/> -->
+            <apex:column headerValue="First Name">
+                <apex:outputLink value="/{!item.theApplication.Applicant__c}">{!item.theApplication.Applicant__r.FirstName}</apex:outputLink>
+            </apex:column>
+            <!-- <apex:column headerValue="Last Name" value="{!item.theContact.LastName}"/> -->
+            <apex:column headerValue="Last Name">
+                <apex:outputLink value="/{!item.theApplication.Applicant__c}">{!item.theApplication.Applicant__r.LastName}</apex:outputLink>
+            </apex:column>
+            <apex:column headerValue="Post Code" value="{!item.theApplication.Applicant__r.MailingPostalCode}"/>
+            <!--
+            <apex:column headerValue="Departed?" value="{!item.straycase.Animal__r.Departure_Type__c}"/>
+            <apex:column headerValue="Breed" value="{!item.straycase.Breed__c}"/>   
+            <apex:column headerValue="Cross Breed" value="{!item.straycase.Cross_Breed__c}"/>
+            <apex:column headerValue="Features" value="{!item.straycase.Distinguishing_Features__c}"/>
+            <apex:column headerValue="Where Lost/Found" value="{!item.straycase.Postcode_where_lost_found__c}"/>
+            <apex:column headerValue="Date Lost/Found" value="{!item.straycase.Lost_Found_Date__c}"/> -->
+        </apex:pageBlockTable>
+        <apex:pageBlockSection title="Map of Search Results (Red Marker = Customer Request, Green Markers = Available Volunteers)">
+            <apex:image value="{!maphtml}"/>
+        </apex:pageBlockSection>
+    </apex:pageblock>
+    </apex:outputPanel>
+
+
+    </apex:form>
+
+</apex:page>

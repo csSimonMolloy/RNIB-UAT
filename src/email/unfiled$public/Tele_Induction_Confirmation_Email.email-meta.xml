@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>An email to go out to confirm each individuals booking on the group Induction</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Tele-Induction Confirmation Email</name>
+    <style>none</style>
+    <subject>RNIB: Telephone Induction Booking Confirmation</subject>
+    <type>text</type>
+</EmailTemplate>

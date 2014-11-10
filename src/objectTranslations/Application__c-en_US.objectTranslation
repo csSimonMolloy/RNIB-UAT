@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Volunteer Role</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Volunteer Roles</value>
+    </caseValues>
+    <fields>
+        <label><!-- Accepted Reference Checks --></label>
+        <name>Accepted_Reference_Checks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Applicant__c</name>
+        <relationshipLabel><!-- Volunteer Roles --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This is the Application Status which the Volunteer will see --></help>
+        <label><!-- Application Status --></label>
+        <name>Application_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Automatic Deletion Required --></label>
+        <name>Automatic_Deletion_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Can Activate Criminal Check --></label>
+        <name>Can_Activate_Criminal_Check__c</name>
+    </fields>
+    <fields>
+        <label><!-- Can Activate References --></label>
+        <name>Can_Activate_References__c</name>
+    </fields>
+    <fields>
+        <label><!-- Can Activate Vehicle --></label>
+        <name>Can_Activate_Vehicle__c</name>
+    </fields>
+    <fields>
+        <label><!-- College/Univeristy/Workplace Contact --></label>
+        <name>College_Univeristy_Workplace_Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- College/Univeristy/Workplace Phone --></label>
+        <name>College_Univeristy_Workplace_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- College/Univeristy/Workplace --></label>
+        <name>College_Univeristy_Workplace__c</name>
+    </fields>
+    <fields>
+        <label><!-- ContactName --></label>
+        <name>ContactName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Informed of Application Outcome --></label>
+        <name>Contact_Informed_of_Application_Outcome__c</name>
+    </fields>
+    <fields>
+        <label><!-- Convicted of Criminal Offence? --></label>
+        <name>Convicted_of_Criminal_Offence__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Corporate Account Billing City --></label>
+        <name>Corporate_Account_Billing_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Corporate Account Billing Country --></label>
+        <name>Corporate_Account_Billing_Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Corporate Account Billing Postal Code --></label>
+        <name>Corporate_Account_Billing_PostalCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Corporate Account Billing State --></label>
+        <name>Corporate_Account_Billing_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Corporate Account Billing Street --></label>
+        <name>Corporate_Account_Billing_Street__c</name>
+    </fields>
+    <fields>
+        <label><!-- Corporate Account Name --></label>
+        <name>Corporate_Account_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Corporate Account Phone --></label>
+        <name>Corporate_Account_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Criminal Check OK --></label>
+        <name>Criminal_Check_OK__c</name>
+    </fields>
+    <fields>
+        <label><!-- Please Give Details of Criminal Offence --></label>
+        <name>Criminal_Offence_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Criminal Record Check --></label>
+        <name>Criminal_Record_Check__c</name>
+    </fields>
+    <fields>
+        <help><!-- If the Volunteer is suspended for this role, enter the date from which the suspension applies here --></help>
+        <label><!-- Date of Suspension --></label>
+        <name>Date_of_Suspension__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2. Duties and Main Achievements --></label>
+        <name>Duties_and_Main_Achievements2__c</name>
+    </fields>
+    <fields>
+        <label><!-- 3. Duties and Main Achievements --></label>
+        <name>Duties_and_Main_Achievements3__c</name>
+    </fields>
+    <fields>
+        <label><!-- 1. Duties and Main Achievements --></label>
+        <name>Duties_and_Main_Achievements__c</name>
+    </fields>
+    <fields>
+        <label><!-- Education --></label>
+        <name>Education__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2. Employer&apos;s name &amp; address: From /To --></label>
+        <name>Employer_s_name_address_From_To2__c</name>
+    </fields>
+    <fields>
+        <label><!-- 3. Employer&apos;s name &amp; address: From /To --></label>
+        <name>Employer_s_name_address_From_To3__c</name>
+    </fields>
+    <fields>
+        <label><!-- 1. Employer&apos;s Name &amp; Address: From /To --></label>
+        <name>Employer_s_name_address_From_To__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please tell us how your experience, skills and qualifications meet the requirements of the volunteer role you have applied for.  Refer to the role description which explains the skills and experience we are looking for. --></help>
+        <label><!-- Experience/Qualifications --></label>
+        <name>Experience_Qualifications__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2. Grades --></label>
+        <name>Grades2__c</name>
+    </fields>
+    <fields>
+        <label><!-- 3. Grades --></label>
+        <name>Grades3__c</name>
+    </fields>
+    <fields>
+        <label><!-- 1. Grades --></label>
+        <name>Grades__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is data from ENVIS indicating the date the volunteer received an induction for this role --></help>
+        <label><!-- Group Induction --></label>
+        <name>Group_Induction__c</name>
+    </fields>
+    <fields>
+        <label><!-- How did you hear about this Opportunity --></label>
+        <name>How_did_you_hear_about_this_Opportunity__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Legacy Volunteer Role ID --></label>
+        <name>Legacy_Volunteer_Role_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legal Declariation Confirmed --></label>
+        <name>Legal_Declariation__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 2. Membership No. --></label>
+        <name>Membership_No2__c</name>
+    </fields>
+    <fields>
+        <label><!-- 3. Membership No. --></label>
+        <name>Membership_No3__c</name>
+    </fields>
+    <fields>
+        <label><!-- 1. Membership No. --></label>
+        <name>Membership_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2. Membership Of Professional Bodies --></label>
+        <name>Membership_of_professional_bodies2__c</name>
+    </fields>
+    <fields>
+        <label><!-- 3. Membership Of Professional Bodies --></label>
+        <name>Membership_of_professional_bodies3__c</name>
+    </fields>
+    <fields>
+        <label><!-- 1. Membership of Professional Bodies --></label>
+        <name>Membership_of_professional_bodies__c</name>
+    </fields>
+    <fields>
+        <label><!-- NVIS Account No --></label>
+        <name>NVIS_Account_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2. Name/Address/Dates to and from --></label>
+        <name>Name_Address_Dates_to_and_from2__c</name>
+    </fields>
+    <fields>
+        <label><!-- 3. Name/Address/Dates to and from --></label>
+        <name>Name_Address_Dates_to_and_from3__c</name>
+    </fields>
+    <fields>
+        <label><!-- 1. Name/Address/Dates to and from --></label>
+        <name>Name_Address_Dates_to_and_from__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Corporate Volunteers --></label>
+        <name>Number_of_Corporate_Volunteers__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2. Present/Recent Employment/Volun Work --></label>
+        <name>Present_Recent_Employment_VoluntaryWork2__c</name>
+    </fields>
+    <fields>
+        <label><!-- 3. Present/Recent Employment/Volun Work --></label>
+        <name>Present_Recent_Employment_VoluntaryWork3__c</name>
+    </fields>
+    <fields>
+        <label><!-- 1. Present/Recent Employment/Volun Work --></label>
+        <name>Present_Recent_Employment_Voluntary_Work__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2. Qualification --></label>
+        <name>Qualification2__c</name>
+    </fields>
+    <fields>
+        <label><!-- 3. Qualification --></label>
+        <name>Qualification3__c</name>
+    </fields>
+    <fields>
+        <label><!-- 1. Qualification --></label>
+        <name>Qualification__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the reasons the Volunteer is suspended here --></help>
+        <label><!-- Reason Suspended --></label>
+        <name>Reason_Suspended__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason for Leaving --></label>
+        <name>Reason_for_leaving__c</name>
+        <picklistValues>
+            <masterLabel>Asked to stop by RNIB</masterLabel>
+            <translation><!-- Asked to stop by RNIB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assisting another UK agency as volunteer</masterLabel>
+            <translation><!-- Assisting another UK agency as volunteer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Changes in RNIB policy</masterLabel>
+            <translation><!-- Changes in RNIB policy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deceased</masterLabel>
+            <translation><!-- Deceased --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dissatisfaction with RNIB</masterLabel>
+            <translation><!-- Dissatisfaction with RNIB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ill health</masterLabel>
+            <translation><!-- Ill health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lack of RNIB support</masterLabel>
+            <translation><!-- Lack of RNIB support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leave RNIB altogether</masterLabel>
+            <translation><!-- Leave RNIB altogether --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moved away</masterLabel>
+            <translation><!-- Moved away --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moved to another role</masterLabel>
+            <translation><!-- Moved to another role --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moving into employment</masterLabel>
+            <translation><!-- Moving into employment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moving to help another RNIB service</masterLabel>
+            <translation><!-- Moving to help another RNIB service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No longer feel able to carry out the role</masterLabel>
+            <translation><!-- No longer feel able to carry out the role --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not being used</masterLabel>
+            <translation><!-- Not being used --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other commitments</masterLabel>
+            <translation><!-- Other commitments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reached retirement age</masterLabel>
+            <translation><!-- Reached retirement age --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service/role ceased</masterLabel>
+            <translation><!-- Service/role ceased --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Short volunteering opportunity</masterLabel>
+            <translation><!-- Short volunteering opportunity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transfer to a new role</masterLabel>
+            <translation><!-- Transfer to a new role --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transfer to a new service</masterLabel>
+            <translation><!-- Transfer to a new service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transferring to Action for the Blind</masterLabel>
+            <translation><!-- Transferring to Action for the Blind --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reference Check --></label>
+        <name>Reference_Check__c</name>
+    </fields>
+    <fields>
+        <label><!-- References OK --></label>
+        <name>References_OK__c</name>
+    </fields>
+    <fields>
+        <label><!-- References Unavailable Explanation --></label>
+        <name>References_Unavailable_Explanation__c</name>
+    </fields>
+    <fields>
+        <label><!-- References Unavailable --></label>
+        <name>References_Unavailable__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This field will be ticked if the Volunteer has requested to retire either by updating their profile on the community of if another Volunteer manager has learned this.  Please follow up with the Volunteer regarding the status of your role with them --></help>
+        <label><!-- Request to Retire? --></label>
+        <name>Request_to_Retire__c</name>
+    </fields>
+    <fields>
+        <label><!-- Risk Assessments --></label>
+        <name>Risk_Assessments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role Description --></label>
+        <name>Role_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role Source --></label>
+        <name>Role_Source__c</name>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone</masterLabel>
+            <translation><!-- Phone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post</masterLabel>
+            <translation><!-- Post --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web</masterLabel>
+            <translation><!-- Web --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Role Title --></label>
+        <name>Role_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Role__c</name>
+        <relationshipLabel><!-- Volunteer Roles --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- School/College Contact --></label>
+        <name>School_College_Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- School/College Phone --></label>
+        <name>School_College_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- School/College --></label>
+        <name>School_College__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2. School/University/HE Institution --></label>
+        <name>School_University_HE_Institution2__c</name>
+    </fields>
+    <fields>
+        <label><!-- 3. School/University/HE Institution --></label>
+        <name>School_University_HE_Institution3__c</name>
+    </fields>
+    <fields>
+        <label><!-- 1. School/University/HE Institution --></label>
+        <name>School_University_HE_Institution__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service --></label>
+        <name>Service__c</name>
+        <picklistValues>
+            <masterLabel>Technology Support</masterLabel>
+            <translation><!-- Technology Support --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contact GVT</masterLabel>
+            <translation><!-- Contact GVT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incomplete</masterLabel>
+            <translation><!-- Incomplete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Interviews</masterLabel>
+            <translation><!-- Pending Interviews --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Referee/CR Checks</masterLabel>
+            <translation><!-- Pending Referee/CR Checks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recruitment Checks Complete</masterLabel>
+            <translation><!-- Recruitment Checks Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>References Successful</masterLabel>
+            <translation><!-- References Successful --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resigned from Role</masterLabel>
+            <translation><!-- Resigned from Role --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspended</masterLabel>
+            <translation><!-- Suspended --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unsuccessful - Not Suitable at Interview</masterLabel>
+            <translation><!-- Unsuccessful - Not Suitable at Interview --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unsuccessful - Not Suitable for Interview</masterLabel>
+            <translation><!-- Unsuccessful - Not Suitable for Interview --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unsuccessful - Role Filled</masterLabel>
+            <translation><!-- Unsuccessful - Role Filled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unsuccessful - Unsuitable References</masterLabel>
+            <translation><!-- Unsuccessful - Unsuitable References --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unsuccessful - Unsuitable Risk Assessment</masterLabel>
+            <translation><!-- Unsuccessful - Unsuitable Risk Assessment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawn</masterLabel>
+            <translation><!-- Withdrawn --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 2. Subjects --></label>
+        <name>Subjects2__c</name>
+    </fields>
+    <fields>
+        <label><!-- 3. Subjects --></label>
+        <name>Subjects3__c</name>
+    </fields>
+    <fields>
+        <label><!-- 1. Subjects --></label>
+        <name>Subjects__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the date the suspension has been lifted here --></help>
+        <label><!-- Suspension Ended --></label>
+        <name>Suspension_Ended__c</name>
+    </fields>
+    <fields>
+        <help><!-- It will be easier to manage your application if you provide the information in these fields --></help>
+        <label><!-- Tell Us about Yourself --></label>
+        <name>Tell_us_about_yourself__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Workflow --></label>
+        <name>Test_Workflow__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trigger Time 05 --></label>
+        <name>Trigger_Time_05__c</name>
+    </fields>
+    <fields>
+        <help><!-- If this box is checked the Volunteer has indicated on the portal that they are unavailable --></help>
+        <label><!-- Unavailable? --></label>
+        <name>Unavailable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vehicle Check --></label>
+        <name>Vehicle_Check_Image__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vehicle Check OK --></label>
+        <name>Vehicle_Check_OK__c</name>
+    </fields>
+    <fields>
+        <label><!-- Voluntary or Work Experience --></label>
+        <name>Voluntary_or_Work_Experience__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volunteer Coordinator --></label>
+        <name>Volunteer_Coordinator__c</name>
+        <relationshipLabel><!-- Volunteer Roles (Volunteer Coordinator) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Volunteer Manager --></label>
+        <name>Volunteer_Manager__c</name>
+        <relationshipLabel><!-- Volunteer Roles (Volunteer Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Why do Work Experience with RNIB --></label>
+        <name>Why_do_work_experience_with_RNIB__c</name>
+    </fields>
+    <fields>
+        <label><!-- Why do You Want to Volunteer for Us? --></label>
+        <name>Why_do_you_want_to_volunteer_for_us__c</name>
+    </fields>
+    <layouts>
+        <layout>Application Layout</layout>
+        <sections>
+            <label><!-- About the Volunteer Role --></label>
+            <section>About the Volunteer Role</section>
+        </sections>
+        <sections>
+            <label><!-- Application Information --></label>
+            <section>Application Information</section>
+        </sections>
+        <sections>
+            <label><!-- Checks --></label>
+            <section>Checks</section>
+        </sections>
+        <sections>
+            <label><!-- Compliance --></label>
+            <section>Compliance</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Education --></label>
+            <section>Education</section>
+        </sections>
+        <sections>
+            <label><!-- Voluntary or Work Experience --></label>
+            <section>Voluntary or Work Experience</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Job Role Layout</layout>
+        <sections>
+            <label><!-- About the Volunteer Role --></label>
+            <section>About the Volunteer Role</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Volunteer Role Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Application --></label>
+        <name>Application</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Role --></label>
+        <name>Role</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- An Application Without Either An Accepted Criminal Record Check Or An Approved Criminal Record Risk Assessment Cannot Be Set To Successful --></errorMessage>
+        <name>Needs_a_criminal_record_check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- An Application Without Either The Required Number Of Reference Checks or An Approved Reference Risk Assessment Cannot Be Set To Successful --></errorMessage>
+        <name>Needs_a_reference_checks_check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- An Application Without An Accepted Check for this Opportunity Cannot Be Set To Successful --></errorMessage>
+        <name>Needs_a_vehicle_checks_check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please supply details of the offence --></errorMessage>
+        <name>Volunteer_Role_Supply_crim_off_detail</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Activate_Role --></label>
+        <name>Activate_Role</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Clone_Application --></label>
+        <name>Clone_Application</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Clone_Application_OLD --></label>
+        <name>Clone_Application_OLD</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Generate_Group_Application_Letter --></label>
+        <name>Generate_Group_Application_Letter</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Generate_Volunteer_Retiring_Letter --></label>
+        <name>Generate_Volunteer_Retiring_Letter</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Generate_Welcome_Letter --></label>
+        <name>Generate_Welcome_Letter</name>
+    </webLinks>
+</CustomObjectTranslation>

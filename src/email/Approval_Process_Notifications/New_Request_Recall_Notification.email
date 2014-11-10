@@ -1,0 +1,15 @@
+Dear All,<br><br>
+
+New Safeguarding request - {!Risk_Assessment__c.Name} for {!Risk_Assessment__c.Volunteer__c} has been withdrawn.<br><br>
+
+To check the details please follow this link - {!ApprovalRequest.External_URL}<br><br>
+
+{!ApprovalRequest.Internal_URL}<br><br><br>
+
+
+Best Regards,<br><br>
+
+{!Risk_Assessment__c.Volunteer_Manager__c}<br><br>
+
+Volunteer Manager<br>
+RNIB Volunteering Team

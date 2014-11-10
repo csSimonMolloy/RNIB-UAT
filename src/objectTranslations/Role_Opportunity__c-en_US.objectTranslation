@@ -1,0 +1,2634 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Opportunities</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Opportunities</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active on Website --></label>
+        <name>Active_on_Website__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activities --></label>
+        <name>Activities__c</name>
+        <picklistValues>
+            <masterLabel>activities</masterLabel>
+            <translation><!-- activities --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Please fill in Postcode, Town or Address or other appropriate location information for display on website here. --></help>
+        <label><!-- Additional Location Information --></label>
+        <name>Additional_Location_Information__c</name>
+    </fields>
+    <fields>
+        <help><!-- If the role receives applications over your stated capacity, do you want them added to a waiting list for future recruitment? --></help>
+        <label><!-- Advertise Role --></label>
+        <name>Advertise_Role__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the times when the volunteers will be needed --></help>
+        <label><!-- When Will You Be Needed? --></label>
+        <name>Availability__c</name>
+        <picklistValues>
+            <masterLabel>Flexible</masterLabel>
+            <translation><!-- Flexible --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fri am</masterLabel>
+            <translation><!-- Fri am --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fri eve</masterLabel>
+            <translation><!-- Fri eve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fri pm</masterLabel>
+            <translation><!-- Fri pm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mon am</masterLabel>
+            <translation><!-- Mon am --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mon eve</masterLabel>
+            <translation><!-- Mon eve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mon pm</masterLabel>
+            <translation><!-- Mon pm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sat am</masterLabel>
+            <translation><!-- Sat am --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sat eve</masterLabel>
+            <translation><!-- Sat eve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sat pm</masterLabel>
+            <translation><!-- Sat pm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sun am</masterLabel>
+            <translation><!-- Sun am --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sun eve</masterLabel>
+            <translation><!-- Sun eve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sun pm</masterLabel>
+            <translation><!-- Sun pm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thurs am</masterLabel>
+            <translation><!-- Thurs am --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thurs eve</masterLabel>
+            <translation><!-- Thurs eve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thurs pm</masterLabel>
+            <translation><!-- Thurs pm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tues am</masterLabel>
+            <translation><!-- Tues am --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tues eve</masterLabel>
+            <translation><!-- Tues eve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tues pm</masterLabel>
+            <translation><!-- Tues pm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wed am</masterLabel>
+            <translation><!-- Wed am --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wed eve</masterLabel>
+            <translation><!-- Wed eve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wed pm</masterLabel>
+            <translation><!-- Wed pm --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Budget Available --></label>
+        <name>Budget_Available__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the number of volunteers you want to recruit for this opportunity --></help>
+        <label><!-- How Many Volunteers Do You Need? --></label>
+        <name>Capacity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charity --></label>
+        <name>Charity__c</name>
+        <picklistValues>
+            <masterLabel>Action for Blind People</masterLabel>
+            <translation><!-- Action for Blind People --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RNIB Charity</masterLabel>
+            <translation><!-- RNIB Charity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RNIB Group</masterLabel>
+            <translation><!-- RNIB Group --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Criminal Record Check Information --></label>
+        <name>Criminal_Record_Check_advertised__c</name>
+    </fields>
+    <fields>
+        <label><!-- Criminal Record Check Required? --></label>
+        <name>DBS_Check_required__c</name>
+        <picklistValues>
+            <masterLabel>Access NI Enhanced</masterLabel>
+            <translation><!-- Access NI Enhanced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Access NI Enhanced check for regulated activity with adults</masterLabel>
+            <translation><!-- Access NI Enhanced check for regulated activity with adults --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Access NI Enhanced check for regulated activity with adults and children</masterLabel>
+            <translation><!-- Access NI Enhanced check for regulated activity with adults and children --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Access NI Enhanced check for regulated activity with children</masterLabel>
+            <translation><!-- Access NI Enhanced check for regulated activity with children --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Access NI Standard</masterLabel>
+            <translation><!-- Access NI Standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DBS Enhanced</masterLabel>
+            <translation><!-- DBS Enhanced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DBS Enhanced check for regulated activity with adults</masterLabel>
+            <translation><!-- DBS Enhanced check for regulated activity with adults --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DBS Enhanced check for regulated activity with adults and children</masterLabel>
+            <translation><!-- DBS Enhanced check for regulated activity with adults and children --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DBS Enhanced check for regulated activity with children</masterLabel>
+            <translation><!-- DBS Enhanced check for regulated activity with children --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DBS Standard</masterLabel>
+            <translation><!-- DBS Standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Check Required</masterLabel>
+            <translation><!-- No Check Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG Scotland Adults</masterLabel>
+            <translation><!-- PVG Scotland Adults --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG Scotland Adults and Children</masterLabel>
+            <translation><!-- PVG Scotland Adults and Children --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG Scotland Children</masterLabel>
+            <translation><!-- PVG Scotland Children --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Date Approved --></label>
+        <name>Date_Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Submitted for Approval --></label>
+        <name>Date_Submitted_for_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Directorate --></label>
+        <name>Directorate__c</name>
+        <picklistValues>
+            <masterLabel>Group Fundraising</masterLabel>
+            <translation><!-- Group Fundraising --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group Marketing and Communications</masterLabel>
+            <translation><!-- Group Marketing and Communications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resources</masterLabel>
+            <translation><!-- Resources --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- All volunteer roles are advertised on RNIB and associate websites, Do It, Guardian, Charity Job and Third Sector. --></help>
+        <label><!-- Do You Want Your Opportunity Advertised? --></label>
+        <name>Do_you_want_your_opportunity_advertised__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- End Date Minus 7 Days --></label>
+        <name>End_Date_Minus_7_Days__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the date that the opportunity is closed. --></help>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate the estimated number of hours per week the volunteers will be needed --></help>
+        <label><!-- How Many Hours A Week Are You Needed? --></label>
+        <name>Hours_per_week__c</name>
+    </fields>
+    <fields>
+        <help><!-- If you do not want the Opportunity advertised, please indicate the reasons why here --></help>
+        <label><!-- If Not Why Not? --></label>
+        <name>If_not_why_not__c</name>
+    </fields>
+    <fields>
+        <help><!-- If an induction teleconference call is needed, please indicate here --></help>
+        <label><!-- Is An Induction Teleconference Needed? --></label>
+        <name>Induction_Call_Required__c</name>
+    </fields>
+    <fields>
+        <help><!-- Information required for advertising on external websites and matching volunteer interests --></help>
+        <label><!-- Type of Activity/Interests --></label>
+        <name>Interests__c</name>
+        <picklistValues>
+            <masterLabel>Admin</masterLabel>
+            <translation><!-- Admin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Advice Info and Support</masterLabel>
+            <translation><!-- Advice Info and Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Befriending and Buddying</masterLabel>
+            <translation><!-- Befriending and Buddying --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campaigns and Lobbying</masterLabel>
+            <translation><!-- Campaigns and Lobbying --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Caring</masterLabel>
+            <translation><!-- Caring --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Catering</masterLabel>
+            <translation><!-- Catering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Computers and Technology</masterLabel>
+            <translation><!-- Computers and Technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Driving</masterLabel>
+            <translation><!-- Driving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainment and Leisure</masterLabel>
+            <translation><!-- Entertainment and Leisure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Events</masterLabel>
+            <translation><!-- Events --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fundraising</masterLabel>
+            <translation><!-- Fundraising --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gardening</masterLabel>
+            <translation><!-- Gardening --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal Work</masterLabel>
+            <translation><!-- Legal Work --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing, PR, Media</masterLabel>
+            <translation><!-- Marketing, PR, Media --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mentoring</masterLabel>
+            <translation><!-- Mentoring --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Music</masterLabel>
+            <translation><!-- Music --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Practical Help</masterLabel>
+            <translation><!-- Practical Help --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail</masterLabel>
+            <translation><!-- Retail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sport</masterLabel>
+            <translation><!-- Sport --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Teaching, Training and Coaching</masterLabel>
+            <translation><!-- Teaching, Training and Coaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trusteeship and Committee work</masterLabel>
+            <translation><!-- Trusteeship and Committee work --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Youth Work</masterLabel>
+            <translation><!-- Youth Work --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Leacy Account ID --></label>
+        <name>Leacy_Account_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy Role ID --></label>
+        <name>Legacy_Role_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Location__c</name>
+        <picklistValues>
+            <masterLabel>East Midlands</masterLabel>
+            <translation><!-- East Midlands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>East of England</masterLabel>
+            <translation><!-- East of England --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>London</masterLabel>
+            <translation><!-- London --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North East</masterLabel>
+            <translation><!-- North East --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North West</masterLabel>
+            <translation><!-- North West --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Northern Ireland</masterLabel>
+            <translation><!-- Northern Ireland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scotland</masterLabel>
+            <translation><!-- Scotland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South East</masterLabel>
+            <translation><!-- South East --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South West</masterLabel>
+            <translation><!-- South West --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wales</masterLabel>
+            <translation><!-- Wales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Midlands</masterLabel>
+            <translation><!-- West Midlands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yorkshire/Humber</masterLabel>
+            <translation><!-- Yorkshire/Humber --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- NVIS Account No --></label>
+        <name>NVIS_Account_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number Of Times Cloned --></label>
+        <name>Number_Of_Times_Cloned__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Applications --></label>
+        <name>Number_of_Applications__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the number of references required in order to successfully apply for this role --></help>
+        <label><!-- Number of References Required --></label>
+        <name>Number_of_References_Required__c</name>
+        <picklistValues>
+            <masterLabel>0</masterLabel>
+            <translation><!-- 0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Number of Spaces Left --></label>
+        <name>Number_of_Spaces_Left__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Successful Applicants --></label>
+        <name>Number_of_Successful_Applicants__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Family --></label>
+        <name>Opportunity_Family__c</name>
+        <picklistValues>
+            <masterLabel>Administration</masterLabel>
+            <translation><!-- Administration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Advice Information and Support</masterLabel>
+            <translation><!-- Advice Information and Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Befriending-Social Activity</masterLabel>
+            <translation><!-- Befriending-Social Activity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campaigns</masterLabel>
+            <translation><!-- Campaigns --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Children, Young People and Families</masterLabel>
+            <translation><!-- Children, Young People and Families --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fundraising</masterLabel>
+            <translation><!-- Fundraising --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Practical Support</masterLabel>
+            <translation><!-- Practical Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Talking Media</masterLabel>
+            <translation><!-- Talking Media --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology</masterLabel>
+            <translation><!-- Technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trusteeship and Advisory</masterLabel>
+            <translation><!-- Trusteeship and Advisory --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opportunity URL --></label>
+        <name>Opportunity_URL__c</name>
+    </fields>
+    <fields>
+        <help><!-- If you need assistance advertising locally please contact GVT --></help>
+        <label><!-- Local Sources --></label>
+        <name>Other_Sources__c</name>
+        <picklistValues>
+            <masterLabel>Colleges</masterLabel>
+            <translation><!-- Colleges --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Libraries</masterLabel>
+            <translation><!-- Libraries --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Local Newspaper</masterLabel>
+            <translation><!-- Local Newspaper --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Schools</masterLabel>
+            <translation><!-- Schools --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volunteer Centres</masterLabel>
+            <translation><!-- Volunteer Centres --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- RNIB Group --></label>
+        <name>RNIB_Group__c</name>
+        <picklistValues>
+            <masterLabel>Action for Blind People</masterLabel>
+            <translation><!-- Action for Blind People --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cardiff Institute for the Blind</masterLabel>
+            <translation><!-- Cardiff Institute for the Blind --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RNIB</masterLabel>
+            <translation><!-- RNIB --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Has a role risk assessment been carried out? --></help>
+        <label><!-- Has This Opportunity Been Risk Assessed? --></label>
+        <name>Risk_Assessment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describe the Purpose and Aims of the role in a short, punchy paragraph. --></help>
+        <label><!-- Description --></label>
+        <name>Role_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Role_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Type --></label>
+        <name>Role_Type__c</name>
+        <picklistValues>
+            <masterLabel>Admin Support</masterLabel>
+            <translation><!-- Admin Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Admin Support - Community Fundraising</masterLabel>
+            <translation><!-- Admin Support - Community Fundraising --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assistive Technology Trainer</masterLabel>
+            <translation><!-- Assistive Technology Trainer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Befriender</masterLabel>
+            <translation><!-- Befriender --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campaigns Buddy</masterLabel>
+            <translation><!-- Campaigns Buddy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campaigns Coordinator</masterLabel>
+            <translation><!-- Campaigns Coordinator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campaigns Leader</masterLabel>
+            <translation><!-- Campaigns Leader --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Classroom Assistant</masterLabel>
+            <translation><!-- Classroom Assistant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coffee Morning Coordinator</masterLabel>
+            <translation><!-- Coffee Morning Coordinator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Councelling and Emotional Support</masterLabel>
+            <translation><!-- Councelling and Emotional Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Driver - Social Activities</masterLabel>
+            <translation><!-- Driver - Social Activities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eye Clinic Information Giver</masterLabel>
+            <translation><!-- Eye Clinic Information Giver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eye Clinic Patient Feedback Volunteer</masterLabel>
+            <translation><!-- Eye Clinic Patient Feedback Volunteer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gardener</masterLabel>
+            <translation><!-- Gardener --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Get Connected Volunteer</masterLabel>
+            <translation><!-- Get Connected Volunteer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospital Eye Clinic Volunteer</masterLabel>
+            <translation><!-- Hospital Eye Clinic Volunteer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hotel Outdoor Activities</masterLabel>
+            <translation><!-- Hotel Outdoor Activities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT Specialist</masterLabel>
+            <translation><!-- IT Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Learning resources assistant</masterLabel>
+            <translation><!-- Learning resources assistant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legacy/Funeral Director Coordinator</masterLabel>
+            <translation><!-- Legacy/Funeral Director Coordinator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Local Fundraising Group Chair/Leader</masterLabel>
+            <translation><!-- Local Fundraising Group Chair/Leader --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Local Fundraising Group Communications Volunteer</masterLabel>
+            <translation><!-- Local Fundraising Group Communications Volunteer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Local Fundraising Group Helper</masterLabel>
+            <translation><!-- Local Fundraising Group Helper --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Local Fundraising Group Secretary</masterLabel>
+            <translation><!-- Local Fundraising Group Secretary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Local Fundraising Group Treasurer</masterLabel>
+            <translation><!-- Local Fundraising Group Treasurer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maintenance Support</masterLabel>
+            <translation><!-- Maintenance Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing and Admin</masterLabel>
+            <translation><!-- Marketing and Admin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Press Office Volunteer</masterLabel>
+            <translation><!-- Press Office Volunteer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Receptionist</masterLabel>
+            <translation><!-- Receptionist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Social Activity Care Home</masterLabel>
+            <translation><!-- Social Activity Care Home --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sooty Charity Collection Box Fundraiser</masterLabel>
+            <translation><!-- Sooty Charity Collection Box Fundraiser --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Specialist Text Preparer</masterLabel>
+            <translation><!-- Specialist Text Preparer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sports Activity - Riding</masterLabel>
+            <translation><!-- Sports Activity - Riding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Store/Street Collector</masterLabel>
+            <translation><!-- Store/Street Collector --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Studio Reader</masterLabel>
+            <translation><!-- Studio Reader --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Talk and Support Marketing Volunteers</masterLabel>
+            <translation><!-- Talk and Support Marketing Volunteers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tandem Pilot</masterLabel>
+            <translation><!-- Tandem Pilot --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology Support Volunteer</masterLabel>
+            <translation><!-- Technology Support Volunteer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology Support and Training</masterLabel>
+            <translation><!-- Technology Support and Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telephone Advice</masterLabel>
+            <translation><!-- Telephone Advice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telephone Group Facilitator</masterLabel>
+            <translation><!-- Telephone Group Facilitator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Text Preparer</masterLabel>
+            <translation><!-- Text Preparer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Welfare, Benefits and Rights</masterLabel>
+            <translation><!-- Welfare, Benefits and Rights --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Young People&apos;s Activities and Residentials Volunteer</masterLabel>
+            <translation><!-- Young People&apos;s Activities and Residentials Volunteer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Young People&apos;s Ambassador</masterLabel>
+            <translation><!-- Young People&apos;s Ambassador --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Role Involves Working With Children? --></label>
+        <name>Role_involve_working_with_Children__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Section --></label>
+        <name>Section__c</name>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HR</masterLabel>
+            <translation><!-- HR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ICT</masterLabel>
+            <translation><!-- ICT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal Services</masterLabel>
+            <translation><!-- Legal Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Property Services</masterLabel>
+            <translation><!-- Property Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategy and Performance</masterLabel>
+            <translation><!-- Strategy and Performance --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Service --></label>
+        <name>Service__c</name>
+        <picklistValues>
+            <masterLabel>Service 1</masterLabel>
+            <translation><!-- Service 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service 2</masterLabel>
+            <translation><!-- Service 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service 3</masterLabel>
+            <translation><!-- Service 3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Skills and Experience which are required for the Role --></help>
+        <label><!-- What Skills/Experience Are Needed? --></label>
+        <name>Skills__c</name>
+        <picklistValues>
+            <masterLabel>A caring and friendly nature</masterLabel>
+            <translation><!-- A caring and friendly nature --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A flexible approach to the role</masterLabel>
+            <translation><!-- A flexible approach to the role --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A good communicator</masterLabel>
+            <translation><!-- A good communicator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A knowledge of general admin practices</masterLabel>
+            <translation><!-- A knowledge of general admin practices --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A listening ear</masterLabel>
+            <translation><!-- A listening ear --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A natural empathy with people</masterLabel>
+            <translation><!-- A natural empathy with people --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A pleasant telephone manner</masterLabel>
+            <translation><!-- A pleasant telephone manner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A reliable and conscientious attitude</masterLabel>
+            <translation><!-- A reliable and conscientious attitude --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A welcoming and friendly nature</masterLabel>
+            <translation><!-- A welcoming and friendly nature --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ability to ask questions sensitively</masterLabel>
+            <translation><!-- Ability to ask questions sensitively --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ability to communicate clearly</masterLabel>
+            <translation><!-- Ability to communicate clearly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ability to find innovative solutions</masterLabel>
+            <translation><!-- Ability to find innovative solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ability to listen</masterLabel>
+            <translation><!-- Ability to listen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ability to listen to others ideas</masterLabel>
+            <translation><!-- Ability to listen to others ideas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ability to take instructions</masterLabel>
+            <translation><!-- Ability to take instructions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ability to use your own initiative</masterLabel>
+            <translation><!-- Ability to use your own initiative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Able to prioritise tasks and be flexible</masterLabel>
+            <translation><!-- Able to prioritise tasks and be flexible --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Able to run about 200 metres</masterLabel>
+            <translation><!-- Able to run about 200 metres --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Able to use own initiative</masterLabel>
+            <translation><!-- Able to use own initiative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Able to work unsupervised</masterLabel>
+            <translation><!-- Able to work unsupervised --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Access to phone, e-mail &amp; internet</masterLabel>
+            <translation><!-- Access to phone, e-mail &amp; internet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Accurate typing at a reasonable speed</masterLabel>
+            <translation><!-- Accurate typing at a reasonable speed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Accurately/fluently read materials</masterLabel>
+            <translation><!-- Accurately/fluently read materials --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>An interest in technology</masterLabel>
+            <translation><!-- An interest in technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>An interest in technology innovations</masterLabel>
+            <translation><!-- An interest in technology innovations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approachable &amp; empathetic nature</masterLabel>
+            <translation><!-- Approachable &amp; empathetic nature --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approachable telephone manner</masterLabel>
+            <translation><!-- Approachable telephone manner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Articulate and an excellent communicator</masterLabel>
+            <translation><!-- Articulate and an excellent communicator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ask for help and receive supervision</masterLabel>
+            <translation><!-- Ask for help and receive supervision --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Attention to detail</masterLabel>
+            <translation><!-- Attention to detail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Awareness of other Assistive Technology</masterLabel>
+            <translation><!-- Awareness of other Assistive Technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Basic maintenance skills</masterLabel>
+            <translation><!-- Basic maintenance skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Be a positive role model</masterLabel>
+            <translation><!-- Be a positive role model --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Be competent using MS Excel and Word</masterLabel>
+            <translation><!-- Be competent using MS Excel and Word --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Be enthusiastic, flexible and committed</masterLabel>
+            <translation><!-- Be enthusiastic, flexible and committed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Being a positive role model</masterLabel>
+            <translation><!-- Being a positive role model --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clear telephone voice</masterLabel>
+            <translation><!-- Clear telephone voice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clear voice &amp; engaging for the listener</masterLabel>
+            <translation><!-- Clear voice &amp; engaging for the listener --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comfortable talking over the telephone</masterLabel>
+            <translation><!-- Comfortable talking over the telephone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Communicate at a variety of levels</masterLabel>
+            <translation><!-- Communicate at a variety of levels --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Communicate problems and their solutions</masterLabel>
+            <translation><!-- Communicate problems and their solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Communication and interpersonal skills</masterLabel>
+            <translation><!-- Communication and interpersonal skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Computer literate</masterLabel>
+            <translation><!-- Computer literate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Computer skills</masterLabel>
+            <translation><!-- Computer skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Confident and Patient</masterLabel>
+            <translation><!-- Confident and Patient --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Confident telephone manner</masterLabel>
+            <translation><!-- Confident telephone manner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Databases &amp; basic statistics experience</masterLabel>
+            <translation><!-- Databases &amp; basic statistics experience --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deal sensitively with patients</masterLabel>
+            <translation><!-- Deal sensitively with patients --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Diploma in Counselling qualification</masterLabel>
+            <translation><!-- Diploma in Counselling qualification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Driving skills</masterLabel>
+            <translation><!-- Driving skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Effective Listening Skills</masterLabel>
+            <translation><!-- Effective Listening Skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Empathy with elderly blind</masterLabel>
+            <translation><!-- Empathy with elderly blind --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Empathy with partially sighted people</masterLabel>
+            <translation><!-- Empathy with partially sighted people --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enjoy working as a member of a team</masterLabel>
+            <translation><!-- Enjoy working as a member of a team --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enjoy working as part of a team</masterLabel>
+            <translation><!-- Enjoy working as part of a team --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enthusiasm to have fun with residents</masterLabel>
+            <translation><!-- Enthusiasm to have fun with residents --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enthusiasm, confidence and patience</masterLabel>
+            <translation><!-- Enthusiasm, confidence and patience --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enthusiastic and friendly</masterLabel>
+            <translation><!-- Enthusiastic and friendly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Excellent attention to detail</masterLabel>
+            <translation><!-- Excellent attention to detail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Excellent listening skills</masterLabel>
+            <translation><!-- Excellent listening skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Experience of Microsoft Word and Excel</masterLabel>
+            <translation><!-- Experience of Microsoft Word and Excel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Experience of sight loss</masterLabel>
+            <translation><!-- Experience of sight loss --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Experience of working with people</masterLabel>
+            <translation><!-- Experience of working with people --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Experience of writing and editing</masterLabel>
+            <translation><!-- Experience of writing and editing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expertise in IT, technology</masterLabel>
+            <translation><!-- Expertise in IT, technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Extract points/figures from documents</masterLabel>
+            <translation><!-- Extract points/figures from documents --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Friendliness, enthusiasm and reliability</masterLabel>
+            <translation><!-- Friendliness, enthusiasm and reliability --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Friendly and outgoing personality</masterLabel>
+            <translation><!-- Friendly and outgoing personality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Friendly, confident and outgoing</masterLabel>
+            <translation><!-- Friendly, confident and outgoing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Friendly, helpful and understanding</masterLabel>
+            <translation><!-- Friendly, helpful and understanding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full Driving licence/own car (advantage)</masterLabel>
+            <translation><!-- Full Driving licence/own car (advantage) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full driving licence with use of car</masterLabel>
+            <translation><!-- Full driving licence with use of car --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good Communication skills</masterLabel>
+            <translation><!-- Good Communication skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good Customer Service Skills</masterLabel>
+            <translation><!-- Good Customer Service Skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good IT skills</masterLabel>
+            <translation><!-- Good IT skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good Interpersonal Skills</masterLabel>
+            <translation><!-- Good Interpersonal Skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good attention to detail</masterLabel>
+            <translation><!-- Good attention to detail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good knowledge of the local area</masterLabel>
+            <translation><!-- Good knowledge of the local area --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good level of literacy</masterLabel>
+            <translation><!-- Good level of literacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good listening skills</masterLabel>
+            <translation><!-- Good listening skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good local knowledge</masterLabel>
+            <translation><!-- Good local knowledge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good organisational skills</masterLabel>
+            <translation><!-- Good organisational skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good sense of direction</masterLabel>
+            <translation><!-- Good sense of direction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good spoken and written English</masterLabel>
+            <translation><!-- Good spoken and written English --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good verbal communication skills</masterLabel>
+            <translation><!-- Good verbal communication skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good written communication skills</masterLabel>
+            <translation><!-- Good written communication skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Helpful &amp; understanding manner</masterLabel>
+            <translation><!-- Helpful &amp; understanding manner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High level of written communication</masterLabel>
+            <translation><!-- High level of written communication --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT Skills (desirable but not essential)</masterLabel>
+            <translation><!-- IT Skills (desirable but not essential) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT Skills and access to a PC</masterLabel>
+            <translation><!-- IT Skills and access to a PC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Identify problems, research solutions</masterLabel>
+            <translation><!-- Identify problems, research solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Improve and extend the coffee mornings</masterLabel>
+            <translation><!-- Improve and extend the coffee mornings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interest in Campaigning</masterLabel>
+            <translation><!-- Interest in Campaigning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interest in cycling</masterLabel>
+            <translation><!-- Interest in cycling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interest in outdoor activities</masterLabel>
+            <translation><!-- Interest in outdoor activities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interpersonal skills</masterLabel>
+            <translation><!-- Interpersonal skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Know National Curriculum/Key Stages</masterLabel>
+            <translation><!-- Know National Curriculum/Key Stages --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Know special qualities of the local area</masterLabel>
+            <translation><!-- Know special qualities of the local area --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Knowledge &amp; experience of JAWS software</masterLabel>
+            <translation><!-- Knowledge &amp; experience of JAWS software --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Knowledge of Sibelius/drawing package</masterLabel>
+            <translation><!-- Knowledge of Sibelius/drawing package --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Knowledge of accessible formats</masterLabel>
+            <translation><!-- Knowledge of accessible formats --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Knowledge of welfare/benefit systems</masterLabel>
+            <translation><!-- Knowledge of welfare/benefit systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Knowledge/willingness of cycle routes</masterLabel>
+            <translation><!-- Knowledge/willingness of cycle routes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leadership skills &amp; motivate others</masterLabel>
+            <translation><!-- Leadership skills &amp; motivate others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Learn about sight loss technology</masterLabel>
+            <translation><!-- Learn about sight loss technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Learn assistive access technology</masterLabel>
+            <translation><!-- Learn assistive access technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Local knowledge</masterLabel>
+            <translation><!-- Local knowledge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Map reading skills</masterLabel>
+            <translation><!-- Map reading skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Membership of the BACP</masterLabel>
+            <translation><!-- Membership of the BACP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft Word, Excel and internet</masterLabel>
+            <translation><!-- Microsoft Word, Excel and internet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No fear of horses</masterLabel>
+            <translation><!-- No fear of horses --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Numeracy Skills</masterLabel>
+            <translation><!-- Numeracy Skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Observe confidentiality at all times</masterLabel>
+            <translation><!-- Observe confidentiality at all times --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organised, friendly and enthusiastic</masterLabel>
+            <translation><!-- Organised, friendly and enthusiastic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient approach to training</masterLabel>
+            <translation><!-- Patient approach to training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physically fit (carry light loads)</masterLabel>
+            <translation><!-- Physically fit (carry light loads) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Previous Campaigns Coordinator</masterLabel>
+            <translation><!-- Previous Campaigns Coordinator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proof Read a wide variety of materials</masterLabel>
+            <translation><!-- Proof Read a wide variety of materials --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Relate to a wide cross section of people</masterLabel>
+            <translation><!-- Relate to a wide cross section of people --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reliability</masterLabel>
+            <translation><!-- Reliability --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reliability and trust worthiness</masterLabel>
+            <translation><!-- Reliability and trust worthiness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reliability, enthusiasm and patience</masterLabel>
+            <translation><!-- Reliability, enthusiasm and patience --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reliable</masterLabel>
+            <translation><!-- Reliable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reliable and punctual</masterLabel>
+            <translation><!-- Reliable and punctual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Respect and sensitivity to others needs</masterLabel>
+            <translation><!-- Respect and sensitivity to others needs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Respond in a sensitive &amp; supportive way</masterLabel>
+            <translation><!-- Respond in a sensitive &amp; supportive way --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Respond sensitively to group discussions</masterLabel>
+            <translation><!-- Respond sensitively to group discussions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sensitivity to the needs of others</masterLabel>
+            <translation><!-- Sensitivity to the needs of others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sighted guiding (full training given)</masterLabel>
+            <translation><!-- Sighted guiding (full training given) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Some gardening experience required</masterLabel>
+            <translation><!-- Some gardening experience required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spotting a good fundraising opportunity</masterLabel>
+            <translation><!-- Spotting a good fundraising opportunity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Team worker</masterLabel>
+            <translation><!-- Team worker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Team working</masterLabel>
+            <translation><!-- Team working --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Treat information confidentially</masterLabel>
+            <translation><!-- Treat information confidentially --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Understand boundaries of confidentiality</masterLabel>
+            <translation><!-- Understand boundaries of confidentiality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Understand issues for partially sighted</masterLabel>
+            <translation><!-- Understand issues for partially sighted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Understander need for confidentiality</masterLabel>
+            <translation><!-- Understander need for confidentiality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Understanding issues for affecting blind</masterLabel>
+            <translation><!-- Understanding issues for affecting blind --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Understanding of high standard of safety</masterLabel>
+            <translation><!-- Understanding of high standard of safety --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Use your own initiative</masterLabel>
+            <translation><!-- Use your own initiative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Willing to attend relevant training</masterLabel>
+            <translation><!-- Willing to attend relevant training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Willingness to travel</masterLabel>
+            <translation><!-- Willingness to travel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Willingness to travel locally</masterLabel>
+            <translation><!-- Willingness to travel locally --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Willingness to work as part of a team</masterLabel>
+            <translation><!-- Willingness to work as part of a team --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Willingness to work independently</masterLabel>
+            <translation><!-- Willingness to work independently --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Work accurately to tight deadlines</masterLabel>
+            <translation><!-- Work accurately to tight deadlines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Work as part of a team</masterLabel>
+            <translation><!-- Work as part of a team --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Work in confidence with information</masterLabel>
+            <translation><!-- Work in confidence with information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Work with wide range of people</masterLabel>
+            <translation><!-- Work with wide range of people --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This is the date that the opportunity is available from. --></help>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent for approval</masterLabel>
+            <translation><!-- Sent for approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawn</masterLabel>
+            <translation><!-- Withdrawn --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Strategic Area --></label>
+        <name>Strategic_Area__c</name>
+        <picklistValues>
+            <masterLabel>Waiting for the list...</masterLabel>
+            <translation><!-- Waiting for the list... --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Strategic Outcomes --></label>
+        <name>Strategic_Outcomes__c</name>
+        <picklistValues>
+            <masterLabel>BPS people maximise income from benefits</masterLabel>
+            <translation><!-- BPS people maximise income from benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Confidence, Information and Advice</masterLabel>
+            <translation><!-- Confidence, Information and Advice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ECLO</masterLabel>
+            <translation><!-- ECLO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fewer people have significant sight loss</masterLabel>
+            <translation><!-- Fewer people have significant sight loss --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Information/transactions are accessible</masterLabel>
+            <translation><!-- Information/transactions are accessible --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Learners are able to achieve potential</masterLabel>
+            <translation><!-- Learners are able to achieve potential --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Newly diagnosed given emotional support</masterLabel>
+            <translation><!-- Newly diagnosed given emotional support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>People develop skills to gain work</masterLabel>
+            <translation><!-- People develop skills to gain work --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>People get out confidently and safely</masterLabel>
+            <translation><!-- People get out confidently and safely --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>People have skills, enhance independence</masterLabel>
+            <translation><!-- People have skills, enhance independence --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>People make more use of products</masterLabel>
+            <translation><!-- People make more use of products --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Strategic Priority --></label>
+        <name>Strategic_Priority__c</name>
+        <picklistValues>
+            <masterLabel>Being There</masterLabel>
+            <translation><!-- Being There --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enabler</masterLabel>
+            <translation><!-- Enabler --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inclusion</masterLabel>
+            <translation><!-- Inclusion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Independence</masterLabel>
+            <translation><!-- Independence --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prevention</masterLabel>
+            <translation><!-- Prevention --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Strategic Targets --></label>
+        <name>Strategic_Targets__c</name>
+        <picklistValues>
+            <masterLabel>Waiting for the list...</masterLabel>
+            <translation><!-- Waiting for the list... --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Is a Driving License and Insurance Check required?  Note: This is a legal requirement for roles that involve driving. --></help>
+        <label><!-- Driving Licence &amp; Vehicle Check Needed? --></label>
+        <name>Vehicle_Check_Required__c</name>
+    </fields>
+    <fields>
+        <help><!-- If vehicle training is required E.g. MiDAS - please enter here --></help>
+        <label><!-- Is Vehicle Training Required? --></label>
+        <name>Vehicle_Training_Required__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is required for services like TSS --></help>
+        <label><!-- Volunteer Coordinator --></label>
+        <name>Volunteer_Coordinator__c</name>
+        <relationshipLabel><!-- Opportunities (Volunteer Coordinator) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Volunteer Manager --></label>
+        <name>Volunteer_Manager__c</name>
+        <relationshipLabel><!-- Opportunities (Volunteer Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- If the role receives applications over your stated capacity, do you want them added to a waiting list for future recruitment? --></help>
+        <label><!-- Waiting List --></label>
+        <name>Waiting_List__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the type of Welcome Pack which will be needed? --></help>
+        <label><!-- Which Welcome Pack will be Needed? --></label>
+        <name>Welcome_Pack__c</name>
+        <picklistValues>
+            <masterLabel>Full</masterLabel>
+            <translation><!-- Full --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partial</masterLabel>
+            <translation><!-- Partial --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Provide a few bullet points (no more than five) of the skills and qualities
+required (for example, using Microsoft, friendly and caring nature, etc) --></help>
+        <label><!-- What Skills and Qualities are Required? --></label>
+        <name>What_skills_and_qualities_required__c</name>
+        <picklistValues>
+            <masterLabel>A financial background</masterLabel>
+            <translation><!-- A financial background --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ability to engage with older people</masterLabel>
+            <translation><!-- Ability to engage with older people --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ability to engage with young people</masterLabel>
+            <translation><!-- Ability to engage with young people --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Able to adhere to strict confidentiality</masterLabel>
+            <translation><!-- Able to adhere to strict confidentiality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Able to influence others</masterLabel>
+            <translation><!-- Able to influence others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Able to work on your own initiative</masterLabel>
+            <translation><!-- Able to work on your own initiative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>An excellent communicator</masterLabel>
+            <translation><!-- An excellent communicator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>An interest in home technology</masterLabel>
+            <translation><!-- An interest in home technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>An understanding of economic conditions</masterLabel>
+            <translation><!-- An understanding of economic conditions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>An understanding of sight problems</masterLabel>
+            <translation><!-- An understanding of sight problems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Articulate and an excellent communicator</masterLabel>
+            <translation><!-- Articulate and an excellent communicator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Can contribute to strategic direction</masterLabel>
+            <translation><!-- Can contribute to strategic direction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Communication and influencing skills</masterLabel>
+            <translation><!-- Communication and influencing skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Confident people skills</masterLabel>
+            <translation><!-- Confident people skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Confident public Speaker</masterLabel>
+            <translation><!-- Confident public Speaker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enthusiastic and confident</masterLabel>
+            <translation><!-- Enthusiastic and confident --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Experience of boards or committees</masterLabel>
+            <translation><!-- Experience of boards or committees --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Experience of ethical investments</masterLabel>
+            <translation><!-- Experience of ethical investments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Experience of sight loss</masterLabel>
+            <translation><!-- Experience of sight loss --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good IT skills</masterLabel>
+            <translation><!-- Good IT skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good Telephone skills</masterLabel>
+            <translation><!-- Good Telephone skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good administrative skills</masterLabel>
+            <translation><!-- Good administrative skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good listening and communication skills</masterLabel>
+            <translation><!-- Good listening and communication skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good organisational skills</masterLabel>
+            <translation><!-- Good organisational skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Impart knowledge to improve services</masterLabel>
+            <translation><!-- Impart knowledge to improve services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proven effective decision making skills</masterLabel>
+            <translation><!-- Proven effective decision making skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reliability</masterLabel>
+            <translation><!-- Reliability --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sensitive and empathetic to others</masterLabel>
+            <translation><!-- Sensitive and empathetic to others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Significant investment market expertise</masterLabel>
+            <translation><!-- Significant investment market expertise --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strong personal commitment</masterLabel>
+            <translation><!-- Strong personal commitment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Understand legal duties and liabilities</masterLabel>
+            <translation><!-- Understand legal duties and liabilities --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter the support which the Volunteers will be provided here --></help>
+        <label><!-- What Support Will You Be Given? --></label>
+        <name>What_support_will_I_be_given__c</name>
+        <picklistValues>
+            <masterLabel>Expenses</masterLabel>
+            <translation><!-- Expenses --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Induction</masterLabel>
+            <translation><!-- Induction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regular updates</masterLabel>
+            <translation><!-- Regular updates --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sighted Guiding Training</masterLabel>
+            <translation><!-- Sighted Guiding Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supervision &amp; Support from your Manager</masterLabel>
+            <translation><!-- Supervision &amp; Support from your Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Support from Volunteers &amp; Staff</masterLabel>
+            <translation><!-- Support from Volunteers &amp; Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training as appropriate</masterLabel>
+            <translation><!-- Training as appropriate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Understanding Sight Loss Pack</masterLabel>
+            <translation><!-- Understanding Sight Loss Pack --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter information about the expected activities of Volunteers --></help>
+        <label><!-- What Will You Be Doing? --></label>
+        <name>What_will_I_be_doing2__c</name>
+        <picklistValues>
+            <masterLabel>Accompany coordinators</masterLabel>
+            <translation><!-- Accompany coordinators --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Accurately record information</masterLabel>
+            <translation><!-- Accurately record information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Acting as a sighted guide</masterLabel>
+            <translation><!-- Acting as a sighted guide --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Advice on new technology and products</masterLabel>
+            <translation><!-- Advice on new technology and products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Answering and making telephone calls</masterLabel>
+            <translation><!-- Answering and making telephone calls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assist in accessing public transport</masterLabel>
+            <translation><!-- Assist in accessing public transport --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assist passengers in and out of vehicle</masterLabel>
+            <translation><!-- Assist passengers in and out of vehicle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assist with a variety of admin tasks</masterLabel>
+            <translation><!-- Assist with a variety of admin tasks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assist with accessing information</masterLabel>
+            <translation><!-- Assist with accessing information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assist with general maintenance jobs</masterLabel>
+            <translation><!-- Assist with general maintenance jobs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assist with paperwork</masterLabel>
+            <translation><!-- Assist with paperwork --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assisting with personal correspondence</masterLabel>
+            <translation><!-- Assisting with personal correspondence --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assistive Technology Training</masterLabel>
+            <translation><!-- Assistive Technology Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Attend Cheque Presentatons and events</masterLabel>
+            <translation><!-- Attend Cheque Presentatons and events --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Attend local and regional events</masterLabel>
+            <translation><!-- Attend local and regional events --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Attending Fundraising Group meetings.</masterLabel>
+            <translation><!-- Attending Fundraising Group meetings. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Being the face of RNIB Group</masterLabel>
+            <translation><!-- Being the face of RNIB Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Booking venues and catering facilities.</masterLabel>
+            <translation><!-- Booking venues and catering facilities. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Build local links</masterLabel>
+            <translation><!-- Build local links --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Build relationships</masterLabel>
+            <translation><!-- Build relationships --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Build relationships with local retailers</masterLabel>
+            <translation><!-- Build relationships with local retailers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carrying out research</masterLabel>
+            <translation><!-- Carrying out research --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Check braille layout against print</masterLabel>
+            <translation><!-- Check braille layout against print --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Checking a text file</masterLabel>
+            <translation><!-- Checking a text file --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Collect, record and bank donations.</masterLabel>
+            <translation><!-- Collect, record and bank donations. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Communicate with  key national contacts</masterLabel>
+            <translation><!-- Communicate with  key national contacts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complete Key Campaign Actions</masterLabel>
+            <translation><!-- Complete Key Campaign Actions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conducting computer health checks</masterLabel>
+            <translation><!-- Conducting computer health checks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contact young people before events</masterLabel>
+            <translation><!-- Contact young people before events --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Correct and reformat recordings</masterLabel>
+            <translation><!-- Correct and reformat recordings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Count, record and bank money</masterLabel>
+            <translation><!-- Count, record and bank money --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Create a friendly welcome</masterLabel>
+            <translation><!-- Create a friendly welcome --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Create audio recordings from text</masterLabel>
+            <translation><!-- Create audio recordings from text --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Create documents and input data</masterLabel>
+            <translation><!-- Create documents and input data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Describing non-textual materials</masterLabel>
+            <translation><!-- Describing non-textual materials --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Despatch finished products</masterLabel>
+            <translation><!-- Despatch finished products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drive to activities and events</masterLabel>
+            <translation><!-- Drive to activities and events --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Driving coordinators to and from events</masterLabel>
+            <translation><!-- Driving coordinators to and from events --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Driving the RNIB mini bus</masterLabel>
+            <translation><!-- Driving the RNIB mini bus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ensure text translates into braille</masterLabel>
+            <translation><!-- Ensure text translates into braille --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Find new venues for Collection Boxes</masterLabel>
+            <translation><!-- Find new venues for Collection Boxes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General gardening tasks</masterLabel>
+            <translation><!-- General gardening tasks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Having a chat and providing company</masterLabel>
+            <translation><!-- Having a chat and providing company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Help organise campaign events</masterLabel>
+            <translation><!-- Help organise campaign events --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Help organise events</masterLabel>
+            <translation><!-- Help organise events --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Help set up and run activities</masterLabel>
+            <translation><!-- Help set up and run activities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Help to organise and manage events</masterLabel>
+            <translation><!-- Help to organise and manage events --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Help with bucket collections</masterLabel>
+            <translation><!-- Help with bucket collections --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Help young people achieve objectives</masterLabel>
+            <translation><!-- Help young people achieve objectives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT Support for basic computer problems</masterLabel>
+            <translation><!-- IT Support for basic computer problems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Identify and resolve computer problems</masterLabel>
+            <translation><!-- Identify and resolve computer problems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Input data using specialist software</masterLabel>
+            <translation><!-- Input data using specialist software --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Install hardware, software and upgrades</masterLabel>
+            <translation><!-- Install hardware, software and upgrades --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Keep abreast of local issues/challenges</masterLabel>
+            <translation><!-- Keep abreast of local issues/challenges --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Keeping supporters abreast of campaigns</masterLabel>
+            <translation><!-- Keeping supporters abreast of campaigns --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Keeping the garden tidy</masterLabel>
+            <translation><!-- Keeping the garden tidy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Link between group and staff</masterLabel>
+            <translation><!-- Link between group and staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Listen to Talk and Support group talks</masterLabel>
+            <translation><!-- Listen to Talk and Support group talks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maintain records and computer files</masterLabel>
+            <translation><!-- Maintain records and computer files --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Make contact with event participants</masterLabel>
+            <translation><!-- Make contact with event participants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Make contact with organisations</masterLabel>
+            <translation><!-- Make contact with organisations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Making appropriate contributions</masterLabel>
+            <translation><!-- Making appropriate contributions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Making teas and coffees</masterLabel>
+            <translation><!-- Making teas and coffees --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meeting and greeting visitors</masterLabel>
+            <translation><!-- Meeting and greeting visitors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New technology training</masterLabel>
+            <translation><!-- New technology training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Note inaccuracies between text and audio</masterLabel>
+            <translation><!-- Note inaccuracies between text and audio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Offer guidance with activities</masterLabel>
+            <translation><!-- Offer guidance with activities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>One to one support and guiding</masterLabel>
+            <translation><!-- One to one support and guiding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Painting and decorating</masterLabel>
+            <translation><!-- Painting and decorating --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Place Collection Boxes in agreed outlets</masterLabel>
+            <translation><!-- Place Collection Boxes in agreed outlets --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plan and action local campaigns</masterLabel>
+            <translation><!-- Plan and action local campaigns --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proofread and edit text on screen</masterLabel>
+            <translation><!-- Proofread and edit text on screen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proofreading and correcting braille</masterLabel>
+            <translation><!-- Proofreading and correcting braille --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provide sighted guiding</masterLabel>
+            <translation><!-- Provide sighted guiding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provide support in running activities</masterLabel>
+            <translation><!-- Provide support in running activities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Providing peer support</masterLabel>
+            <translation><!-- Providing peer support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Publicising agreed campaigns.</masterLabel>
+            <translation><!-- Publicising agreed campaigns. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Raising Awareness of RNIB Group</masterLabel>
+            <translation><!-- Raising Awareness of RNIB Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Read mail, magazines, etc.</masterLabel>
+            <translation><!-- Read mail, magazines, etc. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reading a range of materials aloud</masterLabel>
+            <translation><!-- Reading a range of materials aloud --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Repair garden furniture and fences</masterLabel>
+            <translation><!-- Repair garden furniture and fences --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Respond to questions and concerns</masterLabel>
+            <translation><!-- Respond to questions and concerns --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sharing your experience</masterLabel>
+            <translation><!-- Sharing your experience --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sighted Guiding</masterLabel>
+            <translation><!-- Sighted Guiding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Support children and young people</masterLabel>
+            <translation><!-- Support children and young people --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Support people with IT development</masterLabel>
+            <translation><!-- Support people with IT development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Support with activities and  meal times</masterLabel>
+            <translation><!-- Support with activities and  meal times --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Talk to schools, business and  groups</masterLabel>
+            <translation><!-- Talk to schools, business and  groups --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telephone clients and customers</masterLabel>
+            <translation><!-- Telephone clients and customers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Troubleshooting audio visual products</masterLabel>
+            <translation><!-- Troubleshooting audio visual products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Using IT equipment and systems</masterLabel>
+            <translation><!-- Using IT equipment and systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Visit people in their home</masterLabel>
+            <translation><!-- Visit people in their home --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Choose from pick list above or type into text box. Please do not use more than five bullet points in total --></help>
+        <label><!-- What Will You Be Doing - Further Info --></label>
+        <name>What_will_I_be_doing__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please bullet list (MAXIMUM of 5) the key things that will be gained (for example, meeting new friends, working in a customer facing environment, etc) --></help>
+        <label><!-- What Will You Gain from the Role? --></label>
+        <name>What_will_I_gain_from_the_role__c</name>
+        <picklistValues>
+            <masterLabel>A chance to give something back</masterLabel>
+            <translation><!-- A chance to give something back --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A chance to make a difference</masterLabel>
+            <translation><!-- A chance to make a difference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Experience in a care setting</masterLabel>
+            <translation><!-- Experience in a care setting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Experience of fundraising</masterLabel>
+            <translation><!-- Experience of fundraising --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meeting new people</masterLabel>
+            <translation><!-- Meeting new people --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New experiences and skills</masterLabel>
+            <translation><!-- New experiences and skills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Working in an office environment</masterLabel>
+            <translation><!-- Working in an office environment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Working with a variety of people</masterLabel>
+            <translation><!-- Working with a variety of people --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Working with older people</masterLabel>
+            <translation><!-- Working with older people --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Working with people with sight loss</masterLabel>
+            <translation><!-- Working with people with sight loss --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Working with young people</masterLabel>
+            <translation><!-- Working with young people --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Withdrawn Reason --></label>
+        <name>Withdrawn_Reason__c</name>
+    </fields>
+    <fields>
+        <help><!-- Home based=volunteer based at home, Local area=out and about in local area, On site=RNIB Group premises, schools, care homes --></help>
+        <label><!-- Where Based? --></label>
+        <name>Work_Location__c</name>
+        <picklistValues>
+            <masterLabel>Home Based</masterLabel>
+            <translation><!-- Home Based --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Site</masterLabel>
+            <translation><!-- On Site --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Your Local Area</masterLabel>
+            <translation><!-- Your Local Area --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Corporate</layout>
+        <sections>
+            <label><!-- About the Role --></label>
+            <section>About the Role</section>
+        </sections>
+        <sections>
+            <label><!-- Advertising --></label>
+            <section>Advertising</section>
+        </sections>
+        <sections>
+            <label><!-- Approval --></label>
+            <section>Approval</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Capacity --></label>
+            <section>Opportunity Capacity</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Family --></label>
+            <section>Opportunity Family</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Title &amp; Description --></label>
+            <section>Opportunity Title &amp; Description</section>
+        </sections>
+        <sections>
+            <label><!-- Practicalities --></label>
+            <section>Practicalities</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Fundraising</layout>
+        <sections>
+            <label><!-- About the Role --></label>
+            <section>About the Role</section>
+        </sections>
+        <sections>
+            <label><!-- Advertising --></label>
+            <section>Advertising</section>
+        </sections>
+        <sections>
+            <label><!-- Approval --></label>
+            <section>Approval</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Capacity --></label>
+            <section>Opportunity Capacity</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Family --></label>
+            <section>Opportunity Family</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Title &amp; Description --></label>
+            <section>Opportunity Title &amp; Description</section>
+        </sections>
+        <sections>
+            <label><!-- Practicalities --></label>
+            <section>Practicalities</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>General</layout>
+        <sections>
+            <label><!-- About the Role --></label>
+            <section>About the Role</section>
+        </sections>
+        <sections>
+            <label><!-- Advertising --></label>
+            <section>Advertising</section>
+        </sections>
+        <sections>
+            <label><!-- Approval --></label>
+            <section>Approval</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Capacity --></label>
+            <section>Opportunity Capacity</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Family --></label>
+            <section>Opportunity Family</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Title &amp; Description --></label>
+            <section>Opportunity Title &amp; Description</section>
+        </sections>
+        <sections>
+            <label><!-- Practicalities --></label>
+            <section>Practicalities</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Internship</layout>
+        <sections>
+            <label><!-- About the Role --></label>
+            <section>About the Role</section>
+        </sections>
+        <sections>
+            <label><!-- Advertising --></label>
+            <section>Advertising</section>
+        </sections>
+        <sections>
+            <label><!-- Approval --></label>
+            <section>Approval</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Capacity --></label>
+            <section>Opportunity Capacity</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Family --></label>
+            <section>Opportunity Family</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Title &amp; Description --></label>
+            <section>Opportunity Title &amp; Description</section>
+        </sections>
+        <sections>
+            <label><!-- Practicalities --></label>
+            <section>Practicalities</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>One Off</layout>
+        <sections>
+            <label><!-- About the Role --></label>
+            <section>About the Role</section>
+        </sections>
+        <sections>
+            <label><!-- Advertising --></label>
+            <section>Advertising</section>
+        </sections>
+        <sections>
+            <label><!-- Approval --></label>
+            <section>Approval</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Capacity --></label>
+            <section>Opportunity Capacity</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Family --></label>
+            <section>Opportunity Family</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Title &amp; Description --></label>
+            <section>Opportunity Title &amp; Description</section>
+        </sections>
+        <sections>
+            <label><!-- Practicalities --></label>
+            <section>Practicalities</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Opportunities Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Peer Support</layout>
+        <sections>
+            <label><!-- About the Role --></label>
+            <section>About the Role</section>
+        </sections>
+        <sections>
+            <label><!-- Advertising --></label>
+            <section>Advertising</section>
+        </sections>
+        <sections>
+            <label><!-- Approval --></label>
+            <section>Approval</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Capacity --></label>
+            <section>Opportunity Capacity</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Family --></label>
+            <section>Opportunity Family</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Title &amp; Description --></label>
+            <section>Opportunity Title &amp; Description</section>
+        </sections>
+        <sections>
+            <label><!-- Practicalities --></label>
+            <section>Practicalities</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Specialist</layout>
+        <sections>
+            <label><!-- About the Role --></label>
+            <section>About the Role</section>
+        </sections>
+        <sections>
+            <label><!-- Advertising --></label>
+            <section>Advertising</section>
+        </sections>
+        <sections>
+            <label><!-- Approval --></label>
+            <section>Approval</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Capacity --></label>
+            <section>Opportunity Capacity</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Family --></label>
+            <section>Opportunity Family</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Title &amp; Description --></label>
+            <section>Opportunity Title &amp; Description</section>
+        </sections>
+        <sections>
+            <label><!-- Practicalities --></label>
+            <section>Practicalities</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Trustee</layout>
+        <sections>
+            <label><!-- About the Role --></label>
+            <section>About the Role</section>
+        </sections>
+        <sections>
+            <label><!-- Advertising --></label>
+            <section>Advertising</section>
+        </sections>
+        <sections>
+            <label><!-- Approval --></label>
+            <section>Approval</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Capacity --></label>
+            <section>Opportunity Capacity</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Family --></label>
+            <section>Opportunity Family</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Title &amp; Description --></label>
+            <section>Opportunity Title &amp; Description</section>
+        </sections>
+        <sections>
+            <label><!-- Practicalities --></label>
+            <section>Practicalities</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Work Experience</layout>
+        <sections>
+            <label><!-- About the Role --></label>
+            <section>About the Role</section>
+        </sections>
+        <sections>
+            <label><!-- Advertising --></label>
+            <section>Advertising</section>
+        </sections>
+        <sections>
+            <label><!-- Approval --></label>
+            <section>Approval</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Capacity --></label>
+            <section>Opportunity Capacity</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Family --></label>
+            <section>Opportunity Family</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Title &amp; Description --></label>
+            <section>Opportunity Title &amp; Description</section>
+        </sections>
+        <sections>
+            <label><!-- Practicalities --></label>
+            <section>Practicalities</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Work Placement</layout>
+        <sections>
+            <label><!-- About the Role --></label>
+            <section>About the Role</section>
+        </sections>
+        <sections>
+            <label><!-- Advertising --></label>
+            <section>Advertising</section>
+        </sections>
+        <sections>
+            <label><!-- Approval --></label>
+            <section>Approval</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Family --></label>
+            <section>Opportunity Family</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Title &amp; Description --></label>
+            <section>Opportunity Title &amp; Description</section>
+        </sections>
+        <sections>
+            <label><!-- Practicalities --></label>
+            <section>Practicalities</section>
+        </sections>
+        <sections>
+            <label><!-- Role Capacity --></label>
+            <section>Role Capacity</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Corporate --></label>
+        <name>Corporate</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Internship --></label>
+        <name>Internship</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- One Off --></label>
+        <name>One_Off</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Peer Support --></label>
+        <name>Peer_Support</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Professional --></label>
+        <name>Professional</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Specialist --></label>
+        <name>Specialist</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Standard --></label>
+        <name>Standard</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Trustee --></label>
+        <name>Trustee</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Work Experience --></label>
+        <name>Work_Experience</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Work Placement --></label>
+        <name>work_placement</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Criminal Record Checks not valid for Region selected --></errorMessage>
+        <name>Criminal_Record_Check_Region_Check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter information in either the What Will The Volunteer(s) Be Doing? field or What Will They Be Doing - Further Info --></errorMessage>
+        <name>Either_whatwillvols_or_further_info</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- At least two references are required if the Opportunity requires a Criminal Record Check --></errorMessage>
+        <name>If_CRC_required_2_references_required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter a reason why you do not wish the Opportunity to be advertised --></errorMessage>
+        <name>Reason_why_Opportunity_not_Advertised</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please check that you have carried out a Risk Assessment --></errorMessage>
+        <name>Risk_Assessment</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You are not a system administrator so you are unable to edit this template --></errorMessage>
+        <name>Role_Templates_GVT</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must add a withdrawn reason --></errorMessage>
+        <name>Withdrawn_reason</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Clone_Opportunity --></label>
+        <name>Clone_Opportunity</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Clone_Opportunity_Old --></label>
+        <name>Clone_Opportunity_Old</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Close_Opportunity --></label>
+        <name>Close_Opportunity</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Role_Opportunity --></label>
+        <name>Create_Role_Opportunity</name>
+    </webLinks>
+</CustomObjectTranslation>

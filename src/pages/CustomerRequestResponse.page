@@ -1,0 +1,55 @@
+<apex:page controller="CustomerRequestResponseController" action="{!doAction}" showHeader="false" cache="false">
+<style>
+
+.feeditemfirstentity a{
+color: #015ba7;
+font-weight: bold;
+}
+
+.feeditemsecondentity a{
+color: #015ba7;
+}
+
+.preamblecontainer {
+color: #015ba7;
+margin-bottom: 12px;
+}
+
+.preamblecontainer a{
+color: #015ba7;
+}
+
+.chatter-avatar {
+  vertical-align: top;
+  text-align: top;
+}
+
+</style>
+<apex:form >
+<!-- autoForward panel -->
+<apex:outputPanel id="autoForwardPanel" rendered="{!doAcceptedForward}">
+<br/><br/>
+Thank you for accepting this request.  Please click on the link below to go the request.<br/><br/>
+
+<apex:outputLink value="{!openRequestURL}">Open Request</apex:outputLink>
+
+</apex:outputPanel>
+<!-- alreadyAccepted panel -->
+<apex:outputPanel id="alreadyAcceptedPanel" rendered="{!alreadyAccepted}">
+<br/><br/>
+Thank you for your accepting our request.  Unfortunately, this Customer Request has already been accepted by another Volunteer. We have registered the fact that you were avaialable and wished to accept.  Many thanks for your kind support!.<br/><br/>
+
+<apex:commandLink onclick="javascript:window.close();" value="Close Window"/>
+</apex:outputPanel>
+<!-- rejectedPanel -->
+<apex:outputPanel id="rejectedPanel" rendered="{!showRejected}">
+<br/><br/>
+<!-- You have now REJECTED this Customer Request.<br/><br/> -->
+Thank you for responding to this request.  It has been recorded that you have rejected it.<br/><br/>
+
+<apex:commandLink onclick="javascript:window.close();" value="Close Window"/>
+</apex:outputPanel>
+
+
+</apex:form>
+</apex:page>

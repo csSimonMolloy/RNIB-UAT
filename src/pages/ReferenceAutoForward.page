@@ -1,0 +1,3 @@
+<apex:page standardController="Reference__c" extensions="ReferenceControllerExtension" showHeader="false" sidebar="false" action="{!autoForward}"> 
+
+</apex:page>

@@ -1,0 +1,773 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Customer Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Customer Requests</value>
+    </caseValues>
+    <fields>
+        <help><!-- Select the activities which you performed to complete the Customer Request --></help>
+        <label><!-- Activities Performed to Resolve Request --></label>
+        <name>Activities_Performed_to_Resolve_Request__c</name>
+        <picklistValues>
+            <masterLabel>Closed - Not enough information</masterLabel>
+            <translation><!-- Closed - Not enough information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed - Not suitable for service</masterLabel>
+            <translation><!-- Closed - Not suitable for service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed - Refer to GVT</masterLabel>
+            <translation><!-- Closed - Refer to GVT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed - Refer to another service</masterLabel>
+            <translation><!-- Closed - Refer to another service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed - Request cancelled</masterLabel>
+            <translation><!-- Closed - Request cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed - Resolved</masterLabel>
+            <translation><!-- Closed - Resolved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed - Unable to complete request</masterLabel>
+            <translation><!-- Closed - Unable to complete request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed - Unable to contact customer</masterLabel>
+            <translation><!-- Closed - Unable to contact customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Follow up arranged</masterLabel>
+            <translation><!-- Follow up arranged --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home visit arranged</masterLabel>
+            <translation><!-- Home visit arranged --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On hold - Part/software on order</masterLabel>
+            <translation><!-- On hold - Part/software on order --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On hold - Waiting on customer</masterLabel>
+            <translation><!-- On hold - Waiting on customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On hold - Waiting on volunteer</masterLabel>
+            <translation><!-- On hold - Waiting on volunteer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Remote support arranged</masterLabel>
+            <translation><!-- Remote support arranged --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Researching issue</masterLabel>
+            <translation><!-- Researching issue --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Activity --></label>
+        <name>Activity__c</name>
+        <picklistValues>
+            <masterLabel>Changing settings for accessibility</masterLabel>
+            <translation><!-- Changing settings for accessibility --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Choosing or using a talking book player</masterLabel>
+            <translation><!-- Choosing or using a talking book player --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Installing broadband</masterLabel>
+            <translation><!-- Installing broadband --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Installing software (e.g. JAWS, NVDA, Supernova, Zoomtext)</masterLabel>
+            <translation><!-- Installing software (e.g. JAWS, NVDA, Supernova, Zoomtext) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Problems with broadband</masterLabel>
+            <translation><!-- Problems with broadband --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Problems with device or equipment</masterLabel>
+            <translation><!-- Problems with device or equipment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Problems with software</masterLabel>
+            <translation><!-- Problems with software --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Setting up a new device or equipment</masterLabel>
+            <translation><!-- Setting up a new device or equipment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Virus or spam issues</masterLabel>
+            <translation><!-- Virus or spam issues --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Advise Referrer of Outcome --></label>
+        <name>Advise_Referrer_of_Outcome__c</name>
+    </fields>
+    <fields>
+        <label><!-- Allocated --></label>
+        <name>Allocated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Any other comments --></label>
+        <name>Any_other_comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assigned Volunteer --></label>
+        <name>Assigned_Volunteer__c</name>
+        <relationshipLabel><!-- Customer Requests (Assigned Volunteer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Closed --></label>
+        <name>Closed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Co-ordinator ID --></label>
+        <name>Co_ordinator_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Address --></label>
+        <name>Customer_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Email --></label>
+        <name>Customer_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Feedback --></label>
+        <name>Customer_Feedback__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Home Phone --></label>
+        <name>Customer_Home_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Name --></label>
+        <name>Customer_Name__c</name>
+        <relationshipLabel><!-- Customer Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Customer Other Phone --></label>
+        <name>Customer_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Post Code --></label>
+        <name>Customer_Post_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Request Duration --></label>
+        <name>Customer_Request_Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Origin --></label>
+        <name>Customer_Request_Origin__c</name>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Helpline</masterLabel>
+            <translation><!-- Helpline --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Letter</masterLabel>
+            <translation><!-- Letter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone</masterLabel>
+            <translation><!-- Phone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web</masterLabel>
+            <translation><!-- Web --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Date/Time Closed --></label>
+        <name>Date_Time_Closed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date/Time Opened --></label>
+        <name>Date_Time_Opened__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device --></label>
+        <name>Device__c</name>
+        <picklistValues>
+            <masterLabel>CCTV scanner</masterLabel>
+            <translation><!-- CCTV scanner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Desktop PC</masterLabel>
+            <translation><!-- Desktop PC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ebook reader, eg Kindle, Kobos</masterLabel>
+            <translation><!-- Ebook reader, eg Kindle, Kobos --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GPS navigation, eg Trekker Breeze</masterLabel>
+            <translation><!-- GPS navigation, eg Trekker Breeze --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kitchen equipment</masterLabel>
+            <translation><!-- Kitchen equipment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landline Phone</masterLabel>
+            <translation><!-- Landline Phone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Laptop</masterLabel>
+            <translation><!-- Laptop --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MP3 player</masterLabel>
+            <translation><!-- MP3 player --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Magnifier</masterLabel>
+            <translation><!-- Magnifier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile phone</masterLabel>
+            <translation><!-- Mobile phone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Radio, CD player or HiFi</masterLabel>
+            <translation><!-- Radio, CD player or HiFi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Smart phone</masterLabel>
+            <translation><!-- Smart phone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TV, eg set top box, audio description</masterLabel>
+            <translation><!-- TV, eg set top box, audio description --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tablet</masterLabel>
+            <translation><!-- Tablet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Talking book player</masterLabel>
+            <translation><!-- Talking book player --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Talking clock or watch</masterLabel>
+            <translation><!-- Talking clock or watch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Voice recorder</masterLabel>
+            <translation><!-- Voice recorder --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Home Visits Duration --></label>
+        <name>Duration_Forumla__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy Customer Request ID --></label>
+        <name>Legacy_Customer_Request_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Location --></label>
+        <name>Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mapping Status --></label>
+        <name>Mapping_Status__c</name>
+        <picklistValues>
+            <masterLabel>Google Exhausted</masterLabel>
+            <translation><!-- Google Exhausted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Located</masterLabel>
+            <translation><!-- Located --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Located Yet</masterLabel>
+            <translation><!-- Not Located Yet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Problem With Address</masterLabel>
+            <translation><!-- Problem With Address --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- NVIS Account No. --></label>
+        <name>NVIS_Account_No__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter any further information about activities which you performed to resolve the request.  NOTE: please include any referral information e.g. if the customer would like other services. --></help>
+        <label><!-- Notes on Activities Performed --></label>
+        <name>Notes_on_Activities_Performed__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays the number of Home Visits made for the Customer Request --></help>
+        <label><!-- Number of Home Visits --></label>
+        <name>Number_of_Home_Visits__c</name>
+    </fields>
+    <fields>
+        <label><!-- Operating System the customer is using --></label>
+        <name>Operating_System__c</name>
+        <picklistValues>
+            <masterLabel>Android</masterLabel>
+            <translation><!-- Android --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apple/iOS</masterLabel>
+            <translation><!-- Apple/iOS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chromebook</masterLabel>
+            <translation><!-- Chromebook --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windows</masterLabel>
+            <translation><!-- Windows --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Use if related to a previous request --></help>
+        <label><!-- Parent Customer Request --></label>
+        <name>Parent_Customer_Request__c</name>
+        <relationshipLabel><!-- Child Customer Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This field contains comments from the RNIB Group Volunteer Coordinator relating to the Customer Request --></help>
+        <label><!-- RNIB Group Comments - VISIBLE BY ALL --></label>
+        <name>RNIB_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Home Visits Duration (minutes) --></label>
+        <name>RS_Duration_Minutes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Referred by --></label>
+        <name>Refer_Type__c</name>
+        <picklistValues>
+            <masterLabel>Action for Blind People</masterLabel>
+            <translation><!-- Action for Blind People --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CIB</masterLabel>
+            <translation><!-- CIB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ECLO</masterLabel>
+            <translation><!-- ECLO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Education provider</masterLabel>
+            <translation><!-- Education provider --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employment adviser</masterLabel>
+            <translation><!-- Employment adviser --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family/Friend</masterLabel>
+            <translation><!-- Family/Friend --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Local blind society</masterLabel>
+            <translation><!-- Local blind society --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medical professional</masterLabel>
+            <translation><!-- Medical professional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Charities</masterLabel>
+            <translation><!-- Other Charities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other professional</masterLabel>
+            <translation><!-- Other professional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RNIB</masterLabel>
+            <translation><!-- RNIB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Social services</masterLabel>
+            <translation><!-- Social services --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Only complete if the referral wants to know the outcome. --></help>
+        <label><!-- Referral Contact Name --></label>
+        <name>Referral_Contact_Name__c</name>
+        <relationshipLabel><!-- Customer Requests (Referral Contact Name) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Referral Email --></label>
+        <name>Referral_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Referral Organisation Name --></label>
+        <name>Referral_Organisation_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Referral Phone --></label>
+        <name>Referral_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Referral --></label>
+        <name>Referral__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Type --></label>
+        <name>Request_Type__c</name>
+        <picklistValues>
+            <masterLabel>Audio</masterLabel>
+            <translation><!-- Audio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Broadband installation</masterLabel>
+            <translation><!-- Broadband installation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Broadband trouble shooting</masterLabel>
+            <translation><!-- Broadband trouble shooting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCTV scanners</masterLabel>
+            <translation><!-- CCTV scanners --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change settings for accessibility</masterLabel>
+            <translation><!-- Change settings for accessibility --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Connect/set up PC</masterLabel>
+            <translation><!-- Connect/set up PC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Demonstration for microwaves</masterLabel>
+            <translation><!-- Demonstration for microwaves --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Demonstration for washing machines</masterLabel>
+            <translation><!-- Demonstration for washing machines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fault finding</masterLabel>
+            <translation><!-- Fault finding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GPS navigation e.g. Trekker Breeze</masterLabel>
+            <translation><!-- GPS navigation e.g. Trekker Breeze --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hardware installation</masterLabel>
+            <translation><!-- Hardware installation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hardware trouble shooting</masterLabel>
+            <translation><!-- Hardware trouble shooting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Help with book choice</masterLabel>
+            <translation><!-- Help with book choice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kitchen equipment</masterLabel>
+            <translation><!-- Kitchen equipment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MP3</masterLabel>
+            <translation><!-- MP3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Magnifiers</masterLabel>
+            <translation><!-- Magnifiers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maintenance/housekeeping</masterLabel>
+            <translation><!-- Maintenance/housekeeping --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile phone</masterLabel>
+            <translation><!-- Mobile phone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Note takers</masterLabel>
+            <translation><!-- Note takers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pack and return player via post office</masterLabel>
+            <translation><!-- Pack and return player via post office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Package and return products</masterLabel>
+            <translation><!-- Package and return products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Penfriend</masterLabel>
+            <translation><!-- Penfriend --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Radio/CD/HiFi</masterLabel>
+            <translation><!-- Radio/CD/HiFi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Removal of equipment</masterLabel>
+            <translation><!-- Removal of equipment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Repair</masterLabel>
+            <translation><!-- Repair --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Return and post back</masterLabel>
+            <translation><!-- Return and post back --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set up and demo</masterLabel>
+            <translation><!-- Set up and demo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Software installation</masterLabel>
+            <translation><!-- Software installation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Software trouble shooting</masterLabel>
+            <translation><!-- Software trouble shooting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TV/set top box/DVD/video</masterLabel>
+            <translation><!-- TV/set top box/DVD/video --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tactile markers</masterLabel>
+            <translation><!-- Tactile markers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Talking books</masterLabel>
+            <translation><!-- Talking books --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Talking clocks/watches</masterLabel>
+            <translation><!-- Talking clocks/watches --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Talking scales</masterLabel>
+            <translation><!-- Talking scales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training /advice</masterLabel>
+            <translation><!-- Training /advice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Universal remote control</masterLabel>
+            <translation><!-- Universal remote control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Virus spam issues</masterLabel>
+            <translation><!-- Virus spam issues --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Voice recorders</masterLabel>
+            <translation><!-- Voice recorders --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Service --></label>
+        <name>Service__c</name>
+        <picklistValues>
+            <masterLabel>Technology Support</masterLabel>
+            <translation><!-- Technology Support --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Closed - Approved</masterLabel>
+            <translation><!-- Closed - Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed - Pending Approval</masterLabel>
+            <translation><!-- Closed - Pending Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Hold</masterLabel>
+            <translation><!-- On Hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected - See RNIB Comments Field</masterLabel>
+            <translation><!-- Rejected - See RNIB Comments Field --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resolved - Ready for Approval</masterLabel>
+            <translation><!-- Resolved - Ready for Approval --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Subject --></label>
+        <name>Subject__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the total amount of hours taken to fully complete the Customer Request --></help>
+        <label><!-- Total Number of Hours Donated to Resolve --></label>
+        <name>Total_Number_of_Hours_Donated_to_Resolve__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volunteer Coordinator Email --></label>
+        <name>Volunteer_Coordinator_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volunteer Coordinator Phone --></label>
+        <name>Volunteer_Coordinator_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volunteer Coordinator --></label>
+        <name>Volunteer_Coordinator__c</name>
+        <relationshipLabel><!-- Customer Requests --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Customer Request Layout</layout>
+        <sections>
+            <label><!-- Actions --></label>
+            <section>Actions</section>
+        </sections>
+        <sections>
+            <label><!-- Allocation --></label>
+            <section>Allocation</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Customer --></label>
+            <section>Customer</section>
+        </sections>
+        <sections>
+            <label><!-- Customer Feedback --></label>
+            <section>Customer Feedback</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label><!-- Geo Location Details --></label>
+            <section>Geo Location Details</section>
+        </sections>
+        <sections>
+            <label><!-- Source --></label>
+            <section>Source</section>
+        </sections>
+        <sections>
+            <label><!-- Time --></label>
+            <section>Time</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Volunteer Customer Request Layout</layout>
+        <sections>
+            <label><!-- Allocation --></label>
+            <section>Allocation</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Customer --></label>
+            <section>Customer</section>
+        </sections>
+        <sections>
+            <label><!-- Customer Feedback --></label>
+            <section>Customer Feedback</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label><!-- Outcome of Visit --></label>
+            <section>Outcome of Visit</section>
+        </sections>
+        <sections>
+            <label><!-- Source --></label>
+            <section>Source</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Customer Requests- Internal --></label>
+        <name>Customer_Requests_Internal</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Customer Requests - Portal --></label>
+        <name>Customer_Requests_Portal</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- An activity and the number of hours donated must be entered before you can select this status to close the customer request --></errorMessage>
+        <name>Must_have_activity_and_hours_before_subm</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Select the Referral Contact Name --></errorMessage>
+        <name>Select_Referral_Contact_Name</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Allocate_Request --></label>
+        <name>Allocate_Request</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Close_Customer_Request --></label>
+        <name>Close_Customer_Request</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Child_Request --></label>
+        <name>Create_Child_Request</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Reallocation --></label>
+        <name>Reallocation</name>
+    </webLinks>
+</CustomObjectTranslation>

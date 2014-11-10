@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Auto-response acknowledgement email when a new customer request is submitted</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Acknowledgement email when a new customer request is submitted</name>
+    <style>none</style>
+    <subject>RNIB Case # :{!Customer_Requests__c.Name} - customer request acknowledgement email</subject>
+    <type>text</type>
+</EmailTemplate>

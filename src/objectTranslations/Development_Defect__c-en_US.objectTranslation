@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Development Defect</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Development Defects</value>
+    </caseValues>
+    <fields>
+        <label><!-- Defect --></label>
+        <name>Defect__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expect Results --></label>
+        <name>Expect_Results__c</name>
+    </fields>
+    <fields>
+        <label><!-- Raised By --></label>
+        <name>Raised_By__c</name>
+        <picklistValues>
+            <masterLabel>Angela Jones</masterLabel>
+            <translation><!-- Angela Jones --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auston O&apos;Hara</masterLabel>
+            <translation><!-- Auston O&apos;Hara --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flo Leftly-Gynn</masterLabel>
+            <translation><!-- Flo Leftly-Gynn --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Helen Johnston</masterLabel>
+            <translation><!-- Helen Johnston --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Janet Burke</masterLabel>
+            <translation><!-- Janet Burke --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Janet Green</masterLabel>
+            <translation><!-- Janet Green --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jim Sanders</masterLabel>
+            <translation><!-- Jim Sanders --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Julie Phillips</masterLabel>
+            <translation><!-- Julie Phillips --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kerry Smith</masterLabel>
+            <translation><!-- Kerry Smith --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Louise Markham</masterLabel>
+            <translation><!-- Louise Markham --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lynn Green</masterLabel>
+            <translation><!-- Lynn Green --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UAT meeting</masterLabel>
+            <translation><!-- UAT meeting --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Related Object --></label>
+        <name>Related_Object__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Comments --></label>
+        <name>Status_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Duplicate</masterLabel>
+            <translation><!-- Duplicate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Identified</masterLabel>
+            <translation><!-- Identified --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Won&apos;t Fix</masterLabel>
+            <translation><!-- Won&apos;t Fix --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Development Defect Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Defect --></label>
+            <section>Defect</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Outcome Comments --></label>
+            <section>Outcome Comments</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,610 @@
+<apex:page standardController="Role_Opportunity__c" extensions="ApplicationFormController" sidebar="false" showHeader="true" cache="false">
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.3.custom/js/jquery-1.9.1.js')}"  />
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.js')}"  />
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.min.js')}"  />
+<apex:form >
+<script>
+function isEmpty(inValue){
+    if (inValue == null || inValue == '' || inValue.length <= 0){
+        return true;
+    }else {
+        return false;
+    }
+}
+
+//Form validation 
+function validateForm(){
+    var errorMsgString = 'The following fields need to be populated:\n';
+    var fieldNames = '';
+    //Get the boolean show values
+    var showCorporate = {!showCorporate};
+    var showIntern = {!showIntern};
+    var showStandard = {!showStandard};
+    var showSpecialist = {!showSpecialist};
+    var showPeerSupport = {!showPeerSupport }
+    var showOneOff = {!showOneOff }
+    var showWorkPlacement = {!showWorkPlacement }
+    var showWorkExperience = {!showWorkExperience }
+    var showTrustee = {!showTrustee }
+    var dbsCheckRequired = {!dbsCheckRequired};
+    var numRefsRequired = {!numberOfRefsRequired};
+    //Get all fields
+    var roleLocation = jQuery("[Id$='roleLocation']").text();
+    var ecdName = jQuery("input[Id$='nameEmergencyContact']" );
+    var ecdRelationship = jQuery("select[Id$='relationshipEmergencyContact']" );
+    var ecdPhone = jQuery("input[Id$='phoneEmergencyContact']" );
+    var ecdMobile = jQuery("input[Id$='mobileEmergencyContact']" );
+    var corpContactSaluation = jQuery("select[Id$='corpContactSaluation']" );
+    var corpContactLastName = jQuery("input[Id$='corpContactLastName']" );
+    var corpContactFirstName = jQuery("input[Id$='corpContactFirstName']" );
+    //var corpContactPreferredPhone = jQuery("select[Id$='corpContactPreferredPhone']" );
+    var corpContactEmail = jQuery("input[Id$='corpContactEmail']" );
+    var corpContactPhone = jQuery("input[Id$='corpContactPhone']" );
+    var corpContactMobilePhone = jQuery("input[Id$='corpContactMobilePhone']" );
+    var corpContactWorkPhone = jQuery("input[Id$='corpContactWorkPhone']" );
+    var corpContactOtherPhone = jQuery("input[Id$='corpContactOtherPhone']" );
+    var contactSaluation = jQuery("select[Id$='contactSaluation']" );
+    var contactLastName = jQuery("input[Id$='contactLastName']" );
+    var contactFirstName = jQuery("input[Id$='contactFirstName']" );
+    var contactMailingStreet = jQuery("textarea[Id$='contactMailingStreet']" );
+    var contactMailingCity = jQuery("input[Id$='contactMailingCity']" );
+    var contactMailingState = jQuery("input[Id$='contactMailingState']" );
+    var contactMailingPostalCode = jQuery("input[Id$='contactMailingPostalCode']" );
+    //var contactPreferredPhone = jQuery("select[Id$='contactPreferredPhone']" );
+    var contactEmail = jQuery("input[Id$='contactEmail']" );
+    var contactPhone = jQuery("input[Id$='contactPhone']" );
+    var contactMobilePhone = jQuery("input[Id$='contactMobilePhone']" );
+    var contactWorkPhone = jQuery("input[Id$='contactWorkPhone']" );
+    var contactOtherPhone = jQuery("input[Id$='contactOtherPhone']" );
+    var availability = jQuery("input[Id$='availability']" );
+    var howDidYouHear = jQuery("input[Id$='howDidYouHear']" );
+    var areasOfInterest = jQuery("input[Id$='areasOfInterest']" );
+    var preferredCorrespondence = jQuery("select[Id$='preferredCorrespondence']" );
+    var preferredformat = jQuery("select[Id$='preferredFormat']" );
+    var education = jQuery("input[Id$='education']" );
+    var voluntaryWorkExperience = jQuery("input[Id$='voluntaryWorkExperience']" );
+    var experienceQualifications = jQuery("input[Id$='experienceQualifications']" );
+    var whyDoYouWantToVolunteer = jQuery("input[Id$='whyDoYouWantToVolunteer']" );
+    var whyWorkWith = jQuery("input[Id$='whyWorkWithRNIB']" );
+    var tellUsAboutYourself = jQuery("input[Id$='tellUsAboutYourself']" );
+    var schoolName = jQuery("input[Id$='schoolName']" ); 
+    var schoolContact = jQuery("input[Id$='schoolContact']" );
+    var schoolPhone = jQuery("input[Id$='schoolPhone']" );
+    var universityName = jQuery("input[Id$='universityName']" );
+    var universityContact = jQuery("input[Id$='universityContact']" );
+    var universityPhone = jQuery("input[Id$='universityPhone']" );
+    var corpNumberOfVolunteers = jQuery("input[Id$='corpNumberOfVolunteers']" );
+    var refNoReferences = jQuery("select[id$='refNoReferences']");
+    //Are there no references available?
+    var noReferencesAvailable;
+    if (isEmpty(refNoReferences.val()) || refNoReferences.val() == 'Yes'){
+        noReferencesAvailable = true;
+    }else {
+        noReferencesAvailable = false;
+    }
+    var refNoReferencesExplain = jQuery("textarea[Id$='refNoReferencesExplain']" );
+    var refOneSaluation = jQuery("select[Id$='refOneSaluation']" );
+    var refTwoSalutation = jQuery("select[Id$='refTwoSalutation']" );
+    var refOneFirstName = jQuery("input[Id$='refOneFirstName']" );
+    var refTwoFirstName = jQuery("input[Id$='refTwoFirstName']" );
+    var refOneLastName = jQuery("input[Id$='refOneLastName']" );
+    var refTwoLastName = jQuery("input[Id$='refTwoLastName']" );
+    var refOneMailingStreet = jQuery("textarea[Id$='refOneMailingStreet']" );
+    var refTwoMailingStreet = jQuery("textarea[Id$='refTwoMailingStreet']" );
+    var refOneMailingCity = jQuery("input[Id$='refOneMailingCity']" );
+    var refTwoMailingCity = jQuery("input[Id$='refTwoMailingCity']" );
+    var refOneMailingState = jQuery("input[Id$='refOneMailingState']" );
+    var refTwoMailingState = jQuery("input[Id$='refTwoMailingState']" );
+    var refOneMailingPostalCode = jQuery("input[Id$='refOneMailingPostalCode']" );
+    var refTwoMailingPostalCode = jQuery("input[Id$='refTwoMailingPostalCode']" );
+    var refOneWorkPhone = jQuery("input[Id$='refOneWorkPhone']" );
+    var refTwoWorkPhone = jQuery("input[Id$='refTwoWorkPhone']" );
+    var refOneWorkEmail = jQuery("input[Id$='refOneWorkEmail']" );
+    var refTwoWorkEmail = jQuery("input[Id$='refTwoWorkEmail']" );
+    var refOneRelationship = jQuery("input[Id$='refOneRelationship']" );
+    var refTwoRelationship = jQuery("input[Id$='refTwoRelationship']" );
+    var criminalCheck = jQuery("select[Id$='criminalCheck']" );
+    var criminalInput = jQuery("textarea[Id$='criminalInput']" );
+    //var eoDateOfBirth = jQuery("input[Id$='eoDateOfBirth']" );
+    //var eoAge = jQuery("input[Id$='eoAge']" );
+    var eoGender = jQuery("select[Id$='eoGender']" );
+    //var eoMaritalStatus = jQuery("select[Id$='eoMaritalStatus']" );
+    var eoDisability = jQuery("select[Id$='eoDisability']" );
+    //var eoEthnicity = jQuery("select[Id$='eoEthnicity']" );
+    //var eoReligion = jQuery("select[Id$='eoReligion']" );
+    var dataProtection = jQuery("input[id$='dataProtection']");
+    //Has the data protection statement been agreed to?
+    var dataProtectionChecked;
+    \
+    if (isEmpty(dataProtection.val()) || 'No' == dataProtection.val()){
+        dataProtectionChecked = false;
+    }else {
+        dataProtectionChecked = true;
+    } 
+    
+    //Now validate fields dependant on boolean show values
+    
+    if (showCorporate){
+
+        //if(isEmpty(corpContactSaluation.val())) fieldNames += 'Contact Salutation\n';
+        if(isEmpty(corpContactLastName.val())) fieldNames += 'Contact Last Name\n';
+        if(isEmpty(corpContactFirstName.val())) fieldNames += 'Contact First Name\n';
+        //if(isEmpty(corpContactPreferredPhone.val())) fieldNames += 'Contact Preferred Phone\n';
+        if(isEmpty(corpContactEmail.val())) fieldNames += 'Contact Email\n';
+        
+        if (isEmpty(corpContactPhone.val()) && isEmpty(corpContactMobilePhone.val()) && isEmpty(corpContactOtherPhone.val())){
+            fieldNames += 'Phone Number\n';
+        } 
+        
+        //if (whichPhone == 'Home'){
+        //    if(isEmpty(corpContactPhone.val())) fieldNames += 'Contact Home Phone\n';    
+        //else if (whichPhone == 'Work'){
+        //   if(isEmpty(corpContactWorkPhone.val())) fieldNames += 'Contact Work Phone\n';
+        //else if (whichPhone == 'Mobile'){
+        //    if(isEmpty(corpContactMobilePhone.val())) fieldNames += 'Contact Mobile Phone\n';
+        //else if (whichPhone == 'Other'){
+        //    if(isEmpty(corpContactOtherPhone.val())) fieldNames += 'Contact Other Phone\n';
+        //}
+        
+
+        if (isEmpty(corpNumberOfVolunteers.val())) fieldNames += 'Number Of Volunteers\n';
+        
+    }
+
+    if (showStandard || showIntern || showSpecialist || showPeerSupport){
+        var criminalCheck = criminalCheck.val();
+
+        if (criminalCheck == 'Yes'){
+            if (isEmpty(criminalInput.val())) fieldNames += 'Criminal Offence Details\n';
+        }
+        
+        if (criminalCheck == '') fieldNames += 'Criminal Offence Conviction\n';
+        
+
+    
+        //if (isEmpty(availability.val())) fieldNames += 'Availability\n';
+        //if (isEmpty(howDidYouHear.val())) fieldNames += 'How Did You Hear About Us\n';
+        //if (isEmpty(areasOfInterest.val())) fieldNames += 'Areas Of Interest\n';
+        if (numRefsRequired > 0){
+            if (noReferencesAvailable){
+                if (isEmpty(refNoReferencesExplain.val())) fieldNames += 'References Unavailable Explanation\n';
+            }else {
+                if (numRefsRequired == 1){
+                    //if(isEmpty(refOneSaluation.val())) fieldNames += 'Reference One Salutation\n';
+                    if(isEmpty(refOneFirstName.val())) fieldNames += 'Reference One First Name\n';
+                    if(isEmpty(refOneLastName.val())) fieldNames += 'Reference One Last Name\n';
+                    if(isEmpty(refOneMailingStreet.val())) fieldNames += 'Reference One Street Address\n';
+                    if(isEmpty(refOneMailingCity.val())) fieldNames += 'Reference One City Address\n';
+                    if(isEmpty(refOneMailingState.val())) fieldNames += 'Reference One County Address\n';
+                    if(isEmpty(refOneMailingPostalCode.val())) fieldNames += 'Reference One Postal Code\n';
+                    if(isEmpty(refOneWorkPhone.val())) fieldNames += 'Reference One Work Phone Number\n';
+                    //if(isEmpty(refOneWorkEmail.val())) fieldNames += 'Reference One Email Address\n';
+                    if(isEmpty(refOneRelationship.val())) fieldNames += 'Reference One Relationship To Applicant\n';
+                    
+                   
+                    
+                }else if (numRefsRequired == 2){
+                    //if(isEmpty(refOneSaluation.val())) fieldNames += 'Reference One Salutation\n';
+                    //if(isEmpty(refTwoSalutation.val())) fieldNames += 'Reference Two Salutation\n';
+                    if(isEmpty(refOneFirstName.val())) fieldNames += 'Reference One First Name\n';
+                    if(isEmpty(refTwoFirstName.val())) fieldNames += 'Reference Two First Name\n';
+                    if(isEmpty(refOneLastName.val())) fieldNames += 'Reference One Last Name\n';
+                    if(isEmpty(refTwoLastName.val())) fieldNames += 'Reference Two Last Name\n';
+                    if(isEmpty(refOneMailingStreet.val())) fieldNames += 'Reference One Street Address\n';
+                    if(isEmpty(refTwoMailingStreet.val())) fieldNames += 'Reference Two Street Address\n';
+                    if(isEmpty(refOneMailingCity.val())) fieldNames += 'Reference One City Address\n';
+                    if(isEmpty(refTwoMailingCity.val())) fieldNames += 'Reference Two City Address\n';
+                    //if(isEmpty(refOneMailingState.val())) fieldNames += 'Reference One County Address\n';
+                    //if(isEmpty(refTwoMailingState.val())) fieldNames += 'Reference Two County Address\n';
+                    if(isEmpty(refOneMailingPostalCode.val())) fieldNames += 'Reference One Postal Code\n';
+                    if(isEmpty(refTwoMailingPostalCode.val())) fieldNames += 'Reference Two Postal Code\n';
+                    if(isEmpty(refOneWorkPhone.val())) fieldNames += 'Reference One Daytime Phone Number\n';
+                    if(isEmpty(refTwoWorkPhone.val())) fieldNames += 'Reference Two Daytime Phone Number\n';
+                    //if(isEmpty(refOneWorkEmail.val())) fieldNames += 'Reference One Email Address\n';
+                    //if(isEmpty(refTwoWorkEmail.val())) fieldNames += 'Reference Two Email Address\n';
+                    if(isEmpty(refOneRelationship.val())) fieldNames += 'Reference One Relationship To Applicant\n';
+                    if(isEmpty(refTwoRelationship.val())) fieldNames += 'Reference Two Relationship To Applicant\n';
+                    
+                }
+            }
+        }
+        
+    }
+    
+    if (showIntern || showSpecialist){
+        //if (isEmpty(education.val())) fieldNames += 'Education\n';
+        //if (isEmpty(voluntaryWorkExperience.val())) fieldNames += 'Voluntary or Work Experience\n';
+        //if (isEmpty(experienceQualifications.val())) fieldNames += 'Experience / Qualifications\n';
+    }
+    
+    //Finally validate all those fields that will always show
+
+    if (!showCorporate){
+        
+        //if(isEmpty(contactSaluation.val())) fieldNames += 'Contact Salutation\n';
+        if(isEmpty(contactFirstName.val())) fieldNames += 'Contact First Name\n';
+        if(isEmpty(contactLastName.val())) fieldNames += 'Contact Last Name\n';
+
+        if(isEmpty(contactMailingStreet.val())) fieldNames += 'Contact Address (Street)\n';
+        if(isEmpty(contactMailingCity.val())) fieldNames += 'Contact Address (City)\n';
+        //if(isEmpty(contactMailingState.val())) fieldNames += 'Contact Address (County)\n';
+        if(isEmpty(contactMailingPostalCode.val())) fieldNames += 'Contact Address (Post Code)\n';
+        //if(isEmpty(contactPreferredPhone.val())) fieldNames += 'Contact Preferred Phone\n';
+        if(isEmpty(contactEmail.val())) fieldNames += 'Contact Email\n';
+        //var whichPhone = contactPreferredPhone.val();
+
+        //if (whichPhone == 'Home'){
+        //    if(isEmpty(contactPhone.val())) fieldNames += 'Contact Home Phone\n';    
+        //}else if (whichPhone == 'Work'){
+        //    if(isEmpty(contactWorkPhone.val())) fieldNames += 'Contact Work Phone\n';
+        //}else if (whichPhone == 'Mobile'){
+        //    if(isEmpty(contactMobilePhone.val())) fieldNames += 'Contact Mobile Phone\n';
+        //}else if (whichPhone == 'Other'){
+        //    if(isEmpty(contactOtherPhone.val())) fieldNames += 'Contact Other Phone\n';
+        //}
+        
+        if (isEmpty(preferredCorrespondence.val())) fieldNames += 'Preferred Correspondence\n';
+        
+    }
+    
+    if (showWorkExperience){
+        if (isEmpty(schoolName.val())) fieldNames += 'School / College Name\n';
+        if (isEmpty(schoolContact.val())) fieldNames += 'School / College Contact\n';
+        if (isEmpty(schoolPhone.val())) fieldNames += 'School / College Phone Number\n';
+    }
+    
+    if (showWorkPlacement){
+        if (isEmpty(universityName.val())) fieldNames += 'College / University / Workplace Name\n';
+        if (isEmpty(universityContact.val())) fieldNames += 'College / University / Workplace Contact\n';
+        if (isEmpty(universityPhone.val())) fieldNames += 'College / University / Workplace Phone Number\n';        
+    }
+    
+    if (showStandard || showIntern || showOneOff || showSpecialist || showTrustee){
+        //if (isEmpty(eoDateOfBirth.val())) fieldNames += 'Equal Opportunities - Date Of Birth\n';
+        if (isEmpty(eoGender.val())) fieldNames += 'Equal Opportunities - Gender\n';
+        //if (isEmpty(eoAge.val())) fieldNames += 'Equal Opportunities - Age\n';
+        //if (isEmpty(eoMaritalStatus.val())) fieldNames += 'Equal Opportunities - Marital Status\n';
+        if (isEmpty(eoDisability.val())) fieldNames += 'Equal Opportunities - Disability\n';
+        //if (isEmpty(eoEthnicity.val())) fieldNames += 'Equal Opportunities - Ethnicity\n';
+        //if (roleLocation == 'Northern Ireland'){
+        //    if (isEmpty(eoReligion.val())) fieldNames += 'Equal Opportunities - Religion\n';
+        //}
+    }
+    
+    //if (showWorkExperience || showWorkPlacement ){
+        if (isEmpty(ecdName.val())) fieldNames += 'Emergency Contact Name\n';
+        if (isEmpty(ecdRelationship.val())) fieldNames += 'Emergency Contact Relationship\n';
+        if (isEmpty(ecdPhone.val())) fieldNames += 'Emergency Contact Phone\n';
+        //if (isEmpty(ecdMobile.val())) fieldNames += 'Emergency Contact Mobile Phone\n';
+    //}
+
+
+        
+    if (!dataProtectionChecked){
+        if (fieldNames.length == 0){
+            fieldNames += 'You must agree to the Legal Declaration & Data Protection statement\n';
+        }else {
+            fieldNames += '\nAnd you must agree to the Legal Declaration & Data Protection statement\n';
+        }
+    }
+
+    if (fieldNames.length > 0){
+        alert(errorMsgString + fieldNames);
+        if (!noReferencesAvailable){
+            if (numRefsRequired == 1){
+                if(isEmpty(refOneWorkEmail.val())){
+                    var alertString = 'You have not provided an email address for ' + refOneFirstName.val() + ' ' + refOneLastName.val();
+                    var alertString2 = '\nProviding an email address will speed up your application.';
+                    window.alert(alertString + alertString2);
+                }
+            }else if (numRefsRequired == 2){
+                var alertString = 'You have not provided an email address for \n';
+                var refOne = refOneFirstName.val() + ' ' + refOneLastName.val() + '\n';
+                var refTwo = refTwoFirstName.val() + ' ' + refTwoLastName.val() + '\n';
+                var alertString2 = 'Providing an email address will speed up your application.';
+                var fullAlertString = alertString;
+                
+                if(isEmpty(refOneWorkEmail.val())){
+                    fullAlertString += refOne;
+                }
+                if (isEmpty(refOneWorkEmail.val())){
+                    fullAlertString += refTwo;
+                }
+                fullAlertString += alertString2;
+                
+                if (isEmpty(refOneWorkEmail.val()) || isEmpty(refTwoWorkEmail.val())){
+                    alert(fullAlertString);
+                }
+            }
+        }
+         
+        //2014-02-11 : SM : Turning off validation return of false to enable form submission
+        return false;
+        
+        //return true;
+    }else {
+        //Turn off the Return True to keep the page on the screen
+        //Turn back on to go live
+        return true;
+        //return false;
+    }
+    
+    
+}
+
+function confirmWithdraw(){
+   return confirm("Are you sure you wish to withdraw this application?");
+}
+</script>
+<apex:pageBlock >
+
+<apex:pageBlockButtons >
+    <apex:commandButton value="Save" action="{!doSave}"/>
+    <apex:commandButton value="Save & Submit" onclick="javascript: return validateForm();" action="{!doSubmit}"/>
+    <!-- Change the button to the NON Action= one, to see just the validation code working -->
+    <!--<apex:commandButton value="Save & Submit" onclick="javascript: return validateForm();" />-->
+    <apex:commandButton value="Close" action="{!doClose}" immediate="true"/>
+    <apex:commandButton value="Withdraw Application" rendered="{!!isNewApplication}" onclick="javascript: return confirmWithdraw();" action="{!withdrawApplication}"/>
+</apex:pageBlockButtons>
+<apex:pageBlockSection title="Opportunity Details" columns="2">
+    <apex:outputField value="{!theRole.Role_Title__c}"/>
+    <apex:outputField id="roleLocation" value="{!theRole.Location__c}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection title="Account Information" rendered="{!showCorporate}" columns="2">
+    <apex:inputField value="{!theApplication.Corporate_Account_Name__c}" tabOrderHint="1"/>
+    <apex:inputField value="{!theApplication.Corporate_Account_Phone__c}" tabOrderHint="2"/>
+    <apex:inputField value="{!theApplication.Corporate_Account_Billing_Street__c}" tabOrderHint="3"/>
+    <label/>
+    <apex:inputField value="{!theApplication.Corporate_Account_Billing_City__c}" tabOrderHint="4"/>
+    <label/>
+    <apex:inputField value="{!theApplication.Corporate_Account_Billing_State__c}" tabOrderHint="5"/>
+    <label/>
+    <apex:inputField value="{!theApplication.Corporate_Account_Billing_Country__c}" tabOrderHint="6"/>
+    <label/>
+    <apex:inputField value="{!theApplication.Corporate_Account_Billing_PostalCode__c}" tabOrderHint="7"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection title="Contact Information" rendered="{!showCorporate}" columns="2">
+    <apex:inputField id="corpContactSaluation" value="{!theApplicant.Salutation}" tabOrderHint="8"/>    
+    <apex:inputField id="corpContactLastName" value="{!theApplicant.LastName}" tabOrderHint="9"/>
+    <apex:inputField id="corpContactFirstName" value="{!theApplicant.FirstName}" tabOrderHint="10"/>
+    <label/>
+    <apex:inputField id="corpContactPhone" value="{!theApplicant.HomePhone}" tabOrderHint="11"/> 
+    <apex:inputField id="corpContactMobilePhone" value="{!theApplicant.MobilePhone}" tabOrderHint="12"/>
+    <apex:inputField id="corpContactOtherPhone" value="{!theApplicant.OtherPhone}" tabOrderHint="13"/>
+    <apex:inputField id="corpContactEmail" value="{!theApplicant.Email}" label="Email" tabOrderHint="14"/>
+    <b>test</b>
+
+
+</apex:pageBlockSection>
+<apex:pageBlockSection title="About You" rendered="{!!showCorporate}" columns="1">
+    <apex:inputField id="contactSaluation" value="{!theApplicant.Salutation}" tabOrderHint="15"/>
+    <apex:inputField id="contactFirstName" value="{!theApplicant.FirstName}" tabOrderHint="16"/>
+    <apex:inputField id="contactLastName" value="{!theApplicant.LastName}" tabOrderHint="17"/>   
+    <label/>
+    <apex:inputField id="contactMailingStreet" value="{!theApplicant.MailingStreet}" tabOrderHint="18"/>
+    <label/>    
+    <apex:inputField id="contactMailingCity" value="{!theApplicant.MailingCity}" tabOrderHint="19"/>    
+    <label/>    
+    <apex:inputField id="contactMailingState" value="{!theApplicant.MailingState}" tabOrderHint="20"/>    
+    <label/>    
+    <apex:inputField id="contactMailingPostalCode" value="{!theApplicant.MailingPostalCode}" tabOrderHint="21"/>
+    <label/>
+    <apex:inputField id="contactAccessTechRequired" value="{!theApplicant.Is_Access_Technology_Required__c}" tabOrderHint="22"/>
+    <apex:inputField id="contactAccessTechSelection" value="{!theApplicant.If_Yes_Contact__c}" tabOrderHint="23"/>
+    
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="Contact Details" columns="2" rendered="{!!showCorporate}">
+    <apex:inputField id="contactPhone" value="{!theApplicant.HomePhone}" tabOrderHint="24"/>
+    <apex:inputField id="contactMobilePhone" value="{!theApplicant.MobilePhone}" tabOrderHint="25"/>
+    <apex:inputField id="contactOtherPhone" value="{!theApplicant.OtherPhone}" tabOrderHint="26"/>
+    <apex:inputField id="contactEmail" value="{!theApplicant.Email}" label="Email" tabOrderHint="27"/>
+    <apex:inputField id="contactRegion" value="{!theApplicant.Region__c}" label="Region" tabOrderHint="28"/>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="Emergency Contact Details" columns="2">
+    <apex:inputField id="nameEmergencyContact" value="{!theApplicant.Emergency_Contact_Name__c}" tabOrderHint="29"/>
+    <apex:inputField id="relationshipEmergencyContact" value="{!theApplicant.Emergency_Contact_Relationship__c}" tabOrderHint="30"/>
+    <apex:inputField id="phoneEmergencyContact" value="{!theApplicant.Emergency_Contact_Phone__c}" tabOrderHint="31"/>
+    <apex:inputField id="mobileEmergencyContact" value="{!theApplicant.Emergency_Contact_Mobile__c}" tabOrderHint="32"/>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="School / College" rendered="{!showWorkExperience}" columns="2">
+    <apex:inputField id="schoolName" label="Name of School/College" value="{!theApplication.School_College__c}" tabOrderHint="33"/>
+    <apex:inputField id="schoolPhone" value="{!theApplication.School_College_Phone__c}"/>
+    <apex:inputField id="schoolContact" label="Named Contact" value="{!theApplication.School_College_Contact__c}" tabOrderHint="34"/>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="College / University / Workplace" rendered="{!showWorkPlacement}" columns="2">
+    <apex:inputField id="universityName" label="Name of College/University/Workplace" value="{!theApplication.College_Univeristy_Workplace__c}" tabOrderHint="35"/>
+    <apex:inputField id="universityPhone" value="{!theApplication.College_Univeristy_Workplace_Phone__c}" tabOrderHint="36"/>
+    <apex:inputField id="universityContact" label="Named contact" value="{!theApplication.College_Univeristy_Workplace_Contact__c}" tabOrderHint="37"/>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="Correspondence" rendered="{!!showCorporate}">
+    <apex:inputField id="preferredCorrespondence" value="{!theApplicant.Preferred_reading_correspondence_format__c}" tabOrderHint="38"/>
+     <apex:inputField id="preferredFormat" value="{!theApplicant.If_Other__c}" tabOrderHint="39"/>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="Education History" columns="1" rendered="{!showIntern || showSpecialist}">    
+ 
+  <apex:pageBlockSection id="Edu1" title="Education 1" >  
+    <apex:inputTextarea id="school" cols="40" rows="4" label="Secondary School/University/HE Institution" value="{!theApplication.School_University_HE_Institution__c}" tabindex="400"/>
+    <apex:inputTextarea id="nameadd" cols="40" rows="4" label="Name/Address/Dates From and To" value="{!theApplication.Name_Address_Dates_to_and_from__c}" tabindex="410"/>
+    <apex:inputTextarea id="subjects" cols="40" rows="4" label="Subjects" value="{!theApplication.Subjects__c}" tabindex="420"/>
+    <apex:inputTextarea id="qualification" cols="40" rows="4" label="Qualification" value="{!theApplication.Qualification__c}" tabindex="430"/>
+    <apex:inputTextarea id="grade" cols="40" rows="4" label="Grades" value="{!theApplication.Grades__c}" tabindex="440"/>
+    <apex:inputTextarea id="membodies" cols="40" rows="4" label="Membership of Professional Bodies" value="{!theApplication.Membership_of_professional_bodies__c}" tabindex="450"/>
+    <apex:inputTextarea id="memno" cols="40" rows="4" label="Membership No." value="{!theApplication.Membership_No__c}" tabindex="460"/>
+  </apex:pageBlockSection>
+  
+  <apex:pageBlockSection id="Edu2" title="Education 2" >  
+    <apex:inputTextarea id="school2" cols="40" rows="4" label="Secondary School/University/HE Institution" value="{!theApplication.School_University_HE_Institution2__c}" tabindex="470"/>
+    <apex:inputTextarea id="nameadd2" cols="40" rows="4" label="Name/Address/Dates From and To" value="{!theApplication.Name_Address_Dates_to_and_from2__c}" tabindex="480"/>
+    <apex:inputTextarea id="subjects2" cols="40" rows="4" label="Subjects" value="{!theApplication.Subjects2__c}" tabindex="490"/>
+    <apex:inputTextarea id="qualification2" cols="40" rows="4" label="Qualification" value="{!theApplication.Qualification2__c}" tabindex="500"/>
+    <apex:inputTextarea id="grade2" cols="40" rows="4" label="Grades" value="{!theApplication.Grades2__c}" tabindex="510"/>
+    <apex:inputTextarea id="membodies2" cols="40" rows="4" label="Membership of Professional Bodies" value="{!theApplication.Membership_of_professional_bodies2__c}" tabindex="520"/>
+    <apex:inputTextarea id="memno2" cols="40" rows="4" label="Membership No." value="{!theApplication.Membership_No2__c}" tabindex="530"/>
+  <script>twistSection(document.getElementById("{!$Component.Edu2}").childNodes[0].childNodes[0]); </script>
+  </apex:pageBlockSection>
+    
+  <apex:pageBlockSection id="Edu3" title="Education 3" >  
+    <apex:inputTextarea id="school3" cols="40" rows="4" label="Secondary School/University/HE Institution" value="{!theApplication.School_University_HE_Institution3__c}" tabindex="540"/>
+    <apex:inputTextarea id="nameadd3" cols="40" rows="4" label="Name/Address/Dates From and To" value="{!theApplication.Name_Address_Dates_to_and_from3__c}" tabindex="550"/>
+    <apex:inputTextarea id="subjects3" cols="40" rows="4" label="Subjects" value="{!theApplication.Subjects3__c}" tabindex="560"/>
+    <apex:inputTextarea id="qualification3" cols="40" rows="4" label="Qualification" value="{!theApplication.Qualification3__c}" tabindex="570"/>
+    <apex:inputTextarea id="grade3" cols="40" rows="4" label="Grades" value="{!theApplication.Grades3__c}" tabindex="580"/>
+    <apex:inputTextarea id="membodies3" cols="40" rows="4" label="Membership of Professional Bodies" value="{!theApplication.Membership_of_professional_bodies3__c}" tabindex="590"/>
+    <apex:inputTextarea id="memno3" cols="40" rows="4" label="Membership No." value="{!theApplication.Membership_No3__c}" tabindex="600"/>
+  <script>twistSection(document.getElementById("{!$Component.Edu3}").childNodes[0].childNodes[0]); </script>
+  </apex:pageBlockSection>
+
+ <apex:pageBlockSection title="Volunteering and Work History" columns="1" rendered="{!showIntern || showSpecialist}">
+  <apex:pageBlockSection id="workex1" title="Voluntary or Work Experience 1" >    
+    <apex:inputTextarea id="RecentEmploymentVoluntaryWork1" label="Please give details of your present or most recent employment/voluntary work first and work backwards" cols="50" rows="5" value="{!theApplication.Present_Recent_Employment_Voluntary_Work__c}" tabindex="610"/>
+    <apex:inputTextarea id="NameandAdd1" label="Employer's name and address: From (mm/yy) to (mm/yy)" cols="50" rows="5" value="{!theApplication.Employer_s_name_address_From_To__c}" tabindex="620"/>
+    <apex:inputTextarea id="DutiesandAchieve1" label="Position held including a brief description of your duties/main achievements" cols="50" rows="5" value="{!theApplication.Duties_and_Main_Achievements__c}" tabindex="630"/>
+  </apex:pageBlockSection>
+  
+  <apex:pageBlockSection id="workex2" title="Voluntary or Work Experience 2" >    
+    <apex:inputTextarea id="RecentEmploymentVoluntaryWork2" label="Please give details of your present or most recent employment/voluntary work first and work backwards" cols="50" rows="5" value="{!theApplication.Present_Recent_Employment_VoluntaryWork2__c}" tabindex="640"/>
+    <apex:inputTextarea id="NameandAdd2" label="Employer's name and address: From (mm/yy) to (mm/yy)" cols="50" rows="5" value="{!theApplication.Employer_s_name_address_From_To2__c}" tabindex="650"/>
+    <apex:inputTextarea id="DutiesandAchieve2" label="Position held including a brief description of your duties/main achievements" cols="50" rows="5" value="{!theApplication.Duties_and_Main_Achievements2__c}" tabindex="660"/>
+  <script>twistSection(document.getElementById("{!$Component.workex2}").childNodes[0].childNodes[0]); </script>
+  </apex:pageBlockSection>
+
+  <apex:pageBlockSection id="workex3" title="Voluntary or Work Experience 3" >    
+    <apex:inputTextarea id="RecentEmploymentVoluntaryWork3" label="Please give details of your present or most recent employment/voluntary work first and work backwards" cols="50" rows="5" value="{!theApplication.Present_Recent_Employment_VoluntaryWork3__c}" tabindex="670"/>
+    <apex:inputTextarea id="NameandAdd3" label="Employer's name and address: From (mm/yy) to (mm/yy)" cols="50" rows="5" value="{!theApplication.Employer_s_name_address_From_To3__c}" tabindex="680"/>
+    <apex:inputTextarea id="DutiesandAchieve3" label="Position held including a brief description of your duties/main achievements" cols="50" rows="5" value="{!theApplication.Duties_and_Main_Achievements3__c}" tabindex="690"/>
+  <script>twistSection(document.getElementById("{!$Component.workex3}").childNodes[0].childNodes[0]); </script>
+  </apex:pageBlockSection>  
+ </apex:pageBlockSection>
+</apex:pageBlockSection>
+
+
+<apex:pageBlockSection title="Skills and Experience" rendered="{!!showCorporate && !showTrustee}" columns="1">
+    <apex:inputTextarea id="experienceQualifications" cols="60" rows="5" label="Please tell us how your experience, skills and qualifications meet the requirements of the volunteer intern role you have applied for" value="{!theApplication.Experience_Qualifications__c}"  rendered="{!showIntern || showSpecialist}" tabindex="700"/>
+    <apex:outputPanel rendered="{!showIntern || showSpecialist}"><label/></apex:outputPanel>
+    <apex:inputTextarea id="whyDoYouWantToVolunteer" cols="60" rows="5" value="{!theApplication.Why_do_you_want_to_volunteer_for_us__c}" rendered="{!showPeerSupport || showStandard || showIntern || showOneOff || showSpecialist}" tabindex="710"/>
+    <apex:outputPanel rendered="{!showIntern || showSpecialist}"><label/></apex:outputPanel>
+    <apex:inputTextarea id="whyWorkWithRNIB" cols="60" rows="5" label="Why do you want to do your work experience with us?" value="{!theApplication.Why_do_work_experience_with_RNIB__c}" rendered="{!showWorkExperience}" tabindex="720"/>
+    
+    <apex:outputPanel rendered="{!showWorkPlacement}"><label/></apex:outputPanel>
+    <apex:inputTextarea id="whyWorkWithUs" cols="60" rows="5" label="Why do you want to take up your work placement with us?" value="{!theApplication.Why_do_work_experience_with_RNIB__c}" rendered="{!showWorkPlacement}" tabindex="730"/>
+    
+    <apex:outputPanel rendered="{!!showIntern && !showSpecialist}"><label/></apex:outputPanel>    
+    <apex:inputTextarea title="It will be easier to manage your application if you provide the information in these fields" label="Tell us about yourself and why you think you are suitable for this role?" id="tellUsAboutYourself" cols="60" rows="5" value="{!theApplication.Tell_us_about_yourself__c}" rendered="{!showPeerSupport || showStandard || showIntern || showOneOff || showSpecialist || showWorkExperience || showWorkPlacement}" tabindex="740"/>
+</apex:pageBlockSection>
+
+
+<apex:pageBlockSection id="addinfo" title="Additional Information" columns="1" rendered="{!showStandard || showIntern || showSpecialist || showOneOff || showPeerSupport || showWorkPlacement || showWorkExperience}">
+ 
+    <apex:inputField id="availability" label="When are you available to volunteer?" value="{!theApplicant.Availability__c}"  rendered="{!showStandard || showIntern || showSpecialist}" tabOrderHint="75"/>
+
+<!-- <apex:pageBlockSection title="Marketing" rendered="{!showPeerSupport || showStandard || showIntern || showOneOff || showSpecialist || showWorkPlacement}"> -->
+
+    <apex:inputField id="howDidYouHear" label="How did you hear about volunteering with RNIB Group?" value="{!theApplicant.How_did_you_hear_about_RNIB__c}" rendered="{!showPeerSupport || showStandard || showIntern || showOneOff || showSpecialist || showWorkPlacement}" tabOrderHint="76"/>
+
+<!-- <apex:pageBlockSection title="Areas of Interest" rendered="{!showPeerSupport || showStandard || showIntern || showOneOff || showSpecialist || showWorkExperience}"> -->
+
+    <apex:inputField id="areasOfInterest" label="Please indicate other areas that may be of interest to you" value="{!theApplicant.Areas_of_Interest__c}" rendered="{!showPeerSupport || showStandard || showIntern || showOneOff || showSpecialist || showWorkExperience || showWorkPlacement}" tabOrderHint="77"/>
+</apex:pageBlockSection>
+
+
+<apex:pageBlockSection title="Number of Volunteers" rendered="{!showCorporate}" columns="2">
+    <apex:inputField id="corpNumberOfVolunteers" value="{!theApplication.Number_of_Corporate_Volunteers__c}" tabOrderHint="78"/>
+</apex:pageBlockSection>
+<!-- MORE CODE TO GO HERE BEFORE REFERENCES -->
+<apex:pageBlockSection title="References ({!numberOfRefsRequired} required)" columns="2" rendered="{!showStandard || showIntern || showSpecialist || showPeerSupport}">
+  
+  <apex:outputText escape="false" value="{0}" rendered="{!(showStandard || showIntern || showSpecialist || showPeerSupport) && numberOfRefsRequired > 0}">
+    <apex:param value="To assess your suitability for the role, we will take up written character references from individuals aged 18 or over who are resident in the UK and have known you for at least one year. They must not be a family member or live in the same household as you. 
+  Please provide us with an email address. If your referee would prefer us to contact them in another way, please let us know."/>
+    </apex:outputText>
+    <br></br>
+  
+   <apex:inputField id="refOneSaluation" value="{!ref_contact_one.Salutation}" rendered="{!numberOfRefsRequired > 0}" tabOrderHint="79"/>
+    <apex:outputPanel rendered="{!numberOfRefsRequired == 1}"><label/></apex:outputPanel>
+    <apex:inputField id="refTwoSalutation" value="{!ref_contact_two.Salutation}" rendered="{!numberOfRefsRequired > 1}" tabOrderHint="89"/>
+    <apex:inputField id="refOneFirstName" value="{!ref_contact_one.FirstName}" rendered="{!numberOfRefsRequired > 0}" tabOrderHint="80"/>
+    <apex:outputPanel rendered="{!numberOfRefsRequired == 1}"><label/></apex:outputPanel>
+    <apex:inputField id="refTwoFirstName" value="{!ref_contact_two.FirstName}" rendered="{!numberOfRefsRequired > 1}" tabOrderHint="90"/>
+    <apex:inputField id="refOneLastName" value="{!ref_contact_one.ReferenceLastName__c}" rendered="{!numberOfRefsRequired > 0}" tabOrderHint="81"/>
+    <apex:outputPanel rendered="{!numberOfRefsRequired == 1}"><label/></apex:outputPanel>
+    <apex:inputField id="refTwoLastName" value="{!ref_contact_two.ReferenceLastName__c}" rendered="{!numberOfRefsRequired > 1}" tabOrderHint="91"/>
+    <apex:inputField id="refOneMailingStreet" value="{!ref_contact_one.MailingStreet}" rendered="{!numberOfRefsRequired > 0}" tabOrderHint="82"/>
+    <apex:outputPanel rendered="{!numberOfRefsRequired == 1}"><label/></apex:outputPanel>
+    <apex:inputField id="refTwoMailingStreet" value="{!ref_contact_two.MailingStreet}" rendered="{!numberOfRefsRequired > 1}" tabOrderHint="92"/>
+    <apex:inputField id="refOneMailingCity" value="{!ref_contact_one.MailingCity}" rendered="{!numberOfRefsRequired > 0}" tabOrderHint="83"/>
+    <apex:outputPanel rendered="{!numberOfRefsRequired == 1}"><label/></apex:outputPanel>
+    <apex:inputField id="refTwoMailingCity" value="{!ref_contact_two.MailingCity}" rendered="{!numberOfRefsRequired > 1}" tabOrderHint="93"/>    
+    <apex:inputField id="refOneMailingState" value="{!ref_contact_one.MailingState}" rendered="{!numberOfRefsRequired > 0}" tabOrderHint="84"/>
+    <apex:outputPanel rendered="{!numberOfRefsRequired == 1}"><label/></apex:outputPanel>
+    <apex:inputField id="refTwoMailingState" value="{!ref_contact_two.MailingState}" rendered="{!numberOfRefsRequired > 1}" tabOrderHint="94"/>    
+    <apex:inputField id="refOneMailingPostalCode" value="{!ref_contact_one.MailingPostalCode}" rendered="{!numberOfRefsRequired > 0}" tabOrderHint="85"/>
+    <apex:outputPanel rendered="{!numberOfRefsRequired == 1}"><label/></apex:outputPanel>
+    <apex:inputField id="refTwoMailingPostalCode" value="{!ref_contact_two.MailingPostalCode}" rendered="{!numberOfRefsRequired > 1}" tabOrderHint="95"/>
+    <apex:inputField id="refOneWorkPhone" value="{!ref_contact_one.Daytime_Phone__c}" rendered="{!numberOfRefsRequired > 0}" tabOrderHint="86"/>
+    <apex:outputPanel rendered="{!numberOfRefsRequired == 1}"><label/></apex:outputPanel>
+    <apex:inputField id="refTwoWorkPhone" value="{!ref_contact_two.Daytime_Phone__c}" rendered="{!numberOfRefsRequired > 1}" tabOrderHint="96"/>
+    <apex:inputField id="refOneWorkEmail" value="{!ref_contact_one.Email}" rendered="{!numberOfRefsRequired > 0}" tabOrderHint="87"/>
+    <apex:outputPanel rendered="{!numberOfRefsRequired == 1}"><label/></apex:outputPanel>
+    <apex:inputField id="refTwoWorkEmail" value="{!ref_contact_two.Email}" rendered="{!numberOfRefsRequired > 1}" tabOrderHint="97"/>    
+    <apex:inputField id="refOneRelationship" value="{!reference_one.Relationship__c}" rendered="{!numberOfRefsRequired > 0}" tabOrderHint="88"/>
+    <apex:outputPanel rendered="{!numberOfRefsRequired == 1}"><label/></apex:outputPanel>
+    <apex:inputField id="refTwoRelationship" value="{!reference_two.Relationship__c}" rendered="{!numberOfRefsRequired > 1}" tabOrderHint="98"/>
+    <apex:outputPanel rendered="{!numberOfRefsRequired > 0}"><b>{!$Label.ApplicationNoReferences}</b></apex:outputPanel>
+    <apex:outputPanel rendered="{!numberOfRefsRequired == 1}"><label/></apex:outputPanel>
+    <apex:outputPanel rendered="{!numberOfRefsRequired > 1}"><label/></apex:outputPanel>    
+    <!-- <b>{!$Label.ApplicationNoReferences}</b> -->
+    <apex:inputField id="refNoReferences" value="{!theApplication.References_Unavailable__c}" rendered="{!numberOfRefsRequired > 0}"/>
+    <apex:outputPanel rendered="{!numberOfRefsRequired == 1}"><label/></apex:outputPanel>
+    <apex:inputTextarea id="refNoReferencesExplain" cols="60" rows="5" value="{!theApplication.References_Unavailable_Explanation__c}" rendered="{!numberOfRefsRequired > 0}" tabindex ="990"/>
+    <br/>
+
+</apex:pageBlockSection>
+<!-- MORE CODE TO GO HERE BEFORE EQUAL OPPS -->
+
+<apex:pageBlockSection title="Criminal Offence" rendered="{!showStandard || showIntern || showSpecialist}">
+    <apex:inputField id="criminalCheck" label="Have you been convicted of any criminal offence?" value="{!theApplication.Convicted_of_Criminal_Offence__c}" tabOrderHint="100"/>
+    <label/>
+    <apex:inputTextarea id="criminalInput" label="If yes, please give details. Please note that a conviction will not necessarily exclude you from volunteering with RNIB Group, but will be taken into account when assessing your suitability." cols="60" rows="5"  value="{!theApplication.Criminal_Offence_Details__c}" tabindex="1010"/>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="Legal Declaration & Data Protection" columns="1"> 
+    <apex:outputPanel ><label/></apex:outputPanel>
+    <!-- POSSIBLE MORE CHECKBOXES IN HERE -->
+    <apex:outputText escape="false" value="<b>Data Protection:</b><br>We will only use your personal details in relation to your support with RNIB Group and will not pass your details on the third parties."/>
+    <apex:outputText escape="false" value="<b>Legal Declaration</b><br>In submitting this form to RNIB Group:<br>
+    * I declare that the details given by me on the application form are correct to the best of my knowledge and belief.<br>
+    * I understand that if I give any information which is false, or I withhold any relevant information, this may lead to my application being rejected, or if already appointed, to ending your relationship as a volunteer with RNIB Group.<br>
+    * I understand that information given on the form will be processed by a computer and used for registration and equal opportunities monitoring purposes under the Data Protection Acts 1984 and 1998.<br>"/>
+    <apex:outputText escape="false" value="Please confirm that you agree to the above terms and conditions by ticking this box (Data protection checkbox)"/>
+    <apex:inputField id="dataProtection" value="{!theApplication.Legal_Declariation__c}" label="I agree and understand" tabOrderHint="102"/>
+    <apex:outputText escape="false" value="<b>Please note that we cannot accept your application unless you agree to these terms and conditions.</b><br>"/>
+   
+</apex:pageBlockSection>
+<apex:pageBlockSection title="Equal Opportunities" columns="2" rendered="{!showStandard || showIntern || showOneOff || showSpecialist || showTrustee || showPeerSupport}">
+    <apex:inputField id="eoGender" value="{!theApplicant.Gender__c}" tabOrderHint="103"/> 
+    <apex:inputField id="eoDisability" value="{!theApplicant.Disability__c}" tabOrderHint="104"/>
+    <!-- 2014-02-11 : SM : Do not need the Age field, as it's a formula field -->
+    <!-- <apex:inputField id="eoAge" value="{!theApplicant.Age__c}"/> -->
+    <apex:inputField id="eoDisabilityNotes" value="{!theApplicant.Disability_Notes__c}" tabOrderHint="105"/>   
+    
+    <apex:inputField id="eoEthnicity" value="{!theApplicant.Ethnicity_list__c}" tabOrderHint="106"/>
+
+</apex:pageBlockSection>
+
+<apex:pageBlockSection columns="1" rendered="{!showStandard || showIntern || showOneOff || showSpecialist || showTrustee || showPeerSupport}">
+    <apex:outputText escape="false" value="<b>Once you are ready to submit this part of your application, please press the save and submit button below. You will not be able to return to edit the  application once submitted, so please only do so when you are sure you have completed all of the sections.<br/>
+     If you are not ready to submit, please press save. </b>"></apex:outputText>
+
+</apex:pageBlockSection>
+
+
+</apex:pageBlock>
+</apex:form>
+
+</apex:page>

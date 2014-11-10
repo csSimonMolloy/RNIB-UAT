@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Customer_Name__c</fullName>
+        <inlineHelpText>Enter the name of the Customer you are assisting here</inlineHelpText>
+        <label>Customer/Group Name</label>
+        <length>80</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Request__c</fullName>
+        <label>Customer Request</label>
+        <referenceTo>Customer_Requests__c</referenceTo>
+        <relationshipLabel>Time Donations</relationshipLabel>
+        <relationshipName>Time_Donations</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Individuals__c</fullName>
+        <formula>IF( RecordType.DeveloperName = &quot;Individual_Time_Donation&quot;, 1, IF(  Number_of_People_in_Group__c &lt;&gt; 0,  Number_of_People_in_Group__c , 0) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Number of Individuals</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_People_in_Group__c</fullName>
+        <inlineHelpText>Enter the total number of customers in the group</inlineHelpText>
+        <label>Number of People in Group</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Total_Hours_Donated__c</fullName>
+        <inlineHelpText>Shows the Total Number of Hours Donated for this Time Donation</inlineHelpText>
+        <label>Total Hours Donated</label>
+        <summarizedField>Time_Donation_Entry__c.Time_Donated_in_Hours__c</summarizedField>
+        <summaryForeignKey>Time_Donation_Entry__c.TIme_Donation__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Volunteer_Name__c</fullName>
+        <label>Volunteer Name</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Time Donations</relationshipLabel>
+        <relationshipName>Time_Donations</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>Volunteer_Role__c</fullName>
+        <label>Volunteer Role</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipLabel>Time Donations</relationshipLabel>
+        <relationshipName>Time_Donations</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <label>Time Donation</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Volunteer_Role__c</columns>
+        <columns>Volunteer_Name__c</columns>
+        <columns>Customer_Name__c</columns>
+        <columns>Number_of_Individuals__c</columns>
+        <columns>Total_Hours_Donated__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Time_Donations</fullName>
+        <columns>NAME</columns>
+        <columns>Volunteer_Role__c</columns>
+        <columns>Volunteer_Name__c</columns>
+        <columns>Customer_Name__c</columns>
+        <columns>Number_of_Individuals__c</columns>
+        <columns>Total_Hours_Donated__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>My Time Donations</label>
+    </listViews>
+    <nameField>
+        <label>Time Donation Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Time Donations</pluralLabel>
+    <recordTypes>
+        <fullName>Group_Time_Donation</fullName>
+        <active>true</active>
+        <description>Use this record type to create Time Donations for Groups of Customers</description>
+        <label>Group Customer Time Donation</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Individual_Time_Donation</fullName>
+        <active>true</active>
+        <description>Use this record type to create Time Donations for Individuals</description>
+        <label>Individual Customer Time Donation</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Non_Customer_Time_Donation</fullName>
+        <active>true</active>
+        <description>Use this record type to create Non-Customer Time Donations</description>
+        <label>Non-Customer Time Donation</label>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>RECORDTYPE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Number_of_Individuals__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Total_Hours_Donated__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Volunteer_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Volunteer_Role__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Customer_Name__c</customTabListAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <searchResultsAdditionalFields>RECORDTYPE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Customer_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Number_of_Individuals__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Total_Hours_Donated__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Volunteer_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Volunteer_Role__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>New_Group_Customer_Time_Donation</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>url</linkType>
+        <masterLabel>New Group Customer Time Donation</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/a0K/e?retURL=%2Fa0K%2Fo&amp;RecordType=012g0000000CshI&amp;ent=01Ig0000000D66E</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Individual_Time_Donation</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New Individual Time Donation</masterLabel>
+        <openType>noSidebar</openType>
+        <protected>false</protected>
+        <url>/a0K/e?retURL=%2Fa0K%2Fo&amp;RecordType=012g0000000CshD&amp;ent=01Ig0000000D66E</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Non_Customer_Time_Donation</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>url</linkType>
+        <masterLabel>New Non-Customer Time Donation</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/a0K/e?retURL=%2Fa0K%2Fo&amp;RecordType=012g0000000CshN&amp;ent=01Ig0000000D66E</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Time_Donation</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>url</linkType>
+        <masterLabel>New Time Donation</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/setup/ui/recordtypeselect.jsp?ent=01Ig0000000D66E&amp;retURL=%2Fa0K%2Fo&amp;save_new_url=%2Fa0K%2Fe%3FretURL%3D%252Fa0K%252Fo&amp;retURL=/apex/VolunteerLandingPage?sfdc.tabName=01rg00000004Tr6&amp;CF00Ng0000000jpjH={!User.Contact}</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,219 @@
+<apex:page standardController="Expense_Form__c" extensions="AttachAsPDFController" action="{!attachMe}" showHeader="False" standardStylesheets="True" renderAs="PDF" cache="False" title="{!Expense_Form__c.Name}" applyhtmltag="false">
+<head>
+<style>
+
+  @page{
+    size:landscape;
+        @bottom-left {    
+            content: element(footer);
+        }
+  }
+
+  body{    
+    font-family: Arial Unicode MS;
+    font-size:14pt;
+    color:#333333;
+  }
+
+  p {
+    font-family: arial;
+    font-size:14pt;
+    color:#333333;                   
+  }
+
+  p.clear{
+    clear:both;
+  }
+
+  #table_header{
+    width:100%;
+    float: left;
+    margin-bottom: 10px;
+  }
+ 
+  #table_headerwidth{
+    width:100%; 
+    text-align: right;
+  }
+
+  .table_subheader{
+    width: 100%;
+    height: 100%;
+  }
+
+  #table_subheaderleft{
+    width: 500px;
+  }
+
+  #table_subheaderight{
+    width: 300px;
+    float: right;
+  } 
+
+  .expensetable{
+    width: 100%;
+    float: left;
+  }  
+
+  tr.expensetableheader td{
+  border: 1px solid black;
+  vertical-align: text-top;
+  }
+
+  tr.expensetableitems td{
+  border: 1px solid black;
+  vertical-align: text-top;
+  }
+  
+  div.footer {
+      display: block;
+      padding: 5px;
+      position: running(footer);
+  }
+
+
+</style>
+
+</head>    
+
+<body>
+  <div id="table_header" style="font-size:14pt; font-family: Arial Unicode MS">
+    <!-- <table id="table_headerwidth">
+      <tr>
+        <td><apex:image value="{!$Resource.logo}" alt="Logo"  style="image"/></td>
+      </tr>
+    </table> -->
+  </div>
+
+  <div class="table_subheader" style="font-size:14pt; font-family: Arial Unicode MS">
+    <div id="table_subheaderleft" style="float: left;">
+      <table>
+        <tr>
+          <td>Month/Year of Claim:</td>
+          <td><apex:outputText value="{0,date,dd/MM/yyyy}"><apex:param value="{!Expense_Form__c.Date__c}" /></apex:outputText></td>
+        </tr>
+        <tr>
+          <td>Name:</td>
+          <td><apex:outputField value="{!Expense_Form__c.Volunteer_Role__r.Applicant__r.Name}"/></td>
+        </tr>
+        <tr>
+          <td valign="top">Address:</td>
+          <td><apex:outputField value="{!Expense_Form__c.Volunteer_Role__r.Applicant__r.MailingStreet}"/><br/><apex:outputField value="{!Expense_Form__c.Volunteer_Role__r.Applicant__r.MailingCity}"/><br/><apex:outputField value="{!Expense_Form__c.Volunteer_Role__r.Applicant__r.MailingState}"/></td>
+        </tr>
+        <tr>
+          <td>Post Code:</td>
+          <td><apex:outputField value="{!Expense_Form__c.Volunteer_Role__r.Applicant__r.MailingPostalCode}"/></td>
+        </tr>
+      </table>
+    </div>
+    <div id="table_subheaderight">
+      <table>
+        <tr>
+          <td colspan="2">For Finance use only:</td>
+        </tr>
+        <tr>
+          <td>PE No:</td>
+          <td>_________________</td>
+        </tr>
+        <tr>
+          <td>IN No:</td>
+          <td>_________________</td>
+        </tr>
+        <tr>
+          <td>Supplier No:</td>
+          <td>_________________ </td>
+        </tr>
+      </table>
+    </div>
+    <div style="clear: both;">
+    </div>
+  </div>
+  <!-- 
+  <p class="clear" style="font-size:14pt; font-family: Arial Unicode MS"></p>
+  <p><b>Notes:</b><br/>
+  1. Number each of your receipts and attach them to your claim form.<br/>
+  2. Enter expense details in the relevant sections ensuring that you explain the reason for expenditure.<br/>
+  3. If you are claiming for a journey travelled by car, you don't need a receipt.  Enter the number of miles travelled that day.  Mileage is reimbursed at 45p per mile.  Multiply your number of miles traveled by 45p to give the amount to claim for your journey.<br/>
+  4. Sign this expenses sheet and return it to your manager.</p>
+  <p></p> 
+  -->
+  <br/>
+  <div style="font-size:14pt; font-family: Arial Unicode MS">
+  <strong>Notes:</strong><br/>
+  1. Number each of your receipts and attach them to your claim form.<br/>
+  2. Enter expense details in the relevant sections ensuring that you explain the reason for expenditure.<br/>
+  3. If you are claiming for a journey travelled by car, you don't need a receipt.  Enter the number of miles travelled that day.  Mileage is reimbursed at 45p per mile.  Multiply your number of miles traveled by 45p to give the amount to claim for your journey.<br/>
+  4. Sign this expenses sheet and return it to your manager.<br/>
+  </div> 
+  <p class="clear"></p>
+  
+  <table class="expensetable" cellspacing="0" cellpadding="0">
+    <tr class="expensetableheader">
+      <td>Date</td>
+      <td>Description</td>
+      <td>Receipt Number</td>
+      <td>Number of Miles Travelled</td>
+      <td>Type</td>
+      <td>Amount</td>
+      <td>Full Cost Code (Manager Use Only)</td>
+      <td>VAT (Manager Use Only)</td>
+    </tr>
+    <apex:repeat value="{!Expense_Form__c.Expenses__r}" var="I">
+    <tr class="expensetableitems">
+      <td><apex:outputText value="{0,date,dd/MM/yyyy}"><apex:param value="{!I.Date__c}" /></apex:outputText></td>
+      <td><apex:outputText >{!I.Description__c}</apex:outputText></td>
+      <td><apex:outputText >{!I.Receipt_Number__c}</apex:outputText></td>
+      <td><apex:outputText >{!I.Number_of_Miles_Travelled__c}</apex:outputText></td>
+      <td><apex:outputText >{!I.Type__c}</apex:outputText></td>
+      <td><apex:outputText value="{0,number,0.00}"><apex:param value="{!I.Amount__c}" /></apex:outputText></td> 
+      <td><apex:outputText >{!I.Full_Cost_Code_Manager_Use_Only__c}</apex:outputText></td>
+      <td><apex:outputText >{!I.VAT_Manager_Use_Only__c}</apex:outputText></td>
+    </tr>
+    </apex:repeat>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><strong>Total Amount:</strong></td>
+      <td><apex:outputText value="{0,number,0.00}"><apex:param value="{!Expense_Form__c.Total_Amount__c}" /></apex:outputText></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+  <p class="clear"></p>
+  <table>
+    
+  </table>
+
+
+  <p class="clear"></p>
+
+
+  <table>
+    <tr>
+      <td width="400px" height="50px" valign="top">Volunteer Signature:</td>
+      <td valign="top">Date:</td>
+    </tr>
+    <tr>
+      <td width="400px" height="50px" valign="top">Manager Signature:</td>
+      <td valign="top">Date:</td>
+    </tr>
+    <tr>
+      <td colspan="2">Managers authorisation for any missing receipts:</td>
+    </tr>
+  </table>
+
+
+    <!-- <div class="footer">
+        <div><apex:image value="{!$Resource.FooterLogo}" alt="Logo"  style="image"/></div>
+    </div> -->
+
+    <table id="table_headerwidth">
+      <tr>
+        <td align="left"><apex:image value="{!$Resource.FooterLogo}" alt="Logo"  style="image"/></td>
+      </tr>
+    </table>
+
+</body>
+</apex:page>

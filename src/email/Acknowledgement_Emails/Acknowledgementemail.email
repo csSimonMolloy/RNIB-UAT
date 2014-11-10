@@ -1,0 +1,14 @@
+Dear {!Customer_Requests__c.Customer_Name__c},
+
+Thank you for contacting the Technology Support Squad. Your request is being sent to a local volunteer who should be in touch with you soon.
+
+If you have any questions, or you do not hear from one of our volunteers within the next 7 days, please contact the RNIB Group Volunteering Team on technologysquad@rnib.org.uk or phone 0330 123 999.
+
+Please Quote Reference: {!Customer_Requests__c.Name}
+
+Best wishes,
+
+ RNIB Group Volunteering Team
+ t: 0330 123 999
+ e: technologysquad@rnib.org.uk
+ w: www.rnib.org.uk

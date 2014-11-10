@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Reference</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>References</value>
+    </caseValues>
+    <fields>
+        <label><!-- Ability to follow policies &amp; procedures: --></label>
+        <name>Ability_to_follow_policies_and_procedure__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ability to perform role: --></label>
+        <name>Ability_to_perform_role__c</name>
+    </fields>
+    <fields>
+        <label><!-- Applicant Name --></label>
+        <name>Applicant_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volunteer Role --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- References --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Referee --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- References --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Copy Volunteer Manager Email --></label>
+        <name>Copy_Volunteer_Manager_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Criminal Record Check Required --></label>
+        <name>Criminal_Record_Check_Required__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the date when the reference request was received --></help>
+        <label><!-- Date Reference Received --></label>
+        <name>Date_Reference_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Reference Due for Return --></label>
+        <name>Date_Reference_Return__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the date when the reference request was sent --></help>
+        <label><!-- Date Reference Sent --></label>
+        <name>Date_Reference_Sent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Previous Check --></label>
+        <name>Date_of_Previous_Check__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Applicable --></help>
+        <label><!-- Details of previous DBS/Country checks --></label>
+        <name>Details_of_previous_DBS_Country_checks__c</name>
+    </fields>
+    <fields>
+        <help><!-- If applicable --></help>
+        <label><!-- Evidence of need for person to volunteer --></label>
+        <name>Evidence_of_need_for_bringing_person_int__c</name>
+    </fields>
+    <fields>
+        <label><!-- Further Comments --></label>
+        <name>Further_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Honesty/integrity/Ability to maintain co --></label>
+        <name>Honesty_integrity_Ability_to_maintain_co__c</name>
+    </fields>
+    <fields>
+        <label><!-- How long have you known the above named --></label>
+        <name>How_long_have_you_known_the_above_named__c</name>
+    </fields>
+    <fields>
+        <label><!-- How will be this Risk be managed? --></label>
+        <name>How_will_be_this_Risk_be_managed__c</name>
+    </fields>
+    <fields>
+        <label><!-- In what capacity do you know this person --></label>
+        <name>In_what_capacity_do_you_know_this_person__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy Reference ID --></label>
+        <name>Legacy_Reference_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- how long the person has known the applicant --></help>
+        <label><!-- Length of relationship --></label>
+        <name>Length_of_relationship__c</name>
+    </fields>
+    <fields>
+        <label><!-- NVIS No --></label>
+        <name>NVIS_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outcome --></label>
+        <name>Outcome__c</name>
+        <picklistValues>
+            <masterLabel>Accepted</masterLabel>
+            <translation><!-- Accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Declined Cancel Application</masterLabel>
+            <translation><!-- Declined Cancel Application --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Declined Request New Referee</masterLabel>
+            <translation><!-- Declined Request New Referee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>More Information Required</masterLabel>
+            <translation><!-- More Information Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approval</masterLabel>
+            <translation><!-- Pending Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Checks</masterLabel>
+            <translation><!-- Pending Checks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>References sent</masterLabel>
+            <translation><!-- References sent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Previous Country Checks --></label>
+        <name>Previous_Country_Checks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recommend To RNIB Comments --></label>
+        <name>Recommend_To_RNIB_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recommend To RNIB --></label>
+        <name>Recommend_To_RNIB__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Referee Address --></label>
+        <name>Referee_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Referee Email --></label>
+        <name>Referee_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Referee Work Phone --></label>
+        <name>Referee_Work_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reference Received --></label>
+        <name>Reference_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reference Type --></label>
+        <name>Reference_Type__c</name>
+        <picklistValues>
+            <masterLabel>Character</masterLabel>
+            <translation><!-- Character --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Child related</masterLabel>
+            <translation><!-- Child related --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Risk Assessment</masterLabel>
+            <translation><!-- Risk Assessment --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The capacity of the relationship between applicant and person providing reference --></help>
+        <label><!-- Relationship --></label>
+        <name>Relationship__c</name>
+    </fields>
+    <fields>
+        <label><!-- Relationships with others: --></label>
+        <name>Relationships_with_others__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reliability: --></label>
+        <name>Reliability__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describe duties/contact with children and/or vulnerable adults --></help>
+        <label><!-- Risk to RNIB --></label>
+        <name>Risk_to_RNIB__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role Description --></label>
+        <name>Role_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role Involves Working With Children? --></label>
+        <name>Role_Involves_Working_With_Children__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role Title --></label>
+        <name>Role_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Safeguarding Issue Note --></label>
+        <name>Safeguarding_Issue_Note__c</name>
+    </fields>
+    <fields>
+        <help><!-- Are you satisfied that this person is suitable to volunteer with children, if not, please give details --></help>
+        <label><!-- Suitable to Volunteer with Children? --></label>
+        <name>Suitable_to_Volunteer_with_Children__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field is a read-only field to copy the Volunteer Email Address. This field will be used as a reference in a field update of a Volunteer Email field which will be then used in the Chase - 1 Referee workflow rule. --></help>
+        <label><!-- Copy Volunteer Email --></label>
+        <name>Volunteer_Email1__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field will be used as a reference in a field update which will be then used in the Chase - 1 Referee workflow rule --></help>
+        <label><!-- Volunteer Email --></label>
+        <name>Volunteer_Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field will be used as a reference in a field update which will be then used in the Chase - 2 &amp; 3 Reference (Applicant) workflow rule --></help>
+        <label><!-- Volunteer Manager Email --></label>
+        <name>Volunteer_Manager_Email__c</name>
+    </fields>
+    <layouts>
+        <layout>Reference Layout</layout>
+        <sections>
+            <label><!-- Application --></label>
+            <section>Application</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Outcome --></label>
+            <section>Outcome</section>
+        </sections>
+        <sections>
+            <label><!-- Please comment on the application under the following headings: --></label>
+            <section>Please comment on the application under the following headings:</section>
+        </sections>
+        <sections>
+            <label><!-- Referee Details --></label>
+            <section>Referee Details</section>
+        </sections>
+        <sections>
+            <label><!-- Reference Form Information --></label>
+            <section>Reference Form Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Reference Risk Assessment Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Risk Assessment Information --></label>
+            <section>Risk Assessment Information</section>
+        </sections>
+        <sections>
+            <label><!-- Volunteer Role --></label>
+            <section>Volunteer Role</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Risk Assessment Reference --></label>
+        <name>Risk_Assessment_Reference</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Standard Reference --></label>
+        <name>Standard_Reference</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Generate_Character_Reference_Letter --></label>
+        <name>Generate_Character_Reference_Letter</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Generate_Character_Reference_Letter_OLD --></label>
+        <name>Generate_Character_Reference_Letter_OLD</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Generate_Reference_Email --></label>
+        <name>Generate_Reference_Email</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Generate_Reference_Email_OLD --></label>
+        <name>Generate_Reference_Email_OLD</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Reference --></label>
+        <name>New_Reference</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Reference_Risk_Assessment --></label>
+        <name>New_Reference_Risk_Assessment</name>
+    </webLinks>
+</CustomObjectTranslation>

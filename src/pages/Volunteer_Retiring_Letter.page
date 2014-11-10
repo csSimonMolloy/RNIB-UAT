@@ -1,0 +1,49 @@
+<apex:page standardController="Application__c" renderAs="PDF">
+    <div style="page-break-after:never; padding-top: 100px;font-size:14pt; font-family: Arial Unicode MS"> 
+        <p align="right">
+            RNIB Group Volunteering Team<br/>
+            Bakewell Road<br/>
+            Orton Southgate<br/>
+            Peterborough<br/>
+            PE2 6XU
+        </p>
+        <p class="companyName">
+            {!Application__c.Applicant__r.Name}<br/>
+            {!Application__c.Applicant__r.MailingStreet}<br/>
+            {!Application__c.Applicant__r.MailingCity}<br/>
+            {!Application__c.Applicant__r.MailingState}<br/>
+            {!Application__c.Applicant__r.MailingPostalCode}
+        </p>
+        <p>
+            <apex:outputText value="{0,date}">
+                <apex:param value="{!TODAY()}" />
+            </apex:outputText>
+        </p>
+        <p>
+            Dear {!Application__c.Applicant__r.FirstName},
+        </p>
+
+        <p>
+            On behalf of RNIB Group I want to thank you for the time and commitment you have so kindly given. Your support and dedication helps us to reach many more blind and partially sighted people.
+        </p>
+        <p>
+            Every day I am inspired by the contributions our volunteers make. Together with our volunteers we will achieve our ambition of making every day better for people with sight loss. Your personal contribution has helped us move toward that ambition, for that I thank you.
+        </p>
+        <p>
+       
+        </p>
+        <p>
+            With my very best wishes,
+        </p>
+        <p>
+            &nbsp;
+        </p> <p> <img src="{!$Resource.CEO}"/> </p>
+        <p>
+            Lesley-Anne Alexander CBE<br/>
+
+
+            RNIB Chief Executive
+        </p>
+    </div> 
+   
+</apex:page>

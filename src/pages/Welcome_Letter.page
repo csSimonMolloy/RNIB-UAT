@@ -1,0 +1,64 @@
+<apex:page standardController="Application__c" renderAs="PDF">
+
+    <div style="page-break-after:always; padding-top: 10px; font-size:14pt; font-family: Arial Unicode MS"> 
+        <p align="right">
+            RNIB Group Volunteering Team<br/>
+            Bakewell Road<br/>
+            Orton Southgate<br/>
+            Peterborough <br/>
+            PE2 6XU
+        </p>
+        <p class="companyName">
+             {!Application__c.Applicant__r.Name}<br/>
+            {!Application__c.Applicant__r.MailingStreet}<br/>
+            {!Application__c.Applicant__r.MailingCity}<br/>
+            {!Application__c.Applicant__r.MailingState}<br/>
+            {!Application__c.Applicant__r.MailingPostalCode}
+        </p>
+        <p>
+            <apex:outputText styleClass="outputstyle" value="{0,date}">
+                <apex:param value="{!TODAY()}" />
+            </apex:outputText>
+        </p>
+        <p>
+            Dear {!Application__c.Applicant__r.FirstName},
+        </p>
+        <p>
+            Welcome to the RNIB Group of charities and thank you for choosing to volunteer for blind and partially sighted people. You have joined us at a really exciting time in our development. RNIB, Action for Blind People, National Talking Newspapers and Magazines and Cardiff Vales and Valleys are working really closely to support even more blind and partially sighted people to lead full and independent lives.
+        </p>
+        <p>
+            The RNIB group of charities has three clear priorities: We want to stop people losing their sight unnecessarily; We want to support more people to live independently and We want to create an inclusive society for everyone as soon as we can.
+        </p>
+        <p>
+            You and over 4000 other RNIB Group volunteers will enable us to achieve these priorities and help end the isolation that so many blind and partially sighted people feel. You are now part of a growing community of volunteers without whom much of our work would simply not be possible. We think our strategy is imaginative and exciting and by working closely together we will be in a better position to radically improve the availability of high quality services for blind and partially sighted people. It will be much easier for us to share our skills and knowledge and it will help us to make our vision become a reality.
+        </p>
+        <p>
+            Within this welcome pack you will receive the DVD Understanding Sight Loss and it is important that you watch this and reflect on the messages it contains. You will have the opportunity to discuss this further by joining our short &quot;telephone induction&quot; with one of our Coordinators and other new volunteers from around the UK. A colleague will be in touch soon via the telephone to arrange a convenient date and time with you.<br/><br/>Thank you for your continued support. Without you it would not be possible to improve the lives of so many blind and partially sighted people throughout the UK.
+        </p>
+        <p>
+            With very kind regards
+        </p>
+        <img src="{!$Resource.CEO}"/>
+        <p>
+            Lesley-Anne Alexander CBE<br/>
+            Chief Executive Officer
+        </p>
+    </div> 
+    <div style="page-break-after:auto; font-size:14pt; font-family:'Arial Unicode MS'"> 
+        <h1>Your Volunteering Role</h1>
+        <p>
+            <strong>Volunteer: </strong> {!Application__c.Applicant__r.Name}<br/>
+            <strong>Role Title: </strong>{!Application__c.Role_Title__c}<br/>
+        </p>
+        <p>
+            <b>Main Contact</b><br/>
+            Name: {!Application__c.Volunteer_Manager__r.Name}<br/> 
+            Telephone: {!Application__c.Volunteer_Manager__r.Phone}<br/>
+            Email: {!Application__c.Volunteer_Manager__r.Email}<br/>
+        </p>
+        <p><strong>Claiming Expenses</strong><br/>
+        You are entitled to claim reasonable out of pocket expenses related to your volunteering role. A copy of the expenses policy and the forms relevant to your role are available on the RNIB Group Volunteer Web Pages. </p> 
+        <p>If you are unable to access the internet, please contact us on 0845 603 0575 or 01733 375450 and we will send the information in your preferred format.
+        </p>
+    </div>
+</apex:page>

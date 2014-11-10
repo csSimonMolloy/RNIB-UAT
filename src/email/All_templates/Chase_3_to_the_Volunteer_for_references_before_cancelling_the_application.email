@@ -1,0 +1,17 @@
+<p>Dear {!Application__c.Applicant__c},</p>
+
+<p>Thank you for your application to volunteer with Royal National Institute for Blind People (RNIB).</p>
+
+<p>We have attempted to contact you previously as we have been unsuccessful in obtaining two references from {!Reference__c.Contact__c}. </p>
+
+<p>We have tried to obtain your references and all attempts have been unsuccessful. If you still wish to volunteer can you please contact us within 10 days to provide the details of an alternative referee or to discuss further.</p>
+
+<p>Unfortunately, without any further contact from you we are unable to continue processing your application. Please contact us on 01733 37 54 50 or at volunteering@rnib.org.uk</p>
+
+<p>Kind regards</p>
+
+<p>RNIB Group Volunteering Team<br />
+T: 01733 37 54 50<br />
+E: volunteering@rnib.org.uk<br />
+W: www.rnib.org.uk<br />
+</p>

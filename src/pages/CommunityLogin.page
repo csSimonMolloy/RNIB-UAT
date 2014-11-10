@@ -1,0 +1,99 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" docType="html" controller="CommunityLogin">
+    
+    <meta name="description" content="salesforce.com Customer Secure Login Page. Login to your salesforce.com Customer Account."/>
+    <title>Volunteer Community Login</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="stylesheet" type="text/css" href="/css/sfdc180_global.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/sfdc180_page2.css"/>
+    <style type="text/css">
+        a{color: #015BA7;}
+        input.primary, 
+        .button, 
+        .btnPrimary{background: #008194;border: 1px solid #008194;}.button .label {color: #FFFFFF;}body{background-color:#C2E3E6;}#footer, 
+        #footer a{color:#222222;}#content{background-color:#f3f5f6;}#content{border:1px solid #CCCCCC; border-radius: 3px;-moz-border-radius: 3px;-webkit-border-radius: 3px; padding:10px;}#left_side{float:left; width: 320px;}#right_side{margin-left:350px;margin-top:100px;}@media (max-width: 900px){#right_side {padding-left:25px;display:block;margin-left:1px;margin-top:15px;}}
+        .loginbox, .loginError {margin: 0px auto; width: 270px;}
+        input.primary, .button, .btnPrimary {
+    background: none repeat scroll 0% 0% #008194;
+    border: 1px solid #008194;
+    width: 270px;
+    margin-top: 15px;
+    line-height: 22px;
+    padding: 10px 0px 10px 0px;
+    }
+    .text-error {
+    text-align: center;
+    color: #F00;
+    font-size: 12px;
+}
+        </style>
+        <style type="text/css"> html { visibility: hidden; } </style>
+        <script type="text/javascript">if (self == top) {document.documentElement.style.visibility = 'visible';} else {document.write = ''; top.location = self.location; setTimeout(function(){document.body.innerHTML='';}, 1);window.self.onload=function(evt){document.body.innerHTML='';};}</script>
+        <link rel="canonical" href="https://uat-rnib.cs18.force.com/CommunitiesLogin?locale=us"/>
+    
+   <body>
+       <div id="login">
+           <div id="login_wrapper">
+               <div id="left_side">
+                   <div id="login_component">
+                       <div id="logo_wrapper">
+                           <img id="logo" class="logo_salesforce" src="/img/logo180.png" alt="Salesforce" border="0"/>
+                       </div>
+                   
+                   <div>
+                   
+                   
+                        <section class="main-content">             
+                           <div class="loginbox">   
+                               
+
+                           
+                           
+                               
+                                <apex:form styleClass="aerian-form admin-form form-horizontal" forceSSL="true">
+                                 <apex:outputText value="{!emailAddressError}" rendered="{!LEN(emailAddressError)>0}" styleClass="text-error"/>
+                                <apex:outputText value="{!passwordError}" rendered="{!LEN(passwordError)>0}" styleClass="text-error"/>
+
+                                <div id="usrn">
+                                    <apex:inputText id="email" value="{!emailAddress}" styleClass=" input-text input" html-placeholder="Username"/>
+                                    </div>
+                                
+                                <div id="pswd">
+                                    <apex:inputSecret id="password" value="{!password}" styleClass=" input-text input" html-placeholder="Password" />
+                                </div>
+                                <div class="loginbox_container">
+                                        <apex:commandButton action="{!login}" id="Submit" value="Log in" styleclass="button" />   
+                                    </div>
+
+
+                                    <div class="loginbox_container" id="forgot">
+                                        <span>
+                                            <a href="/secur/forgotpassword.jsp?locale=us">Forgot your password?</a>
+                                        </span> | 
+                                        <span id="selfReg">
+                                            <a href="/CommunitiesSelfReg">Register Here</a>
+                                        </span>
+                                    </div>
+
+                                </apex:form>               
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div id="right_side" class="communityOptions" style="font-size: 15px">
+                <p>RNIB employee? <a href="https://login.salesforce.com">Log in here</a></p>
+            </div>
+        </div>
+        <div id="footer">
+            Copyright © 2014 RNIB. All rights reserved.
+        </div>
+    </div>
+    
+
+    
+    
+    
+</body>
+
+
+</apex:page>

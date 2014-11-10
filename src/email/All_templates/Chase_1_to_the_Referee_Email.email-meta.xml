@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Chase 1 to the Referee - Email</name>
+    <style>none</style>
+    <subject>Follow-up email to request a Reference for {!Reference__c.Applicant_Name__c}</subject>
+    <textOnly>Dear {!Reference__c.Name},
+
+We recently sent you a reference request for  who has applied to become a volunteer with RNIB Group.  Please could you complete and return the reference to us within the next 7 days. Once the reference has been received we can continue with their recruitment.
+
+If you have any questions regarding the reference please contact us on 01733 37 54 50 or volunteering@rnib.org.uk
+
+Kind regards
+
+RNIB Group Volunteering Team
+T: 01733 37 54 50
+E: volunteering@rnib.org.uk
+W: www.rnib.org.uk</textOnly>
+    <type>custom</type>
+</EmailTemplate>

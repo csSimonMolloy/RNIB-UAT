@@ -1,0 +1,27 @@
+Dear {!Reference__c.Contact__c},
+
+{!Reference__c.Applicant_Name__c} wants to volunteer with us at RNIB Group of Charities and has requested we contact you to provide a character reference. Referees must be independent (not related or have a personal relationship). 
+
+Please find a link below to a form about our volunteering opportunity {!Reference__c.Applicant_Name__c} has applied for. Please read about the opportunity, and think about {!Reference__c.Applicant_Name__c}’s suitability in your opinion for this volunteering role.
+
+https://rnib.force.com/ReferenceForm?id={!Reference__c.Id}&c={!Reference__c.Role_Involves_Working_With_Children__c}
+
+All correspondence will be treated in the strictest confidence.
+
+We have an ambition and are committed to making every day better for everyone affected by sight loss. Our volunteers are helping us make this ambition a reality, without our volunteers we wouldn’t be able to reach as many blind and partially sighted people who need our support. The sooner we can receive your reference the sooner {!Reference__c.Applicant_Name__c} can start supporting blind and partially sighted people. We really appreciate your help with {!Reference__c.Applicant_Name__c}’s application and would welcome your response before {!Reference__c.Date_Reference_Return__c}.
+
+Yours sincerely,
+Louise Markham
+Volunteering Team
+
+Details of role applied for:
+
+Role Title: {!Reference__c.Role_Title__c}
+Role Description: {!Reference__c.Role_Description__c}
+What they will be doing: {!Reference__c.Application__r.Role__r.What_will_I_be_doing2__c}
+What Skills / Experience are needed: {!Reference__c.Application__r.Role__r.Skills__c}
+Opportunity involves working with children: {!Reference__c.Role_involve_working_with_Children__c}
+
+All correspondence will be treated in the strictest confidence.  Please be aware that a delay in returning the reference will result in a delay in the volunteer’s application being processed.
+
+If you have any queries, or would like an hard copy of this form, please do not hesitate to contact us on 0845 60 30 575 or volunteering@rnib.org.uk.

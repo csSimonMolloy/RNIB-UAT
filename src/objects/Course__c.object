@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Capacity_Indicator__c</fullName>
+        <formula>IMAGE(&quot;/img/samples/color_red.gif&quot;, &quot;red&quot;, 15, (Number_of_Attendees__c/Capacity__c)*200) &amp; 
+IMAGE(&quot;/img/samples/color_green.gif&quot;, &quot;green&quot;, 15, ((Capacity__c/Capacity__c)*200)-(Number_of_Attendees__c/Capacity__c)*200)</formula>
+        <label>Capacity Indicator</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Capacity__c</fullName>
+        <label>Capacity</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Course_Status__c</fullName>
+        <label>Course Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Unconfirmed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Confirmed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Course_Type__c</fullName>
+        <label>Course Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Local Induction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tele Induction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Type 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Type 3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>End_Date_Time__c</fullName>
+        <label>End Date/Time</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Facilitator__c</fullName>
+        <label>Facilitator</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Courses</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Location_City__c</fullName>
+        <label>Location City</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Location_State_Province__c</fullName>
+        <label>Location County</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Location_Street__c</fullName>
+        <label>Location Street</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Location_Zip_Postal_Code__c</fullName>
+        <label>Location Postal Code</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Attendees__c</fullName>
+        <label>Number of Participants Booked</label>
+        <summaryForeignKey>Course_Booking__c.Course__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Role_Specific_Training__c</fullName>
+        <inlineHelpText>Select the training which must be completed for the role</inlineHelpText>
+        <label>Role Specific Training</label>
+        <picklist>
+            <picklistValues>
+                <fullName>MiDAS Training</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Start_Date_Time__c</fullName>
+        <label>Start Date/Time</label>
+        <type>DateTime</type>
+    </fields>
+    <label>Course</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Capacity_Indicator__c</columns>
+        <columns>Course_Type__c</columns>
+        <columns>Start_Date_Time__c</columns>
+        <columns>Facilitator__c</columns>
+        <columns>Location_City__c</columns>
+        <columns>Location_State_Province__c</columns>
+        <columns>Course_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>New_this_week</fullName>
+        <columns>NAME</columns>
+        <columns>Course_Status__c</columns>
+        <columns>Facilitator__c</columns>
+        <columns>Capacity__c</columns>
+        <columns>Location_City__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_WEEK</value>
+        </filters>
+        <label>New this week</label>
+    </listViews>
+    <nameField>
+        <label>Course Id</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Courses</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Facilitator__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Location_City__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Start_Date_Time__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>End_Date_Time__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Capacity__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Start_Date_Time__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>End_Date_Time__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Facilitator__c</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Capacity_Warning</fullName>
+        <active>true</active>
+        <errorConditionFormula>Number_of_Attendees__c &gt; (Capacity__c)</errorConditionFormula>
+        <errorMessage>This course is at capacity</errorMessage>
+    </validationRules>
+</CustomObject>

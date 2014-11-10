@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Time Donation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Time Donations</value>
+    </caseValues>
+    <fields>
+        <help><!-- Enter the name of the Customer you are assisting here --></help>
+        <label><!-- Customer/Group Name --></label>
+        <name>Customer_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Request --></label>
+        <name>Customer_Request__c</name>
+        <relationshipLabel><!-- Time Donations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Number of Individuals --></label>
+        <name>Number_of_Individuals__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the total number of customers in the group --></help>
+        <label><!-- Number of People in Group --></label>
+        <name>Number_of_People_in_Group__c</name>
+    </fields>
+    <fields>
+        <help><!-- Shows the Total Number of Hours Donated for this Time Donation --></help>
+        <label><!-- Total Hours Donated --></label>
+        <name>Total_Hours_Donated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volunteer Name --></label>
+        <name>Volunteer_Name__c</name>
+        <relationshipLabel><!-- Time Donations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Volunteer Role --></label>
+        <name>Volunteer_Role__c</name>
+        <relationshipLabel><!-- Time Donations --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Group Time Donation Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Individual Time Donation Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Non-Customer Time Donation Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Time Donation Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Group Customer Time Donation --></label>
+        <name>Group_Time_Donation</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Individual Customer Time Donation --></label>
+        <name>Individual_Time_Donation</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Non-Customer Time Donation --></label>
+        <name>Non_Customer_Time_Donation</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- New_Group_Customer_Time_Donation --></label>
+        <name>New_Group_Customer_Time_Donation</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Individual_Time_Donation --></label>
+        <name>New_Individual_Time_Donation</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Non_Customer_Time_Donation --></label>
+        <name>New_Non_Customer_Time_Donation</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Time_Donation --></label>
+        <name>New_Time_Donation</name>
+    </webLinks>
+</CustomObjectTranslation>

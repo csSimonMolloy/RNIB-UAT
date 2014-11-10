@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Existing Request Submitted for Approval Notification</name>
+    <style>none</style>
+    <subject>Existing Request # - {!Risk_Assessment__c.Name} Submitted for Approval Notification</subject>
+    <textOnly>Dear {!ApprovalRequest.Process_Assignee},
+
+Please find the existing request - {!Risk_Assessment__c.Name} for {!Risk_Assessment__c.Volunteer__c}
+
+To check their details and approve the existing safeguarding request, please follow the link - {!ApprovalRequest.External_URL}
+
+{!ApprovalRequest.Internal_URL}
+
+
+Best Regards,
+
+{!Risk_Assessment__c.Volunteer_Manager__c}
+
+Volunteer Manager
+RNIB Volunteering Team</textOnly>
+    <type>custom</type>
+</EmailTemplate>

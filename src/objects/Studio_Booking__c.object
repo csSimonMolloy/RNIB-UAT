@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>A test object re. demand for volunteer studio booking to be deployed through salesforce</description>
+    <enableActivities>true</enableActivities>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Date_Time_of_Booking__c</fullName>
+        <description>The Date and Time of the Studio Booking</description>
+        <inlineHelpText>Fill in the date and time of the studio booking here</inlineHelpText>
+        <label>Date / Time of Booking</label>
+        <required>true</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <description>A notes field for additional information relating to the studio booking</description>
+        <inlineHelpText>A notes field for additional information relating to the studio booking</inlineHelpText>
+        <label>Notes</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>The status of the studio booking</description>
+        <inlineHelpText>Select the status of the studio booking</inlineHelpText>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Scheduled</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Studio_Engineer__c</fullName>
+        <description>The engineer who will be hosting the studio session</description>
+        <inlineHelpText>Look up the engineer who will be hosting the studio session</inlineHelpText>
+        <label>Studio Engineer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Studio_Bookings</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Studio_Location__c</fullName>
+        <description>The location of the studio</description>
+        <inlineHelpText>select the location of the studio</inlineHelpText>
+        <label>Studio Location</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Heathfield</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ivybridge</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Peterborough</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Studio_Number__c</fullName>
+        <description>Select the studio Number</description>
+        <inlineHelpText>Select the studio Number</inlineHelpText>
+        <label>Studio Number</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Studio 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Studio 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Studio 3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Studio 4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Studio 5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Volunteer_Role_1__c</fullName>
+        <description>The volunteer role of the first volunteer in the studio booking</description>
+        <inlineHelpText>look up the volunteer role of the first volunteer who will be participating in the studio booking</inlineHelpText>
+        <label>Volunteer Role 1</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipLabel>Studio Bookings</relationshipLabel>
+        <relationshipName>Studio_Bookings</relationshipName>
+        <required>true</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Volunteer_Role_2__c</fullName>
+        <description>The volunteer role of the second volunteer who may be participating in the studio booking</description>
+        <inlineHelpText>select the volunteer role of the second volunteer who may be taking part in the studio booking session</inlineHelpText>
+        <label>Volunteer Role 2</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipLabel>Studio Bookings (Volunteer Role 2)</relationshipLabel>
+        <relationshipName>Studio_Bookings1</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <label>Studio Booking</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Studio Booking Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Studio Bookings</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

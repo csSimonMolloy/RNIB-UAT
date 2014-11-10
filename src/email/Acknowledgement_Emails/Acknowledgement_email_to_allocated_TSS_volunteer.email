@@ -1,0 +1,18 @@
+<p>Dear <volunteer first name>  </p>
+
+<p>Is it possible for you to please visit {!Customer_Requests__c.Customer_Name__c}. {!Customer_Requests__c.Customer_Post_Code__c}? </p> 
+
+<p>Details of their request:  {!Customer_Requests__c.Subject__c}, {!Customer_Requests__c.Description__c} </p>
+
+<p>Please can you accept or decline this request as soon as possible.</p>  
+
+<p>To accept this request {!Customer_Requests__c.Link} </p>  
+<p>To decline this request {!Customer_Requests__c.Link} </p>  
+
+<p>Thank you again for all your help and support, it is much appreciated!</p>  
+
+<p>Kind regards</p>  
+
+<p>{!Customer_Requests__c.Volunteer_Coordinator__c} <br /> 
+{!Customer_Requests__c.Volunteer_Coordinator_Phone__c}  <br />
+{!Customer_Requests__c.Volunteer_Coordinator_Email__c} </p>

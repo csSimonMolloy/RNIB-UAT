@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Opportunity Request Rejection Notification</name>
+    <style>none</style>
+    <subject>Opportunity Approval Request - {!Role_Opportunity__c.Role_Title__c} Rejection Notification</subject>
+    <textOnly>Dear All,
+
+Your approval request for Opportunity - {!Role_Opportunity__c.Role_Title__c} has been rejected.
+
+To check the details follow this link -  {!Opportunities__c.Link}
+
+
+Best Regards,
+
+{!ApprovalRequest.Process_Approver}
+
+GVT
+RNIB Volunteering Team</textOnly>
+    <type>custom</type>
+</EmailTemplate>

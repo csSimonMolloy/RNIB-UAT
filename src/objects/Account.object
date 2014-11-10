@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>pw_ccpro__BillingAddressStatus__c</fullName>
+        <label>Billing Address Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not checked</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not matched</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parsed but not found</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ambiguous</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Corrected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Verified</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>pw_ccpro__BillingCountryLookup__c</fullName>
+        <label>Billing Country Lookup</label>
+        <referenceTo>pw_ccpro__CountryObject__c</referenceTo>
+        <relationshipLabel>Accounts (BillingCountryLookup)</relationshipLabel>
+        <relationshipName>BillingAccounts</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>pw_ccpro__BillingStateLookup__c</fullName>
+        <label>Billing State Lookup</label>
+        <referenceTo>pw_ccpro__State__c</referenceTo>
+        <relationshipLabel>Accounts (BillingStateLookup)</relationshipLabel>
+        <relationshipName>BillingAccounts</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>pw_ccpro__BillingZipCodeLookup__c</fullName>
+        <label>Billing Zip/Postal Code Lookup</label>
+        <referenceTo>pw_ccpro__ZipCode__c</referenceTo>
+        <relationshipLabel>Accounts (BillingZIPCodeLookup)</relationshipLabel>
+        <relationshipName>BillingAccounts</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>pw_ccpro__ShippingAddressStatus__c</fullName>
+        <label>Shipping Address Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not checked</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not matched</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parsed but not found</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ambiguous</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Corrected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Verified</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>pw_ccpro__ShippingCountryLookup__c</fullName>
+        <label>Shipping Country Lookup</label>
+        <referenceTo>pw_ccpro__CountryObject__c</referenceTo>
+        <relationshipLabel>ShippingAccounts</relationshipLabel>
+        <relationshipName>Accounts</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>pw_ccpro__ShippingStateLookup__c</fullName>
+        <label>Shipping State Lookup</label>
+        <referenceTo>pw_ccpro__State__c</referenceTo>
+        <relationshipLabel>ShippingAccounts</relationshipLabel>
+        <relationshipName>Accounts</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>pw_ccpro__ShippingZipCodeLookup__c</fullName>
+        <label>Shipping Zip/Postal Code Lookup</label>
+        <referenceTo>pw_ccpro__ZipCode__c</referenceTo>
+        <relationshipLabel>ShippingAccounts</relationshipLabel>
+        <relationshipName>Accounts</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>pw_ccpro__UtcTimeOffset__c</fullName>
+        <formula>IF(AND(MONTH(TODAY()) &gt;=4, MONTH(TODAY()) &lt;=9),
+
+BLANKVALUE(pw_ccpro__BillingZipCodeLookup__r.pw_ccpro__TimeZone__r.pw_ccpro__UtcOffsetMidYear__c, BLANKVALUE(pw_ccpro__BillingStateLookup__r.pw_ccpro__TimeZone__r.pw_ccpro__UtcOffsetMidYear__c, BLANKVALUE(pw_ccpro__BillingCountryLookup__r.pw_ccpro__TimeZone__r.pw_ccpro__UtcOffsetMidYear__c, NULL))), 
+
+BLANKVALUE(pw_ccpro__BillingZipCodeLookup__r.pw_ccpro__TimeZone__r.pw_ccpro__UtcOffset__c, BLANKVALUE(pw_ccpro__BillingStateLookup__r.pw_ccpro__TimeZone__r.pw_ccpro__UtcOffset__c, BLANKVALUE(pw_ccpro__BillingCountryLookup__r.pw_ccpro__TimeZone__r.pw_ccpro__UtcOffset__c, NULL)))
+
+)</formula>
+        <inlineHelpText>Shows current time zone offset according to related Zip code, State and/or Country values.  Note that due to variations in DST start/end dates there may be variances.</inlineHelpText>
+        <label>UTC Time Offset</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <webLinks>
+        <fullName>AltavistaNews</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasMenubar>true</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>true</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Altavista News</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>true</showsLocation>
+        <showsStatus>true</showsStatus>
+        <url>http://news.altavista.com/search?nc=0&amp;q={!Account_Name}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>GoogleMaps</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasScrollbars>true</hasScrollbars>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Google Maps</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <url>http://maps.google.com/maps?f=q&amp;hl=en&amp;q={!Account_BillingStreet}+{!Account_BillingCity}+{!Account_BillingState}&amp;om=1</url>
+    </webLinks>
+    <webLinks>
+        <fullName>GoogleNews</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasScrollbars>true</hasScrollbars>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Google News</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <url>http://www.google.com/news?&amp;q={!Account_Name}&amp;btnG=Search+News</url>
+    </webLinks>
+    <webLinks>
+        <fullName>GoogleSearch</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasScrollbars>true</hasScrollbars>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Google Search</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <url>http://www.google.com/search?q={!Account_Name}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>HooversProfile</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasScrollbars>true</hasScrollbars>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Hoovers Profile</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <url>http://search.hoovers.com/cgi-bin/hol_search?which=company&amp;query_string={!Account_Name}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>YahooMaps</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasMenubar>true</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>true</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Yahoo Maps</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>true</showsLocation>
+        <showsStatus>true</showsStatus>
+        <url>http://maps.yahoo.com/py/maps.py?cn={!Account_BillingCountry}&amp;csz={!Account_BillingCity}+{!Account_BillingState}+{!Account_BillingPostalCode}+&amp;addr={!Account_BillingAddress}</url>
+    </webLinks>
+</CustomObject>

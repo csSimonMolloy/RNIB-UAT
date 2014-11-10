@@ -1,0 +1,15 @@
+Dear {!ApprovalRequest.Process_Assignee},<br><br>
+
+Please find the existing request - {!Risk_Assessment__c.Name} for {!Risk_Assessment__c.Volunteer__c} <br><br>
+
+To check their details and approve the existing safeguarding request, please follow the link - {!ApprovalRequest.External_URL}<br><br>
+
+{!ApprovalRequest.Internal_URL}<br><br><br>
+
+
+Best Regards,<br><br>
+
+{!Risk_Assessment__c.Volunteer_Manager__c}<br><br>
+
+Volunteer Manager<br>
+RNIB Volunteering Team

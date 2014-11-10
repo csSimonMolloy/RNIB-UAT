@@ -1,0 +1,131 @@
+<apex:page standardController="Customer_Requests__c"
+           showChat="false" 
+           sidebar="false" 
+           showHeader="false" 
+           standardStylesheets="false">
+           
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"/>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.10&sensor=false"/>
+    <script src="/soap/ajax/27.0/connection.js" type="text/javascript"/>
+    <script src="/soap/ajax/27.0/apex.js" type="text/javascript"/>
+    
+    <script type="text/javascript">
+        var CustomerRequest = {};
+        function authorize()
+        { sforce.connection.sessionId = '{!GETSESSIONID()}'; }      
+    
+        function getCustomerRequestID() 
+        {
+         CustomerRequest.ID = '{!Customer_Requests__c.Id}';
+        }
+ 
+        function fetchCustomerRequestRecord()
+        {
+         result = sforce.connection.query('SELECT ID,Customer_Name__r.MailingStreet,Customer_Name__r.MailingCity,Customer_Name__r.MailingState,Customer_Name__r.MailingPostalCode,Customer_Name__r.MailingCountry,Location__Latitude__s,Location__Longitude__s,Mapping_Status__c FROM Customer_Requests__c WHERE ID=\'' + CustomerRequest.ID + '\' AND Mapping_Status__c!=\'Located\'');
+         records = result.getArray('records');
+         if(records.length>0)
+         {
+
+          CustomerRequest.IsRecordAvailable = true;
+          CustomerRequest.MailingStreet = records[0].Customer_Name__r.MailingStreet;
+          CustomerRequest.MailingCity = records[0].Customer_Name__r.MailingCity;
+          CustomerRequest.MailingState = records[0].Customer_Name__r.MailingState;
+          CustomerRequest.MailingPostalCode = records[0].Customer_Name__r.MailingPostalCode;
+          CustomerRequest.MailingCountry = records[0].Customer_Name__r.MailingCountry;
+          CustomerRequest.MappingStatus = records[0].Customer_Name__r.Mapping_Status__c;
+         }
+         else
+          CustomerRequest.IsRecordAvailable = false;
+        }
+ 
+        CustomerRequest.isAddressAvailable = function(){
+         if (this.MailingCountry!='' && this.MailingPostalCode!='')
+           return true;
+         else
+           return false; 
+        }
+ 
+        CustomerRequest.isMapped = function(){
+         if (this.MappingStatus=='Located' || this.MappingStatus=='Problem with Address')
+          return true;
+         else
+          return false; 
+        }
+ 
+        CustomerRequest.getCSVAddress = function(){
+         if(this.isAddressAvailable())
+         {
+          return (
+                  this.MailingStreet +','+
+                  this.MailingCity +','+
+                  this.MailingState +','+ 
+                  this.MailingPostalCode +','+
+                  this.MailingCountry
+                 );
+         }
+ 
+         return 'error'; 
+        }   
+ 
+        function getLatLng() 
+        { 
+         geocoder = new google.maps.Geocoder();  
+         geocoder.geocode( 
+         { 'address': CustomerRequest.getCSVAddress() }, 
+         function(results, status) 
+         { 
+          if (status == google.maps.GeocoderStatus.OK) 
+          { 
+            CustomerRequest.Latitude  = (results[0].geometry.location.lat()).toString();  
+            CustomerRequest.Longitude = (results[0].geometry.location.lng()).toString();  
+            CustomerRequest.MappingStatus = 'Located'; 
+          } 
+          else if (status == google.maps.GeocoderStatus.ZERO_RESULTS || status == google.maps.GeocoderStatus.INVALID_REQUEST) 
+          { 
+           CustomerRequest.MappingStatus = 'Problem with Address'; 
+          } 
+          else if (status == google.maps.GeocoderStatus.OVER_QUERY_LIMIT) 
+          { 
+           CustomerRequest.MappingStatus = 'Google Exhausted'; 
+          }  
+          updateCustomerRequest(); 
+         }); 
+        }
+ 
+        function updateCustomerRequest() 
+        { 
+         var mappedCustomerRequest = new sforce.SObject('Customer_Requests__c');  
+ 
+         mappedCustomerRequest.Location__Latitude__s  = null; 
+         mappedCustomerRequest.Location__Longitude__s = null;  
+ 
+         if(CustomerRequest.MappingStatus == 'Located') 
+         { 
+          mappedCustomerRequest.Location__Latitude__s  = CustomerRequest.Latitude; 
+          mappedCustomerRequest.Location__Longitude__s = CustomerRequest.Longitude; 
+         }  
+         mappedCustomerRequest.id = CustomerRequest.ID; 
+         mappedCustomerRequest.Mapping_Status__c = CustomerRequest.MappingStatus;
+ 
+         result = sforce.connection.update([mappedCustomerRequest]);  
+ 
+         if(result[0].getBoolean('success')) 
+         { 
+          alert('The Customer Request\'s new Address has been located Successfully. Please Refresh the Page.');   
+         } 
+        }   
+        
+        $(document).ready(
+         function()
+         {
+          authorize();
+          getCustomerRequestID();
+          fetchCustomerRequestRecord();
+          if(CustomerRequest.IsRecordAvailable && !CustomerRequest.isMapped() && CustomerRequest.isAddressAvailable())
+          {
+           getLatLng();
+          }
+         });
+    </script>
+            
+ </apex:page>

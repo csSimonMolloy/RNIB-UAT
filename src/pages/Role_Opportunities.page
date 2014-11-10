@@ -1,0 +1,160 @@
+<apex:page showHeader="true" controller="RoleController">
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.3.custom/js/jquery-1.9.1.js')}"  />
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.js')}"  />
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.min.js')}"  />
+<apex:form >
+  <apex:pageMessages id="errors" escape="false"/>
+ 
+       <script type="text/javascript">
+      function doSearch() {
+        var locationValues = jQuery('#location').val();
+        var availValues = jQuery('#availability').val();
+        var interestValues = jQuery('#interests').val();
+
+        var passLocation = (locationValues == null ? '' : locationValues.join());
+        var passAvail = (availValues == null ? '' : availValues.join());
+        var passInterest = (interestValues == null ? '' : interestValues.join());
+        
+        searchServer(
+          passLocation, passAvail, passInterest,
+          //document.getElementById("location").value,
+          //document.getElementById("availability").value,
+          //document.getElementById("interests").value,   
+          document.getElementById("worklocation").value   
+          );
+      }
+      </script> 
+
+      <apex:actionFunction name="searchServer" action="{!runSearch}" rerender="results,results2,debug,errors" >
+          <apex:param name="location" value="" />
+          <apex:param name="availability" value="" />
+          <apex:param name="interests" value="" />
+          <apex:param name="worklocation" value="" />
+      </apex:actionFunction>
+
+    <!-- Chatter Feed Panel -->
+      <apex:outputPanel style="padding:10px 10px 50px 10px" id="chatterFeed">
+        <apex:pageBlock id="chatter">
+
+          <table>
+          <tr>
+          <td><b>Filter your Opportunities.</b></td>
+          </tr>
+          <tr>
+          <td>(Note: More than one value can be selected from each list.<br/>To select more than one value please hold CTRL and click) </td>
+          </tr>
+    	<tr>
+        <td style="font-weight:bold;">Regions</td>
+        <td>
+        <select id="location" multiple="true">
+        <!-- <option value=""></option> -->
+        <apex:repeat value="{!locations}" var="loc">
+        <option value="{!loc}">{!loc}</option>
+        </apex:repeat>
+        </select>
+        </td>
+    </tr>
+    <!--No Longer Required
+    <tr>
+        <td style="font-weight:bold;">Skills</td>
+        <td>
+        <select id="skills">
+        <option value=""></option>
+        <apex:repeat value="{!skills}" var="skl">
+        <option value="{!skl}">{!skl}</option>
+        </apex:repeat>
+        </select>
+        </td>
+    </tr>
+    -->
+    <tr>
+        <td style="font-weight:bold;">Availability</td>
+        <td>
+        <select id="availability" multiple="true">
+        <!-- <option value=""></option> -->
+        <apex:repeat value="{!availability}" var="ava">
+        <option value="{!ava}">{!ava}</option>
+        </apex:repeat>
+        </select>
+        </td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold;">Interests/Skills</td>
+        <td>
+        <select id="interests" multiple="true">
+        <!-- <option value=""></option> -->
+        <apex:repeat value="{!interests}" var="int">
+        <option value="{!int}">{!int}</option>
+        </apex:repeat>
+        </select>
+        </td>
+    </tr>
+    <!--No Longer Required
+    <tr>
+        <td style="font-weight:bold;">Service</td>
+        <td>
+        <select id="service">
+        <option value=""></option>
+        <apex:repeat value="{!service}" var="ser">
+        <option value="{!ser}">{!ser}</option>
+        </apex:repeat>
+        </select>
+        </td>
+    </tr>  
+    -->
+    <tr>
+    <td style="font-weight:bold;">Based</td>
+        <td>
+        <select id="worklocation">
+        <option value=""></option> 
+        <apex:repeat value="{!worklocation}" var="wor">
+        <option value="{!wor}">{!wor}</option>
+        </apex:repeat>
+        </select>
+        </td>
+    </tr>   
+    <tr>
+        <td>
+        <input type="BUTTON" OnClick="doSearch();" value="Search"/>
+        <input type="BUTTON" OnClick="window.location.reload()" value="Reset"/>
+        </td>
+        <td>
+        </td>
+    </tr>    
+</table>
+
+        </apex:pageBlock>
+      </apex:outputPanel>
+
+ <apex:outputPanel style="padding:10px 10px 50px 10px" id="results2">
+        <apex:pageblock >
+          <apex:pageBlockSection title="{!$Label.Title_Current_Opportunities}" columns="1" collapsible="false">
+            <apex:pageblocktable value="{!roles}" var="role" id="requestTable">
+              <apex:column width="50px">
+                <apex:facet name="header"></apex:facet>
+                <apex:outputLink value="/apex/Role_Opportunities_Details?id={!role.Id}">View</apex:outputLink>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Role Title</apex:facet>
+                <apex:outputfield value="{!role.Role_Title__c}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Region</apex:facet>
+                <apex:outputfield value="{!role.Location__c}"/>
+              </apex:column> 
+              <apex:column >
+                <apex:facet name="header">Interests</apex:facet>
+                <apex:outputfield value="{!role.Interests__c}"/>
+              </apex:column> 
+              <apex:column >
+                <apex:facet name="header">Description</apex:facet>
+                <apex:outputfield value="{!role.Role_Description__c}"/>
+              </apex:column> 
+            </apex:pageblocktable>
+          </apex:pageBlockSection>
+        </apex:pageblock> 
+      </apex:outputpanel>
+
+  </apex:form>   
+
+</apex:page>

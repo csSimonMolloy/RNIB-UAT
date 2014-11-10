@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Role_Opportunity__c$Name</field>
+    </columns>
+    <columns>
+        <field>Role_Opportunity__c$Active_on_Website__c</field>
+    </columns>
+    <columns>
+        <field>Role_Opportunity__c.Applications__r$Status__c</field>
+    </columns>
+    <columns>
+        <field>Role_Opportunity__c$DBS_Check_required__c</field>
+    </columns>
+    <columns>
+        <field>Role_Opportunity__c.Applications__r$Name</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Role_Opportunity__c$DBS_Check_required__c</column>
+            <operator>notEqual</operator>
+            <value>DBS Standard,DBS Enhanced,DBS Enhanced check for regulated activity with adults,DBS Enhanced check for regulated activity with children,DBS Enhanced check for regulated activity with adults and children</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Volunteers require CRB but don&apos;t have 1</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>Roles_with_Volunteer_Roles__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Role_Opportunity__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

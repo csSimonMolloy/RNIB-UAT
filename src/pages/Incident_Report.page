@@ -1,0 +1,266 @@
+<apex:page standardController="Incident_Report__c" renderAs="PDF">
+<head> 
+    <style> 
+    table.gridtable { font-family: verdana,arial,sans-serif; font-size:11px; color:#333333; }
+    </style>
+</head>
+
+
+    <div class="main">
+        <div style="page-break-after:always;"> 
+            <p align="right">
+                RNIB Group Volunteering Team<br/>
+                Bakewell Road<br/>
+                Orton Southgate<br/>
+                Peterborough <br/>
+                PE2 6XU
+            </p>
+        
+            <p><b>Accident/Incident report form</b></p>
+            <p>This form should be used by volunteers to report all incidents, accidents and near misses. Accidents resulting in property damage should also be recorded.  Where possible, this form should be completed by the volunteer/ person involved in the incident.</p>
+            <p>Once completed, please forward to your volunteer manager*.</p>
+
+            <p><b>1. The volunteer/person involved in the incident.</b></p>
+
+            <table width="100%" border="1px solid black" cellspacing="0">
+                <tr>
+                    <td width="25%" style="vertical-align: top;">Last Name</td>
+                    <td style="vertical-align: top;" colspan="4">{!IF(Incident_Report__c.Person_Involved__c!= "",Incident_Report__c.Person_Involved__r.LastName,Incident_Report__c.Other_Person_Last_Name__c)}</td>
+                </tr>
+                <tr>
+                    <td width="25%" style="vertical-align: top;">First Name</td>
+                    <td style="vertical-align: top;" colspan="4">{!IF(Incident_Report__c.Person_Involved__c!= "",Incident_Report__c.Person_Involved__r.FirstName,Incident_Report__c.Other_Person_First_Name__c)}</td>
+                </tr>
+                <tr>
+                    <td width="25%" style="vertical-align: top;" height="125px">Home Address</td>
+                    <td style="vertical-align: top;" colspan="4"><apex:outputText value=" {!IF(Incident_Report__c.Person_Involved__c!= "",Incident_Report__c.Person_Involved_Address__c,Incident_Report__c.Other_Person_Address__c)}" escape="false" /></td>
+                </tr>
+                <tr>
+                    <td width="25%" style="vertical-align: top;">Email</td>
+                    <td style="vertical-align: top;" colspan="4">{!IF(Incident_Report__c.Person_Involved__c!= "",Incident_Report__c.Person_Involved_Email__c,Incident_Report__c.Other_Person_Email__c)}</td>
+                </tr>
+                <tr>
+                    <td width="25%" style="vertical-align: top;">Status</td>
+                    <td width="20%" style="vertical-align: top;">Volunteer</td>
+                    <td width="17.5%" style="vertical-align: top;">{!IF(Incident_Report__c.Person_Involved_Type__c = "Volunteer","X","")}</td>
+                    <td width="20%" style="vertical-align: top;">Other</td>
+                    <td width="17.5%" style="vertical-align: top;">{!IF(Incident_Report__c.Person_Involved_Type__c = "Other","X","")}</td>
+                </tr>
+                <tr>
+                    <td width="25%" style="vertical-align: top;">Telephone</td>
+                    <td style="vertical-align: top;" colspan="4">{!IF(Incident_Report__c.Person_Involved__c!= "",Incident_Report__c.Person_Involved_Phone__c,Incident_Report__c.Other_Person_Phone__c)}</td>
+                </tr>
+
+            </table>
+      
+            <div style="display:inline; height:20px width: 70px">&nbsp;</div>
+
+            <p><b>2. YOU the person filling in the form (If you are not the person involved in the incident).</b></p>
+
+            <table width="100%" border="1px solid black" cellspacing="0">
+                <tr>
+                    <td width="25%" style="vertical-align: top;">Last Name</td>
+                    <td style="vertical-align: top;" colspan="4">{!Incident_Report__c.Form_Filled_In_By__r.Lastname}</td>
+                </tr>
+                <tr>
+                    <td width="25%" style="vertical-align: top;">First Name</td>
+                    <td style="vertical-align: top;" colspan="4">{!Incident_Report__c.Form_Filled_In_By__r.FirstName}</td>
+                </tr>
+                <tr>
+                    <td width="25%" style="vertical-align: top;" height="125px">Home Address</td>
+                    <td style="vertical-align: top;" colspan="4"><apex:outputText value=" {!Incident_Report__c.Form_Filled_In_By_Type__c}" escape="false"/></td>
+                </tr>
+                <tr>
+                    <td width="25%" style="vertical-align: top;">Email</td>
+                    <td style="vertical-align: top;" colspan="4">{!Incident_Report__c.Form_Filled_In_By_Email__c}</td>
+                </tr>
+                <tr>
+                    <td width="25%" style="vertical-align: top;">Status</td>
+                    <td width="20%" style="vertical-align: top;">Volunteer</td>
+                    <td width="17.5%" style="vertical-align: top;">{!IF(Incident_Report__c.Form_Filled_In_By_Type__c = "Volunteer","X","")}</td>
+                    <td width="20%" style="vertical-align: top;">Other</td>
+                    <td width="17.5%" style="vertical-align: top;">{!IF(Incident_Report__c.Form_Filled_In_By_Type__c = "Other","X","")}</td> 
+                </tr>
+                <tr>
+                    <td width="25%" style="vertical-align: top;">Telephone</td>
+                    <td style="vertical-align: top;" colspan="4">{!Incident_Report__c.Form_Filled_In_By_Phone__c}</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div style="page-break-after:always;"/>
+
+
+        <div style="page-break-after:auto;"> 
+
+            <p><b>3. When the incident happened</b></p>      
+
+            <table width="100%" border="1px solid black" cellspacing="0">
+                <tr>
+                    <td width="35%" style="vertical-align: top;">Date</td>
+                    <td style="vertical-align: top;"><apex:outputText value="{0,date,dd'/'MM'/'yyyy}">
+                    <apex:param value="{!Incident_Report__c.Incident_Date_Time__c}" /> 
+                    </apex:outputText></td>
+                </tr>
+                <tr>
+                    <td width="35%" style="vertical-align: top;">Time</td>
+                    <td style="vertical-align: top;"><apex:outputText value="{0,date,HH:mm}">
+                    <apex:param value="{!Incident_Report__c.Incident_Date_Time__c}" /> 
+                    </apex:outputText></td>
+                </tr>
+                <tr>
+                    <td width="35%" style="vertical-align: top;">Not known</td>
+                    <td style="vertical-align: top;"><apex:outputText value="{!IF(Incident_Report__c.Incident_Date_Time__c = NULL,"X","")}"/></td>
+                </tr>
+            </table>   
+
+            <div style="display:inline; height:20px width: 70px">&nbsp;</div>
+
+            <p><b>4. Where the incident happened</b></p> 
+
+            <table width="100%" border="1px solid black" cellspacing="0">
+                <tr>
+                    <td width="100%" height="125px" style="vertical-align: top;">Address or Location.<br/><apex:outputfield value=" {!Incident_Report__c.Incident_Location__c}"/></td>
+                </tr>
+
+            </table> 
+
+            <div style="display:inline; height:20px width: 70px">&nbsp;</div>
+
+            <p><b>5. About the incident</b></p>
+
+            <table width="100%" border="1px solid black" cellspacing="0">
+                <tr>
+                    <td width="100%" height="125px" style="vertical-align: top;">How did it happen?<br/><apex:outputfield value=" {!Incident_Report__c.About_the_incident__c}" /></td>
+                </tr>
+            </table> 
+            
+            <div style="display:inline; height:20px width: 70px">&nbsp;</div>
+
+            <p><b>6. About the injury or damage. </b></p>
+  
+            <table width="100%" border="1px solid black" cellspacing="0">
+                <tr>
+                    <td width="100%" height="125px" style="vertical-align: top;">Description of injury suffered.<br/><apex:outputfield value=" {!Incident_Report__c.About_the_injury_or_damage__c}"/></td>
+                </tr>
+            </table> 
+
+        </div>
+
+        <div style="page-break-after:always;"/>
+
+
+        <div style="page-break-after:auto;"> 
+
+            <table width="100%" border="1px solid black" cellspacing="0">
+                <tr>
+                    <td width="60%"><b>Treatment after injury</b></td>
+                    <td width="20%">Yes</td>
+                    <td width="20%">No</td>
+                </tr>
+                <tr>
+                    <td width="60%">No treatment</td>
+                    <td width="20%">{!IF(CONTAINS(Incident_Report__c.Treatment_after_injury__c, "No Treatment"),"X", "")}</td>
+                    <td width="20%">{!IF(NOT(CONTAINS(Incident_Report__c.Treatment_after_injury__c, "No Treatment")),"X", "")}</td>
+                </tr>
+                <tr>
+                    <td width="60%">First Aid</td>
+                    <td width="20%">{!IF(CONTAINS(Incident_Report__c.Treatment_after_injury__c, "First Aid"),"X", "")}</td>
+                    <td width="20%">{!IF(NOT(CONTAINS(Incident_Report__c.Treatment_after_injury__c, "First Aid")),"X", "")}</td>
+                </tr>
+                <tr>
+                    <td width="60%">Seen by GP/Paramedic</td>
+                    <td width="20%">{!IF(CONTAINS(Incident_Report__c.Treatment_after_injury__c, "Seen by GP / Paramedic"),"X", "")}</td>
+                    <td width="20%">{!IF(NOT(CONTAINS(Incident_Report__c.Treatment_after_injury__c, "Seen by GP / Paramedic")),"X", "")}</td>
+                </tr>
+                <tr>
+                    <td width="60%">Hospital visit for treatment</td>
+                    <td width="20%">{!IF(CONTAINS(Incident_Report__c.Treatment_after_injury__c, "Hospital Visit for Treatment"),"X", "")}</td>
+                    <td width="20%">{!IF(NOT(CONTAINS(Incident_Report__c.Treatment_after_injury__c, "Hospital Visit for Treatment")),"X", "")}</td>
+                </tr>
+                <tr>
+                    <td width="60%">24 hours or more hospital stay </td>
+                    <td width="20%">{!IF(CONTAINS(Incident_Report__c.Treatment_after_injury__c, "24 hours or more Hospital Stay"),"X", "")}</td>
+                    <td width="20%">{!IF(NOT(CONTAINS(Incident_Report__c.Treatment_after_injury__c, "24 hours or more Hospital Stay")),"X", "")}</td>
+                </tr>
+                <tr>
+                    <td width="100%" colspan="3"><b>Result of Injury</b></td>
+                </tr>
+                <tr>
+                    <td width="60%">Able to do normal activities after incident</td>
+                    <td width="20%">{!IF(CONTAINS(Incident_Report__c.Result_of_injury__c, "Able to do normal activities after incident"),"X", "")}</td>
+                    <td width="20%">{!IF(NOT(CONTAINS(Incident_Report__c.Result_of_injury__c, "Able to do normal activities after incident")),"X", "")}</td>
+                </tr>
+                <tr>
+                    <td width="60%">Unable to do normal activities after incident</td>
+                    <td width="20%">{!IF(CONTAINS(Incident_Report__c.Result_of_injury__c, "Unable to do normal activities after incident"),"X", "")}</td>
+                    <td width="20%">{!IF(NOT(CONTAINS(Incident_Report__c.Result_of_injury__c, "Unable to do normal activities after incident")),"X", "")}</td>
+                </tr>
+
+            </table> 
+
+            <div style="display:inline; height:20px width: 70px">&nbsp;</div>
+
+            <p><b>7. Property damaged</b></p>
+
+            <table width="100%" border="1px solid black" cellspacing="0">
+                <tr>
+                    <td width="60%">Was any property damaged?</td>
+                    <td width="20%">{!IF(CONTAINS(Incident_Report__c.Property_damaged__c, "Yes"),"X", "")}</td>
+                    <td width="20%">{!IF(CONTAINS(Incident_Report__c.Property_damaged__c, "No"),"X", "")}</td>
+                </tr>
+                <tr>
+                    <td width="100%" height="125px" colspan="3" style="vertical-align: top;">Describe damage to property.<br/>
+                    <apex:outputfield value=" {!Incident_Report__c.Property_damaged_Description__c}"/></td>
+                </tr>                
+                <tr>
+                    <td width="100%" height="125px" colspan="3" style="vertical-align: top;">Cost of repair to damage<br/>
+                    <apex:outputfield value=" {!Incident_Report__c.Property_damage_cost__c}" /></td>
+                </tr>   
+            </table> 
+
+            <div style="display:inline; height:20px width: 70px">&nbsp;</div>
+
+            <p><b>8. Action taken after accident/incident to reduce risk</b></p>
+
+            <table width="100%" border="1px solid black" cellspacing="0">
+                <tr>
+                    <td width="60%">Was any action taken?</td>
+                    <td width="20%">{!IF(CONTAINS(Incident_Report__c.Action_taken_after_to_reduce_risk__c, "Yes"),"X", "")}</td>
+                    <td width="20%">{!IF(CONTAINS(Incident_Report__c.Action_taken_after_to_reduce_risk__c, "No"),"X", "")}</td>
+                </tr>
+                <tr>
+                    <td width="100%" height="125px" colspan="3" style="vertical-align: top;">Describe damage to property.<br/>
+                    <apex:outputfield value="{!Incident_Report__c.Reduce_Risk_Description__c}" /></td>
+                </tr>                 
+            </table>
+
+            <div style="display:inline; height:20px width: 70px">&nbsp;</div>
+
+            <table width="100%" border="0">
+                <tr>
+                    <td width="6%" style="vertical-align: top;">Signed:</td>
+                    <td width="40%" style="vertical-align: top; border-bottom: 1px solid black;">{!Incident_Report__c.Form_Filled_In_By__r.Name}</td>
+                    <td width="6%" style="vertical-align: top;">Date:</td>
+                    <td style="vertical-align: top; border-bottom: 1px solid black;">
+                        <apex:outputText value="{0,date,dd'/'MM'/'yyyy}">
+                            <apex:param value="{!Incident_Report__c.CreatedDate}" /> 
+                        </apex:outputText>
+                    </td>
+                </tr>
+            </table> 
+
+            <div style="display:inline; height:20px width: 70px">&nbsp;</div>
+
+            <table width="100%" border="1px solid black" cellspacing="0">
+                <tr>
+                    <td style="vertical-align: top;">*Volunteer Managers with access to RNIB iSite must complete the electronic Accident and Incident Reporting Form and submit to H S &amp; E.  Action for Blind People, CVV and TNAK volunteer managers should follow their own internal reporting procedures and also forward a copy of this form to volunteering@rnib.org.uk</td>
+                </tr>
+            </table> 
+
+        
+        </div> 
+    </div>
+</apex:page>

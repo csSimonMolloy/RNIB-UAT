@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email template for sending Role Description to other recruitment source.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>RNIB_Basic</letterhead>
+    <name>Role Description</name>
+    <style>freeForm</style>
+    <subject>RNIB Role Description</subject>
+    <textOnly>Please find the Role Description below:
+
+
+{!Role_Opportunity__c.Role_Title__c}
+{!Role_Opportunity__c.00Nb0000003zfA2}
+{!Role_Opportunity__c.Start_Date__c}
+{!Role_Opportunity__c.End_Date__c}
+{!Role_Opportunity__c.Location__c}
+
+
+If you have any enquires please feel free to contact the person below.
+{!Role_Opportunity__c.Capacity__c}</textOnly>
+    <type>html</type>
+</EmailTemplate>

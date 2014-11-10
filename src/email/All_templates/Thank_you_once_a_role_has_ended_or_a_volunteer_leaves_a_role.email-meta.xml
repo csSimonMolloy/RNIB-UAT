@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>RNIB_Basic</letterhead>
+    <name>Thank you once a role has ended or a volunteer leaves a role</name>
+    <style>freeForm</style>
+    <subject>Thank you</subject>
+    <textOnly>Dear {!Contact.FirstName}
+
+
+
+On behalf of RNIB Group we would like to say a huge thank you for all the time and support you have given us, helping us to reach many more blind and partially sighted people than we possibility could with staff alone.
+
+
+Volunteers are hugely important to us; together we can achieve our ambition of making every day better for everyone affected by sight loss: by being there when people need us, supporting independent living, creating an inclusive society and preventing sight loss.
+
+
+Quite simply we will not be able to do this without the dedication of our volunteers; your time, talents and effort were very much needed and are much appreciated.
+
+
+Thank you once again for volunteering with us. We would like to wish you all the very best for the future and we hope you will continue to champion and support our cause to make every day better for everyone affected by sight loss. If you’re interested in supporting our work in other ways then please visit www.rnib.org.uk/getinvolved
+
+
+Your sincerely,
+
+
+
+RNIB Group Volunteering</textOnly>
+    <type>html</type>
+</EmailTemplate>

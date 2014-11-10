@@ -1,0 +1,636 @@
+<apex:page showHeader="false" cache="false" controller="CustomerRequest_Helpline">
+<head>
+    <title>Customer Request - RNIB</title>
+    <!-- <link href="https://www.rnib.org.uk//_layouts/RNIB/Internet/Styles/green.css" rel="stylesheet" type="text/css"/>
+    <link id="Link1" rel="stylesheet" href="https://www.rnib.org.uk//_layouts/RNIB/Internet/Styles/rnib.css" type="text/css"/>
+    <link rel="stylesheet" href="https://www.rnib.org.uk//_layouts/RNIB/Internet/Styles/rnibprintmedia.css" type="text/css" media="print"/>
+    <link id="ResolutionCSS" rel="stylesheet" type="text/css" href="https://www.rnib.org.uk//_layouts/RNIB/Internet/Styles/wide.css" title="ResolutionCSS"/>
+    <link id="ctl00_bodyCSS" rel="stylesheet" href="https://www.rnib.org.uk//_layouts/RNIB/Internet/Styles/TextResizing/smallfont.css" type="text/css"/>
+    <link rel="alternate stylesheet" type="text/css" href="https://www.rnib.org.uk//_layouts/RNIB/Internet/Styles/wide.css" title="Wide"/>
+    -->  
+    <meta name="keywords" content="contact, address, telephone, email, offices, location, head office, offices, HQ,"></meta>
+    <meta name="description" content="To get in touch with RNIB, call 0303 123 9999, email helpline@rnib.org.uk or fill out our online contact form."></meta>
+    <!-- <link rel="shortcut icon" href="http://www.rnib.org.uk//SiteCollectionImages/favicon.jpg"/> -->
+
+    <!-- <link id="ctl00_onetidThemeCSS" rel="stylesheet" type="text/css" href="https://www.rnib.org.uk/../../../_themes/Vintage/Vint1011-65001.css"/> -->
+    <meta name="Microsoft Theme" content="Vintage 1011, default"></meta>
+    
+    <!--<apex:includescript value="{!$Resource.jquery_1_10_2_js}"></apex:includescript>
+    <apex:includescript value="{!$Resource.jquery_validate_min_js}"></apex:includescript>   
+
+    <script type="text/javascript"> 
+        $(document).ready(function() {
+            $('[id$=commentForm]').validate();             
+            jQuery("input[Id$='firstname']" ).rules("add",{
+                required: true,
+                minlength: 2
+            });   
+            jQuery("input[Id$='lastname']" ).rules("add",{
+                required: true,
+                minlength: 2
+            });
+            jQuery("input[Id$='phone']" ).rules("add",{
+                required: true,
+                minlength: 2
+            });
+            jQuery("input[Id$='street']" ).rules("add",{
+                required: true,
+                minlength: 2
+            });
+            jQuery("input[Id$='city']" ).rules("add",{
+                required: true,
+                minlength: 2
+            });
+            jQuery("input[Id$='county']" ).rules("add",{
+                required: true,
+                minlength: 2
+            });
+            jQuery("input[Id$='postcode']" ).rules("add",{
+                required: true,
+                minlength: 2
+            });
+            jQuery("input[Id$='nvis']" ).rules("add",{
+                required: true,
+                minlength: 2
+            });
+            
+            $('[id$=referralFields]').hide();                          
+        });
+         
+        function setMandatoryField(){
+            var isReferral = jQuery('[id$="isReferral"]')[0];
+
+            if (isReferral.checked){
+                $('[id$=referralFields]').show();
+                jQuery("input[Id$='referralfirstname']" ).rules("add",{
+                required: true,
+                minlength: 2
+                }); 
+                jQuery("input[Id$='referrallastname']" ).rules("add",{
+                required: true,
+                minlength: 2
+                });
+                jQuery("input[Id$='referralstreet']" ).rules("add",{
+                required: true,
+                minlength: 2
+                });
+                jQuery("input[Id$='referralcity']" ).rules("add",{
+                required: true,
+                minlength: 2
+                });
+                jQuery("input[Id$='referralcounty']" ).rules("add",{
+                required: true,
+                minlength: 2
+                });
+                jQuery("input[Id$='referralpostcode']" ).rules("add",{
+                required: true,
+                minlength: 2
+                });
+                jQuery("input[Id$='referralphone']" ).rules("add",{
+                required: true,
+                minlength: 2
+                });
+
+
+            }else {
+                $('[id$=referralfirstname]').rules("remove");
+                $('[id$=referrallastname]').rules("remove");
+                $('[id$=referralstreet]').rules("remove");
+                $('[id$=referralcity]').rules("remove");
+                $('[id$=referralpostcode]').rules("remove");
+                $('[id$=referralphone]').rules("remove");
+                $('[id$=referralFields]').hide();
+            }
+        }
+         
+    </script>-->
+    
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.3.custom/js/jquery-1.9.1.js')}"  />
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.js')}"  />
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.min.js')}"  />
+    
+<script>
+function isEmpty(inValue){
+    if (inValue == null || inValue == '' || inValue.length <= 0){
+        return true;
+    }else {
+        return false;
+    }
+}
+
+//Form validation 
+function validateForm(){
+    var errorMsgString = 'The following fields need to be populated:\n';
+    var fieldNames = '';
+    var postcode_regex = /[A-Z]{1,2}[0-9][0-9A-Z]?\s?[0-9][A-Z]{2}/gi;
+    
+    //Get the boolean show values
+    var isReferral = jQuery("input[id$='isReferral']");
+    var isReferralChecked = isReferral.prop('checked');
+    //Get all fields
+    var firstname =  jQuery("[Id$='firstname']");
+    var lastname =  jQuery("[Id$='lastname']");
+    var phone =  jQuery("[Id$='phone']");
+    var street =  jQuery("[Id$='street']");
+    var city =  jQuery("[Id$='city']");
+    var county =  jQuery("[Id$='county']");
+    var postcode =  jQuery("[Id$='postcode']");
+    var nvis =  jQuery("[Id$='nvis']");
+    var referralfirstname =  jQuery("[Id$='referralfirstname']");
+    var referrallastname =  jQuery("[Id$='referrallastname']");
+    var referralphone =  jQuery("[Id$='referralphone']");
+    var referralstreet =  jQuery("[Id$='referralstreet']");
+    var referralcity =  jQuery("[Id$='referralcity']");
+    var referralpostcode =  jQuery("[Id$='referralpostcode']");
+
+    if(isEmpty(firstname.val())) fieldNames += 'First Name\n';
+    if(isEmpty(lastname.val())) fieldNames += 'Last Name\n';
+    if(isEmpty(phone.val())) fieldNames += 'Home Phone\n';
+    if(isEmpty(street.val())) fieldNames += 'Street\n';
+    if(isEmpty(city.val())) fieldNames += 'City\n';
+    if(isEmpty(county.val())) fieldNames += 'County\n';
+    if(isEmpty(postcode.val())){
+        fieldNames += 'Postcode\n';
+    }else if (!postcode.val().match(postcode_regex)){
+        fieldNames += 'Postcode with correct format\n';
+    }
+    if(isEmpty(nvis.val())) fieldNames += 'NIVS\n';
+    
+    //2014-07-09 : CSL : Adding in validation for What does the customer need help with
+    var whatIsNeeded = jQuery("[Id$='whatIsNeeded']");
+    var whatIsNeededVal = whatIsNeeded.val();
+    
+    if ('NULL' == whatIsNeededVal) fieldNames += 'What does the customer need help with\n';
+    
+    if (isReferralChecked){
+        if(isEmpty(referralfirstname.val())) fieldNames += 'Referral First Name\n';
+        if(isEmpty(referrallastname.val())) fieldNames += 'Referral Last Name\n';
+        if(isEmpty(referralphone.val())) fieldNames += 'Referral Phone\n';
+        if(isEmpty(referralstreet.val())) fieldNames += 'Referral Street\n';
+        if(isEmpty(referralcity.val())) fieldNames += 'Referral City\n';
+        if(isEmpty(referralcounty.val())) fieldNames += 'Referral County\n';
+        
+        if(isEmpty(referralpostcode.val())){
+            fieldNames += 'Referral Postcode\n';
+        }else if (!referralpostcode.val().match(postcode_regex)){
+            fieldNames += 'Referral Postcode with correct format\n';
+        }
+    }
+    
+    if (fieldNames.length > 0){
+        alert(errorMsgString + fieldNames);
+
+        //2014-02-11 : SM : Turning off validation return of false to enable form submission
+        return false;
+        
+        //return true;
+    }else {
+        //Turn off the Return True to keep the page on the screen
+        //Turn back on to go live
+        return true;
+        //return false;
+    }
+}
+
+
+
+</script>
+
+
+    <style>
+        input[type=text],input[type=password], textarea{
+            float: left;
+            width: 40%;
+        }
+        
+        input[type=text], input[type=password], textarea{
+            border: 1px solid #AAA !important; ;
+            padding: 2px !important;
+            margin: 1px 0px;
+        }
+        
+        textarea{
+            margin-bottom: 10px;
+        }
+        
+        form{
+           margin: 0px auto;
+           text-align: left;
+           100%;
+        }
+        
+        br{
+            clear: both;
+            margin: 10px;
+        }
+        
+        label.error{
+            color:red;
+            font-size: 12px;
+            line-height: 20px;
+            padding: 2px 5px;
+            float: left;
+            border: none;
+            !important;
+        }
+        
+        .apexp .bPageBlock .error {
+            border: none;  
+        }
+        
+        .star{
+            color: red;
+        }
+        
+        .bPageBlock .labelCol {
+            text-align: left !important;
+            font-size: 12px !important;
+            font-weight: normal !important;
+            color: #000000 !important;
+            padding-left: 10px !important;
+        }
+    </style>
+  
+ </head>
+ <body id="home">
+    <div>
+        <div id="wrapper">
+            <div id="header" style="width: 99.9996%;">
+                <div id="header-col-1">
+                    <a id="ctl00_masterPageLogo_linkSiteLogo" href="http://www.rnib.org.uk"><img id="ctl00_masterPageLogo_imgSiteLogo" src="http://www.rnib.org.uk/PublishingImages/RNIBLogo.gif" alt="RNIB Home"/></a> <img id="ctl00_masterPageLogo_imgStrapLineLogo" src="http://www.rnib.org.uk/publishingimages/rnibstrapline.gif" alt="supporting blind and partially sighted people"/> 
+                    <ul class="contact-info">
+                        <li>
+                        <a href="http://www.rnib.org.uk/aboutus/contactdetails/Pages/helpline.aspx">RNIB Helpline</a>
+                        </li>
+                        <li>
+                        0303 123 9999
+                        </li>
+                        <li class="rss">
+                        <a href="http://www.rnib.org.uk/getinvolved/onlinecommunity/Pages/rss.aspx">Email alerts and RSS</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="header-col-2">
+                    <div class="headerlinks-right">
+                        <p class="welcome"></p>
+                        <ul id="ctl00_ctl14_ulWelcomeControl" class="site-tools login">
+                            <li id="ctl00_ctl14_liLogin">
+                            <a href="https://www.rnib.org.uk/Pages/Login.aspx?ReturnUrl=http://www.rnib.org.uk/aboutus/contactdetails/Pages/contactdetails.aspx&amp;LoginLnk=true">Login</a>
+                            </li>
+                            <li id="ctl00_ctl14_liRegister">
+                            <a href="https://www.rnib.org.uk/Pages/Register.aspx">Register</a>
+                            </li>
+                        </ul><!-- End Master Page Welcome Control 1.0.0.0-->
+                        <ul class="site-tools" xmlns:rs="urn:schemas-microsoft-com:rowset">
+                            <li>
+                            <a href="http://www.rnib.org.uk/aboutus/aboutthiswebsite/help/Pages/help.aspx">Help</a>
+                            </li>
+                            <li>
+                            <a href="http://www.rnib.org.uk/aboutus/contactdetails/Pages/contactdetails.aspx">Contact Us</a>
+                            </li>
+                            <li>
+                            <a href="http://www.rnib.org.uk/getinvolved/onlinecommunity/Forum">Discussions</a>
+                            </li>
+                            <li>
+                            <a href="http://www.rnib.org.uk/aboutus/aboutthiswebsite/privacy/Pages/cookies.aspx">Cookies</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="clear">
+                </div>
+            </div><!-- main nav -->
+                <ul id="main-nav">
+                    <li class="node-0">
+                    <a href="/">Home</a>
+                    </li>
+                    <li class="node-1">
+                    <a href="/eyehealth">Eye health</a>
+                    </li>
+                    <li class="node-2">
+                    <a href="/LIVINGWITHSIGHTLOSS">Living with sight loss</a>
+                    </li>
+                    <li class="node-3">
+                    <a href="/PROFESSIONALS">Professionals</a>
+                    </li>
+                    <li class="node-4">
+                    <a href="/getinvolved">Get involved</a>
+                    </li>
+                    <li class="node-5 selected">
+                    <a href="/aboutus">About us</a>
+                    </li>
+                    <li class="node-6">
+                    <a href="/shop">Shop</a>
+                    </li>
+                    <li class="node-7">
+                    <a href="/donate">Donate</a>
+                    </li>
+                </ul>
+        </div>
+<div id="breadcrumbs">
+     <p>
+      You are here:
+     </p>
+     <ul>
+      <li>
+       <a href="/">Home</a>
+      </li>
+      <li>
+       <a href="/getinvolved">Get involved</a>
+      </li>
+      <li>
+       Volunteer
+      </li>
+     </ul>
+     <div class="clear">
+            </div>
+        </div>
+        
+  
+        <div id="content-wrapper">
+            <div id="main">
+                <div id="content">
+                    <div id="col-3">
+                        <h1 id="skiptomain">Customer Request</h1>
+                        <div id="col-3-top">
+                            <div class="top-links" id="ctl00_PlaceHolderContentWrapper_PlaceHolderMainWrapper_PlaceHolderMain_H2LinksPanel">
+                                <div id="ctl00_PlaceHolderContentWrapper_PlaceHolderMainWrapper_PlaceHolderMain_H2LinksPanel_RichHtmlField1__ControlWrapper_RichHtmlField">
+                                </div>
+                            </div>
+                            <div class="clear">
+                            </div>
+                        </div>
+                        <div class="clear">
+                        </div>
+                        
+<apex:form id="commentForm">               
+      
+                        <div id="ctl00_main_UpdatePanel1">
+    
+                            <div id="ctl00_main_nowizard">
+                            <apex:pagemessages />
+                            <p><font size="4"><strong>Customer Request Helpline form</strong></font></p>
+
+                            <p>All fields marked <span class="star"> *</span> are mandatory.</p>
+                            <p>&nbsp;</p>
+
+                            <p><strong>Customer Details</strong></p>
+
+
+                                <div class="questiontext" style="padding-bottom: 10px;">Salutation:<span class="star"> *</span><br></br>
+                                <apex:selectList value="{!Salutation}" size="1"  >
+                                <apex:selectOptions value="{!SalutationList}"  />
+                                </apex:selectList>
+                            </div> 
+                                
+                                <div class="questiontext">First Name:<span class="star"> *</span><br></br><apex:inputtext id="firstname" value="{!firstname}" size="20" style="width:360px;" maxlength="80"></apex:inputtext></div>  
+                                <div class="questiontext"><br></br>Last Name:<span class="star"> *</span><br></br><apex:inputtext id="lastname" value="{!lastname}" size="20" style="width:360px;" maxlength="80"></apex:inputtext></div>  
+                                 <div class="questiontext"><br></br>Home Phone:<span class="star"> *</span><br></br><apex:inputtext id="phone" value="{!phone}" size="20" style="width:360px;" maxlength="40"></apex:inputtext></div> 
+                                <div class="questiontext"><br></br>Mobile: <br></br><apex:inputtext id="mobilephone" value="{!MobilePhone}" size="20" style="width:360px;" maxlength="40"></apex:inputtext></div> 
+                                <div class="questiontext"><br></br>Email:<br></br><apex:inputtext id="email" value="{!email}" size="20" style="width:360px;" maxlength="80"></apex:inputtext></div>  
+                                <div class="questiontext"><br></br>Street Line 1:<span class="star"> *</span><br></br><apex:inputtext id="street" value="{!street}" size="20" style="width:360px;" maxlength="80"></apex:inputtext></div>  
+                                <div class="questiontext"><br></br>Street Line 2:<br></br><apex:inputtext id="street2" value="{!street2}" size="20" style="width:360px;" maxlength="80"></apex:inputtext></div>  
+                                <div class="questiontext"><br></br>City:<span class="star"> *</span><br></br><apex:inputtext id="city" value="{!city}" size="20" style="width:360px;" maxlength="80"></apex:inputtext></div>  
+                                 <div class="questiontext"><br></br>County:<span class="star"> *</span><br></br><apex:inputtext id="county" value="{!county}" size="20" style="width:360px;" maxlength="80"></apex:inputtext></div>
+                                <div class="questiontext"><br></br>Post Code:<span class="star"> *</span><br></br><apex:inputtext id="postcode" value="{!postcode}" size="20" style="width:360px;" maxlength="80"></apex:inputtext></div>                                  
+                                <div class="questiontext"><br></br>Ascent NFP Number:<span class="star"> *</span><br></br><apex:inputtext id="nvis" value="{!nvis}" size="20" style="width:360px;" maxlength="80"></apex:inputtext></div> 
+                                 
+                               <div class="clear"></div>
+                                <p>&nbsp;</p>
+                                <p><strong>Customer Request Information</strong></p>                            
+
+                            <div class="questiontext" style="padding-bottom: 10px;">What does the customer needs help with:<span class="star"> *</span><br></br>
+                                <apex:selectList value="{!Activity}" size="1" id="whatIsNeeded" >
+                                <apex:selectOptions value="{!ActivityList}"  />
+                                </apex:selectList>
+                            </div> 
+
+                            <div class="questiontext" style="padding-bottom: 10px;">What kind of device do you need help with:<br></br>
+                                <apex:selectList value="{!Device}" size="1"  >                                
+                                <apex:selectOptions value="{!DeviceList}"  />
+                                </apex:selectList>
+                            </div> 
+
+                            <div class="questiontext" style="padding-bottom: 10px;">Further Information:<br></br><apex:inputTextarea id="description" value="{!description}" style="width:360px; height: 100px;"></apex:inputTextarea></div> 
+
+                            <div class="clear"></div>
+
+                            <div class="questiontext" style="padding-bottom: 10px;">Any other comments:<br></br><apex:inputTextarea id="Any_other_comments" value="{!Any_other_comments}" style="width:360px; height: 100px;"></apex:inputTextarea></div>
+
+                            <div class="clear">
+                            </div>
+
+                            <p>&nbsp;</p>  
+                                
+                            <p><strong>If the caller is requesting help for someone else, please tick this box and complete the section below:</strong></p>
+                                <!--referal checkbox needed here-->
+                                <div class="questiontext" style="padding-bottom: 10px;">
+                                <apex:inputCheckbox id="isReferral" value="{!isReferral}"/>
+                                </div>
+                                <apex:outputPanel id="referralFields">
+                                
+                                <div class="questiontext">First Name:<span class="star"> *</span><br></br><apex:inputtext id="referralfirstname" value="{!referralfirstname}" size="20" style="width:360px;" maxlength="80"></apex:inputtext></div>  
+                                <div class="questiontext"><br></br>Last Name:<span class="star"> *</span><br></br><apex:inputtext id="referrallastname" value="{!referrallastname}" size="20" style="width:360px;" maxlength="80"></apex:inputtext></div> 
+                                <div class="questiontext"><br></br>Organisation:<br></br><apex:inputtext id="referralorganisation" value="{!referralorganisation}" size="20" style="width:360px;" maxlength="80"></apex:inputtext></div>  
+                                <div class="questiontext"><br></br>Email:<br></br><apex:inputtext id="referralemail" value="{!referralemail}" size="20" style="width:360px;" maxlength="80"></apex:inputtext></div>
+                                <div class="questiontext"><br/>Would you like to be kept updated about this request by email:<apex:inputCheckbox id="adviseReferrer" value="{!adviseReferrer}"/></div>
+                                <div class="questiontext"><br></br>Phone:<span class="star"> *</span><br></br><apex:inputtext id="referralphone" value="{!referralphone}" size="20" style="width:360px;" maxlength="40"></apex:inputtext></div>        
+                                <div class="questiontext"><br></br>Street Line 1:<span class="star"> *</span><br></br><apex:inputtext id="referralstreet" value="{!referralstreet}" size="20" style="width:360px;" maxlength="80"></apex:inputtext></div>  
+                                <div class="questiontext"><br></br>Street Line 2:<br></br><apex:inputtext id="referralstreet2" value="{!referralstreet2}" size="20" style="width:360px;" maxlength="80"></apex:inputtext></div>  
+                                <div class="questiontext"><br></br>City:<span class="star"> *</span><br></br><apex:inputtext id="referralcity" value="{!referralcity}" size="20" style="width:360px;" maxlength="80"></apex:inputtext></div>
+                                <div class="questiontext"><br></br>Post Code:<span class="star"> *</span><br></br><apex:inputtext id="referralpostcode" value="{!referralpostcode}" size="20" style="width:360px;" maxlength="80"></apex:inputtext></div>                                 
+                               
+                                <div class="clear"></div>
+                                </apex:outputPanel>
+                                
+                                                                       
+                                   
+                            </div>
+                        </div>
+                    
+                        <br></br>
+                        <div class="questiontext"> 
+                            <apex:commandbutton onclick="javascript: return validateForm();" action="{!save}" value="Submit"></apex:commandbutton>
+
+                        </div>
+                        <br></br>
+                    </apex:form>
+    
+                        
+                        
+                                           
+                        
+                        
+                        
+                        <div id="ctl00_PlaceHolderContentWrapper_PlaceHolderMainWrapper_PlaceHolderMain_PageContactDisplayModePanel1">
+                            <p class="last-updated">Contact: <a href="technologysquad@rnib.org.uk">technologysquad@rnib.org.uk</a> </p>
+                        </div>
+
+                        <div class="clear">
+                        </div>
+                        <div class="back-to-top">
+                            <a href="#skiptomain">Back to top</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="content-col-1">
+                    <div id="content-col-1-inner">
+                        <div id="content-col-1-corner">
+                        </div>
+                        <div id="current-navigation">
+                            <div id="current-nav">
+          <div id="nav-heading">
+           <h2>
+            <a href="/getinvolved/volunteer">Volunteer</a>
+           </h2>
+          </div>
+          <ul>
+           <li>
+            <a href="/getinvolved/volunteer/opportunities">Volunteering opportunities</a>
+           </li>
+           <li>
+            <a href="/getinvolved/volunteer/Pages/howapply.aspx">How do I apply?</a>
+           </li>
+           <li>
+            <a href="/getinvolved/volunteer/forourvolunteers">Common questions about volunteering</a>
+           </li>
+           <li>
+            <a href="/getinvolved/volunteer/meetvolunteers">Meet our volunteers</a>
+           </li>
+           <li>
+            <a href="/getinvolved/volunteer/contactus">Contact the volunteering team</a>
+           </li>
+          </ul>
+         </div>
+         <div id="sub-nav">
+          <h2>
+           <a href="/getinvolved">Get involved</a>
+          </h2>
+          <ul>
+           <li>
+            <a href="/getinvolved/campaign">Campaign</a>
+           </li>
+           <li class="selected">
+            <a href="/getinvolved/volunteer">Volunteer</a>
+           </li>
+           <li>
+            <a href="/getinvolved/fundraising">Fundraising</a>
+           </li>
+           <li>
+            <a href="/getinvolved/events">Events and challenges</a>
+           </li>
+           <li>
+            <a href="/getinvolved/readforrnibday">Read for RNIB Day</a>
+           </li>
+           <li>
+            <a href="/donate/">Donate</a>
+           </li>
+           <li>
+            <a href="/donate/legacy/Pages/leave-gift-in-will.aspx">Leave us a gift in your Will</a>
+           </li>
+           <li>
+            <a href="/getinvolved/membership">RNIB Membership</a>
+           </li>
+           <li>
+            <a href="/getinvolved/corporatepartnerships">Corporate partnerships</a>
+           </li>
+           <li>
+            <a href="/getinvolved/news">Get involved news</a>
+           </li>
+           <li>
+            <a href="/getinvolved/onlinecommunity">Online community</a>
+           </li>
+          </ul>
+         </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div id="content-col-3">
+                <div class="listlinks-aggregation">
+                    <div class="wp-wrapper curve-left branding-7">
+                        <div class="wp-inner">
+                            <h2>Related information</h2>
+                            <ul>
+                                <li>
+                                <a href="http://www.rnib.org.uk/aboutus/contactdetails/Pages/contactdetails.aspx">Contact RNIB</a>
+                                </li>
+                                <li>
+                                <a href="http://www.rnib.org.uk/aboutus/contactdetails/Pages/helpline.aspx">RNIB Helpline</a>
+                                </li>
+                                <li>
+                                <a href="http://www.rnib.org.uk/aboutus/organisation/Pages/our_organisation.aspx">Our organisation</a>
+                                </li>
+                                <li>
+                                <a href="http://www.rnib.org.uk/aboutus/jobs/Pages/jobs.aspx">Jobs with RNIB</a>
+                                </li>
+                                <li>
+                                <a href="http://www.rnib.org.uk/aboutus/mediacentre/Pages/media_centre.aspx">Media centre</a>
+                                </li>
+                                <li>
+                                <a href="http://www.rnib.org.uk/getinvolved/campaign">Our campaigns</a>
+                                </li>
+                                <li>
+                                <a href="http://www.rnib.org.uk/getinvolved/volunteer">Volunteering</a>
+                                </li>
+                                <li>
+                                <a href="http://www.rnib.org.uk/getinvolved/onlinecommunity">Online community</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear">
+        </div><!-- Master Page Footer Control 1.0.0.0-->
+        <div id="footer">
+            <div id="footer-right">
+                <a href="/professionals/webaccessibility/accessiblewebsitedirectory/Pages/accessible_website_directory.aspx"><img id="imgFooter" alt="RNIB Surf Right Accessible website" src="http://www.rnib.org.uk/publishingimages/SeeItRight.gif"/></a>
+            </div>
+            <ul class="contact-info" xmlns:rs="urn:schemas-microsoft-com:rowset">
+                <li>
+                <a href="http://www.rnib.org.uk/aboutus/aboutthiswebsite/legal/Pages/copyright.aspx">Copyright</a>
+                </li>
+                <li>
+                &copy; 2013 Royal National Institute of Blind People
+                </li>
+                <li>
+                <a href="http://www.rnib.org.uk/aboutus/aboutthiswebsite/legal/Pages/legal.aspx">Terms and conditions</a>
+                </li>
+                <li>
+                <a href="http://www.rnib.org.uk/aboutus/aboutthiswebsite/privacy">Privacy</a>
+                </li>
+                <li>
+                <a href="http://www.rnib.org.uk/getinvolved/fundraising/fundraisingpromise/Pages/fundraising_promise.aspx">Fundraising promise</a>
+                </li>
+                <li>
+                <a href="http://twitter.com/rnib">Twitter</a>
+                </li>
+                <li>
+                <a href="http://www.facebook.com/rnibuk">Facebook</a>
+                </li>
+                <li>
+                <a href="http://www.youtube.com/rnibuk">You Tube</a>
+                </li>
+                <li>
+                <a href="http://www.rnib.org.uk/aboutus/contactdetails/Pages/contactdetails.aspx">Contact us</a>
+                </li>
+            </ul>
+            <p>Registered Charity Number 226227, 105 Judd Street, London WC1H 9NE</p>
+            <div class="clear">
+            </div>
+        </div><!-- End Master Page Footer Control 1.0.0.0-->
+        <div class="clear">
+        </div>
+    </div><!--//wrapper-->
+</div>
+ 
+
+</body>
+    
+    
+
+</apex:page>

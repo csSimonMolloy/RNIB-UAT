@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Ability_to_follow_policies_and_procedure__c</fullName>
+        <label>Ability to follow policies &amp; procedures:</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Ability_to_perform_role__c</fullName>
+        <label>Ability to perform role:</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Applicant_Name__c</fullName>
+        <formula>TRIM(Application__r.Applicant__r.Name__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Applicant Name</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Application__c</fullName>
+        <label>Volunteer Role</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipLabel>References</relationshipLabel>
+        <relationshipName>References</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <label>Referee</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>References</relationshipLabel>
+        <relationshipName>References_del</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Copy_Volunteer_Manager_Email__c</fullName>
+        <formula>Application__r.Volunteer_Manager__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Copy Volunteer Manager Email</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Criminal_Record_Check_Required__c</fullName>
+        <formula>TEXT(Application__r.Role__r.DBS_Check_required__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Criminal Record Check Required</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Date_Reference_Received__c</fullName>
+        <inlineHelpText>Enter the date when the reference request was received</inlineHelpText>
+        <label>Date Reference Received</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Reference_Return__c</fullName>
+        <formula>Date_Reference_Sent__c + 7</formula>
+        <label>Date Reference Due for Return</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Reference_Sent__c</fullName>
+        <inlineHelpText>Enter the date when the reference request was sent</inlineHelpText>
+        <label>Date Reference Sent</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_of_Previous_Check__c</fullName>
+        <label>Date of Previous Check</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Details_of_previous_DBS_Country_checks__c</fullName>
+        <inlineHelpText>If Applicable</inlineHelpText>
+        <label>Details of previous DBS/Country checks</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Evidence_of_need_for_bringing_person_int__c</fullName>
+        <inlineHelpText>If applicable</inlineHelpText>
+        <label>Evidence of need for person to volunteer</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Further_Comments__c</fullName>
+        <label>Further Comments</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Honesty_integrity_Ability_to_maintain_co__c</fullName>
+        <label>Honesty/integrity/Ability to maintain co</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>How_long_have_you_known_the_above_named__c</fullName>
+        <label>How long have you known the above named</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>How_will_be_this_Risk_be_managed__c</fullName>
+        <label>How will be this Risk be managed?</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>In_what_capacity_do_you_know_this_person__c</fullName>
+        <label>In what capacity do you know this person</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Legacy_Reference_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>Legacy Reference ID</label>
+        <length>10</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Length_of_relationship__c</fullName>
+        <inlineHelpText>how long the person has known the applicant</inlineHelpText>
+        <label>Length of relationship</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>NVIS_No__c</fullName>
+        <externalId>true</externalId>
+        <label>NVIS No</label>
+        <length>30</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Outcome__c</fullName>
+        <label>Outcome</label>
+        <picklist>
+            <picklistValues>
+                <fullName>References sent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>More Information Required</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Declined Cancel Application</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Declined Request New Referee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending Checks</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Previous_Country_Checks__c</fullName>
+        <label>Previous Country Checks</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Recommend_To_RNIB_Comments__c</fullName>
+        <label>Recommend To RNIB Comments</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Recommend_To_RNIB__c</fullName>
+        <label>Recommend To RNIB</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Referee_Address__c</fullName>
+        <formula>Contact__r.MailingStreet &amp; BR()&amp; Contact__r.MailingCity &amp;BR() &amp;Contact__r.MailingState &amp;BR() &amp; Contact__r.MailingPostalCode</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Referee Address</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Referee_Email__c</fullName>
+        <formula>Contact__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Referee Email</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Referee_Work_Phone__c</fullName>
+        <formula>Contact__r.Phone</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Referee Work Phone</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Reference_Received__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Reference Received</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Reference_Type__c</fullName>
+        <label>Reference Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Character</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Child related</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Risk Assessment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Relationship__c</fullName>
+        <inlineHelpText>The capacity of the relationship between applicant and person providing reference</inlineHelpText>
+        <label>Relationship</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Relationships_with_others__c</fullName>
+        <label>Relationships with others:</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Reliability__c</fullName>
+        <label>Reliability:</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Risk_to_RNIB__c</fullName>
+        <inlineHelpText>Describe duties/contact with children and/or vulnerable adults</inlineHelpText>
+        <label>Risk to RNIB</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Role_Description__c</fullName>
+        <formula>Application__r.Role_Description__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Role Description</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Role_Involves_Working_With_Children__c</fullName>
+        <formula>TEXT(Application__r.Role__r.Role_involve_working_with_Children__c)</formula>
+        <label>Role Involves Working With Children?</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Role_Title__c</fullName>
+        <formula>Application__r.Role_Title__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Role Title</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Safeguarding_Issue_Note__c</fullName>
+        <label>Safeguarding Issue Note</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Suitable_to_Volunteer_with_Children__c</fullName>
+        <inlineHelpText>Are you satisfied that this person is suitable to volunteer with children, if not, please give details</inlineHelpText>
+        <label>Suitable to Volunteer with Children?</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Volunteer_Email1__c</fullName>
+        <description>This field is a read-only field to copy the Volunteer Email Address. This field will be used as a reference in a field update of a Volunteer Email field which will be then used in the Chase - 1 Referee workflow rule</description>
+        <formula>Application__r.Applicant__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This field is a read-only field to copy the Volunteer Email Address. This field will be used as a reference in a field update of a Volunteer Email field which will be then used in the Chase - 1 Referee workflow rule.</inlineHelpText>
+        <label>Copy Volunteer Email</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Volunteer_Email__c</fullName>
+        <description>This field will be used as a reference in a field update which will be then used in the Chase - 1 Referee workflow rule</description>
+        <inlineHelpText>This field will be used as a reference in a field update which will be then used in the Chase - 1 Referee workflow rule</inlineHelpText>
+        <label>Volunteer Email</label>
+        <type>Email</type>
+    </fields>
+    <fields>
+        <fullName>Volunteer_Manager_Email__c</fullName>
+        <description>This field will be used as a reference in a field update which will be then used in the Chase - 2 &amp; 3 Reference (Applicant) workflow rule</description>
+        <inlineHelpText>This field will be used as a reference in a field update which will be then used in the Chase - 2 &amp; 3 Reference (Applicant) workflow rule</inlineHelpText>
+        <label>Volunteer Manager Email</label>
+        <type>Email</type>
+    </fields>
+    <label>Reference</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Applicant_Name__c</columns>
+        <columns>Application__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Reference_Type__c</columns>
+        <columns>Relationship__c</columns>
+        <columns>Length_of_relationship__c</columns>
+        <columns>Outcome__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>References_pending_acceptance</fullName>
+        <columns>NAME</columns>
+        <columns>Applicant_Name__c</columns>
+        <columns>Application__c</columns>
+        <columns>Role_Title__c</columns>
+        <columns>Role_Description__c</columns>
+        <columns>Outcome__c</columns>
+        <columns>Date_Reference_Sent__c</columns>
+        <columns>Reference_Type__c</columns>
+        <columns>Reference_Received__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Reference_Received__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Outcome__c</field>
+            <operation>equals</operation>
+            <value>Pending Checks,More Information Required</value>
+        </filters>
+        <label>References Pending Acceptance</label>
+    </listViews>
+    <listViews>
+        <fullName>References_pending_checks</fullName>
+        <columns>NAME</columns>
+        <columns>Applicant_Name__c</columns>
+        <columns>Application__c</columns>
+        <columns>Role_Title__c</columns>
+        <columns>Role_Description__c</columns>
+        <columns>Outcome__c</columns>
+        <columns>Date_Reference_Sent__c</columns>
+        <columns>Reference_Type__c</columns>
+        <columns>Reference_Received__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Outcome__c</field>
+            <operation>equals</operation>
+            <value>Pending Checks,More Information Required</value>
+        </filters>
+        <label>References Pending Checks</label>
+    </listViews>
+    <nameField>
+        <displayFormat>Reference - {0000}</displayFormat>
+        <label>Reference</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>References</pluralLabel>
+    <recordTypes>
+        <fullName>Risk_Assessment_Reference</fullName>
+        <active>true</active>
+        <label>Risk Assessment Reference</label>
+        <picklistValues>
+            <picklist>Outcome__c</picklist>
+            <values>
+                <fullName>Pending Approval</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>References sent</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Recommend_To_RNIB__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reference_Type__c</picklist>
+            <values>
+                <fullName>Risk Assessment</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Standard_Reference</fullName>
+        <active>true</active>
+        <label>Standard Reference</label>
+        <picklistValues>
+            <picklist>Outcome__c</picklist>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined Cancel Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined Request New Referee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>More Information Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Checks</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>References sent</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Recommend_To_RNIB__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reference_Type__c</picklist>
+            <values>
+                <fullName>Character</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Child related</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Application__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Contact__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Reference_Received__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Outcome__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>RECORDTYPE</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>Application__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Generate_Character_Reference_Letter</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Generate Character Reference Letter</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/ReferenceAutoForward?id={!Reference__c.Id}&amp;Type=LETTER</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Generate_Character_Reference_Letter_OLD</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasScrollbars>true</hasScrollbars>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Generate Character Reference Letter OLD</masterLabel>
+        <openType>newWindow</openType>
+        <page>Character_Reference</page>
+        <position>none</position>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>Generate_Reference_Email</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Generate Reference Email</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/ReferenceAutoForward?id={!Reference__c.Id}&amp;Type=EMAIL</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Generate_Reference_Email_OLD</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>url</linkType>
+        <masterLabel>Generate Reference Email OLD</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/_ui/core/email/author/EmailAuthor?p2_lkid={!Reference__c.ContactId__c}&amp;p3_lkid={!Reference__c.Id}&amp;retURL=/{!Reference__c.Id}&amp;template_id=00Xb0000000d9eG</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Reference</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>url</linkType>
+        <masterLabel>New Reference</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/a0C/e?CF00Nb0000008Lpil={!Application__c.Name}&amp;CF00Nb0000008Lpil_lkid={!Application__c.Id}&amp;RecordType=012b0000000Q7g0&amp;ent=01Ib0000000SSHm&amp;retURL={!Application__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Reference_Risk_Assessment</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>url</linkType>
+        <masterLabel>New Reference Risk Assessment</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/a0C/e?CF00Nb0000008Lpil={!Application__c.Name}&amp;CF00Nb0000008Lpil_lkid={!Application__c.Id}&amp;retURL=%2F{!Application__c.Id}&amp;RecordType=012b0000000Q7fz&amp;ent=01Ib0000000TM8c</url>
+    </webLinks>
+</CustomObject>

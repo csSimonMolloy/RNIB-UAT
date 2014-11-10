@@ -1,0 +1,1635 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Accepted_Reference_Checks__c</fullName>
+        <defaultValue>0</defaultValue>
+        <label>Accepted Reference Checks</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Applicant__c</fullName>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Volunteer Roles</relationshipLabel>
+        <relationshipName>Roles</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Application_Status__c</fullName>
+        <formula>CASE(TEXT(Status__c), 
+&quot;Draft&quot;, &quot;Draft&quot;,  
+&quot;Submitted&quot;, &quot;Submitted&quot;,
+&quot;Pending Referee/CR Checks&quot;, &quot;In Progress&quot;,
+&quot;Pending Interviews&quot;, &quot;In Progress&quot;,
+&quot;References Successful&quot;, &quot;In Progress&quot;,
+&quot;Recruitment Checks Complete&quot;, &quot;In Progress&quot;,
+&quot;Unsuccessful - Role Filled&quot;, &quot;Closed&quot;,
+&quot;Unsuccessful - Not Suitable at Interview&quot;, &quot;Closed&quot;,
+&quot;Unsuccessful - Not Suitable for Interview&quot;, &quot;Closed&quot;,
+&quot;Unsuccessful - Unsuitable References&quot;, &quot;Closed&quot;,
+&quot;Unsuccessful - Unsuitable Risk Assessment&quot;, &quot;Closed&quot; ,
+&quot;Successful&quot; , &quot;In Progress&quot; ,
+&quot;References Successful&quot;, &quot;In Progress&quot;,
+&quot;Withdrawn&quot;, &quot;Withdrawn&quot; ,
+&quot;Closed&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This is the Application Status which the Volunteer will see</inlineHelpText>
+        <label>Application Status</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Automatic_Deletion_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Automatic Deletion Required</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Can_Activate_Criminal_Check__c</fullName>
+        <formula>IF ((ISPICKVAL( Role__r.DBS_Check_required__c , &apos;No Check Required&apos;) || (NOT(ISPICKVAL( Role__r.DBS_Check_required__c , &apos;No Check Required&apos;)) &amp;&amp; Criminal_Check_OK__c)), true , false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Can Activate Criminal Check</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Can_Activate_References__c</fullName>
+        <formula>IF ((ISPICKVAL(Role__r.Number_of_References_Required__c,&quot;0&quot;) ||  References_OK__c) , true , false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Can Activate References</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Can_Activate_Vehicle__c</fullName>
+        <formula>IF ((!Role__r.Vehicle_Check_Required__c || (Role__r.Vehicle_Check_Required__c &amp;&amp; Vehicle_Check_OK__c)), true , false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Can Activate Vehicle</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>College_Univeristy_Workplace_Contact__c</fullName>
+        <label>College/Univeristy/Workplace Contact</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>College_Univeristy_Workplace_Phone__c</fullName>
+        <label>College/Univeristy/Workplace Phone</label>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>College_Univeristy_Workplace__c</fullName>
+        <label>College/Univeristy/Workplace</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>ContactName__c</fullName>
+        <description>Formula field for Ascent report</description>
+        <formula>Applicant__r.FirstName &amp; &apos; &apos; &amp; Applicant__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ContactName</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Contact_Informed_of_Application_Outcome__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Contact Informed of Application Outcome</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Convicted_of_Criminal_Offence__c</fullName>
+        <label>Convicted of Criminal Offence?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Corporate_Account_Billing_City__c</fullName>
+        <label>Corporate Account Billing City</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Corporate_Account_Billing_Country__c</fullName>
+        <label>Corporate Account Billing Country</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Corporate_Account_Billing_PostalCode__c</fullName>
+        <label>Corporate Account Billing Postal Code</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Corporate_Account_Billing_State__c</fullName>
+        <label>Corporate Account Billing State</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Corporate_Account_Billing_Street__c</fullName>
+        <label>Corporate Account Billing Street</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Corporate_Account_Name__c</fullName>
+        <label>Corporate Account Name</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Corporate_Account_Phone__c</fullName>
+        <label>Corporate Account Phone</label>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Criminal_Check_OK__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Criminal Check OK</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Criminal_Offence_Details__c</fullName>
+        <label>Please Give Details of Criminal Offence</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Criminal_Record_Check__c</fullName>
+        <formula>IF ((ISPICKVAL( Role__r.DBS_Check_required__c , &apos;No Check Required&apos;) || (NOT(ISPICKVAL( Role__r.DBS_Check_required__c , &apos;No Check Required&apos;)) &amp;&amp; Criminal_Check_OK__c)), IMAGE(&apos;/resource/1391432643000/GreenTick&apos;,&apos;Complete&apos;,22,26) , IMAGE(&apos;/resource/1391432656000/RedCross&apos;,&apos;Not Complete&apos;,22,26))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Criminal Record Check</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Date_of_Suspension__c</fullName>
+        <inlineHelpText>If the Volunteer is suspended for this role, enter the date from which the suspension applies here</inlineHelpText>
+        <label>Date of Suspension</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Duties_and_Main_Achievements2__c</fullName>
+        <label>2. Duties and Main Achievements</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Duties_and_Main_Achievements3__c</fullName>
+        <label>3. Duties and Main Achievements</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Duties_and_Main_Achievements__c</fullName>
+        <label>1. Duties and Main Achievements</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Education__c</fullName>
+        <label>Education</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Employer_s_name_address_From_To2__c</fullName>
+        <label>2. Employer&apos;s name &amp; address: From /To</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Employer_s_name_address_From_To3__c</fullName>
+        <label>3. Employer&apos;s name &amp; address: From /To</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Employer_s_name_address_From_To__c</fullName>
+        <label>1. Employer&apos;s Name &amp; Address: From /To</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <label>End Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Experience_Qualifications__c</fullName>
+        <inlineHelpText>Please tell us how your experience, skills and qualifications meet the requirements of the volunteer role you have applied for.  Refer to the role description which explains the skills and experience we are looking for.</inlineHelpText>
+        <label>Experience/Qualifications</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Grades2__c</fullName>
+        <label>2. Grades</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Grades3__c</fullName>
+        <label>3. Grades</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Grades__c</fullName>
+        <label>1. Grades</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Group_Induction__c</fullName>
+        <inlineHelpText>This is data from ENVIS indicating the date the volunteer received an induction for this role</inlineHelpText>
+        <label>Group Induction</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>How_did_you_hear_about_this_Opportunity__c</fullName>
+        <label>How did you hear about this Opportunity</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_Volunteer_Role_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>Legacy Volunteer Role ID</label>
+        <length>10</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Legal_Declariation__c</fullName>
+        <label>Legal Declariation Confirmed</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Membership_No2__c</fullName>
+        <label>2. Membership No.</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Membership_No3__c</fullName>
+        <label>3. Membership No.</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Membership_No__c</fullName>
+        <label>1. Membership No.</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Membership_of_professional_bodies2__c</fullName>
+        <label>2. Membership Of Professional Bodies</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Membership_of_professional_bodies3__c</fullName>
+        <label>3. Membership Of Professional Bodies</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Membership_of_professional_bodies__c</fullName>
+        <label>1. Membership of Professional Bodies</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NVIS_Account_No__c</fullName>
+        <externalId>true</externalId>
+        <label>NVIS Account No</label>
+        <length>30</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Name_Address_Dates_to_and_from2__c</fullName>
+        <label>2. Name/Address/Dates to and from</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Name_Address_Dates_to_and_from3__c</fullName>
+        <label>3. Name/Address/Dates to and from</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Name_Address_Dates_to_and_from__c</fullName>
+        <label>1. Name/Address/Dates to and from</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Number_of_Corporate_Volunteers__c</fullName>
+        <label>Number of Corporate Volunteers</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Present_Recent_Employment_VoluntaryWork2__c</fullName>
+        <label>2. Present/Recent Employment/Volun Work</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Present_Recent_Employment_VoluntaryWork3__c</fullName>
+        <label>3. Present/Recent Employment/Volun Work</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Present_Recent_Employment_Voluntary_Work__c</fullName>
+        <label>1. Present/Recent Employment/Volun Work</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Qualification2__c</fullName>
+        <label>2. Qualification</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Qualification3__c</fullName>
+        <label>3. Qualification</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Qualification__c</fullName>
+        <label>1. Qualification</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Reason_Suspended__c</fullName>
+        <inlineHelpText>Enter the reasons the Volunteer is suspended here</inlineHelpText>
+        <label>Reason Suspended</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Reason_for_leaving__c</fullName>
+        <label>Reason for Leaving</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Asked to stop by RNIB</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Assisting another UK agency as volunteer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Changes in RNIB policy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deceased</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dissatisfaction with RNIB</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ill health</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lack of RNIB support</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Leave RNIB altogether</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moved away</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moved to another role</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moving into employment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moving to help another RNIB service</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No longer feel able to carry out the role</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not being used</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other commitments</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reached retirement age</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service/role ceased</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Short volunteering opportunity</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transferring to Action for the Blind</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer to a new role</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transfer to a new service</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reference_Check__c</fullName>
+        <formula>IF ( (ISPICKVAL(Role__r.Number_of_References_Required__c, &quot;0&quot;) || References_OK__c) , IMAGE(&apos;/resource/1391432643000/GreenTick&apos;,&apos;Complete&apos;,22,26) , IMAGE(&apos;/resource/1391432656000/RedCross&apos;,&apos;Not Complete&apos;,22,26))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Reference Check</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>References_OK__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>References OK</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>References_Unavailable_Explanation__c</fullName>
+        <label>References Unavailable Explanation</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>References_Unavailable__c</fullName>
+        <label>References Unavailable</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Request_to_Retire__c</fullName>
+        <formula>Applicant__r.Request_to_Retire__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This field will be ticked if the Volunteer has requested to retire either by updating their profile on the community of if another Volunteer manager has learned this.  Please follow up with the Volunteer regarding the status of your role with them</inlineHelpText>
+        <label>Request to Retire?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Risk_Assessments__c</fullName>
+        <defaultValue>0</defaultValue>
+        <label>Risk Assessments</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Role_Description__c</fullName>
+        <formula>&quot;See Opportunity Record&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Role Description</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Role_Source__c</fullName>
+        <label>Role Source</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Post</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Role_Title__c</fullName>
+        <formula>Role__r.Role_Title__c</formula>
+        <label>Role Title</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Role__c</fullName>
+        <label>Opportunity</label>
+        <referenceTo>Role_Opportunity__c</referenceTo>
+        <relationshipLabel>Volunteer Roles</relationshipLabel>
+        <relationshipName>Applications</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>School_College_Contact__c</fullName>
+        <label>School/College Contact</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>School_College_Phone__c</fullName>
+        <label>School/College Phone</label>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>School_College__c</fullName>
+        <label>School/College</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>School_University_HE_Institution2__c</fullName>
+        <label>2. School/University/HE Institution</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>School_University_HE_Institution3__c</fullName>
+        <label>3. School/University/HE Institution</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>School_University_HE_Institution__c</fullName>
+        <label>1. School/University/HE Institution</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Service__c</fullName>
+        <label>Service</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Technology Support</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <label>Start Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Submitted</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending Interviews</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending Referee/CR Checks</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>References Successful</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Recruitment Checks Complete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Withdrawn</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unsuccessful - Role Filled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unsuccessful - Not Suitable at Interview</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unsuccessful - Not Suitable for Interview</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unsuccessful - Unsuitable References</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unsuccessful - Unsuitable Risk Assessment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contact GVT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Suspended</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Resigned from Role</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incomplete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Subjects2__c</fullName>
+        <label>2. Subjects</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Subjects3__c</fullName>
+        <label>3. Subjects</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Subjects__c</fullName>
+        <label>1. Subjects</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Suspension_Ended__c</fullName>
+        <inlineHelpText>Enter the date the suspension has been lifted here</inlineHelpText>
+        <label>Suspension Ended</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Tell_us_about_yourself__c</fullName>
+        <inlineHelpText>It will be easier to manage your application if you provide the information in these fields</inlineHelpText>
+        <label>Tell Us about Yourself</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Test_Workflow__c</fullName>
+        <description>Testing the workflow to make sure that the trigger is deleting the record as it should be.</description>
+        <label>Test Workflow</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Trigger_Time_05__c</fullName>
+        <formula>IF(ISNULL(Test_Workflow__c),NULL, Test_Workflow__c -  0.016)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Trigger Time 05</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Unavailable__c</fullName>
+        <formula>Applicant__r.Holiday__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>If this box is checked the Volunteer has indicated on the portal that they are unavailable</inlineHelpText>
+        <label>Unavailable?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Check_Image__c</fullName>
+        <formula>IF ((NOT(Role__r.Vehicle_Check_Required__c) || (Role__r.Vehicle_Check_Required__c &amp;&amp; Vehicle_Check_OK__c)), IMAGE(&apos;/resource/1391432643000/GreenTick&apos;,&apos;Complete&apos;,22,26) , IMAGE(&apos;/resource/1391432656000/RedCross&apos;,&apos;Not Complete&apos;,22,26))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Vehicle Check</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Check_OK__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Vehicle Check OK</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Voluntary_or_Work_Experience__c</fullName>
+        <label>Voluntary or Work Experience</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Volunteer_Coordinator__c</fullName>
+        <label>Volunteer Coordinator</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Volunteer_Roles1</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Volunteer_Manager__c</fullName>
+        <label>Volunteer Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Volunteer_Roles</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Why_do_work_experience_with_RNIB__c</fullName>
+        <label>Why do Work Experience with RNIB</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Why_do_you_want_to_volunteer_for_us__c</fullName>
+        <label>Why do You Want to Volunteer for Us?</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <label>Volunteer Role</label>
+    <listViews>
+        <fullName>Active_Volunteer_Roles</fullName>
+        <columns>NAME</columns>
+        <columns>Applicant__c</columns>
+        <columns>Role__c</columns>
+        <columns>Role_Title__c</columns>
+        <columns>Status__c</columns>
+        <columns>Volunteer_Coordinator__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Application__c.Role</value>
+        </filters>
+        <label>Active Volunteer Roles</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Volunteer_Roles</fullName>
+        <columns>Applicant__c</columns>
+        <columns>Status__c</columns>
+        <columns>Reference_Check__c</columns>
+        <columns>Criminal_Record_Check__c</columns>
+        <columns>Vehicle_Check_Image__c</columns>
+        <columns>Accepted_Reference_Checks__c</columns>
+        <columns>Role_Title__c</columns>
+        <columns>Start_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Volunteer Roles</label>
+    </listViews>
+    <listViews>
+        <fullName>Applications_Pending_Interviews</fullName>
+        <columns>NAME</columns>
+        <columns>Role_Title__c</columns>
+        <columns>Applicant__c</columns>
+        <columns>Role__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Pending Interviews</value>
+        </filters>
+        <label>Applications Pending Interviews</label>
+    </listViews>
+    <listViews>
+        <fullName>Applications_Pending_Referee_DBS_Checks</fullName>
+        <columns>NAME</columns>
+        <columns>Applicant__c</columns>
+        <columns>Role__c</columns>
+        <columns>Role_Title__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>Status__c</columns>
+        <columns>Accepted_Reference_Checks__c</columns>
+        <columns>Volunteer_Coordinator__c</columns>
+        <columns>Volunteer_Manager__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Pending Referee/CR Checks</value>
+        </filters>
+        <label>Applications Pending Referee/CR Checks</label>
+    </listViews>
+    <listViews>
+        <fullName>Applications_Recruitment_Checks_Complete</fullName>
+        <columns>NAME</columns>
+        <columns>Applicant__c</columns>
+        <columns>Role__c</columns>
+        <columns>Role_Description__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>Status__c</columns>
+        <columns>Accepted_Reference_Checks__c</columns>
+        <columns>Volunteer_Coordinator__c</columns>
+        <columns>Volunteer_Manager__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Recruitment Checks Complete</value>
+        </filters>
+        <label>Applications Recruitment Checks Complete</label>
+    </listViews>
+    <listViews>
+        <fullName>Applications_References_Successful</fullName>
+        <columns>NAME</columns>
+        <columns>Role_Title__c</columns>
+        <columns>Applicant__c</columns>
+        <columns>Role__c</columns>
+        <columns>Status__c</columns>
+        <columns>Criminal_Record_Check__c</columns>
+        <columns>Reference_Check__c</columns>
+        <columns>Vehicle_Check_Image__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>References Successful</value>
+        </filters>
+        <label>Applications References Successful</label>
+    </listViews>
+    <listViews>
+        <fullName>Applications_Submitted</fullName>
+        <columns>NAME</columns>
+        <columns>Role_Title__c</columns>
+        <columns>Reference_Check__c</columns>
+        <columns>Status__c</columns>
+        <columns>Applicant__c</columns>
+        <columns>Volunteer_Manager__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Service__c</columns>
+        <columns>Role_Description__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </filters>
+        <label>Applications Submitted</label>
+    </listViews>
+    <listViews>
+        <fullName>Applications_role_filled</fullName>
+        <columns>NAME</columns>
+        <columns>Applicant__c</columns>
+        <columns>Role_Title__c</columns>
+        <columns>Volunteer_Manager__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Unsuccessful - Role Filled</value>
+        </filters>
+        <label>Unsuccessful - Role Filled</label>
+    </listViews>
+    <listViews>
+        <fullName>Created_Today</fullName>
+        <columns>NAME</columns>
+        <columns>Role_Title__c</columns>
+        <columns>Volunteer_Manager__c</columns>
+        <columns>Reference_Check__c</columns>
+        <columns>Vehicle_Check_Image__c</columns>
+        <columns>Criminal_Record_Check__c</columns>
+        <columns>Status__c</columns>
+        <columns>Applicant__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Service__c</columns>
+        <columns>Role_Description__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Applications Created Today</label>
+    </listViews>
+    <listViews>
+        <fullName>Draft_Volunteer_Roles</fullName>
+        <columns>NAME</columns>
+        <columns>Applicant__c</columns>
+        <columns>Status__c</columns>
+        <columns>Reference_Check__c</columns>
+        <columns>Criminal_Record_Check__c</columns>
+        <columns>Vehicle_Check_Image__c</columns>
+        <columns>Accepted_Reference_Checks__c</columns>
+        <columns>Role_Title__c</columns>
+        <columns>Start_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Draft</value>
+        </filters>
+        <label>Draft Volunteer Roles</label>
+    </listViews>
+    <listViews>
+        <fullName>New_Applications</fullName>
+        <columns>NAME</columns>
+        <columns>Role_Title__c</columns>
+        <columns>Applicant__c</columns>
+        <columns>Role__c</columns>
+        <columns>Status__c</columns>
+        <columns>Criminal_Record_Check__c</columns>
+        <columns>Reference_Check__c</columns>
+        <columns>Vehicle_Check_Image__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </filters>
+        <label>New Applications</label>
+    </listViews>
+    <listViews>
+        <fullName>Roles_Volunteer_Request_to_retire</fullName>
+        <columns>NAME</columns>
+        <columns>Role_Title__c</columns>
+        <columns>Applicant__c</columns>
+        <columns>Role__c</columns>
+        <columns>Status__c</columns>
+        <columns>Criminal_Record_Check__c</columns>
+        <columns>Reference_Check__c</columns>
+        <columns>Vehicle_Check_Image__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Application__c.Role</value>
+        </filters>
+        <filters>
+            <field>Request_to_Retire__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Roles with Volunteer Request to Retire</label>
+    </listViews>
+    <listViews>
+        <fullName>Volunteer_due_to_leave_next_month</fullName>
+        <columns>NAME</columns>
+        <columns>Applicant__c</columns>
+        <columns>Role_Title__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>End_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>End_Date__c</field>
+            <operation>equals</operation>
+            <value>NEXT_MONTH</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Application__c.Role</value>
+        </filters>
+        <label>Volunteer Due To Leave Next Month</label>
+    </listViews>
+    <listViews>
+        <fullName>Volunteermanager_New_Applications</fullName>
+        <columns>NAME</columns>
+        <columns>Role_Title__c</columns>
+        <columns>Applicant__c</columns>
+        <columns>Role__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </filters>
+        <filters>
+            <field>Volunteer_Manager__c</field>
+            <operation>equals</operation>
+            <value>Volunteer Manager</value>
+        </filters>
+        <label>Volunteer Manager - New Applications</label>
+    </listViews>
+    <listViews>
+        <fullName>Volunteers_leaving_today</fullName>
+        <columns>NAME</columns>
+        <columns>Applicant__c</columns>
+        <columns>Role_Title__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>End_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>End_Date__c</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Volunteers Leaving Roles Today</label>
+    </listViews>
+    <nameField>
+        <displayFormat>Volunteer Role-{0000}</displayFormat>
+        <label>Volunteer Role</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Volunteer Roles</pluralLabel>
+    <recordTypes>
+        <fullName>Application</fullName>
+        <active>true</active>
+        <label>Application</label>
+        <picklistValues>
+            <picklist>Convicted_of_Criminal_Offence__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_did_you_hear_about_this_Opportunity__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Legal_Declariation__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_for_leaving__c</picklist>
+            <values>
+                <fullName>Leave RNIB altogether</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to a new role</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to a new service</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>References_Unavailable__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Role_Source__c</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Service__c</picklist>
+            <values>
+                <fullName>Technology Support</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Interviews</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Pending Referee%2FCR Checks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recruitment Checks Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>References Successful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unsuccessful - Not Suitable at Interview</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unsuccessful - Not Suitable for Interview</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unsuccessful - Role Filled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unsuccessful - Unsuitable References</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unsuccessful - Unsuitable Risk Assessment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Withdrawn</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Role</fullName>
+        <active>true</active>
+        <description>This record type is when somebody is fulfilling a role or inactive in a role they were previously doing</description>
+        <label>Role</label>
+        <picklistValues>
+            <picklist>Convicted_of_Criminal_Offence__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_did_you_hear_about_this_Opportunity__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Legal_Declariation__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_for_leaving__c</picklist>
+            <values>
+                <fullName>Asked to stop by RNIB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assisting another UK agency as volunteer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Changes in RNIB policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deceased</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dissatisfaction with RNIB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ill health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lack of RNIB support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leave RNIB altogether</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moved away</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moved to another role</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moving into employment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moving to help another RNIB service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No longer feel able to carry out the role</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not being used</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other commitments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reached retirement age</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service%2Frole ceased</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Short volunteering opportunity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to a new role</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to a new service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transferring to Action for the Blind</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>References_Unavailable__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Role_Source__c</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Service__c</picklist>
+            <values>
+                <fullName>Technology Support</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Contact GVT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resigned from Role</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Suspended</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Role_Title__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Role__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Applicant__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Role_Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Criminal_Record_Check__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Reference_Check__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Vehicle_Check_Image__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Role__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Applicant__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Role_Title__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Volunteer_Coordinator__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Volunteer_Manager__c</lookupDialogsAdditionalFields>
+        <lookupFilterFields>NAME</lookupFilterFields>
+        <lookupFilterFields>Role__c</lookupFilterFields>
+        <lookupFilterFields>Applicant__c</lookupFilterFields>
+        <lookupFilterFields>Role_Title__c</lookupFilterFields>
+        <lookupFilterFields>Status__c</lookupFilterFields>
+        <lookupPhoneDialogsAdditionalFields>Role__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Applicant__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Role_Title__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Status__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Volunteer_Coordinator__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Volunteer_Manager__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Role__c</searchFilterFields>
+        <searchFilterFields>Applicant__c</searchFilterFields>
+        <searchFilterFields>Role_Title__c</searchFilterFields>
+        <searchFilterFields>Status__c</searchFilterFields>
+        <searchFilterFields>Volunteer_Coordinator__c</searchFilterFields>
+        <searchFilterFields>Volunteer_Manager__c</searchFilterFields>
+        <searchResultsAdditionalFields>Role__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Applicant__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Role_Title__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Volunteer_Coordinator__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Volunteer_Manager__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Needs_a_criminal_record_check</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(NOT(Criminal_Check_OK__c), TEXT( Status__c) = &quot;Successful&quot;)</errorConditionFormula>
+        <errorMessage>An Application Without Either An Accepted Criminal Record Check Or An Approved Criminal Record Risk Assessment Cannot Be Set To Successful</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Needs_a_reference_checks_check</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(NOT( References_OK__c ), TEXT( Status__c) = &quot;Successful&quot;)</errorConditionFormula>
+        <errorMessage>An Application Without Either The Required Number Of Reference Checks or An Approved Reference Risk Assessment Cannot Be Set To Successful</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Needs_a_vehicle_checks_check</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(NOT(Vehicle_Check_OK__c), TEXT( Status__c) = &quot;Successful&quot;)</errorConditionFormula>
+        <errorMessage>An Application Without An Accepted Check for this Opportunity Cannot Be Set To Successful</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Volunteer_Role_Supply_crim_off_detail</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(  ISPICKVAL( Convicted_of_Criminal_Offence__c , &quot;Yes&quot; ), ISBLANK ( Criminal_Offence_Details__c ), ISPICKVAL(Status__c, &quot;Submitted&quot;))</errorConditionFormula>
+        <errorDisplayField>Criminal_Offence_Details__c</errorDisplayField>
+        <errorMessage>Please supply details of the offence</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Activate_Role</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Activate Role</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/apex.js&quot;)}
+
+if (&apos;{!Application__c.Status__c}&apos; != &quot;Recruitment Checks Complete&quot;){
+window.alert(&apos;You can only Activate a Role with the Status of \&apos;Recruitment Checks Complete\&apos;&apos;);
+}else {
+
+if ({!Application__c.Can_Activate_Vehicle__c} &amp;&amp; {!Application__c.Can_Activate_References__c} &amp;&amp; {!Application__c.Can_Activate_Criminal_Check__c}) {
+if (window.confirm(&apos;If you continue this Application will be set to a Role and the Applicant will be set to an Active Volunteer&apos;)){
+sforce.apex.execute(&quot;ApplicationMethods&quot;,&quot;activateApplication&quot;, {applicationId:&quot;{!Application__c.Id}&quot;});
+window.location.reload();
+}
+}else {
+window.alert(&apos;Criminal Record Checks, References, and Vehicle Checks must all be satisfied before you can Activate this Role&apos;);
+}
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Clone_Application</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Clone Application</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/ApplicationClone?Id={!Application__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Clone_Application_OLD</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Clone Application OLD</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/apex.js&quot;)} 
+ 
+if (window.confirm(&apos;You are about to clone this application and any associated references - is this OK?&apos;)){ 
+sforce.apex.execute(&quot;ApplicationMethods&quot;,&quot;cloneApplication&quot;, {applicationId:&quot;{!Application__c.Id}&quot;}); 
+window.location.reload(); 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Generate_Group_Application_Letter</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasScrollbars>true</hasScrollbars>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Generate Group Application Letter</masterLabel>
+        <openType>newWindow</openType>
+        <page>Group_Application_Letter</page>
+        <position>none</position>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>Generate_Volunteer_Retiring_Letter</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasScrollbars>true</hasScrollbars>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Generate Volunteer Retiring Letter</masterLabel>
+        <openType>newWindow</openType>
+        <page>Volunteer_Retiring_Letter</page>
+        <position>none</position>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>Generate_Welcome_Letter</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasScrollbars>true</hasScrollbars>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Generate Welcome Letter</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <url>/apex/Welcome_Letter?id={!Application__c.ApplicantId__c }</url>
+    </webLinks>
+</CustomObject>

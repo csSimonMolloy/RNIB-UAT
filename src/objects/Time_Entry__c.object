@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Customer_Request__c</fullName>
+        <label>Customer Request</label>
+        <referenceTo>Customer_Requests__c</referenceTo>
+        <relationshipLabel>Home Visits</relationshipLabel>
+        <relationshipName>Time_Entries</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>Duration_Forumla__c</fullName>
+        <formula>TEXT(FLOOR((Duration__c)/60))
+&amp;&quot; hr &quot;
+&amp;TEXT(round(MOD((Duration__c)/60,1)*60,0))
+&amp;&quot; min&quot;</formula>
+        <label>Duration</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Duration__c</fullName>
+        <formula>IF(ISBLANK(Duration_entry__c),(Finished__c -  Started__c) * 1440, Duration_entry__c)</formula>
+        <label>Duration (minutes)</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Duration_entry__c</fullName>
+        <inlineHelpText>Enter the number of minutes</inlineHelpText>
+        <label>Time Donated</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Finished__c</fullName>
+        <label>Finished</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <label>Notes</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Reason_for_absence__c</fullName>
+        <label>Reason for absence</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Unexplained</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Holiday</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sickness</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Compassionate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Started__c</fullName>
+        <label>Started</label>
+        <required>true</required>
+        <type>DateTime</type>
+    </fields>
+    <label>Home Visit</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Customer_Request__c</columns>
+        <columns>Duration__c</columns>
+        <columns>Finished__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>HV-{00000}</displayFormat>
+        <label>Action Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Home Visits</pluralLabel>
+    <recordTypes>
+        <fullName>Home_Visit</fullName>
+        <active>true</active>
+        <description>Use this to log actual physical home visits with the customer</description>
+        <label>Home Visit</label>
+        <picklistValues>
+            <picklist>Reason_for_absence__c</picklist>
+            <values>
+                <fullName>Compassionate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Holiday</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sickness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unexplained</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>New_Action</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>url</linkType>
+        <masterLabel>New Action</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/a0H/e?CF00Nb0000006WZQP={!Customer_Requests__c.Name}&amp;RecordType=012b0000000PtNt</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Home_Visit</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>url</linkType>
+        <masterLabel>New Home Visit</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/a0H/e?CF00Nb0000006WZQP={!Customer_Requests__c.Name}&amp;CF00Nb0000006WZQP_lkid={!Customer_Requests__c.Id}&amp;retURL=%2Fa08g00000024amL&amp;saveURL=%2F{!Customer_Requests__c.Id}</url>
+    </webLinks>
+</CustomObject>

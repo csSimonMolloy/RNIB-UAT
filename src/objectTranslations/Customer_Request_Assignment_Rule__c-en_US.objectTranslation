@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Customer Request Assignment Rule</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Customer Request Assignment Rules</value>
+    </caseValues>
+    <fields>
+        <label><!-- Post Code --></label>
+        <name>Post_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Owner --></label>
+        <name>Primary_Owner__c</name>
+        <relationshipLabel><!-- Customer Request Assignment Rules (Primary Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Secondary Owner --></label>
+        <name>Secondary_Owner__c</name>
+        <relationshipLabel><!-- Customer Request Assignment Rules (Secondary Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Service --></label>
+        <name>Service__c</name>
+        <picklistValues>
+            <masterLabel>Technology Support</masterLabel>
+            <translation><!-- Technology Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>To be defined</masterLabel>
+            <translation><!-- To be defined --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Customer Request Assignment Rule Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

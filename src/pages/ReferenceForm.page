@@ -1,0 +1,482 @@
+<apex:page showHeader="false" cache="false" standardController="Reference__c" extensions="ReferenceFormController" action="{!checkForSubmitted}">
+<head>
+    <title>Request For Reference - RNIB Group</title>
+    <link href="https://www.rnib.org.uk//_layouts/RNIB/Internet/Styles/green.css" rel="stylesheet" type="text/css"/><!-- End CssLink -->
+    <link id="Link1" rel="stylesheet" href="https://www.rnib.org.uk//_layouts/RNIB/Internet/Styles/rnib.css" type="text/css"/>
+    <link rel="stylesheet" href="https://www.rnib.org.uk//_layouts/RNIB/Internet/Styles/rnibprintmedia.css" type="text/css" media="print"/>
+    <link id="ResolutionCSS" rel="stylesheet" type="text/css" href="https://www.rnib.org.uk//_layouts/RNIB/Internet/Styles/wide.css" title="ResolutionCSS"/>
+    <link id="ctl00_bodyCSS" rel="stylesheet" href="https://www.rnib.org.uk//_layouts/RNIB/Internet/Styles/TextResizing/smallfont.css" type="text/css"/>
+    <link rel="alternate stylesheet" type="text/css" href="https://www.rnib.org.uk//_layouts/RNIB/Internet/Styles/wide.css" title="Wide"/>
+  
+    <meta name="keywords" content="contact, address, telephone, email, offices, location, head office, offices, HQ,"></meta>
+    <meta name="description" content="To get in touch with RNIB, call 0303 123 9999, email helpline@rnib.org.uk or fill out our online contact form."></meta>
+    <link rel="shortcut icon" href="http://www.rnib.org.uk//SiteCollectionImages/favicon.jpg"/>
+
+    <link id="ctl00_onetidThemeCSS" rel="stylesheet" type="text/css" href="https://www.rnib.org.uk/../../../_themes/Vintage/Vint1011-65001.css"/>
+    <meta name="Microsoft Theme" content="Vintage 1011, default"></meta>
+    
+    <apex:includescript value="{!$Resource.jquery_1_10_2_js}"></apex:includescript>
+    <apex:includescript value="{!$Resource.jquery_validate_min_js}"></apex:includescript>   
+
+<script type="text/javascript"> 
+        $(document).ready(function() {
+            $('[id$=contentForm]').validate();             
+            $('[id$=howLongHaveYouKnown]').rules("add",{
+                required: true,
+                minlength: 1
+            });   
+            $('[id$=whatCapacityDoYouKnow]').rules("add",{
+                required: true,
+                minlength: 2
+            });
+            $('[id$=abilityToPerform]').rules("add",{
+                required: true,
+                minlength: 2
+            });
+            $('[id$=relationshipWithOthers]').rules("add",{
+                required: true,
+                minlength: 2
+            });
+            $('[id$=honesty]').rules("add",{
+                required: true,
+                minlength: 2
+            });
+            $('[id$=reliability]').rules("add",{
+                required: true,
+                minlength: 2
+            });
+            $('[id$=followPolicies]').rules("add",{
+                required: true,
+                minlength: 2
+            });
+            
+             $('[id$=workWithChildren]').rules("add",{
+                required: true,
+                minlength: 2
+            });
+
+            $('[id$=recommendToRNIB]').rules("add",{
+                required: true
+            });
+            
+        });
+         
+    </script>
+
+    <style>
+        input[type=text],input[type=password], textarea{
+            float: left;
+            width: 80%;
+        }
+        
+        input[type=text], input[type=password], textarea{
+            border: 1px solid #AAA !important; ;
+            padding: 2px !important;
+            margin: 1px 0px;
+        }
+        
+        textarea{
+            margin-bottom: 10px;
+        }
+        
+        form{
+           margin: 0px auto;
+           text-align: left;
+           100%;
+        }
+        
+        br{
+            clear: both;
+            margin: 10px;
+        }
+        
+        label.error{
+            color:red;
+            font-size: 12px;
+            line-height: 20px;
+            padding: 2px 5px;
+            float: left;
+            border: none;
+            !important;
+        }
+        
+        .apexp .bPageBlock .error {
+            border: none;  
+        }
+        
+        .star{
+            color: red;
+        }
+        
+        .bPageBlock .labelCol {
+            text-align: left !important;
+            font-size: 12px !important;
+            font-weight: normal !important;
+            color: #000000 !important;
+            padding-left: 10px !important;
+        }
+    </style>
+  
+ </head>
+ <body id="home">
+    <div>
+        <div id="wrapper">
+            <div id="header" style="width: 99.9996%;">
+                <div id="header-col-1">
+                    <a id="ctl00_masterPageLogo_linkSiteLogo" href="http://www.rnib.org.uk"><img id="ctl00_masterPageLogo_imgSiteLogo" src="http://www.rnib.org.uk/PublishingImages/RNIBLogo.gif" alt="RNIB Home"/></a> <img id="ctl00_masterPageLogo_imgStrapLineLogo" src="http://www.rnib.org.uk/publishingimages/rnibstrapline.gif" alt="supporting blind and partially sighted people"/> 
+                    <ul class="contact-info">
+                        <li>
+                        <a href="http://www.rnib.org.uk/aboutus/contactdetails/Pages/helpline.aspx">RNIB Helpline</a>
+                        </li>
+                        <li>
+                        0303 123 9999
+                        </li>
+                        <li class="rss">
+                        <a href="http://www.rnib.org.uk/getinvolved/onlinecommunity/Pages/rss.aspx">Email alerts and RSS</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="header-col-2">
+                    <div class="headerlinks-right">
+                        <p class="welcome"></p>
+                        <ul id="ctl00_ctl14_ulWelcomeControl" class="site-tools login">
+                            <li id="ctl00_ctl14_liLogin">
+                            <a href="https://www.rnib.org.uk/Pages/Login.aspx?ReturnUrl=http://www.rnib.org.uk/aboutus/contactdetails/Pages/contactdetails.aspx&amp;LoginLnk=true">Login</a>
+                            </li>
+                            <li id="ctl00_ctl14_liRegister">
+                            <a href="https://www.rnib.org.uk/Pages/Register.aspx">Register</a>
+                            </li>
+                        </ul><!-- End Master Page Welcome Control 1.0.0.0-->
+                        <ul class="site-tools" xmlns:rs="urn:schemas-microsoft-com:rowset">
+                            <li>
+                            <a href="http://www.rnib.org.uk/aboutus/aboutthiswebsite/help/Pages/help.aspx">Help</a>
+                            </li>
+                            <li>
+                            <a href="http://www.rnib.org.uk/aboutus/contactdetails/Pages/contactdetails.aspx">Contact Us</a>
+                            </li>
+                            <li>
+                            <a href="http://www.rnib.org.uk/getinvolved/onlinecommunity/Forum">Discussions</a>
+                            </li>
+                            <li>
+                            <a href="http://www.rnib.org.uk/aboutus/aboutthiswebsite/privacy/Pages/cookies.aspx">Cookies</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="clear">
+                </div>
+            </div><!-- main nav -->
+                <ul id="main-nav">
+                    <li class="node-0">
+                    <a href="/">Home</a>
+                    </li>
+                    <li class="node-1">
+                    <a href="/eyehealth">Eye health</a>
+                    </li>
+                    <li class="node-2">
+                    <a href="/LIVINGWITHSIGHTLOSS">Living with sight loss</a>
+                    </li>
+                    <li class="node-3">
+                    <a href="/PROFESSIONALS">Professionals</a>
+                    </li>
+                    <li class="node-4">
+                    <a href="/getinvolved">Get involved</a>
+                    </li>
+                    <li class="node-5 selected">
+                    <a href="/aboutus">About us</a>
+                    </li>
+                    <li class="node-6">
+                    <a href="/shop">Shop</a>
+                    </li>
+                    <li class="node-7">
+                    <a href="/donate">Donate</a>
+                    </li>
+                </ul>
+        </div>
+<div id="breadcrumbs">
+     <p>
+      You are here:
+     </p>
+     <ul>
+      <li>
+       <a href="/">Home</a>
+      </li>
+      <li>
+       <a href="/getinvolved">Get involved</a>
+      </li>
+      <li>
+       Volunteer
+      </li>
+     </ul>
+     <div class="clear">
+            </div>
+        </div>
+        
+  
+        <div id="content-wrapper">
+            <div id="main">
+                <div id="content">
+                    <div id="col-3">
+                        <h1 id="skiptomain">Request For Reference</h1>
+                        <div id="col-3-top">
+                            <div class="top-links" id="ctl00_PlaceHolderContentWrapper_PlaceHolderMainWrapper_PlaceHolderMain_H2LinksPanel">
+                                <div id="ctl00_PlaceHolderContentWrapper_PlaceHolderMainWrapper_PlaceHolderMain_H2LinksPanel_RichHtmlField1__ControlWrapper_RichHtmlField">
+                                </div>
+                            </div>
+                            <div class="clear">
+                            </div>
+                        </div>
+                        <div class="clear">
+                        </div>
+                        
+                        <!-- FORM TO BE INSERTED IN HERE -->
+                        <apex:form id="contentForm">
+                        <div id="ctl00_main_UpdatePanel1">
+    
+                            <div id="ctl00_main_nowizard">
+                            <apex:pagemessages />
+                            <p><font size="4"><strong>Volunteer Recruitment - Character Reference</strong></font></p>
+
+                            <p>If you would like to contact us, please email your message to <a href="mailto:helpline@rnib.org.uk">helpline@rnib.org.uk</a></p>
+                            <p>All fields marked <span class="star"> *</span> are mandatory.</p>
+                            <p>&nbsp;</p>
+
+                            <p><strong>Name of prospective volunteer: {!theReference.Application__r.Applicant__r.FirstName} {!theReference.Application__r.Applicant__r.LastName}</strong></p>
+                            <p>
+                            <strong>Role Title:</strong>&nbsp;<apex:outputText value="{!theReference.Application__r.Role_Title__c}"/><br/>
+                            <strong>Role Description:</strong>&nbsp;<apex:outputText value="{!theReference.Application__r.Role_Description__c}"/><br/>
+                            <strong>What they will be doing:</strong>&nbsp;<apex:outputText value="{!theReference.Application__r.Role__r.What_will_I_be_doing2__c}"/><br/>
+                            <apex:outputPanel rendered="{!NOT(theReference.Application__r.Role__r.What_will_I_be_doing__c == '')}">
+                            <strong>What they will be doing - Further info:</strong>&nbsp;<apex:outputText value="{!theReference.Application__r.Role__r.What_will_I_be_doing__c}"/><br/>
+                            </apex:outputPanel>
+                            <strong>What Skills / Experience are needed:</strong>&nbsp;<apex:outputText value="{!theReference.Application__r.Role__r.Skills__c}"/>
+                            </p>
+                            <br/>
+                                <div class="questiontext">How long have you known the above named person?<span class="star"> *</span><br/>
+                                    <apex:inputTextArea id="howLongHaveYouKnown" value="{!theReference.How_long_have_you_known_the_above_named__c}" rows="1"/>
+                                </div>
+                                <br/>
+                                <div class="questiontext">In what capacity do you know this person?<span class="star"> *</span><br/>
+                                    <apex:inputTextArea id="whatCapacityDoYouKnow" value="{!theReference.In_what_capacity_do_you_know_this_person__c}" rows="1"/>
+                                </div>
+                                <br/>
+                                <p><strong>Please comment on the application under the following headings:</strong></p>
+                                <br/>
+                                <div class="questiontext">Ability to perform role:<span class="star"> *</span><br/>
+                                    <apex:inputTextArea id="abilityToPerform" value="{!theReference.Ability_to_perform_role__c}" rows="5"/>
+                                </div>
+                                <br/>
+                                <div class="questiontext">Relationship with others:<span class="star"> *</span><br/>
+                                    <apex:inputTextArea id="relationshipWithOthers" value="{!theReference.Relationships_with_others__c}" rows="5"/>
+                                </div>
+                                <br/>
+                                <div class="questiontext">Honesty / Integrity / Ability to maintain confidentiality:<span class="star"> *</span><br/>
+                                    <apex:inputTextArea id="honesty" value="{!theReference.Honesty_integrity_Ability_to_maintain_co__c}" rows="5"/>
+                                </div>
+                                <br/>
+                                <div class="questiontext">Reliability:<span class="star"> *</span><br/>
+                                    <apex:inputTextArea id="reliability" value="{!theReference.Reliability__c}" rows="5"/>
+                                </div>
+                                <br/>
+                                <div class="questiontext">Ability to follow policies and procedures:<span class="star"> *</span><br/>
+                                    <apex:inputTextArea id="followPolicies" value="{!theReference.Ability_to_follow_policies_and_procedure__c}" rows="5"/>
+                                </div>
+                                <br/>
+                                <apex:outputPanel rendered="{!showChildQuestion}">
+                                 <div class="questiontext">Suitability to work with children:<span class="star"> *</span><br/>
+                                    <apex:inputTextArea id="workWithChildren" value="{!theReference.Suitable_to_Volunteer_with_Children__c}" rows="5"/>
+                                </div>
+                                <br/>
+                                </apex:outputPanel>
+                                <strong><p>We invite you to add any further comments you would like to make on the </p> 
+                                <p>applicant's suitability for the work outlined above, or to include any other </p>
+                                <p>information you think may be relevant:</p></strong>
+                                <div class="questiontext">
+                                    <apex:inputTextArea value="{!theReference.Further_Comments__c}" rows="5"/>
+                                </div>
+                                <br/>
+                                <strong><p>Would you recommend this person as a volunteer with RNIB?<span class="star"> *</span></p></strong>
+                                <div class="questiontext">
+                                    <apex:inputField id="recommendToRNIB" value="{!theReference.Recommend_To_RNIB__c}"/>
+                                </div>
+                                <strong><p>Please give your reasons. </p></strong>
+                                <div class="questiontext">
+                                    <apex:inputTextArea value="{!theReference.Recommend_To_RNIB_Comments__c}" rows="5"/>
+                                </div>
+                                <br/>
+                            </div> <!-- End of ctl00_main_nowizard -->
+                            </div> <!-- End of ctl00_main_UpdatePanel1 -->
+                            <br/>
+                            <apex:commandLink style="btn" action="{!doSubmit}">Submit</apex:commandLink>
+                            
+                        </apex:form>
+                        <br/><br/>
+                        <div id="ctl00_PlaceHolderContentWrapper_PlaceHolderMainWrapper_PlaceHolderMain_PageContactDisplayModePanel1">
+                            <p class="last-updated">Contact: <a href="mailto:helpline@rnib.org.uk">helpline@rnib.org.uk</a> </p>
+                        </div>
+
+                        <div class="clear">
+                        </div>
+                        <div class="back-to-top">
+                            <a href="#skiptomain">Back to top</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="content-col-1">
+                    <div id="content-col-1-inner">
+                        <div id="content-col-1-corner">
+                        </div>
+                        <div id="current-navigation">
+                            <div id="current-nav">
+          <div id="nav-heading">
+           <h2>
+            <a href="/getinvolved/volunteer">Volunteer</a>
+           </h2>
+          </div>
+          <ul>
+           <li>
+            <a href="/getinvolved/volunteer/opportunities">Volunteering opportunities</a>
+           </li>
+           <li>
+            <a href="/getinvolved/volunteer/Pages/howapply.aspx">How do I apply?</a>
+           </li>
+           <li>
+            <a href="/getinvolved/volunteer/forourvolunteers">Common questions about volunteering</a>
+           </li>
+           <li>
+            <a href="/getinvolved/volunteer/meetvolunteers">Meet our volunteers</a>
+           </li>
+           <li>
+            <a href="/getinvolved/volunteer/contactus">Contact the volunteering team</a>
+           </li>
+          </ul>
+         </div>
+         <div id="sub-nav">
+          <h2>
+           <a href="/getinvolved">Get involved</a>
+          </h2>
+          <ul>
+           <li>
+            <a href="/getinvolved/campaign">Campaign</a>
+           </li>
+           <li class="selected">
+            <a href="/getinvolved/volunteer">Volunteer</a>
+           </li>
+           <li>
+            <a href="/getinvolved/fundraising">Fundraising</a>
+           </li>
+           <li>
+            <a href="/getinvolved/events">Events and challenges</a>
+           </li>
+           <li>
+            <a href="/getinvolved/readforrnibday">Read for RNIB Day</a>
+           </li>
+           <li>
+            <a href="/donate/">Donate</a>
+           </li>
+           <li>
+            <a href="/donate/legacy/Pages/leave-gift-in-will.aspx">Leave us a gift in your Will</a>
+           </li>
+           <li>
+            <a href="/getinvolved/membership">RNIB Membership</a>
+           </li>
+           <li>
+            <a href="/getinvolved/corporatepartnerships">Corporate partnerships</a>
+           </li>
+           <li>
+            <a href="/getinvolved/news">Get involved news</a>
+           </li>
+           <li>
+            <a href="/getinvolved/onlinecommunity">Online community</a>
+           </li>
+          </ul>
+         </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div id="content-col-3">
+                <div class="listlinks-aggregation">
+                    <div class="wp-wrapper curve-left branding-7">
+                        <div class="wp-inner">
+                            <h2>Related information</h2>
+                            <ul>
+                                <li>
+                                <a href="http://www.rnib.org.uk/aboutus/contactdetails/Pages/contactdetails.aspx">Contact RNIB</a>
+                                </li>
+                                <li>
+                                <a href="http://www.rnib.org.uk/aboutus/contactdetails/Pages/helpline.aspx">RNIB Helpline</a>
+                                </li>
+                                <li>
+                                <a href="http://www.rnib.org.uk/aboutus/organisation/Pages/our_organisation.aspx">Our organisation</a>
+                                </li>
+                                <li>
+                                <a href="http://www.rnib.org.uk/aboutus/jobs/Pages/jobs.aspx">Jobs with RNIB</a>
+                                </li>
+                                <li>
+                                <a href="http://www.rnib.org.uk/aboutus/mediacentre/Pages/media_centre.aspx">Media centre</a>
+                                </li>
+                                <li>
+                                <a href="http://www.rnib.org.uk/getinvolved/campaign">Our campaigns</a>
+                                </li>
+                                <li>
+                                <a href="http://www.rnib.org.uk/getinvolved/volunteer">Volunteering</a>
+                                </li>
+                                <li>
+                                <a href="http://www.rnib.org.uk/getinvolved/onlinecommunity">Online community</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear">
+        </div><!-- Master Page Footer Control 1.0.0.0-->
+        <div id="footer">
+            <div id="footer-right">
+                <a href="/professionals/webaccessibility/accessiblewebsitedirectory/Pages/accessible_website_directory.aspx"><img id="imgFooter" alt="RNIB Surf Right Accessible website" src="http://www.rnib.org.uk/publishingimages/SeeItRight.gif"/></a>
+            </div>
+            <ul class="contact-info" xmlns:rs="urn:schemas-microsoft-com:rowset">
+                <li>
+                <a href="http://www.rnib.org.uk/aboutus/aboutthiswebsite/legal/Pages/copyright.aspx">Copyright</a>
+                </li>
+                <li>
+                &copy; 2013 Royal National Institute of Blind People
+                </li>
+                <li>
+                <a href="http://www.rnib.org.uk/aboutus/aboutthiswebsite/legal/Pages/legal.aspx">Terms and conditions</a>
+                </li>
+                <li>
+                <a href="http://www.rnib.org.uk/aboutus/aboutthiswebsite/privacy">Privacy</a>
+                </li>
+                <li>
+                <a href="http://www.rnib.org.uk/getinvolved/fundraising/fundraisingpromise/Pages/fundraising_promise.aspx">Fundraising promise</a>
+                </li>
+                <li>
+                <a href="http://twitter.com/rnib">Twitter</a>
+                </li>
+                <li>
+                <a href="http://www.facebook.com/rnibuk">Facebook</a>
+                </li>
+                <li>
+                <a href="http://www.youtube.com/rnibuk">You Tube</a>
+                </li>
+                <li>
+                <a href="http://www.rnib.org.uk/aboutus/contactdetails/Pages/contactdetails.aspx">Contact us</a>
+                </li>
+            </ul>
+            <p>Registered Charity Number 226227, 105 Judd Street, London WC1H 9NE</p>
+            <div class="clear">
+            </div>
+        </div><!-- End Master Page Footer Control 1.0.0.0-->
+        <div class="clear">
+        </div>
+    </div><!--//wrapper-->
+</div>
+ 
+
+</body>
+</apex:page>

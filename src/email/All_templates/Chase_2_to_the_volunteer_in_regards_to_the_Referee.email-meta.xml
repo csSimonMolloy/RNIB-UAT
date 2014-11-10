@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Chase 2 to the volunteer in regards to the Referee</name>
+    <style>none</style>
+    <subject>Reminder for Reference request by {!Reference__c.Contact__c}</subject>
+    <textOnly>Dear {!Application__c.Applicant__c},
+
+Unfortunately we have been unable to contact you by phone and I am in the process of chasing your referee, who has not returned the reference request we sent to them.
+
+Please could you contact the referee yourself or supply us with an alternative referee who is able to provide a character reference for you. This can be anyone who has known you for over two years, but is not a family member/partner or lives in the same household as you.
+
+If you have any questions, please do not hesitate to contact us on 0845 60 30 575 or 01733 37 54 50 or volunteering@rnib.org.uk.
+
+Kind regards
+
+RNIB Group Volunteering Team
+T: 01733 37 54 50
+E: volunteering@rnib.org.uk
+W: www.rnib.org.uk</textOnly>
+    <type>custom</type>
+</EmailTemplate>

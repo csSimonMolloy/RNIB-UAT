@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Criminal Record Check</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Criminal Record Checks</value>
+    </caseValues>
+    <fields>
+        <label><!-- Volunteer Role --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- Criminal Record Checks --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The date the Criminal Record Check is due to expire --></help>
+        <label><!-- CRC Expiry Date --></label>
+        <name>CRC_Expiry_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the number of the existing check --></help>
+        <label><!-- Certificate Number --></label>
+        <name>Certificate_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the status of the existing check --></help>
+        <label><!-- Check Status --></label>
+        <name>Check_Status__c</name>
+        <picklistValues>
+            <masterLabel>Clear</masterLabel>
+            <translation><!-- Clear --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Clear</masterLabel>
+            <translation><!-- Not Clear --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Check Verified By --></label>
+        <name>Check_Verified_By__c</name>
+        <relationshipLabel><!-- Criminal Record Checks (Check Verified By) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Counter Signatory --></label>
+        <name>Counter_Signatory1__c</name>
+        <relationshipLabel><!-- Criminal Record Checks (Counter Signatory) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Counter Signatory Email --></label>
+        <name>Counter_Signatory_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Counter Signatory Phone --></label>
+        <name>Counter_Signatory_Phone__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the person here to whom you wish to submit this request for approval --></help>
+        <label><!-- Existing Check Counter Signatory --></label>
+        <name>Counter_Signatory__c</name>
+        <relationshipLabel><!-- Criminal Record Checks (Existing Check Counter Signatory) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Counter Signatory if Other Org and Known --></label>
+        <name>Counter_Signatory_if_Other_Org_and_Known__c</name>
+    </fields>
+    <fields>
+        <label><!-- Criminal Record Check Required --></label>
+        <name>Criminal_Record_Check_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Existing Check Date Approved/Rejected --></label>
+        <name>Date_Approved_Rejected__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Sent to Authorities --></label>
+        <name>Date_Sent_to_Authorities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Existing Date Submitted for Approval --></label>
+        <name>Date_Submitted_for_Approval__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the date of application for the new check --></help>
+        <label><!-- Date of Application --></label>
+        <name>Date_of_Application__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Birth --></label>
+        <name>Date_of_Birth__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Birth --></label>
+        <name>Date_of_Birth_f__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the date of issue of the existing check --></help>
+        <label><!-- Date of Issue --></label>
+        <name>Date_of_Issue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Previous Check --></label>
+        <name>Date_of_Previous_Check__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- If applicable --></help>
+        <label><!-- Details of previous DBS/Country checks --></label>
+        <name>Details_of_previous_DBS_Country_checks__c</name>
+    </fields>
+    <fields>
+        <help><!-- If applicable --></help>
+        <label><!-- Evidence of need for person to volunteer --></label>
+        <name>Evidence_of__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expected Start Date --></label>
+        <name>Expected_Start_Date_formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Face to Face interview conducted --></label>
+        <name>Face_to_Face_interview_conducted__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Form Reference Number --></label>
+        <name>Form_Reference_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- How will this Risk be managed? --></label>
+        <name>How_will_this_Risk_be_managed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interview Date --></label>
+        <name>Interview_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interview --></label>
+        <name>Interview__c</name>
+        <relationshipLabel><!-- Criminal Record Checks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Legacy Criminal Record Check ID --></label>
+        <name>Legacy_Criminal_Record_Check_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the level of the existing check --></help>
+        <label><!-- Level of Check --></label>
+        <name>Level_of_Check__c</name>
+        <picklistValues>
+            <masterLabel>Access NI Enhanced</masterLabel>
+            <translation><!-- Access NI Enhanced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Access NI Enhanced check for regulated activity with adults</masterLabel>
+            <translation><!-- Access NI Enhanced check for regulated activity with adults --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Access NI Enhanced check for regulated activity with adults and children</masterLabel>
+            <translation><!-- Access NI Enhanced check for regulated activity with adults and children --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Access NI Enhanced check for regulated activity with children</masterLabel>
+            <translation><!-- Access NI Enhanced check for regulated activity with children --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Access NI Standard</masterLabel>
+            <translation><!-- Access NI Standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DBS Enhanced</masterLabel>
+            <translation><!-- DBS Enhanced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DBS Enhanced check for regulated activity with adults</masterLabel>
+            <translation><!-- DBS Enhanced check for regulated activity with adults --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DBS Enhanced check for regulated activity with adults and children</masterLabel>
+            <translation><!-- DBS Enhanced check for regulated activity with adults and children --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DBS Enhanced check for regulated activity with children</masterLabel>
+            <translation><!-- DBS Enhanced check for regulated activity with children --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DBS Standard</masterLabel>
+            <translation><!-- DBS Standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG Scotland Adults</masterLabel>
+            <translation><!-- PVG Scotland Adults --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG Scotland Adults and Children</masterLabel>
+            <translation><!-- PVG Scotland Adults and Children --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG Scotland Children</masterLabel>
+            <translation><!-- PVG Scotland Children --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- NVIS Account No --></label>
+        <name>NVIS_Account_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Check Counter Signatory --></label>
+        <name>New_Check_Counter_Signatory__c</name>
+        <relationshipLabel><!-- Criminal Record Checks (New Check Counter Signatory) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- New Check Date Approved/Rejected --></label>
+        <name>New_Check_Date_Approved_Rejected__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Check Date Submitted for Approval --></label>
+        <name>New_Check_Date_Submitted_for_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Note: --></label>
+        <name>Note__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please check this box if the volunteer has signed up to the update service - Note: this will also update the update service status on the volunteer&apos;s contact record --></help>
+        <label><!-- On Update Service? --></label>
+        <name>On_Update_Service__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity_Formula__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter the PVG membership number.  Note: only relevant for PVG Criminal Record Checks. --></help>
+        <label><!-- PVG Scotland Membership Number --></label>
+        <name>PVG_Scotland_Membership_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Previous Country Checks --></label>
+        <name>Previous_Country_Checks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Risk to RNIB --></label>
+        <name>Risk_to_RNIB__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role Check Level --></label>
+        <name>Role_Check_Level__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role Involves Working With Children? --></label>
+        <name>Role_Involves_Working_With_Children__c</name>
+    </fields>
+    <fields>
+        <label><!-- Safeguarding Issue Note --></label>
+        <name>Safeguarding_issue_to_note__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Application Withdrawn</masterLabel>
+            <translation><!-- Application Withdrawn --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Certificate Approved</masterLabel>
+            <translation><!-- Certificate Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Certificate Approved - Need Risk Assessment</masterLabel>
+            <translation><!-- Certificate Approved - Need Risk Assessment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Certificate Checked - Pending Approval</masterLabel>
+            <translation><!-- Certificate Checked - Pending Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Certificate Rejected</masterLabel>
+            <translation><!-- Certificate Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Declined</masterLabel>
+            <translation><!-- Declined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approval</masterLabel>
+            <translation><!-- Pending Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Counter Signatory</masterLabel>
+            <translation><!-- Pending Counter Signatory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Witnesses</masterLabel>
+            <translation><!-- Pending Witnesses --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent to Authorities</masterLabel>
+            <translation><!-- Sent to Authorities --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields>
+    <fields>
+        <help><!-- Have you verified the volunteer exists on the update service? --></help>
+        <label><!-- Update Service Verified? --></label>
+        <name>Update_Service_Verified__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volunteer Email --></label>
+        <name>Volunteer_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volunteer Manager Email --></label>
+        <name>Volunteer_Manager_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volunteer Manager Phone --></label>
+        <name>Volunteer_Manager_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volunteer Manager --></label>
+        <name>Volunteer_Manager__c</name>
+        <relationshipLabel><!-- Criminal Record Checks (Volunteer Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Volunteer --></label>
+        <name>Volunteer__c</name>
+        <relationshipLabel><!-- Criminal Record Checks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Witness --></label>
+        <name>Witness1__c</name>
+        <relationshipLabel><!-- Criminal Record Checks (Witness) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Witness Email --></label>
+        <name>Witness_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Witness Phone --></label>
+        <name>Witness_Phone__c</name>
+    </fields>
+    <layouts>
+        <layout>Criminal Record Check Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Existing Check Details --></label>
+            <section>Existing Check Details</section>
+        </sections>
+        <sections>
+            <label><!-- New Application Details --></label>
+            <section>New Application Details</section>
+        </sections>
+        <sections>
+            <label><!-- Role Opportunity Details --></label>
+            <section>Role Opportunity Details</section>
+        </sections>
+        <sections>
+            <label><!-- Volunteer Details --></label>
+            <section>Volunteer Details</section>
+        </sections>
+        <sections>
+            <label><!-- Volunteer Manager Details --></label>
+            <section>Volunteer Manager Details</section>
+        </sections>
+        <sections>
+            <label><!-- Witness Details --></label>
+            <section>Witness Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Criminal Record Risk Assessment</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Information --></label>
+            <section>Information</section>
+        </sections>
+        <sections>
+            <label><!-- Risk Assessment Information --></label>
+            <section>Risk Assessment Information</section>
+        </sections>
+        <sections>
+            <label><!-- Volunteer Role --></label>
+            <section>Volunteer Role</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- CR Risk Assessment --></label>
+        <name>CR_Risk_Assessment</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Criminal Record Check --></label>
+        <name>Criminal_Record_Check</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Only Delegated GVT And Counter Signatory Users Can Approve Or Reject Criminal Record Checks --></errorMessage>
+        <name>Criminal_Record_Checks_only_CS_GVT</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Criminal_Record_Check_Risk_Assessment --></label>
+        <name>Criminal_Record_Check_Risk_Assessment</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Criminal_Record_Check --></label>
+        <name>New_Criminal_Record_Check</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,845 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Application__c</fullName>
+        <label>Volunteer Role</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipName>Risk_Assessments</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CRC_Expiry_Date__c</fullName>
+        <formula>Date_of_Issue__c + 365</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The date the Criminal Record Check is due to expire</inlineHelpText>
+        <label>CRC Expiry Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Certificate_Number__c</fullName>
+        <inlineHelpText>Enter the number of the existing check</inlineHelpText>
+        <label>Certificate Number</label>
+        <length>40</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Check_Status__c</fullName>
+        <inlineHelpText>Enter the status of the existing check</inlineHelpText>
+        <label>Check Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Clear</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Clear</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Check_Verified_By__c</fullName>
+        <label>Check Verified By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Criminal_Record_Checks</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Counter_Signatory1__c</fullName>
+        <label>Counter Signatory</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Criminal Record Checks (Counter Signatory)</relationshipLabel>
+        <relationshipName>Criminal_Record_Checks</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Counter_Signatory_Email__c</fullName>
+        <formula>Counter_Signatory1__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Counter Signatory Email</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Counter_Signatory_Phone__c</fullName>
+        <formula>Counter_Signatory1__r.Phone</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Counter Signatory Phone</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Counter_Signatory__c</fullName>
+        <inlineHelpText>Enter the person here to whom you wish to submit this request for approval</inlineHelpText>
+        <label>Existing Check Counter Signatory</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Safeguarding</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Counter_Signatory_if_Other_Org_and_Known__c</fullName>
+        <label>Counter Signatory if Other Org and Known</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Criminal_Record_Check_Required__c</fullName>
+        <formula>TEXT( Application__r.Role__r.DBS_Check_required__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Criminal Record Check Required</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Date_Approved_Rejected__c</fullName>
+        <label>Existing Check Date Approved/Rejected</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Date_Sent_to_Authorities__c</fullName>
+        <label>Date Sent to Authorities</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Submitted_for_Approval__c</fullName>
+        <label>Existing Date Submitted for Approval</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Date_of_Application__c</fullName>
+        <inlineHelpText>Enter the date of application for the new check</inlineHelpText>
+        <label>Date of Application</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_of_Birth__c</fullName>
+        <label>Date of Birth</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_of_Birth_f__c</fullName>
+        <formula>Volunteer__r.Date_of_birth__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Date of Birth</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_of_Issue__c</fullName>
+        <inlineHelpText>Enter the date of issue of the existing check</inlineHelpText>
+        <label>Date of Issue</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_of_Previous_Check__c</fullName>
+        <label>Date of Previous Check</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <formula>Application__r.Role_Description__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Description</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Details_of_previous_DBS_Country_checks__c</fullName>
+        <inlineHelpText>If applicable</inlineHelpText>
+        <label>Details of previous DBS/Country checks</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Evidence_of__c</fullName>
+        <inlineHelpText>If applicable</inlineHelpText>
+        <label>Evidence of need for person to volunteer</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Expected_Start_Date_formula__c</fullName>
+        <formula>Application__r.Role__r.Start_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Expected Start Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Face_to_Face_interview_conducted__c</fullName>
+        <label>Face to Face interview conducted</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Form_Reference_Number__c</fullName>
+        <label>Form Reference Number</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>How_will_this_Risk_be_managed__c</fullName>
+        <label>How will this Risk be managed?</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Interview_Date__c</fullName>
+        <formula>DATEVALUE(Interview__r.Date_Time__c)</formula>
+        <label>Interview Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Interview__c</fullName>
+        <label>Interview</label>
+        <referenceTo>Interview__c</referenceTo>
+        <relationshipName>Risk_Assessments</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_Criminal_Record_Check_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>Legacy Criminal Record Check ID</label>
+        <length>10</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Level_of_Check__c</fullName>
+        <inlineHelpText>Enter the level of the existing check</inlineHelpText>
+        <label>Level of Check</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Access NI Standard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Access NI Enhanced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Access NI Enhanced check for regulated activity with adults</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Access NI Enhanced check for regulated activity with children</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Access NI Enhanced check for regulated activity with adults and children</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DBS Standard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DBS Enhanced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DBS Enhanced check for regulated activity with adults</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DBS Enhanced check for regulated activity with children</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DBS Enhanced check for regulated activity with adults and children</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVG Scotland Adults</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVG Scotland Children</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVG Scotland Adults and Children</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Location__c</fullName>
+        <formula>IF(INCLUDES(  Application__r.Role__r.Location__c  , &quot;North West&quot;), &quot;North West&quot; + BR() , NULL) +
+IF(INCLUDES(  Application__r.Role__r.Location__c  , &quot;North East&quot;), &quot;North East&quot; + BR() , NULL) +
+IF(INCLUDES( Application__r.Role__r.Location__c , &quot;South West&quot;), &quot;South West&quot; + BR() , NULL) +
+IF(INCLUDES( Application__r.Role__r.Location__c , &quot;South East&quot;), &quot;South East&quot; + BR() , NULL) +
+IF(INCLUDES( Application__r.Role__r.Location__c , &quot;West Midlands&quot;), &quot;West Midlands&quot; + BR() , NULL) +
+IF(INCLUDES( Application__r.Role__r.Location__c , &quot;East Midlands&quot;), &quot;East Midlands&quot; + BR() , NULL) +
+IF(INCLUDES( Application__r.Role__r.Location__c , &quot;London&quot;), &quot;London&quot; + BR() , NULL) +
+IF(INCLUDES( Application__r.Role__r.Location__c , &quot;East of England&quot;), &quot;East of England&quot; + BR() , NULL) +
+IF(INCLUDES( Application__r.Role__r.Location__c , &quot;Yorkshire/Humber&quot;), &quot;Yorkshire/Humber&quot; + BR() , NULL) +
+IF(INCLUDES( Application__r.Role__r.Location__c , &quot;Scotland&quot;), &quot;Scotland&quot; + BR() , NULL) +
+IF(INCLUDES( Application__r.Role__r.Location__c , &quot;Wales&quot;), &quot;Wales&quot; + BR() , NULL) +
+IF(INCLUDES( Application__r.Role__r.Location__c , &quot;Northern Ireland&quot;), &quot;Northern Ireland&quot;, NULL)</formula>
+        <label>Location</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>NVIS_Account_No__c</fullName>
+        <externalId>true</externalId>
+        <label>NVIS Account No</label>
+        <length>30</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>New_Check_Counter_Signatory__c</fullName>
+        <label>New Check Counter Signatory</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Safeguarding2</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>New_Check_Date_Approved_Rejected__c</fullName>
+        <label>New Check Date Approved/Rejected</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>New_Check_Date_Submitted_for_Approval__c</fullName>
+        <label>New Check Date Submitted for Approval</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Note__c</fullName>
+        <formula>&quot;Entering information into the &apos;On Update Service?&apos; or &apos;Date of Birth&apos; fields in this section will automatically update these fields on the contact record also.&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Note:</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>On_Update_Service__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>Please check this box if the volunteer has signed up to the update service - Note: this will also update the update service status on the volunteer&apos;s contact record</inlineHelpText>
+        <label>On Update Service?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Formula__c</fullName>
+        <formula>HYPERLINK(&quot;https://cs17.salesforce.com/&quot;+Application__r.Role__r.Id , Application__r.Role__r.Role_Title__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>PVG_Scotland_Membership_Number__c</fullName>
+        <inlineHelpText>Please enter the PVG membership number.  Note: only relevant for PVG Criminal Record Checks.</inlineHelpText>
+        <label>PVG Scotland Membership Number</label>
+        <length>30</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Previous_Country_Checks__c</fullName>
+        <label>Previous Country Checks</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Risk_to_RNIB__c</fullName>
+        <label>Risk to RNIB</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Role_Check_Level__c</fullName>
+        <formula>TEXT( Application__r.Role__r.DBS_Check_required__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Role Check Level</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Role_Involves_Working_With_Children__c</fullName>
+        <formula>IF(  CONTAINS(Role_Check_Level__c , &quot;children&quot;) , IMAGE(&quot;/servlet/servlet.FileDownload?file=015g000000029vT&quot;, &quot;This Role involves working with Children&quot;), &quot;No&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Role Involves Working With Children?</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Safeguarding_issue_to_note__c</fullName>
+        <label>Safeguarding Issue Note</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Pending Witnesses</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending Counter Signatory</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sent to Authorities</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Certificate Checked - Pending Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Certificate Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Certificate Approved - Need Risk Assessment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Certificate Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Application Withdrawn</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Declined</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Title__c</fullName>
+        <formula>Application__r.Role_Title__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Title</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Update_Service_Verified__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>Have you verified the volunteer exists on the update service?</inlineHelpText>
+        <label>Update Service Verified?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Volunteer_Email__c</fullName>
+        <formula>Volunteer__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Volunteer Email</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Volunteer_Manager_Email__c</fullName>
+        <formula>HYPERLINK(Volunteer_Manager__r.Email, Volunteer_Manager__r.Email)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Volunteer Manager Email</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Volunteer_Manager_Phone__c</fullName>
+        <formula>Volunteer_Manager__r.Phone</formula>
+        <label>Volunteer Manager Phone</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Volunteer_Manager__c</fullName>
+        <label>Volunteer Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Risk_Assessments</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Volunteer__c</fullName>
+        <label>Volunteer</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Criminal Record Checks</relationshipLabel>
+        <relationshipName>Risk_Assessments_del</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Witness1__c</fullName>
+        <label>Witness</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Criminal Record Checks (Witness)</relationshipLabel>
+        <relationshipName>Criminal_Record_Checks1</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Witness_Email__c</fullName>
+        <formula>Witness1__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Witness Email</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Witness_Phone__c</fullName>
+        <formula>Witness1__r.Phone</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Witness Phone</label>
+        <type>Text</type>
+    </fields>
+    <label>Criminal Record Check</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Certificate_Number__c</columns>
+        <columns>Volunteer__c</columns>
+        <columns>Opportunity_Formula__c</columns>
+        <columns>Role_Check_Level__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>CRCs_Approved</fullName>
+        <columns>NAME</columns>
+        <columns>Date_Sent_to_Authorities__c</columns>
+        <columns>Opportunity_Formula__c</columns>
+        <columns>Volunteer__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </filters>
+        <label>CRCs Approved</label>
+    </listViews>
+    <listViews>
+        <fullName>CRCs_Assessments</fullName>
+        <columns>NAME</columns>
+        <columns>Opportunity_Formula__c</columns>
+        <columns>Volunteer__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Risk_Assessment__c.CR_Risk_Assessment</value>
+        </filters>
+        <label>CRC Risk Assessments</label>
+    </listViews>
+    <listViews>
+        <fullName>CRCs_Pending_Approval</fullName>
+        <columns>NAME</columns>
+        <columns>Date_Sent_to_Authorities__c</columns>
+        <columns>Opportunity_Formula__c</columns>
+        <columns>Volunteer__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Pending Approval</value>
+        </filters>
+        <label>CRCs Pending Approval</label>
+    </listViews>
+    <listViews>
+        <fullName>CRCs_Pending_Counter_Signatory</fullName>
+        <columns>NAME</columns>
+        <columns>Date_Sent_to_Authorities__c</columns>
+        <columns>Opportunity_Formula__c</columns>
+        <columns>Volunteer__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Pending Counter Signatory</value>
+        </filters>
+        <label>CRCs Pending Counter Signatory</label>
+    </listViews>
+    <listViews>
+        <fullName>CRCs_Pending_Witnesses</fullName>
+        <columns>NAME</columns>
+        <columns>Date_Sent_to_Authorities__c</columns>
+        <columns>Opportunity_Formula__c</columns>
+        <columns>Volunteer__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Pending Witnesses</value>
+        </filters>
+        <label>CRCs Pending Witnesses</label>
+    </listViews>
+    <listViews>
+        <fullName>Criminal_Record_Checks_Sent_To_Authoriti</fullName>
+        <columns>NAME</columns>
+        <columns>Date_Sent_to_Authorities__c</columns>
+        <columns>Opportunity_Formula__c</columns>
+        <columns>Volunteer__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Sent to Authorities</value>
+        </filters>
+        <label>CRCs Sent To Authoritiies</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CRC-{0000}</displayFormat>
+        <label>Criminal Record Check ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Criminal Record Checks</pluralLabel>
+    <recordTypes>
+        <fullName>CR_Risk_Assessment</fullName>
+        <active>true</active>
+        <description>Choose This Type For A Criminal Record Check Risk Assessment</description>
+        <label>CR Risk Assessment</label>
+        <picklistValues>
+            <picklist>Check_Status__c</picklist>
+            <values>
+                <fullName>Clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Clear</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Face_to_Face_interview_conducted__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_of_Check__c</picklist>
+            <values>
+                <fullName>Access NI Enhanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Access NI Enhanced check for regulated activity with adults</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Access NI Enhanced check for regulated activity with adults and children</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Access NI Enhanced check for regulated activity with children</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Access NI Standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DBS Enhanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DBS Enhanced check for regulated activity with adults</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DBS Enhanced check for regulated activity with adults and children</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DBS Enhanced check for regulated activity with children</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DBS Standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG Scotland Adults</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG Scotland Adults and Children</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG Scotland Children</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Pending Approval</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Criminal_Record_Check</fullName>
+        <active>true</active>
+        <description>Choose This Type For A Standard Criminal Record Check</description>
+        <label>Criminal Record Check</label>
+        <picklistValues>
+            <picklist>Check_Status__c</picklist>
+            <values>
+                <fullName>Clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Clear</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Face_to_Face_interview_conducted__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_of_Check__c</picklist>
+            <values>
+                <fullName>Access NI Enhanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Access NI Enhanced check for regulated activity with adults</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Access NI Enhanced check for regulated activity with adults and children</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Access NI Enhanced check for regulated activity with children</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Access NI Standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DBS Enhanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DBS Enhanced check for regulated activity with adults</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DBS Enhanced check for regulated activity with adults and children</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DBS Enhanced check for regulated activity with children</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DBS Standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG Scotland Adults</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG Scotland Adults and Children</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG Scotland Children</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Application Withdrawn</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Certificate Checked - Pending Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Counter Signatory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Witnesses</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Sent to Authorities</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Volunteer__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Opportunity_Formula__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Application__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Date_Sent_to_Authorities__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Date_of_Issue__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>RECORDTYPE</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Criminal_Record_Checks_only_CS_GVT</fullName>
+        <active>false</active>
+        <description>Prevents users who do not have the GVT/CS checkbox on their record checked from approving criminal record checks</description>
+        <errorConditionFormula>AND( $User.GVT_CS_Approver__c  &lt;&gt; TRUE,OR(ISPICKVAL( Status__c, &quot;Certificate Approved&quot;),ISPICKVAL(Status__c, &quot;Certificate Rejected&quot;)))</errorConditionFormula>
+        <errorMessage>Only Delegated GVT And Counter Signatory Users Can Approve Or Reject Criminal Record Checks</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Criminal_Record_Check_Risk_Assessment</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>url</linkType>
+        <masterLabel>Criminal Record Check Risk Assessment</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/a0D/e?CF00Nb0000008LpjE={!Application__c.Name}&amp;CF00Nb0000008LpjE_lkid={!Application__c.Id}&amp;CF00Nb0000008Lpjt={!Application__c.Applicant__c}&amp;RecordType=012b0000000Q7g1&amp;ent=01Ib0000000SSHn&amp;retURL={!Application__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Criminal_Record_Check</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>url</linkType>
+        <masterLabel>New/Existing Criminal Record Check</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/a0D/e?CF00Nb0000008LpjE={!Application__c.Name}&amp;CF00Nb0000008LpjE_lkid={!Application__c.Id}&amp;CF00Nb0000008Lpjs={!Application__c.Volunteer_Manager__c}&amp;CF00Nb0000008Lpjt={!Application__c.Applicant__c}&amp;RecordType=012b0000000Q7g2&amp;ent=01Ib0000000SSHn&amp;retURL={!Application__c.Id}</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,4 @@
+Thank you for submitting your customer request. Case #{!Customer_Requests__c.Name} has been created and one of the  {!Organization.Name} team will respond to you shortly.   
+
+Thank you,   
+{!Organization.Name}

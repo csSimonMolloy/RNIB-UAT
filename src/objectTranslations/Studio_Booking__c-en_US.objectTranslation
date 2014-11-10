@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Studio Booking</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Studio Bookings</value>
+    </caseValues>
+    <fields>
+        <help><!-- Fill in the date and time of the studio booking here --></help>
+        <label><!-- Date / Time of Booking --></label>
+        <name>Date_Time_of_Booking__c</name>
+    </fields>
+    <fields>
+        <help><!-- A notes field for additional information relating to the studio booking --></help>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the status of the studio booking --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scheduled</masterLabel>
+            <translation><!-- Scheduled --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Look up the engineer who will be hosting the studio session --></help>
+        <label><!-- Studio Engineer --></label>
+        <name>Studio_Engineer__c</name>
+        <relationshipLabel><!-- Studio Bookings --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- select the location of the studio --></help>
+        <label><!-- Studio Location --></label>
+        <name>Studio_Location__c</name>
+        <picklistValues>
+            <masterLabel>Heathfield</masterLabel>
+            <translation><!-- Heathfield --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ivybridge</masterLabel>
+            <translation><!-- Ivybridge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Peterborough</masterLabel>
+            <translation><!-- Peterborough --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Select the studio Number --></help>
+        <label><!-- Studio Number --></label>
+        <name>Studio_Number__c</name>
+        <picklistValues>
+            <masterLabel>Studio 1</masterLabel>
+            <translation><!-- Studio 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Studio 2</masterLabel>
+            <translation><!-- Studio 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Studio 3</masterLabel>
+            <translation><!-- Studio 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Studio 4</masterLabel>
+            <translation><!-- Studio 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Studio 5</masterLabel>
+            <translation><!-- Studio 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- look up the volunteer role of the first volunteer who will be participating in the studio booking --></help>
+        <label><!-- Volunteer Role 1 --></label>
+        <name>Volunteer_Role_1__c</name>
+        <relationshipLabel><!-- Studio Bookings --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- select the volunteer role of the second volunteer who may be taking part in the studio booking session --></help>
+        <label><!-- Volunteer Role 2 --></label>
+        <name>Volunteer_Role_2__c</name>
+        <relationshipLabel><!-- Studio Bookings (Volunteer Role 2) --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Studio Booking Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Session Participants --></label>
+            <section>Session Participants</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

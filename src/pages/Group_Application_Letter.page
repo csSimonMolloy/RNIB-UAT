@@ -1,0 +1,88 @@
+<apex:page standardController="Application__c" renderAs="PDF">
+    <div style="page-break-after:always; padding-top: 100px;"> 
+        <p align="right">
+            RNIB Group Volunteering Team<br/>
+            Bakewell Road<br/>
+            Orton Southgate<br/>
+            Peterborough <br/>
+            PE2 6XU
+        </p>
+        <p class="companyName">
+            {!Application__c.Applicant__r.Name}<br/>
+            {!Application__c.Applicant__r.MailingStreet}<br/>
+            {!Application__c.Applicant__r.MailingCity}<br/>
+            {!Application__c.Applicant__r.MailingState}<br/>
+            {!Application__c.Applicant__r.MailingPostalCode}
+        </p>
+        <p>
+            <apex:outputText value="{0,date}">
+                <apex:param value="{!TODAY()}" />
+            </apex:outputText>
+        </p>
+        <p>
+            Dear {!Application__c.Applicant__r.FirstName}
+        </p>
+        <p><strong>Re: Volunteering Application</strong></p>
+        <p>Thank you for your interest in volunteering with RNIB Group of charities. Action for Blind People, National Talking Newspapers and Magazines, Cardiff Vales and Valleys and RNIB are working closely together to support even more blind or partially sighted people to lead full and independent lives. One of the most effective ways you can help is by volunteering with us.</p>
+        <p>Please find enclosed the following documents: </p>
+        <ul>
+            <li>RNIB Group Volunteering Application Form</li>
+            <li>Role Information Sheet </li>
+            <li>Further information about the opportunities you expressed interest in</li>
+            <li>Braille Information Card</li>
+        </ul> 
+
+<p>Using the business reply envelope, please ensure you complete and return the application form and role information sheet. Alternatively, you can return your completed form via email to volunteering@rnib.org.uk </p>
+<p>Once we have received your application we will contact you discuss the opportunity further. If you have any questions, please do not hesitate to contact us on 0845 60 30 575/01733 37 54 50, at volunteering@rnib.org.uk or visit our website www.rnib.org.uk/volunteer </p>
+<p>Yours sincerely,</p>
+        <img src="{!$Resource.CEO}"/>
+        <p><strong>Volunteering Team</strong></p>
+    </div> 
+    <div style="page-break-after:auto;"> 
+        <h1>Role Information Sheet</h1>
+        <p><strong>Name: </strong>{!Application__c.Applicant__r.Name}</p>
+        <p><strong>You have requested information about the following opportunities. Please indicate below which of these roles you are applying for:</strong></p>
+        <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="300" valign="top">
+                <p>{!Application__c.Role__r.Role_Type__c}</p>
+            </td>
+            <td>
+                <p>Yes/No</p>
+            </td>
+          </tr>
+        </table>
+        <p>Please return this sheet with your completed application</p>
+        <hr></hr>
+        <p>It is within best practice guidelines that we also receive a parental/guardian note if you are under the age of 18 years old. This is to give authorisation for you to proceed with your volunteering role and to ensure that you are covered by our insurances. </p>
+        <p>If you are under the age of 18, please complete the section below and we will send your parent/guardian a brief form to complete.</p>
+        <p>Name of parent/guardian:</p>
+        <p>Address:</p>
+        <p>Relationship to you:</p>
+        <p>Preferred reading format (please tick the appropriate):<br/>
+        Standard print [ ]  Braille [ ]  Disc [ ]  Audio [ ]  E-mail<br/>  
+        Large print (16 point) [ ]  Large print (18 point) [ ]  Other (please specify):________________________</p>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="100%" valign="top">
+                <img src="{!$Resource.RNIB_Footer}"/>
+            </td>
+          </tr>
+        </table>
+ 
+         </div>
+</apex:page>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Application__c</fullName>
+        <label>Application</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipLabel>Course Bookings</relationshipLabel>
+        <relationshipName>Course_Bookings</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Course__c</fullName>
+        <label>Course</label>
+        <referenceTo>Course__c</referenceTo>
+        <relationshipLabel>Course Bookings</relationshipLabel>
+        <relationshipName>Course_Bookings</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>Person__c</fullName>
+        <label>Person</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Course Bookings</relationshipLabel>
+        <relationshipName>Course_Bookings</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Date__c</fullName>
+        <label>Renewal Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Booked</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Attended</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unable to Attend</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <label>Course Booking</label>
+    <nameField>
+        <displayFormat>CB-{0000}</displayFormat>
+        <label>Course Booking Id</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Course Bookings</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Person__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Person__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Status__c</lookupPhoneDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>New_Course_Booking</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>url</linkType>
+        <masterLabel>New Course Booking</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/a02/e?CF00Nb0000008Lpe7={! Course__c.Name }&amp;CF00Nb0000008Lpe7={!Course__c.Id}&amp;saveURL=/{!Course__c.Id}</url>
+    </webLinks>
+</CustomObject>

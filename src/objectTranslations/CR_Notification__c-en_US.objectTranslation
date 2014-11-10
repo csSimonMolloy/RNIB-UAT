@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Customer Request Notification</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Customer Request Notifications</value>
+    </caseValues>
+    <fields>
+        <label><!-- Customer Request --></label>
+        <name>Customer_Request__c</name>
+        <relationshipLabel><!-- Customer Request Notifications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date Notification Sent --></label>
+        <name>Date_Notification_Sent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Responded --></label>
+        <name>Date_Responded__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Accepted</masterLabel>
+            <translation><!-- Accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Accepted but no longer available</masterLabel>
+            <translation><!-- Accepted but no longer available --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Responded</masterLabel>
+            <translation><!-- Not Responded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Volunteer Role ID --></label>
+        <name>Volunteer_Role_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volunteer --></label>
+        <name>Volunteer__c</name>
+        <relationshipLabel><!-- Customer Request Notifications --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

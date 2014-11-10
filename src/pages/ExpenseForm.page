@@ -1,0 +1,51 @@
+<apex:page standardController="Expense_Form__c" extensions="ExpenseFormController" showHeader="true" sidebar="true" tabStyle="Expense_Form__c">
+<script>
+ var newWin=null;
+ function openLookupPopup(name, id)
+ {
+  var url="/apex/EFLookupApplications?namefield=" + name + "&idfield=" + id;
+  newWin=window.open(url, 'Popup','height=500,width=900,left=100,top=100,resizable=no,scrollbars=yes,toolbar=no,status=no');
+  if (window.focus) 
+  {
+   newWin.focus();
+  }
+    
+     return false;
+    }
+       
+ function closeLookupPopup()
+ {
+    if (null!=newWin)
+    {
+       newWin.close();
+    }  
+ }
+</script>
+<apex:form >
+    <apex:pageBlock title="Expense Edit">
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Save" action="{!Save}"/>
+            <apex:commandButton value="Save & New" action="{!saveAndNew}"/>
+            <apex:commandButton value="Cancel" action="{!Cancel}" immediate="true"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection title="Information">
+        <apex:outputPanel rendered="{!isPortalUser}">
+            <apex:pageBlockSectionitem >
+          <apex:outputLabel value="Volunteer Role" styleClass="labelCol vfLabelColTextWrap  last "/>
+          <apex:outputPanel >
+         <apex:inputHidden value="{!selectedApplication}" id="targetId" />
+            <apex:inputText required="true" size="30" value="{!applicationName}" id="targetName" onFocus="this.blur()" disabled="false"/> <a href="#" onclick="openLookupPopup('{!$Component.targetName}', '{!$Component.targetId}'); return false">Lookup</a>
+          </apex:outputPanel>
+        </apex:pageBlockSectionitem>
+        </apex:outputPanel>
+        <apex:outputPanel rendered="{!!isPortalUser}">
+        <apex:outputLabel value="Volunteer Role" styleClass="labelCol vfLabelColTextWrap  last "/>
+          <apex:inputField value="{!Expense_Form__c.Volunteer_Role__c}"/>
+          </apex:outputPanel>
+            <apex:inputField value="{!Expense_Form__c.Date__c}"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    
+    
+</apex:form>
+</apex:page>

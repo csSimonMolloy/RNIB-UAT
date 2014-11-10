@@ -1,0 +1,110 @@
+<apex:page showHeader="true" sidebar="true" controller="RoleDetailsController"> 
+<apex:form >
+<apex:pageBlock >
+
+<apex:pageBlockSection title="Title and Description" columns="1">
+<apex:repeat value="{!$ObjectType.Role_Opportunity__c.FieldSets.Title_Description}" var="f">
+    <apex:outputField value="{!roleDetails[f]}"/>
+</apex:repeat>
+
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="About The Role" columns="1">
+    <apex:repeat value="{!$ObjectType.Role_Opportunity__c.FieldSets.About_the_Role}" var="f">
+        <apex:outputField value="{!roleDetails[f]}"/>
+    </apex:repeat>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="Practicalities" columns="1">
+    <apex:repeat value="{!$ObjectType.Role_Opportunity__c.FieldSets.Practicalities}" var="f">
+        <apex:outputField value="{!roleDetails[f]}"/>
+    </apex:repeat>
+</apex:pageBlockSection>
+</apex:pageBlock>
+
+<!-- 2014-01-22 : SM : Removing old code so we can use Fieldsets -->
+<!--    <div id="content-wrapper">
+            <div id="main">
+                <div id="content">
+                    <div id="col-3">
+                        
+                        <p><strong>Location: </strong> <apex:outputfield value="{!roleDetails.Location__c}" /></p>
+                    <p><strong>Closing Date: </strong><apex:outputText value="{0,date,dd.MM.yyyy}">
+       <apex:param value="{!roleDetails.End_Date__c}" /></apex:outputText></p>
+
+                    <p><strong>Description: </strong><br></br> <apex:outputText value="{!roleDetails.Role_Description__c}" escape="false"/></p>
+                    <p></p>     
+                    <h2 id="H2Heading1">
+           What will I be doing?
+          </h2>
+                                  <p></p>
+                        <p></p>
+                        <p></p>
+          <div class="clear"></div>
+           <p><apex:outputfield value="{!roleDetails.What_will_I_be_doing__c}" /></p>   
+           
+           <p></p>     
+                    <h2 id="H2Heading1">
+           Hours per week? 
+          </h2>
+                                  <p></p>
+                        <p></p>
+                        <p></p>
+          <div class="clear"></div>
+           <p><apex:outputfield value="{!roleDetails.Hours_per_week__c}" /></p>   
+                                
+         <p></p>     
+                    <h2 id="H2Heading1">
+           What will I gain from the role? 
+          </h2>
+                                  <p></p>
+                        <p></p>
+                        <p></p>
+          <div class="clear"></div>
+           <p><apex:outputfield value="{!roleDetails.What_will_I_gain_from_the_role__c}" /></p>   
+                                
+                                  
+         <p></p>     
+                    <h2 id="H2Heading1">
+           What support will I be given?   
+          </h2>
+                                  <p></p>
+                        <p></p>
+                        <p></p>
+          <div class="clear"></div>
+           <p><apex:outputfield value="{!roleDetails.What_support_will_I_be_given__c}" /></p>   
+                                
+                 
+                 
+               
+                 
+                 
+                       
+                        </div> -->
+                        
+                        <apex:outputPanel rendered="true">
+                        <div id="ctl00_PlaceHolderContentWrapper_PlaceHolderMainWrapper_PlaceHolderMain_PageContactDisplayModePanel1">                            
+                          <apex:commandButton action="/apex/Application?id={!roleDetails.Id}" value="Apply" id="theButton"/>
+                        </div>
+                        </apex:outputPanel>
+                        
+                        <!-- <apex:outputPanel rendered="{!showApply}">
+                        <div id="ctl00_PlaceHolderContentWrapper_PlaceHolderMainWrapper_PlaceHolderMain_PageContactDisplayModePanel1">                            
+                          <apex:commandButton action="/apex/Application?id={!roleDetails.Id}" value="Apply" id="theButton"/>
+                        </div>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!!showApply}">
+                        <div id="ctl00_PlaceHolderContentWrapper_PlaceHolderMainWrapper_PlaceHolderMain_PageContactDisplayModePanel2">                            
+                          <strong>You have already applied for this role on {!appliedDate} please contact volunteering@rnib.org.uk quoting the role title if you wish to reapply.</strong>
+                        </div>
+                        </apex:outputPanel> -->
+<!-- 2014-01-22 : SM : Removing old code so we can use fieldsets -->
+<!--                    </div>
+
+                        </div>
+
+                         </div> -->
+                
+</apex:form>        
+       
+</apex:page>

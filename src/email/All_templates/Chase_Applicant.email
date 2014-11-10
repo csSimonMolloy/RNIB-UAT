@@ -1,0 +1,17 @@
+<p>Dear {!Application__c.Applicant__c},</p>
+
+<p>Thank you for your interest in volunteering for RNIB group.</p>
+
+<p>The information you have entered on your application form will continue to be saved for the next seven days. If it is not completed and submitted after this time you will be required to restart the application process.</p>
+
+<p>If you have any questions, please do not hesitate to contact us on 0845 60 30 575 or 01733 37 54 50 or volunteering@rnib.org.uk.</p>
+
+<p>We look forward to hearing from you.</p>
+
+<p>Kind regards</p>
+
+<p>RNIB Group Volunteering Team<br />
+T: 01733 37 54 50<br />
+E: volunteering@rnib.org.uk<br />
+W: www.rnib.org.uk<br />
+</p>

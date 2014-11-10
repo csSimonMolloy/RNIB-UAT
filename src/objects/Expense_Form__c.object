@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Date__c</fullName>
+        <label>Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Name__c</fullName>
+        <formula>Volunteer_Role__r.Applicant__r.FirstName + &quot; &quot; + Volunteer_Role__r.Applicant__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Name</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Total_Amount__c</fullName>
+        <label>Total Amount</label>
+        <summarizedField>Expense__c.Amount__c</summarizedField>
+        <summaryForeignKey>Expense__c.Expense_Form__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Volunteer_Manager__c</fullName>
+        <formula>Volunteer_Role__r.Volunteer_Manager__r.User_Fullname__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Volunteer Manager</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Volunteer_Role__c</fullName>
+        <label>Volunteer Role</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipLabel>Expense Forms</relationshipLabel>
+        <relationshipName>Expense_Forms</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <label>Expense Form</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Volunteer_Manager__c</columns>
+        <columns>Name__c</columns>
+        <columns>Volunteer_Role__c</columns>
+        <columns>Total_Amount__c</columns>
+        <columns>Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Expense_Forms</fullName>
+        <columns>NAME</columns>
+        <columns>Name__c</columns>
+        <columns>Volunteer_Role__c</columns>
+        <columns>Total_Amount__c</columns>
+        <columns>Date__c</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Expense Forms</label>
+    </listViews>
+    <nameField>
+        <displayFormat>EXPENSE FORM-{00000}</displayFormat>
+        <label>Expense Form No</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Expense Forms</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Volunteer_Manager__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Volunteer_Role__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Total_Amount__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Date__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Volunteer_Manager__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Volunteer_Role__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Total_Amount__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Date__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Volunteer_Manager__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Name__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Volunteer_Role__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Total_Amount__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Date__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Volunteer_Manager__c</searchFilterFields>
+        <searchFilterFields>Name__c</searchFilterFields>
+        <searchFilterFields>Volunteer_Role__c</searchFilterFields>
+        <searchFilterFields>Total_Amount__c</searchFilterFields>
+        <searchFilterFields>Date__c</searchFilterFields>
+        <searchResultsAdditionalFields>Volunteer_Manager__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Volunteer_Role__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Total_Amount__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Expense_Form</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>page</linkType>
+        <masterLabel>Generate Expense Form</masterLabel>
+        <openType>replace</openType>
+        <page>Expense_Form</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

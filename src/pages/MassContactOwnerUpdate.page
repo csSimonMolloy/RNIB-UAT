@@ -1,0 +1,51 @@
+<apex:page standardController="Contact" recordSetVar="Contacts" id="updateOwnerPage">
+	<head>
+		<title>Change Contact Owner</title>
+	</head>
+
+	<apex:form >
+		<apex:sectionheader title="Change Contact Owner"/>
+			<div class="bDescription">
+      			This screen allows you to transfer ownership of a contact to another user.
+    			<br></br>
+	 			Note that completed activities and open activities owned by other users will not be transferred.
+   			</div>
+
+			<apex:pageblock mode="edit">
+				<apex:pagemessages />
+				<div class="pbHeader pbHeaderEmpty">
+					<table cellspacing="0" cellpadding="0" border="0">
+						<tbody>
+							<tr>
+								<td class="pbTitle">
+									<img class="minWidth" width="1" height="1" title="" alt="" src="/s.gif"></img>
+									<h2 class="mainTitle"></h2>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<apex:pageblocksection title="Select New Owner" columns="1">
+					<apex:pageblocksectionitem >
+						<apex:outputlabel for="owner">Owner</apex:outputlabel>
+						<apex:inputfield id="owner" value="{!Contact.OwnerId}"/>
+					</apex:pageblocksectionitem>
+				</apex:pageblocksection>
+				<apex:pageblocksection title="Selected Contacts" columns="1">
+					<apex:pageblocktable value="{!selected}" var="j" width="100%" styleClass="list" rowClasses="dataRow" onRowMouseOver="hiOn(this);" onRowMouseOut="hiOff(this);">
+						<apex:column >
+							<apex:facet name="header">Contact Name</apex:facet>
+							<apex:outputlink value="{!URLFOR($Action.Contact.View, j.id)}">{!j.FirstName} {!j.LastName}</apex:outputlink>
+						</apex:column>
+						<apex:column >
+							<apex:facet name="header">Current Owner</apex:facet>{!j.Owner.Name}
+						</apex:column>
+					</apex:pageblocktable>
+				</apex:pageblocksection>
+			<apex:pageblockbuttons location="bottom">
+				<apex:commandbutton value="Save" action="{!save}"/>
+				<apex:commandbutton value="Cancel" action="{!cancel}"/>
+			</apex:pageblockbuttons>
+		</apex:pageblock>
+	</apex:form>
+</apex:page>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Applicant_Landing_Options</fullName>
+        <categories>VF, Sites</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Applicant Landing Options</shortDescription>
+        <value>Update your profile
+Search for Opportunities that match your skill set</value>
+    </labels>
+    <labels>
+        <fullName>Applicant_Landing_Page</fullName>
+        <categories>VF, Sites</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Applicant Landing Page</shortDescription>
+        <value>RNIB Home Page</value>
+    </labels>
+    <labels>
+        <fullName>Applicant_Landing_Welcome</fullName>
+        <categories>VF, Sites</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Applicant Landing Welcome</shortDescription>
+        <value>Welcome to the RNIB Applicant Home Page.  Use the links on this page to do the following :</value>
+    </labels>
+    <labels>
+        <fullName>ApplicationNoReferences</fullName>
+        <categories>VF, Sites</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ApplicationNoReferences</shortDescription>
+        <value>If you are unable to provide references, please set this field to Yes and supply an explanation</value>
+    </labels>
+    <labels>
+        <fullName>Correspondence</fullName>
+        <categories>VF, Sites</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Correspondence</shortDescription>
+        <value>Correspondence &amp; Access Information</value>
+    </labels>
+    <labels>
+        <fullName>Courses</fullName>
+        <categories>VF, Sites</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Courses</shortDescription>
+        <value>Courses</value>
+    </labels>
+    <labels>
+        <fullName>Currently_Unavailable</fullName>
+        <categories>VF, Sites</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Currently_Unavailable</shortDescription>
+        <value>Currently Unavailable</value>
+    </labels>
+    <labels>
+        <fullName>Data_Protection</fullName>
+        <categories>VF, Sites</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Data_Protection</shortDescription>
+        <value>Data Protection</value>
+    </labels>
+    <labels>
+        <fullName>Data_Protection_New_Applicant</fullName>
+        <categories>VF, Sites</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Data_Protection_New_Applicant</shortDescription>
+        <value>I understand that information given on the form will be processed by a computer and used for registration. We will only use your personal details in relation to your support with RNIB Group and will not pass your details on the third parties.</value>
+    </labels>
+    <labels>
+        <fullName>Data_Protection_Text</fullName>
+        <categories>VF, Sites</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Data_Protection_Text</shortDescription>
+        <value>We will use your personal details in relation to your application and volunteering role. Please indicate if you are happy to receive occasional information on other RNIB Group Volunteering opportunities</value>
+    </labels>
+    <labels>
+        <fullName>Mark_As_Not_On_Holiday</fullName>
+        <categories>VF, Sites</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mark_As_Not_On_Holiday</shortDescription>
+        <value>Mark As Available</value>
+    </labels>
+    <labels>
+        <fullName>Mark_As_On_Holiday</fullName>
+        <categories>VF, Sites</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mark_As_On_Holiday</shortDescription>
+        <value>Mark As Unavailable</value>
+    </labels>
+    <labels>
+        <fullName>SiteNewUserPrompt</fullName>
+        <categories>VF, Sites</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SiteNewUserPrompt</shortDescription>
+        <value>If you are not a member</value>
+    </labels>
+    <labels>
+        <fullName>SiteNewUserPromptClickHere</fullName>
+        <categories>VF, Sites</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SiteNewUserPromptClickHere</shortDescription>
+        <value>Click Here</value>
+    </labels>
+    <labels>
+        <fullName>Title_Available_Roles</fullName>
+        <categories>VF, Sites</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Title_Available_Roles</shortDescription>
+        <value>Opportunities which match your Interests</value>
+    </labels>
+    <labels>
+        <fullName>Title_Community_Chatter</fullName>
+        <categories>VF, Sites</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Title_Community_Chatter</shortDescription>
+        <value>Community Chatter Feed</value>
+    </labels>
+    <labels>
+        <fullName>Title_Completed_Roles</fullName>
+        <categories>VF, Sites</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Title_Completed_Roles</shortDescription>
+        <value>My Completed Courses</value>
+    </labels>
+    <labels>
+        <fullName>Title_Courses</fullName>
+        <categories>VF, Sites</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Title_Courses</shortDescription>
+        <value>My Course Bookings</value>
+    </labels>
+    <labels>
+        <fullName>Title_Current_Opportunities</fullName>
+        <categories>VF, Sites</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Title_Current_Opportunities</shortDescription>
+        <value>Current Opportunities</value>
+    </labels>
+    <labels>
+        <fullName>Title_Current_Roles</fullName>
+        <categories>VF, Sites</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Title_Current_Roles</shortDescription>
+        <value>My Current Roles</value>
+    </labels>
+    <labels>
+        <fullName>Title_My_Applications</fullName>
+        <categories>VF, Sites</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Title_My_Applications</shortDescription>
+        <value>My Applications</value>
+    </labels>
+    <labels>
+        <fullName>Title_Open_Requests</fullName>
+        <categories>VF, Sites</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Title_Open_Requests</shortDescription>
+        <value>My Open Customer Requests</value>
+    </labels>
+    <labels>
+        <fullName>Title_Search</fullName>
+        <categories>VF, Sites</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Title_Search</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>Volunteer_Landing_Page</fullName>
+        <categories>VF, Sites</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Volunteer Landing Page</shortDescription>
+        <value>Volunteer Home Page</value>
+    </labels>
+    <labels>
+        <fullName>Volunteering</fullName>
+        <categories>VF, Sites</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Volunteering</shortDescription>
+        <value>Volunteering</value>
+    </labels>
+    <labels>
+        <fullName>Welcome_Pack_Introduction</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Welcome Pack Introduction</shortDescription>
+        <value>&lt;p&gt;Welcome to the RNIB Group of charities and thank you for choosing to volunteer for blind and partially sighted people. You have joined us at a really exciting time in our development. RNIB, Action for Blind People, National Talking Newspapers and Magazines and Cardiff Vales and Valleys are working really closely to support even more blind and partially sighted people to lead full and independent lives.&lt;p&gt;
+&lt;p&gt;The RNIB group of charities has three clear priorities: We want to stop people losing their sight
+unnecessarily; We want to support more people to live independently and We want to create an inclusive
+society for everyone as soon as we can.&lt;/p&gt;</value>
+    </labels>
+</CustomLabels>

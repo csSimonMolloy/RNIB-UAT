@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Acknowledgement email to Co-ordinator for new customer request</name>
+    <style>none</style>
+    <subject>Acknowledgement email for new customer request - {!Customer_Requests__c.Name}</subject>
+    <textOnly>&apos;Dear {!Customer_Requests__c.Volunteer_Coordinator__c},
+
+We have received a new customer request for {!Customer_Requests__c.Customer_Name__c}. {!Customer_Requests__c.Customer_Post_Code__c}?
+
+Please can you allocate this request to a suitable volunteer as soon as possible.
+
+{!Customer_Requests__c.Link}
+
+Thank you again for all your help and support, it is much appreciated!
+
+Kind regards
+
+RNIB Group Volunteering Team
+t: 01733 375084
+e: technologysquad@rnib.org.uk
+w: www.rnib.org.uk</textOnly>
+    <type>custom</type>
+</EmailTemplate>

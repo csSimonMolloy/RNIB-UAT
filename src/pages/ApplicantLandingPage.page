@@ -1,0 +1,115 @@
+<!--
+* 2014-01-08 : KS : Volunteer Landing Page
+-->
+
+<apex:page id="applicantUserLandingPage" controller="VolunteerLandingPageController" title="{!$Label.Applicant_Landing_Page}" cache="false">
+ 
+<style>
+
+.feeditemfirstentity a{
+color: #015ba7;
+font-weight: bold;
+}
+
+.feeditemsecondentity a{
+color: #015ba7;
+}
+
+.preamblecontainer {
+color: #015ba7;
+margin-bottom: 12px;
+}
+
+.preamblecontainer a{
+color: #015ba7;
+}
+
+.chatter-avatar {
+  vertical-align: top;
+  text-align: top;
+}
+
+</style>
+
+<apex:define name="body">
+    <apex:form id="theForm">
+    <!-- Welcome text -->
+    <apex:pageBlock >
+        <b><apex:outputText value="{!$Label.Applicant_Landing_Welcome}"/><br/>
+        Update your profile<br/>
+        Search for Opportunities that match your skill set</b>
+    </apex:pageBlock>
+    
+    <!-- Available Opportunities Panel -->
+      <apex:outputPanel style="padding:10px 10px 50px 10px" id="opportunityFeed">
+        <apex:pageblock >
+          <apex:pageBlockSection title="{!$Label.Title_Available_Roles}" columns="1" collapsible="false">
+            <!--rendered value added to handle when list returned is null to hide pageblocktabel-->
+            <apex:pageblocktable value="{!avaliableopportunities}" var="opp" id="opportunityTable" rendered="{!(avaliableopportunities.size != null)}">﻿
+              <apex:column width="50px">
+                <apex:facet name="header"></apex:facet>
+                <apex:outputLink value="Role_Opportunities_Details?id={!opp.id}">View</apex:outputLink>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Title</apex:facet>
+                <apex:outputfield value="{!opp.Role_Title__c}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Region</apex:facet>
+                <apex:outputfield value="{!opp.Location__c}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Interests</apex:facet>
+                <apex:outputfield value="{!opp.Interests__c}"/>
+              </apex:column>
+            </apex:pageblocktable>
+            <apex:commandLink action="/Role_Opportunities" value="See all Opportunities" id="theCommandLink"/>
+          </apex:pageBlockSection>
+        </apex:pageblock>   
+      </apex:outputpanel>
+      <!-- End of Current Roles Panel --> 
+
+<!-- Applications Panel -->
+      <!--rendered value added to handle when list returned is null to hide outputpanel-->
+      <apex:outputPanel style="padding:10px 10px 50px 10px" id="ApplicationFeed" rendered="{!applications.size != 0}">
+        <apex:pageblock >
+          <apex:pageBlockSection title="{!$Label.Title_My_Applications}" columns="1" collapsible="false">
+            <apex:pageblocktable value="{!applications}" var="app" id="ApplicationTable">
+              <apex:column width="50px">
+                <apex:facet name="header"></apex:facet>                
+                <!-- <apex:outputLink value="/Application?id={!app.theApplication.Role__r.id}&appid={!app.theApplication.id}">{!IF((app.theApplication.Status__c="Draft"),"Edit","View")}</apex:outputLink> -->
+                <apex:outputLink value="/Application_Read?id={!app.theApplication.Role__r.id}&appid={!app.theApplication.id}" rendered="{!app.theApplication.Status__c != 'Draft'}">View</apex:outputLink>
+                <apex:outputLink value="/Application?id={!app.theApplication.Role__r.id}&appid={!app.theApplication.id}" rendered="{!app.theApplication.Status__c = 'Draft'}">Edit</apex:outputLink>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">RNIB Group</apex:facet>
+                <apex:outputfield value="{!app.theApplication.Role__r.RNIB_Group__c}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Role Title</apex:facet>
+                <apex:outputfield value="{!app.theApplication.Role_Title__c}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Role Type</apex:facet>
+                <apex:outputfield value="{!app.theApplication.Role__r.Opportunity_Family__c}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Service</apex:facet>
+                <apex:outputfield value="{!app.theApplication.Service__c}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Status</apex:facet>
+                <!--<apex:outputtext value="{!app.displayStatus}"/>-->
+                <apex:outputtext value="{!app.theApplication.Application_Status__c}"/>
+                
+              </apex:column>  
+            </apex:pageblocktable>
+          </apex:pageBlockSection>
+        </apex:pageblock> 
+      </apex:outputpanel>
+      <!-- End of Current Roles Panel -->  
+    </apex:form>
+  </apex:define>  
+
+    
+</apex:page>

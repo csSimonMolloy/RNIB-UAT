@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Interview</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Interviews</value>
+    </caseValues>
+    <fields>
+        <label><!-- Access Technology - Related to Role --></label>
+        <name>Access_Technology_Related_to_Role__c</name>
+    </fields>
+    <fields>
+        <label><!-- Access Technology Type --></label>
+        <name>Access_Technology_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Any further comments --></label>
+        <name>Any_further_comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volunteer Role --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- Interviews --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Communication methods --></label>
+        <name>Communication_methods__c</name>
+        <picklistValues>
+            <masterLabel>Connect magazine</masterLabel>
+            <translation><!-- Connect magazine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Newsletter</masterLabel>
+            <translation><!-- Newsletter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reviews</masterLabel>
+            <translation><!-- Reviews --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Team meetings</masterLabel>
+            <translation><!-- Team meetings --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Interviews --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date/Time --></label>
+        <name>Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Favourite part --></label>
+        <name>Favourite_part__c</name>
+    </fields>
+    <fields>
+        <help><!-- Follow-on actions have been identified during the exit interview stage. --></help>
+        <label><!-- Follow-on Actions Required --></label>
+        <name>Follow_on_Actions_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interviewer --></label>
+        <name>Interviewer1__c</name>
+        <relationshipLabel><!-- Interviews --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Is Access Technology Required? --></label>
+        <name>Is_Access_Technology_required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Least positive aspect --></label>
+        <name>Least_positive_aspect__c</name>
+    </fields>
+    <fields>
+        <label><!-- Leaving Reason --></label>
+        <name>Leaving_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Asked to stop by RNIB</masterLabel>
+            <translation><!-- Asked to stop by RNIB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assisting another UK agency as volunteer</masterLabel>
+            <translation><!-- Assisting another UK agency as volunteer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Changes in RNIB policy</masterLabel>
+            <translation><!-- Changes in RNIB policy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deceased</masterLabel>
+            <translation><!-- Deceased --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dissatisfaction with RNIB</masterLabel>
+            <translation><!-- Dissatisfaction with RNIB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ill health</masterLabel>
+            <translation><!-- Ill health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lack of RNIB support</masterLabel>
+            <translation><!-- Lack of RNIB support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moved away</masterLabel>
+            <translation><!-- Moved away --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moved to another role</masterLabel>
+            <translation><!-- Moved to another role --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moving into employment</masterLabel>
+            <translation><!-- Moving into employment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moving to help another RNIB service</masterLabel>
+            <translation><!-- Moving to help another RNIB service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No longer feel able to carry out the role</masterLabel>
+            <translation><!-- No longer feel able to carry out the role --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not being used</masterLabel>
+            <translation><!-- Not being used --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other commitments</masterLabel>
+            <translation><!-- Other commitments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reached retirement age</masterLabel>
+            <translation><!-- Reached retirement age --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service/role ceased</masterLabel>
+            <translation><!-- Service/role ceased --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Short volunteering opportunity</masterLabel>
+            <translation><!-- Short volunteering opportunity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transferring to Action for the Blind</masterLabel>
+            <translation><!-- Transferring to Action for the Blind --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Leaving details --></label>
+        <name>Leaving_details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy Interview ID --></label>
+        <name>Legacy_Interview_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- NVIS Account No --></label>
+        <name>NVIS_Account_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Note: --></label>
+        <name>Note__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outcome --></label>
+        <name>Outcome__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conducted</masterLabel>
+            <translation><!-- Conducted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not yet conducted</masterLabel>
+            <translation><!-- Not yet conducted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Recommend to others --></label>
+        <name>Recommend_to_others__c</name>
+    </fields>
+    <fields>
+        <label><!-- Review frequency --></label>
+        <name>Review_frequency__c</name>
+    </fields>
+    <fields>
+        <help><!-- Safeguarding issues resulting in Volunteer leaving --></help>
+        <label><!-- Safeguarding Issue --></label>
+        <name>Safeguarding_Issue__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter notes regarding the interview here --></help>
+        <label><!-- Soft Notes --></label>
+        <name>Soft_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sufficient training --></label>
+        <name>Sufficient_training__c</name>
+    </fields>
+    <fields>
+        <label><!-- Suggested improvements --></label>
+        <name>Suggested_improvements__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field contains the description given by the Volunteer/Applicant --></help>
+        <label><!-- Technology required, If Yes --></label>
+        <name>Technology_required_if_yes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Training received --></label>
+        <name>Training_received__c</name>
+        <picklistValues>
+            <masterLabel>Customer care</masterLabel>
+            <translation><!-- Customer care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Induction</masterLabel>
+            <translation><!-- Induction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manual handling</masterLabel>
+            <translation><!-- Manual handling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Role specific training</masterLabel>
+            <translation><!-- Role specific training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Visual awareness/understand sight loss</masterLabel>
+            <translation><!-- Visual awareness/understand sight loss --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Exit Interview</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Interview Layout</layout>
+        <sections>
+            <label><!-- Access Technology Requirement --></label>
+            <section>Access Technology Requirement</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Interview Notes --></label>
+            <section>Interview Notes</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Exit Interview --></label>
+        <name>Exit_Interview</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Role Interview --></label>
+        <name>Role_Interview</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- New_Exit_Interview --></label>
+        <name>New_Exit_Interview</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Interview --></label>
+        <name>New_Interview</name>
+    </webLinks>
+</CustomObjectTranslation>

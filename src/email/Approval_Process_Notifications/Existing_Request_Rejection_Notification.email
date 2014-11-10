@@ -1,0 +1,16 @@
+Dear All, <br><br>
+
+Existing Safeguarding request - {!Risk_Assessment__c.Name} for {!Risk_Assessment__c.Volunteer__c} has been rejected. <br><br>
+
+To check the details follow this link - {!ApprovalRequest.External_URL} <br><br>
+
+
+{!ApprovalRequest.Internal_URL} <br><br><br>
+
+
+Best Regards, <br><br>
+
+{!ApprovalRequest.Process_Approver} <br><br>
+
+Counter Signatory/GVT <br>
+RNIB Volunteering Team

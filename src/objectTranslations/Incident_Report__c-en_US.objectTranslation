@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Incident Report</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Incident Reports</value>
+    </caseValues>
+    <fields>
+        <help><!-- How did it happen? --></help>
+        <label><!-- About the incident --></label>
+        <name>About_the_incident__c</name>
+    </fields>
+    <fields>
+        <help><!-- Description of injury suffered:
+What part of the body was injured?: --></help>
+        <label><!-- About the injury or damage --></label>
+        <name>About_the_injury_or_damage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Action taken after to reduce risk --></label>
+        <name>Action_taken_after_to_reduce_risk__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Community Fundraiser Email --></label>
+        <name>Community_Fundraiser_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Community Fundraiser Name --></label>
+        <name>Community_Fundraiser_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Community Fundraiser Phone --></label>
+        <name>Community_Fundraiser_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Form Filled In By Address --></label>
+        <name>Form_Filled_In_By_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Form Filled In By Email --></label>
+        <name>Form_Filled_In_By_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Form Filled In By Phone --></label>
+        <name>Form_Filled_In_By_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Form Filled In By Type --></label>
+        <name>Form_Filled_In_By_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Form Filled In By --></label>
+        <name>Form_Filled_In_By__c</name>
+        <relationshipLabel><!-- Incident Reports (Form Filled In By) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Form filled In By --></label>
+        <name>Form_filled_in_by2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incident Date/Time --></label>
+        <name>Incident_Date_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- Where the Incident happened (Address or Location) --></help>
+        <label><!-- Incident Location --></label>
+        <name>Incident_Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- Note: --></label>
+        <name>Note__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Person Address --></label>
+        <name>Other_Person_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Person Email --></label>
+        <name>Other_Person_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Person First Name --></label>
+        <name>Other_Person_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Person Last Name --></label>
+        <name>Other_Person_Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Person Phone --></label>
+        <name>Other_Person_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Person --></label>
+        <name>Other_Person__c</name>
+    </fields>
+    <fields>
+        <label><!-- Person Involved --></label>
+        <name>Person_Involved2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Person Involved Address --></label>
+        <name>Person_Involved_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Person Involved Email --></label>
+        <name>Person_Involved_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Person Involved Phone --></label>
+        <name>Person_Involved_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Person Involved Type --></label>
+        <name>Person_Involved_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Person Involved --></label>
+        <name>Person_Involved__c</name>
+        <relationshipLabel><!-- Incident Reports --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Property damage cost --></label>
+        <name>Property_damage_cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describe damage to property
+Cost of repair to damage --></help>
+        <label><!-- Property damaged Description --></label>
+        <name>Property_damaged_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Property damaged --></label>
+        <name>Property_damaged__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Describe Action taken after accident/incident to reduce risk --></help>
+        <label><!-- Reduce Risk Description --></label>
+        <name>Reduce_Risk_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Result of injury --></label>
+        <name>Result_of_injury__c</name>
+        <picklistValues>
+            <masterLabel>Able to do normal activities after incident</masterLabel>
+            <translation><!-- Able to do normal activities after incident --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unable to do normal activities after incident</masterLabel>
+            <translation><!-- Unable to do normal activities after incident --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Treatment after injury --></label>
+        <name>Treatment_after_injury__c</name>
+        <picklistValues>
+            <masterLabel>24 hours or more Hospital Stay</masterLabel>
+            <translation><!-- 24 hours or more Hospital Stay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>First aid</masterLabel>
+            <translation><!-- First aid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospital Visit for Treatment</masterLabel>
+            <translation><!-- Hospital Visit for Treatment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Treatment</masterLabel>
+            <translation><!-- No Treatment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seen by GP / Paramedic</masterLabel>
+            <translation><!-- Seen by GP / Paramedic --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Incident Report Layout - Community</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Incident Details --></label>
+            <section>Incident Details</section>
+        </sections>
+        <sections>
+            <label><!-- Incident Details Description --></label>
+            <section>Incident Details Description</section>
+        </sections>
+        <sections>
+            <label><!-- Person Filling in the Form --></label>
+            <section>Person Filling in the Form</section>
+        </sections>
+        <sections>
+            <label><!-- Post Incident --></label>
+            <section>Post Incident</section>
+        </sections>
+        <sections>
+            <label><!-- Property Damage --></label>
+            <section>Property Damage</section>
+        </sections>
+        <sections>
+            <label><!-- Volunteer/Person Involved in the Incident --></label>
+            <section>Volunteer/Person Involved in the Incident</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Incident Report Layout - Internal</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Incident Details --></label>
+            <section>Incident Details</section>
+        </sections>
+        <sections>
+            <label><!-- Incident Details Description --></label>
+            <section>Incident Details Description</section>
+        </sections>
+        <sections>
+            <label><!-- Information provided by Volunteer --></label>
+            <section>Information provided by Volunteer</section>
+        </sections>
+        <sections>
+            <label><!-- Internal Only - Please Select the Relevant Contacts to Generate Incident Report --></label>
+            <section>Internal Only - Please Select the Relevant Contacts to Generate Incident Report</section>
+        </sections>
+        <sections>
+            <label><!-- Post Incident --></label>
+            <section>Post Incident</section>
+        </sections>
+        <sections>
+            <label><!-- Property Damage --></label>
+            <section>Property Damage</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Reduce Risk Description must be filled in --></errorMessage>
+        <name>Action_After_Description_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Property Damage Description must be filled in --></errorMessage>
+        <name>Property_Damage_Description_Required</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Generate_Incident_Report --></label>
+        <name>Generate_Incident_Report</name>
+    </webLinks>
+</CustomObjectTranslation>

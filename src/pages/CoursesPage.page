@@ -1,0 +1,64 @@
+<apex:page id="coursesPage" controller="CoursesPageController" title="{!$Label.Courses}">
+
+<apex:define name="body">
+    <apex:form id="theForm">
+    	<apex:outputPanel style="padding:10px 10px 50px 10px" id="requestCourses">
+        <apex:pageblock >
+          <apex:pageBlockSection title="{!$Label.Title_Courses}" columns="1">
+            <apex:pageblocktable value="{!CoursesBooking}" var="course" id="requestCourseTable">
+              <apex:column width="50px">
+                <apex:facet name="header"></apex:facet>
+                <apex:outputLink value="/{!course.Id}/e?retURL=apex/CoursesPage?sfdc.tabName=01rg00000004UYj">Edit</apex:outputLink>
+              </apex:column>
+              <apex:column width="80px">
+                <apex:facet name="header">Course Name</apex:facet>
+                <apex:outputfield value="{!course.Course__r.Name}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Start Date</apex:facet>
+                <apex:outputfield value="{!course.Course__r.Start_Date_Time__c}"/>
+              </apex:column>  
+              <apex:column >
+                <apex:facet name="header">End Date</apex:facet>
+                <apex:outputfield value="{!course.Course__r.End_Date_Time__c}"/>
+              </apex:column>  
+              <apex:column >
+                <apex:facet name="header">Your Status</apex:facet>
+                <apex:outputfield value="{!course.Status__c}"/>
+              </apex:column> 
+            </apex:pageblocktable>
+          </apex:pageBlockSection>
+        </apex:pageblock> 
+      </apex:outputpanel>
+
+      <apex:outputPanel style="padding:10px 10px 50px 10px" id="requestCompletedCourses">
+        <apex:pageblock >
+          <apex:pageBlockSection title="{!$Label.Title_Completed_Roles}" columns="1">
+            <apex:pageblocktable value="{!CompleteCoursesBooking}" var="course" id="requestCompletedCoursesTable">
+              <apex:column width="50px">
+                <apex:facet name="header"></apex:facet>
+              </apex:column>
+              <apex:column width="80px">
+                <apex:facet name="header">Course Name</apex:facet>
+                <apex:outputfield value="{!course.Course__r.Name}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Start Date</apex:facet>
+                <apex:outputfield value="{!course.Course__r.Start_Date_Time__c}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">End Date</apex:facet>
+                <apex:outputfield value="{!course.Course__r.End_Date_Time__c}"/>
+              </apex:column>   
+              <apex:column >
+                <apex:facet name="header">Your Status</apex:facet>
+                <apex:outputfield value="{!course.Status__c}"/>
+              </apex:column> 
+            </apex:pageblocktable>
+          </apex:pageBlockSection>
+        </apex:pageblock> 
+      </apex:outputpanel>
+    </apex:form>
+</apex:define>
+
+</apex:page>

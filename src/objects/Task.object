@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <webLinks>
+        <fullName>Log_a_Call_Customer_Request</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>url</linkType>
+        <masterLabel>Log a Call (Customer Request)</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/00T/e?title=Call&amp;what_id={!Customer_Requests__c.Id}&amp;who_id={!Customer_Requests__c.Customer_NameId__c}&amp;followup=1&amp;tsk5=Call&amp;retURL={!Customer_Requests__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Task_Customer_Request</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>url</linkType>
+        <masterLabel>New Task (Customer Request)</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/00T/e?what_id={!Customer_Requests__c.Id}&amp;who_id={!Customer_Requests__c.Customer_NameId__c}&amp;retURL={!Customer_Requests__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Send_an_Email_Customer_Request</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>url</linkType>
+        <masterLabel>Send an Email (Customer Request)</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/_ui/core/email/author/EmailAuthor?p3_lkid={!Customer_Requests__c.Id}&amp;p2_lkid={!Customer_Requests__c.Customer_NameId__c}&amp;retURL={!Customer_Requests__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>new_task_test</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>new task test</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/00T/e?what_id=a08g0000001hGt0&amp;retURL=%2Fa08g0000001hGt0</url>
+    </webLinks>
+</CustomObject>

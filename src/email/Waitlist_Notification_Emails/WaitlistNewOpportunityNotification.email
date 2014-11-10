@@ -1,0 +1,10 @@
+Dear {!Contact.FirstName},  
+
+As you are currently on our volunteering waitlist, I wanted to let you know that a new volunteering opportunity is now available.  The Opportunity - {!Role_Opportunity__c.Role_Title__c} is now open for applications.  A description of the role is as follows: {!Role_Opportunity__c.Role_Description__c}.  
+
+If you would like to learn more about the role, or would like to apply, please click the link below and follow the onscreen directions.
+
+
+Kind Regards,  
+
+{!User.FirstName}

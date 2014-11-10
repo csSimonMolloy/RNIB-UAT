@@ -1,0 +1,171 @@
+<apex:page standardController="Reference__c" renderAs="PDF">
+    <div style="page-break-after:always; padding-top: 80px; font-family: Arial Unicode MS; font-size: 14pt;"> 
+        <p align="right">
+            RNIB Group Volunteering Team<br/>
+            Bakewell Road<br/>
+            Orton Southgate<br/>
+            Peterborough <br/>
+            PE2 6XU
+        </p>
+        <p class="companyName">
+            {!Reference__c.Contact__r.Name}<br/>
+            {!Reference__c.Contact__r.MailingStreet}<br/>
+            {!Reference__c.Contact__r.MailingCity}<br/>
+            {!Reference__c.Contact__r.MailingState}<br/>
+            {!Reference__c.Contact__r.MailingPostalCode}
+        </p>
+        <p>
+            <apex:outputText value="{0,date}">
+                <apex:param value="{!TODAY()}" />
+            </apex:outputText>
+        </p>
+        <p>
+            Dear {!Reference__c.Contact__r.FirstName}
+        </p>
+        <p><strong>Re: Character Reference Request</strong></p>
+        <p>{!Reference__c.Applicant_Name__c} wants to volunteer with us at RNIB Group of Charities and has requested we contact you to provide a character reference. Referees must be independent (not related or have a personal relationship) and have known {!Reference__c.Applicant_Name__c} for at least two years.</p>
+        <p>We have an ambition and are committed to making every day better for everyone affected by sight loss. Our volunteers are helping us make this ambition a reality, without our volunteers we wouldn’t be able to reach as many blind and partially sighted people who need our support. The sooner we can receive your reference the sooner {!Reference__c.Applicant_Name__c} can start supporting blind and partially sighted people. We really appreciate your help with {!Reference__c.Applicant_Name__c}’s application and would welcome your response before {!Reference__c.Date_Reference_Return__c}. </p>
+        <p>Please find enclosed information about our volunteering opportunity {!Reference__c.Applicant_Name__c} has applied for. Please read about the opportunity, and think about {!Reference__c.Applicant_Name__c}’s suitability in your opinion for this volunteering role, then complete and return the attached reference form to via the reply envelope. All correspondence will be treated in the strictest confidence.</p>
+        <p>Thank you for your assistance in this matter. I would like to advise you that in order to keep administrative costs to a minimum, receipt of your reference will not be acknowledged. </p>
+<p>If you have any queries, or would like an electronic version of this form, please do not hesitate to contact us on 0845 60 30 575 or volunteering@rnib.org.uk.</p>
+<p>Yours sincerely,</p>
+        <img src="{!$Resource.MarkhamSig}"/>
+        <p><strong>Louise Markham</strong></p>
+        <p><strong>Volunteering Team</strong></p>
+        <p>Enclosed: Business Reply Envelope, Role Description(s) for {!Reference__c.Role_Title__c}</p>
+        <br/>
+        <p><strong>Details of role applied for:</strong></p>
+        <p>
+        <strong>Role Title:</strong>&nbsp;<apex:outputText value="{!Reference__c.Role_Title__c}"/><br/>
+        <strong>Role Description:</strong>&nbsp;<apex:outputText value="{!Reference__c.Role_Description__c}"/><br/>
+        <strong>What they will be doing:</strong>&nbsp;<apex:outputText value="{!Reference__c.Application__r.Role__r.What_will_I_be_doing2__c}"/><br/>
+        <apex:outputPanel rendered="{!NOT(Reference__c.Application__r.Role__r.What_will_I_be_doing__c == '')}">
+        <strong>What they will be doing - Further info:</strong>&nbsp;<apex:outputText value="{!Reference__c.Application__r.Role__r.What_will_I_be_doing__c}"/><br/>
+        </apex:outputPanel>
+        <strong>What Skills / Experience are needed:</strong>&nbsp;<apex:outputText value="{!Reference__c.Application__r.Role__r.Skills__c}"/><br/>
+        <strong>Opportunity involves working with children:</strong><apex:outputText value="{!Reference__c.Role_Involves_Working_With_Children__c}"/>
+        </p>
+    </div> 
+    <div style="page-break-after:auto; font-family: Arial Unicode MS; font-size: 14pt;">
+        <img src="{!$Resource.logo}"/>
+        <h1>Volunteer Recruitment – Character Reference</h1>
+        <table border="1" cellspacing="0" cellpadding="0">
+        <td width="700" valign="top">
+        <p><strong>Name of prospective volunteer: </strong>{!Reference__c.Applicant_Name__c}</p>
+        </td>
+          </table>
+        <br/>
+        <br/>
+        <table border="1" cellspacing="0" cellpadding="0" style="width:700px">
+        <tr>
+          <td>How long have you known the above named person?
+          <br/>
+          <br/>
+          <br/></td>
+        </tr>
+        <tr>
+          <td>In what capacity do you know this person?
+          <br/>
+          <br/></td>
+        </tr>
+        </table>
+        <br/>    
+        <table border="1" cellspacing="0" cellpadding="0" style="width:700px">
+        <tr>
+        <td><strong>Please comment on {!Reference__c.Applicant_Name__c} suitability regarding the following:</strong> 
+        <br/>    
+        <br/> 
+        Ability to perform role:
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        Relationships with others:
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        Honesty/integrity/Ability to maintain confidentiality:
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <p>Reliability:</p>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        </td>
+        </tr>
+        </table>
+        
+        <br/>
+        <!-- <table border="1" cellspacing="0" cellpadding="0" style="width:700px">
+        <tr>
+        <td><strong>If this opportunity includes volunteering with children, please answer the question below:</strong></td>
+        </tr>
+        <tr>
+        <td>Are you satisfied that this person is suitable to volunteer with children, if not what are your concerns:
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/></td>
+        </tr>
+        </table> -->
+        <br/>
+        <table border="1" cellspacing="0" cellpadding="0" style="width:700px">
+          <tr>
+        <td><strong>We invite you to add any further comments you would like to make on the applicant's suitability for the work outlined above, or to include any other information you think may be relevant:</strong>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/></td>
+          </tr>
+          </table>
+        <br/>
+        <table border="1" cellspacing="0" cellpadding="0" style="width:700px">
+          <tr>
+        <td><strong>Would you recommend this person as a volunteer with RNIB Group?  Please give your reasons.</strong>
+        <br/>
+        <br/>
+        Yes
+        <br/>
+        <br/>
+        No
+        <br/>
+        <br/>
+        <br/></td>
+          </tr>
+          </table>
+          <br/>
+        <table border="1" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="700" valign="top"><p>Name</p> (please use block capitals):<br/>
+              <p>Address:</p>
+              <p>Email:</p>
+              <p>Telephone Number:</p>
+              <p>Signed:</p>                                                                                
+              <p>Date:</p></td>
+          </tr>
+        </table>
+         </div>
+</apex:page>

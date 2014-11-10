@@ -1,0 +1,156 @@
+<apex:page standardController="Role_Opportunity__c" extensions="ApplicationFormController" sidebar="false" showHeader="true">
+<apex:form >
+<script>
+function confirmWithdraw(){
+   return confirm("Are you sure you wish to withdraw this application?");
+}
+</script>
+<apex:pageBlock >
+<apex:pageBlockButtons >
+    <apex:commandButton value="Close" action="{!doClose}" immediate="true"/>
+    <apex:commandButton value="Withdraw Application" rendered="{!!isNewApplication && theApplication.Status__c != 'Withdrawn' }" onclick="javascript: return confirmWithdraw();" action="{!withdrawApplication}"/>
+</apex:pageBlockButtons>
+<apex:pageBlockSection title="Opportunity Details" columns="2">
+    <apex:outputField value="{!theRole.Role_Title__c}"/>
+    <apex:outputField value="{!theRole.Location__c}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection title="Account Information" rendered="{!showCorporate}" columns="2">
+    <apex:outputField value="{!corpAccount.Name}"/>
+    <apex:outputField value="{!corpAccount.Phone}"/>
+    <apex:outputField value="{!corpAccount.BillingStreet}"/>
+    <label/>
+    <apex:outputField value="{!corpAccount.BillingCity}"/>
+    <label/>
+    <apex:outputField value="{!corpAccount.BillingState}"/>
+    <label/>
+    <apex:outputField value="{!corpAccount.BillingCountry}"/>
+    <label/>
+    <apex:outputField value="{!corpAccount.BillingPostalCode}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection title="Contact Information" rendered="{!showCorporate}" columns="2">
+    <apex:outputField value="{!theApplicant.Salutation}"/>
+    <apex:outputField value="{!theApplicant.LastName}"/>
+    <apex:outputField value="{!theApplicant.FirstName}"/>
+    <label/>
+    <apex:outputField value="{!theApplicant.Phone}"/>
+    <apex:outputField value="{!theApplicant.Email}"/>
+    <apex:outputField value="{!theApplicant.MobilePhone}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection title="Contact Information" rendered="{!!showCorporate}" columns="2">
+    <apex:outputField value="{!theApplicant.Salutation}"/>
+    <apex:outputField value="{!theApplicant.LastName}"/>
+    <apex:outputField value="{!theApplicant.FirstName}"/>
+    <label/>
+    <apex:outputField value="{!theApplicant.MailingStreet}"/>
+    <label/>    
+    <apex:outputField value="{!theApplicant.MailingCity}"/>    
+    <label/>    
+    <apex:outputField value="{!theApplicant.MailingState}"/>    
+    <label/>    
+    <apex:outputField value="{!theApplicant.MailingPostalCode}"/>
+    <label/>
+    <apex:outputField value="{!theApplicant.Phone}"/>
+    <apex:outputField value="{!theApplicant.MobilePhone}"/>
+    <apex:outputField value="{!theApplicant.Email}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection title="Emergency Contact Details" columns="2">
+    <apex:outputField value="{!theApplicant.Emergency_Contact_Name__c}"/>
+    <apex:outputField value="{!theApplicant.Emergency_Contact_Relationship__c}"/>
+    <apex:outputField value="{!theApplicant.Emergency_Contact_Phone__c}"/>
+    <apex:outputField value="{!theApplicant.Emergency_Contact_Mobile__c}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection title="Correspondance" rendered="{!!showCorporate}">
+    <apex:outputField value="{!theApplicant.Preferred_reading_correspondence_format__c}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection title="Education" rendered="{!showIntern || showSpecialist}">
+    <apex:outputField value="{!theApplication.Education__c}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection title="Voluntary or Work Experience" rendered="{!showIntern || showSpecialist}">
+    <apex:outputField value="{!theApplication.Voluntary_or_Work_Experience__c}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection title="Skills and Experience">
+    <apex:outputField value="{!theApplication.Experience_Qualifications__c}"  rendered="{!showIntern || showSpecialist}"/>
+    <apex:outputPanel rendered="{!showIntern || showSpecialist}"><label/></apex:outputPanel>
+    <apex:outputField value="{!theApplication.Why_do_you_want_to_volunteer_for_us__c}" rendered="{!showPeerSupport || showStandard || showIntern || showOneOff || showSpecialist}"/>
+    <apex:outputPanel rendered="{!showIntern || showSpecialist}"><label/></apex:outputPanel>
+    <apex:outputField value="{!theApplication.Why_do_work_experience_with_RNIB__c}" rendered="{!showWorkExperience}"/>
+    <apex:outputPanel rendered="{!showIntern || showSpecialist}"><label/></apex:outputPanel>    
+    <apex:outputField value="{!theApplication.Tell_us_about_yourself__c}" rendered="{!showPeerSupport || showStandard || showIntern || showOneOff || showSpecialist || showWorkExperience}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection title="When are you available to volunteer?" rendered="{!showStandard || showIntern || showSpecialist}">
+    <apex:outputField value="{!theApplicant.Availability__c}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection title="Marketing" rendered="{!showPeerSupport || showStandard || showIntern || showOneOff || showSpecialist || showWorkPlacement}">
+    <apex:outputField value="{!theApplicant.How_did_you_hear_about_RNIB__c}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection title="Areas of Interest" rendered="{!showPeerSupport || showStandard || showIntern || showOneOff || showSpecialist || showWorkExperience}">
+    <apex:outputField value="{!theApplicant.Areas_of_Interest__c}" />
+</apex:pageBlockSection>
+<apex:pageBlockSection title="School / College" rendered="{!showWorkExperience}" columns="2">
+    <apex:outputField value="{!theApplication.School_College__c}"/>
+    <apex:outputField value="{!theApplication.School_College_Contact__c}"/>
+    <apex:outputField value="{!theApplication.School_College_Phone__c}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection title="College / University / Workplace" rendered="{!showWorkPlacement}" columns="2">
+    <apex:outputField value="{!theApplication.College_Univeristy_Workplace__c}"/>
+    <apex:outputField value="{!theApplication.College_Univeristy_Workplace_Contact__c}"/>
+    <apex:outputField value="{!theApplication.College_Univeristy_Workplace_Phone__c}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection title="Number of Volunteers" rendered="{!showCorporate}" columns="2">
+    <apex:outputField value="{!theApplication.Number_of_Corporate_Volunteers__c}"/>
+</apex:pageBlockSection>
+<!-- MORE CODE TO GO HERE BEFORE REFERENCES -->
+<apex:pageBlockSection title="References" columns="2" rendered="{!showStandard || showIntern || showSpecialist}">
+    <apex:outputField value="{!ref_contact_one.Salutation}"/>
+    <apex:outputField value="{!ref_contact_two.Salutation}"/>
+    <apex:outputField value="{!ref_contact_one.FirstName}"/>
+    <apex:outputField value="{!ref_contact_two.FirstName}"/>
+    <apex:outputField value="{!ref_contact_one.ReferenceLastName__c}"/>
+    <apex:outputField value="{!ref_contact_two.ReferenceLastName__c}"/>
+    <apex:outputField value="{!ref_contact_one.MailingStreet}"/>
+    <apex:outputField value="{!ref_contact_two.MailingStreet}"/>
+    <apex:outputField value="{!ref_contact_one.MailingCity}"/>
+    <apex:outputField value="{!ref_contact_two.MailingCity}"/>    
+    <apex:outputField value="{!ref_contact_one.MailingState}"/>
+    <apex:outputField value="{!ref_contact_two.MailingState}"/>    
+    <apex:outputField value="{!ref_contact_one.MailingPostalCode}"/>
+    <apex:outputField value="{!ref_contact_two.MailingPostalCode}"/>
+    <apex:outputField value="{!reference_one.Relationship__c}"/>
+    <apex:outputField value="{!reference_two.Relationship__c}"/>
+</apex:pageBlockSection>
+<!-- MORE CODE TO GO HERE BEFORE EQUAL OPPS -->
+
+<apex:pageBlockSection title="Criminal Offence" rendered="{!showStandard || showIntern || showSpecialist}">
+    <apex:outputField value="{!theApplication.Convicted_of_Criminal_Offence__c}"/>
+    <label/>
+    <apex:outputField value="{!theApplication.Criminal_Offence_Details__c}"/>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="Legal Declariation & Data Protection" columns="1">
+    <apex:outputPanel rendered="{!showStandard || showIntern}"><label/></apex:outputPanel>
+    <!-- POSSIBLE MORE CHECKBOXES IN HERE -->
+    <apex:outputText escape="false" value="<b>Data Protection:</b><br>We will only use your personal details in relation to your support with RNIB Group and will not pass your details on the third parties."/>
+    <apex:outputText escape="false" value="<b>Legal Declaration</b><br>In submitting this form to RNIB:<br>
+    * I declare that the details given by me on the application form are correct to the best of my knowledge and belief.<br>
+    * I understand that if I give any information which is false, or I withhold any relevant information, this may lead to my application being rejected, or if already appointed, to termination of contract<br>
+    * I understand that information given on the form will be processed by a computer and used for registration and equal opportunities monitoring purposes under the Data Protection Acts 1984 and 1998.<br>"/>
+    <apex:outputText escape="false" value="Please confirm that you agree to the above terms and conditions by ticking this box (Data protection checkbox)"/>
+    <apex:outputField id="dataProtection" value="{!theApplication.Legal_Declariation__c}" label="Data Protection"/>
+    <apex:outputText escape="false" value="<b>Please note that we cannot accept your application unless you agree to the terms and conditions.</b><br>Once you are ready to submit this part of your application, please press the button below. You will not be able to return to edit the  application once submitted, so please only do so when you are sure you have completed all of the sections. "/>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="Equal Opportunities" columns="2" rendered="{!showStandard || showIntern || showOneOff || showSpecialist || showTrustee}">
+    <apex:outputField value="{!theApplicant.Date_of_birth__c}"/>
+    <apex:outputField value="{!theApplicant.Gender__c}"/>    
+    <apex:outputField value="{!theApplicant.Marital_Status__c}"/>    
+    <apex:outputField value="{!theApplicant.Disability__c}"/>
+    <apex:outputField value="{!theApplicant.Ethnicity_list__c}"/>
+    <apex:outputField value="{!theApplicant.Religion__c}" rendered="{!theRole.Location__c == 'Northern Ireland'}"/>
+    <apex:outputPanel rendered="{!NOT(theRole.Location__c == 'Northern Ireland')}">
+        <label/>
+    </apex:outputPanel>
+
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

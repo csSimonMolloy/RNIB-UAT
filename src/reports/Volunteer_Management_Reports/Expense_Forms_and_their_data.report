@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Expense_Form__c$Name</field>
+    </columns>
+    <columns>
+        <field>Expense_Form__c.Expenses__r$Name</field>
+    </columns>
+    <columns>
+        <field>Expense_Form__c.Expenses__r$Date__c</field>
+    </columns>
+    <columns>
+        <field>Expense_Form__c.Expenses__r$Type__c</field>
+    </columns>
+    <columns>
+        <field>Expense_Form__c.Expenses__r$Description__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Expense_Form__c.Expenses__r$Amount__c</field>
+    </columns>
+    <description>Expense Forms and their data</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Expense_Form__c$Volunteer_Role__c.Service__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Expense_Form__c$Name__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Expense Forms and their data</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Expense_Forms_and_their_data__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Expense_Form__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>
