@@ -252,12 +252,13 @@ function validateForm(){
     </style>
   
  </head>
- <body id="home">
-    <div>
+ <body id="home" style="background-color:#E8F5F6;">
+    <div style="margin-left:250px;font-size:16px; font-family:'Arial Unicode MS';">
         <div id="wrapper">
             <div id="header" style="width: 99.9996%;">
                 <div id="header-col-1">
-                    <a id="ctl00_masterPageLogo_linkSiteLogo" href="http://www.rnib.org.uk"><img id="ctl00_masterPageLogo_imgSiteLogo" src="http://www.rnib.org.uk/PublishingImages/RNIBLogo.gif" alt="RNIB Home"/></a> <img id="ctl00_masterPageLogo_imgStrapLineLogo" src="http://www.rnib.org.uk/publishingimages/rnibstrapline.gif" alt="supporting blind and partially sighted people"/> 
+                    <!-- <a id="ctl00_masterPageLogo_linkSiteLogo" href="http://www.rnib.org.uk"><img id="ctl00_masterPageLogo_imgSiteLogo" src="http://www.rnib.org.uk/PublishingImages/RNIBLogo.gif" alt="RNIB Home"/></a> <img id="ctl00_masterPageLogo_imgStrapLineLogo" src="http://www.rnib.org.uk/publishingimages/rnibstrapline.gif" alt="supporting blind and partially sighted people"/>  -->
+                    <a id="ctl00_masterPageLogo_linkSiteLogo" href="http://rnib.org.uk">  <apex:image url="{!$Resource.logoRNIB}" width="250" height="130" style="margin-top:10px;"/>  <!---- <img id="ctl00_masterPageLogo_imgSiteLogo" src="http://www.rnib.org.uk/PublishingImages/RNIBLogo.gif" alt="RNIB Home"/> ---> </a> <!---- <img id="ctl00_masterPageLogo_imgStrapLineLogo" src="http://www.rnib.org.uk/publishingimages/rnibstrapline.gif" alt="supporting blind and partially sighted people"/> ---> 
                     <ul class="contact-info">
                         <li>
                         <a href="http://www.rnib.org.uk/aboutus/contactdetails/Pages/helpline.aspx">RNIB Helpline</a>
